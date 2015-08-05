@@ -1,0 +1,24 @@
+{{#partial "page"}}
+
+  <section class="account-wrapper">
+
+    {{> components/account/navigation account_page='wishlists'}}
+
+    <div class="account-body">
+      <h1 class="account-heading">{{lang 'account.wishlists.view_heading' name=wishlist.name}}</h1>
+      {{#if wishlist.is_public}}
+        <div class="account-share-wishlist">
+          <h2>{{lang 'account.wishlists.share_intro'}}</h2>
+          <div class="account-share-wishlist-url">
+            <input class="form-input" value="{{settings.base_url}}{{wishlist.share_url}}">
+          </div>
+        </div>
+      {{/if}}
+      {{> components/account/wishlist-item-list show_remove=true}}
+    </div>
+
+  </section>
+
+{{/partial}}
+
+{{> layout/base}}

@@ -1,0 +1,57 @@
+<nav class="account-nav">
+  <ul class="account-nav-list">
+
+    {{#compare account_page 'orders' operator='==='}}
+      <li class="account-nav-item active">{{lang 'account.menu.orders'}}</li>
+    {{else}}
+      <li class="account-nav-item">
+        <a href="{{urls.account.orders.all}}">{{lang 'account.menu.orders'}}</a>
+      </li>
+    {{/compare}}
+    {{#if settings.returns_enabled}}
+      {{#compare account_page 'returns' operator='==='}}
+        <li class="account-nav-item active">{{lang 'account.menu.returns'}}</li>
+      {{else}}
+        <li class="account-nav-item">
+          <a href="{{urls.account.returns}}">{{lang 'account.menu.returns'}}</a>
+        </li>
+      {{/compare}}
+    {{/if}}
+    {{#compare account_page 'messages' operator='==='}}
+      <li class="account-nav-item active">{{lang 'account.menu.messages'}}</li>
+    {{else}}
+      <li class="account-nav-item">
+        <a href="{{urls.account.inbox}}">{{lang 'account.menu.messages'}}</a>
+      </li>
+    {{/compare}}
+    {{#compare account_page 'addresses' operator='==='}}
+      <li class="account-nav-item active">{{lang 'account.menu.addresses'}}</li>
+    {{else}}
+      <li class="account-nav-item">
+        <a href="{{urls.account.addresses}}">{{lang 'account.menu.addresses'}}</a>
+      </li>
+    {{/compare}}
+    {{#compare account_page 'wishlists' operator='==='}}
+      <li class="account-nav-item active">{{lang 'account.menu.wishlists'}}</li>
+    {{else}}
+      <li class="account-nav-item">
+        <a href="{{urls.account.wishlists.all}}">{{lang 'account.menu.wishlists'}}</a>
+      </li>
+    {{/compare}}
+    {{#compare account_page 'recent_items' operator='==='}}
+      <li class="account-nav-item active">{{lang 'account.menu.recently_viewed'}}</li>
+    {{else}}
+      <li class="account-nav-item">
+        <a href="{{urls.account.recent_items}}">{{lang 'account.menu.recently_viewed'}}</a>
+      </li>
+    {{/compare}}
+    {{#compare account_page 'settings' operator='==='}}
+      <li class="account-nav-item active">{{lang 'account.menu.settings'}}</li>
+    {{else}}
+      <li class="account-nav-item">
+        <a href="{{urls.account.details}}">{{lang 'account.menu.settings'}}</a>
+      </li>
+    {{/compare}}
+
+  </ul>
+</nav>

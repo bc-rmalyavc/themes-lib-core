@@ -1,0 +1,16 @@
+{{#partial "page"}}
+
+  <section class="account-wrapper">
+
+    {{> components/account/navigation account_page='addresses'}}
+
+    <div class="account-body">
+      <h1 class="account-heading">{{lang 'account.addresses.heading'}}</h1>
+      {{> components/account/address-list}}
+    </div>
+
+  </section>
+
+{{/partial}}
+
+{{> layout/base}}

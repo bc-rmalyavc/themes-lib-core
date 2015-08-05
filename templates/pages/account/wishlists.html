@@ -1,0 +1,16 @@
+{{#partial "page"}}
+
+  <section class="account-wrapper">
+
+    {{> components/account/navigation account_page='wishlists'}}
+
+    <div class="account-body">
+      <h1 class="account-heading">{{lang 'account.wishlists.heading'}}</h1>
+      {{> components/account/wishlist-list}}
+    </div>
+
+  </section>
+
+{{/partial}}
+
+{{> layout/base}}

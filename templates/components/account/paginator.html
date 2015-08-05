@@ -1,0 +1,20 @@
+<div class="pagination">
+  {{#if previous}}
+    <a class="pagination-link pagination-link-previous" href="{{previous}}">
+      &laquo; {{lang 'account.paginator.previous'}}
+    </a>
+  {{/if}}
+
+  {{#if this.links.length}}
+    <span>{{lang 'account.paginator.page_of' current=1 total=this.links.length}}</span>
+  {{else}}
+    <span>{{lang 'account.paginator.page_of' current=1 total=1}}</span>
+  {{/if}}
+
+  {{#if next}}
+    <a class="pagination-link pagination-link-next" href="{{next}}">
+      {{lang 'account.paginator.next'}} &raquo;
+    </a>
+  {{/if}}
+</div>
+

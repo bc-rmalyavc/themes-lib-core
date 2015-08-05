@@ -1,0 +1,35 @@
+<h2 class="account-sub-heading border">{{lang 'account.messages.send_message'}}</h2>
+
+<form class="form" id="inbox-form" action="{{urls.account.send_message}}" method="post">
+
+  <div class="form-field">
+    <label class="form-label" for="message_order_id">
+      {{lang 'account.inbox.order'}}
+      <small>{{lang 'account.common.required'}}</small>
+    </label>
+    <select class="form-select" name="message_order_id" id="message_order_id">
+      {{#each customer.inbox.orders}}
+        <option value="{{id}}">{{lang 'account.inbox.order_display' id=id date=date total=amount.formatted}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="form-field">
+    <label class="form-label" for="message_subject">
+      {{lang 'account.inbox.subject'}}
+      <small>{{lang 'account.common.required'}}</small>
+    </label>
+    <input type="text" class="form-input" name="message_subject" id="message_subject">
+  </div>
+
+  <div class="form-field">
+    <label class="form-label" for="message_content">{{lang 'account.inbox.message'}}</label>
+    <textarea class="form-input" name="message_content" id="message_content" rows="7" ></textarea>
+  </div>
+
+  <div class="form-actions">
+    <input class="button" type="submit" value="{{lang 'account.inbox.submit_value'}}">
+    <input class="button" type="reset" value="{{lang 'account.inbox.clear_value'}}">
+  </div>
+
+</form>

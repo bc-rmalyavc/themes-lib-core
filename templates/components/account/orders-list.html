@@ -1,0 +1,106 @@
+<ul class="account-list account-orders">
+
+  <div class="account-list-header">
+
+    <div class="account-list-header-item number">
+      <span class="account-list-header-label">{{lang 'account.orders.list.order_number'}}</span>
+    </div>
+
+    <div class="account-list-header-item total">
+      <span class="account-list-header-label">{{lang 'account.orders.list.order_total'}}</span>
+    </div>
+
+    <div class="account-list-header-item date">
+      <span class="account-list-header-label">{{lang 'account.orders.list.order_date'}}</span>
+    </div>
+
+    <div class="account-list-header-item update">
+      <span class="account-list-header-label">{{lang 'account.orders.list.order_update'}}</span>
+    </div>
+
+    <div class="account-list-header-item status">
+      <span class="account-list-header-label">{{lang 'account.orders.list.order_status'}}</span>
+    </div>
+
+  </div>
+
+  {{#each orders}}
+
+    <li class="account-list-item" id="order-{{this.id}}">
+
+      <div class="account-list-item-details">
+
+        <div class="account-list-item-cell number">
+          <span><a href="{{this.details_url}}">{{this.id}}</a></span>
+        </div>
+
+        <div class="account-list-item-cell total">
+          <span>{{this.total.formatted}}</span>
+        </div>
+
+        <div class="account-list-item-cell date">
+          <span>{{this.date}}</span>
+        </div>
+
+        <div class="account-list-item-cell update">
+          <span>{{this.last_update_date}}</span>
+        </div>
+
+        <div class="account-list-item-cell status">
+          <span>{{this.status}}</span>
+        </div>
+
+        <div class="account-list-item-cell details-btn">
+          <span>
+            <a href="#order-{{this.id}}" class="button account-order-details">
+              <span class="show-details">{{lang 'account.orders.list.show_details'}}</span>
+              <span class="hide-details">{{lang 'account.orders.list.hide_details'}}</span>
+            </a>
+          </span>
+        </div>
+
+      </div>
+
+      <div class="account-list-item-row order">
+
+        {{#each this.items}}
+          <div class="account-list-item-row-inner {{#if @last}}last{{/if}}">
+            <div class="account-list-item-image">
+              <a href="{{../details_url}}">
+                <img src="{{getImage image}}" alt="image.alt">
+              </a>
+            </div>
+            <div class="account-list-item-name">
+              <a href="{{../details_url}}">{{name}}</a>
+            </div>
+            <div class="account-list-item-options">
+              {{#each options}}
+                <span class="account-list-item-label">{{name}}:</span>
+                {{value}}{{#unless @last}}<br />{{/unless}}
+              {{/each}}
+            </div>
+            <div class="account-list-item-quantity">
+              <span class="account-list-item-label">{{lang 'account.orders.list.quantity'}}:</span> {{quantity}}
+            </div>
+          </div>
+        {{/each}}
+
+        <div class="account-list-item-return-order">
+
+          {{#if ../settings.returns_enabled}}
+            {{#if this.return_url}}
+              <a class="button account-order-status-return" href="{{this.return_url}}">
+                {{lang 'account.orders.return_items'}}
+              </a>
+            {{/if}}
+          {{/if}}
+
+        </div>
+
+      </div>
+
+    </li>
+
+  {{/each}}
+
+</ul>
