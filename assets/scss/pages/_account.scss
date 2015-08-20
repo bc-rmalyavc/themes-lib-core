@@ -562,31 +562,23 @@ $account-header-color: #f5f6f7 !default;
   top: 10px;
   right: 10px;
 
-  input {
+  a {
     width: 35px;
     height: 35px;
     text-align: center;
+    color: $account-header-color;
     background-color: $account-light-color;
     border: 0;
     border-radius: 50%;
 
     &:hover {
-      color: $account-light-color;
-      background-color: $account-accent-color;
+      @include hover($account-header-color);
     }
   }
 }
 
 .account-product-item-add-to-cart {
   text-align: center;
-}
-
-
-// Recently Viewed
-.account-recently-viewed {
-  .account-product-item-remove-item {
-    display: none;
-  }
 }
 
 
