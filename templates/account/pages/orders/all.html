@@ -1,11 +1,10 @@
 <section class="account-wrapper">
-
   {{> account/components/navigation account_page='orders'}}
 
   <div class="account-body">
     <h1 class="account-heading">{{lang 'account.orders.heading'}}</h1>
     {{> account/components/orders-list orders=customer.orders}}
-    {{> account/components/paginator pagination.orders}}
+    {{> components/common/pagination pagination.orders}}
   </div>
 
 </section>

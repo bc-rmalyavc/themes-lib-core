@@ -1,5 +1,4 @@
 <section class="account-wrapper">
-
   {{> account/components/navigation account_page='returns'}}
 
   <div class="account-body">
@@ -41,7 +40,7 @@
 
                 <div class="account-list-item-cell message {{#unless unread}}is-read{{/unless}}">
                   <span>
-                    <select class="form-select form-select--small form-select--short" name="return_qty[{{id}}]">
+                    <select class="form-input input-select" name="return_qty[{{id}}]">
                       {{#enumerate 0 quantity}}
                         <option value="{{this}}">{{this}}</option>
                       {{/enumerate}}
@@ -55,40 +54,41 @@
 
         </ul>
 
-        <h2 class="account-sub-heading border">{{lang 'account.orders.return.return_details'}}</h2>
+        <h2 class="account-sub-heading">{{lang 'account.orders.return.return_details'}}</h2>
 
-        <div class="form-field">
+        <div class="form-field required">
           <label for="return_reason" class="form-label">
-            {{lang 'account.orders.return.reason'}}
-            <small>{{lang 'account.common.required'}}</small>
+            <span class="form-label-text" data-required="{{lang 'account.common.required'}}">
+              {{lang 'account.orders.return.reason'}}
+            </span>
+            <select name="return_reason" id="return_reason" class="form-input input-select">
+              {{#each forms.return.reasons}}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
           </label>
-          <select name="return_reason" id="return_reason" class="form-select">
-            {{#each forms.return.reasons}}
-              <option value="{{this}}">{{this}}</option>
-            {{/each}}
-          </select>
         </div>
 
         <div class="form-field">
           <label for="return_action" class="form-label">
-            {{lang 'account.orders.return.action'}}
+            <span class="form-label-text">{{lang 'account.orders.return.action'}}</span>
+            <select name="return_action" id="return_action" class="form-input input-select">
+              {{#each forms.return.actions}}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
           </label>
-          <select name="return_action" id="return_action" class="form-select">
-            {{#each forms.return.actions}}
-              <option value="{{this}}">{{this}}</option>
-            {{/each}}
-          </select>
         </div>
 
         <div class="form-field">
           <label for="return_comments" class="form-label">
-            {{lang 'account.orders.return.comments'}}
+            <span class="form-label-text">{{lang 'account.orders.return.comments'}}</span>
+            <textarea class="form-input" rows="8" name="return_comments" id="return_comments"></textarea>
           </label>
-          <textarea class="form-input" rows="8" name="return_comments" id="return_comments"></textarea>
         </div>
 
         <div class="form-actions">
-          <input class="button" type="submit" value="Submit Return Request" />
+          <input class="button" type="submit" value="{{lang 'account.orders.return.request_return'}}" />
         </div>
 
       </form>
@@ -101,5 +101,4 @@
     {{/if}}
 
   </div>
-
 </section>
