@@ -4,16 +4,18 @@ import $ from 'jquery';
 export default class Account extends PageManager {
   constructor() {
     super();
-
     this._bindEvents();
   }
 
   _bindEvents() {
-    $(document.body).on('click', '.account-order-details', (e) => {
-      e.preventDefault();
-      const id = e.currentTarget.hash;
-
-      $(id).toggleClass('visible');
+    this.$el.on('click', '.account-order-details', (event) => {
+      event.preventDefault();
+      this._toggleDetails(event);
     });
+  }
+
+  _toggleDetails(event) {
+    const id = event.currentTarget.hash;
+    $(id).toggleClass('visible');
   }
 }
