@@ -1,0 +1,17 @@
+<section class="account-wrapper">
+
+  {{> account/partials/navigation account_page='recent_items'}}
+
+  <div class="account-body">
+    <h1 class="account-heading">{{lang 'account.recent_items.heading'}}</h1>
+    <form action="/compare" method="post">
+      <div class="account-recently-viewed">
+        {{> account/partials/product-grid products=customer.recently_viewed_products.items}}
+      </div>
+      {{#if show_compare}}
+        <button class="button" type="submit">{{lang 'compare.button'}}</button>
+      {{/if}}
+    </form>
+  </div>
+
+</section>

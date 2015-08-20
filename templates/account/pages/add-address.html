@@ -1,0 +1,31 @@
+<section class="account-wrapper">
+
+  {{> account/partials/navigation account_page='addresses'}}
+
+  <div class="account-body">
+    {{#if forms.address.address_id}}
+      <h1 class="account-heading">{{lang 'forms.address.edit.heading'}}</h1>
+    {{else}}
+      <h1 class="account-heading">{{lang 'forms.address.add.heading'}}</h1>
+    {{/if}}
+
+    {{#if forms.address.error}}
+      {{> components/alerts/alert-error forms.address.error}}
+    {{/if}}
+
+    <form action="{{forms.address.action}}" id="address-form" class="form account-address-form" method="post">
+      {{#if forms.address.address_id}}
+        <input type="hidden" name="shipid" value="{{forms.address.address_id}}">
+      {{/if}}
+
+      {{#each forms.address.shipping_fields}}
+        {{{dynamicComponent 'components/common/forms'}}}
+      {{/each}}
+      <div class="form-actions">
+        <input type="submit" class="button" value="{{lang 'forms.address.submit_value'}}">
+        <a href="{{urls.account.addresses}}" class="button">{{lang 'account.common.cancel'}}</a>
+      </div>
+    </form>
+  </div>
+
+</section>
