@@ -1,6 +1,6 @@
 <section class="account-wrapper">
 
-  {{> account/partials/navigation account_page='settings'}}
+  {{> account/components/navigation account_page='settings'}}
 
   <div class="account-body">
     <h1 class="account-heading">{{lang 'account.settings.heading'}}</h1>
@@ -10,7 +10,7 @@
     {{#if forms.edit_account.success}}
       {{> components/alerts/alert-success forms.edit_account.success}}
     {{/if}}
-    {{> account/partials/edit-account}}
+    {{> account/components/edit-account}}
   </div>
 
 </section>

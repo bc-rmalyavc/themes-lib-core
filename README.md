@@ -5,38 +5,58 @@ A collection of all the bits and pieces needed to make the BC Account Pages func
 These templates are a work-in-progress, so please feel free to jump in on the fun !
 
 
-### Templates
+## Templates
 
-Pages: [/templates/pages/account/](/templates/pages/account/)
+Account templates are set up in a way so that they should function independent to your theme's page wrapper markup and frontmatter. All account markup is located within an `account/` directory, which should be dropped into your theme's `templates/` directory. 
 
-Components: [/templates/components/account/](/templates/components/account/)
+From there, for each account page template in your theme, link to its equivalent block:
 
+```
+<!-- templates/pages/account/edit.html -->
+
+---
+frontmatter: here
+more_frontmatter: yup
+---
+
+{{#partial "page"}}
+
+<div class="theme-specific-outer">
+  <div class="theme-specific-inner">
+      {{> account/pages/edit}}
+  </div>
+</div>
+
+{{/partial}}
+
+{{> layout/base}}
+
+```
+
+#### Theme requirements
+The account pages rely on a few partials from your theme's components. Make sure they exist and that they're handling the passed variables in the same way:
+
+- `components/products/ratings.html`
+- `components/alerts/alert-info.html`
+- `components/alerts/alert-error.html`
+- `components/alerts/alert-success.html`
 
 ### Styles
 
 SCSS: [/assets/scss/pages/_account.scss](/assets/scss/pages/_account.scss)
 
-```
-@import "pages/account";
-```
+`@import "pages/account";`
 
 ### Scripts
 
-JS: [/assets/js/theme/components/account-pages.js](/assets/js/theme/components/account-pages.js)
+JS: [/assets/js/theme/components/account-utils.js](/assets/js/theme/components/account-utils.js)
 
 #### Import the following into global.js:
-```
-import HeaderTools from './components/header-tools';
-```
+`import AccountUtils from './components/account-utils';`
 
 #### And then include the following within your constructor:
-```
-new AccountPages($('.account-list-item'));
-```
+`new AccountUtils($('.account-list-item'));`
 
-#ToDo:
+###TODO:
 
 • Still have to make this all responsive :D
-
-#Notes:
-Some of the account pages call upon the alert partials. To keep everything organized, place your alerts in: `/templates/components/alerts/`

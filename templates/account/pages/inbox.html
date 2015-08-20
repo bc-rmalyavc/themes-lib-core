@@ -1,6 +1,6 @@
 <section class="account-wrapper">
 
-  {{> account/partials/navigation account_page='messages'}}
+  {{> account/components/navigation account_page='messages'}}
 
   <div class="account-body">
     <h1 class="account-heading">{{lang 'account.messages.heading'}}</h1>
@@ -10,8 +10,8 @@
     {{#if forms.inbox.success}}
       {{> components/alerts/alert-success forms.inbox.success}}
     {{/if}}
-    {{> account/partials/messages-list messages=customer.inbox.messages}}
-    {{> account/partials/messages-form}}
+    {{> account/components/messages-list messages=customer.inbox.messages}}
+    {{> account/components/messages-form}}
   </div>
 
 </section>

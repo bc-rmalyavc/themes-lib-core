@@ -1,10 +1,10 @@
 <section class="account-wrapper">
 
-  {{> account/partials/navigation account_page='wishlists'}}
+  {{> account/components/navigation account_page='wishlists'}}
 
   <div class="account-body">
     <h1 class="account-heading">{{lang 'account.wishlists.view_heading' name=wishlist.name}}</h1>
-    {{> account/partials/wishlist-item-list show_remove=false}}
+    {{> account/components/wishlist-item-list show_remove=false}}
   </div>
 
 </section>
