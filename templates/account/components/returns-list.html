@@ -1,121 +1,125 @@
 <ul class="account-list account-returns">
 
-  <div class="account-list-header">
+  <li class="account-list-header">
 
-    <div class="account-list-header-item number">
+    <div class="account-list-header-item">
       <span class="account-list-header-label">{{lang 'account.returns.list.return_number'}}</span>
     </div>
 
-    <div class="account-list-header-item total">
+    <div class="account-list-header-item">
       <span class="account-list-header-label">{{lang 'account.returns.list.return_quantity'}}</span>
     </div>
 
-    <div class="account-list-header-item date">
+    <div class="account-list-header-item">
       <span class="account-list-header-label">{{lang 'account.returns.list.return_date'}}</span>
     </div>
 
-    <div class="account-list-header-item update">
+    <div class="account-list-header-item">
       <span class="account-list-header-label">{{lang 'account.returns.list.return_action'}}</span>
     </div>
 
-    <div class="account-list-header-item status">
+    <div class="account-list-header-item">
       <span class="account-list-header-label">{{lang 'account.returns.list.return_status'}}</span>
     </div>
 
-  </div>
+  </li>
 
-  {{#each returns}}
+  {{#if returns}}
+    {{#each returns}}
 
-    <li class="account-list-item" id="return-{{id}}">
+      <li class="account-list-item" id="return-{{id}}">
 
-      <div class="account-list-item-details">
+        <div class="account-list-item-details">
 
-        <div class="account-list-item-cell number">
-          <span><a href="{{details_url}}">{{id}}</a></span>
+          <div class="account-list-item-cell">
+            <span>{{id}}</span>
+          </div>
+
+          <div class="account-list-item-cell">
+            <span>{{lang 'account.returns.list.product_details' num_products=quantity}}</span>
+          </div>
+
+          <div class="account-list-item-cell">
+            <span>{{date_requested}}</span>
+          </div>
+
+          <div class="account-list-item-cell">
+            <span>{{action}}</span>
+          </div>
+
+          <div class="account-list-item-cell">
+            {{#compare status 'ReturnStatusPending' operator='==='}}
+              <span class="account-return-status-label">{{lang 'account.returns.status.pending'}}</span>
+            {{/compare}}
+            {{#compare status 'ReturnStatusReceived' operator='==='}}
+              <span class="account-return-status-label">{{lang 'account.returns.status.received'}}</span>
+            {{/compare}}
+            {{#compare status 'ReturnStatusAuthorized' operator='==='}}
+              <span class="account-return-status-label">{{lang 'account.returns.status.authorized'}}</span>
+            {{/compare}}
+            {{#compare status 'ReturnStatusRepaired' operator='==='}}
+              <span class="account-return-status-label">{{lang 'account.returns.status.repaired'}}</span>
+            {{/compare}}
+            {{#compare status 'ReturnStatusRefunded' operator='==='}}
+              <span class="account-return-status-label">{{lang 'account.returns.status.refunded'}}</span>
+            {{/compare}}
+            {{#compare status 'ReturnStatusRejected' operator='==='}}
+              <span class="account-return-status-label">{{lang 'account.returns.status.rejected'}}</span>
+            {{/compare}}
+            {{#compare status 'ReturnStatusCancelled' operator='==='}}
+              <span class="account-return-status-label">{{lang 'account.returns.status.cancelled'}}</span>
+            {{/compare}}
+          </div>
+
+          <div class="account-list-item-cell details-button">
+            <span>
+              <a href="#return-{{id}}" class="button button-small account-order-details">
+                <span class="show-details">{{lang 'account.returns.list.show_details'}}</span>
+                <span class="hide-details">{{lang 'account.returns.list.hide_details'}}</span>
+              </a>
+            </span>
+          </div>
+
         </div>
 
-        <div class="account-list-item-cell quantity">
-          <span>{{lang 'account.returns.list.product_details' num_products=quantity}}</span>
-        </div>
+        <div class="account-list-item-row">
+          <div class="account-list-item-row-inner">
 
-        <div class="account-list-item-cell date">
-          <span>{{date_requested}}</span>
-        </div>
-
-        <div class="account-list-item-cell update">
-          <span>{{action}}</span>
-        </div>
-
-        <div class="account-list-item-cell status">
-          {{#compare status 'ReturnStatusPending' operator='==='}}
-            <span class="account-return-status-label">{{lang 'account.returns.status.pending'}}</span>
-          {{/compare}}
-          {{#compare status 'ReturnStatusReceived' operator='==='}}
-            <span class="account-return-status-label">{{lang 'account.returns.status.received'}}</span>
-          {{/compare}}
-          {{#compare status 'ReturnStatusAuthorized' operator='==='}}
-            <span class="account-return-status-label">{{lang 'account.returns.status.authorized'}}</span>
-          {{/compare}}
-          {{#compare status 'ReturnStatusRepaired' operator='==='}}
-            <span class="account-return-status-label">{{lang 'account.returns.status.repaired'}}</span>
-          {{/compare}}
-          {{#compare status 'ReturnStatusRefunded' operator='==='}}
-            <span class="account-return-status-label">{{lang 'account.returns.status.refunded'}}</span>
-          {{/compare}}
-          {{#compare status 'ReturnStatusRejected' operator='==='}}
-            <span class="account-return-status-label">{{lang 'account.returns.status.rejected'}}</span>
-          {{/compare}}
-          {{#compare status 'ReturnStatusCancelled' operator='==='}}
-            <span class="account-return-status-label">{{lang 'account.returns.status.cancelled'}}</span>
-          {{/compare}}
-        </div>
-
-        <div class="account-list-item-cell details-btn">
-          <span>
-            <a href="#return-{{id}}" class="button account-order-details">
-              <span class="show-details">{{lang 'account.returns.list.show_details'}}</span>
-              <span class="hide-details">{{lang 'account.returns.list.hide_details'}}</span>
-            </a>
-          </span>
-        </div>
-
-      </div>
-
-      <div class="account-list-item-row return">
-        <div class="account-list-item-row-inner">
-
-          <div class="account-list-item-row-inner-details">
             <div class="account-list-item-image">
               <a href="{{product.url}}">
                 <img src="{{getImage product.image 'thumb'}}" alt="{{product.image.alt}}">
               </a>
             </div>
-            <div class="account-list-item-name">
-              <a href="{{product.url}}">{{product.name}}</a>
-            </div>
-            <div class="account-list-item-options">
-              {{#each product.options}}
-                <span class="account-list-item-label">{{name}}:</span>
-                {{value}}{{#unless @last}}<br />{{/unless}}
-              {{/each}}
-            </div>
-            <div class="account-list-item-quantity">
-              <span class="account-list-item-label">{{lang 'account.returns.list.return_quantity'}}:</span> {{quantity}}
-            </div>
-          </div>
 
-          <div class="account-list-item-row-inner-notes">
-            <div class="account-list-item-note"><span>{{lang 'account.returns.reason'}}:</span> {{reason}}</div>
-            {{#if comments}}
-              <div class="account-list-item-note"><span>{{lang 'account.returns.comments'}}: </span> {{comments}}</div>
-            {{/if}}
-          </div>
+            <div class="account-list-item-info">
+              <div class="account-list-item-name">
+                <a href="{{product.url}}">{{product.name}}</a>
+              </div>
+              <div class="account-list-item-options">
+                {{#each product.options}}
+                  <span class="account-list-item-label">{{name}}:</span>
+                  {{value}}{{#unless @last}}<br/>{{/unless}}
+                {{/each}}
+              </div>
+              <div class="account-list-item-quantity">
+                <span class="account-list-item-label">{{lang 'account.returns.list.return_quantity'}}:</span> {{quantity}}
+              </div>
+            </div>
 
+            <div class="account-list-item-notes">
+              <div class="account-list-item-note"><span>{{lang 'account.returns.reason'}}</span> {{reason}}</div>
+              {{#if comments}}
+                <div class="account-list-item-note"><span>{{lang 'account.returns.comments'}}</span> {{comments}}</div>
+              {{/if}}
+            </div>
+
+          </div>
         </div>
-      </div>
 
-    </li>
+      </li>
 
-  {{/each}}
-
+    {{/each}}
+  {{else}}
+    <li class="account-list-item account-empty">{{lang 'account.returns.empty'}}</li>
+  {{/if}}
 </ul>

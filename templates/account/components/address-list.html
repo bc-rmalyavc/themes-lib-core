@@ -14,12 +14,12 @@
           <span class="address-detail">{{address1}}</span>
           <span class="address-detail">{{address2}}</span>
           <span class="address-detail">{{city}}, {{state}} {{zip}}</span>
-          <span class="address-detail">{{lang 'account.addresses.phone' number=phone}}</span>
+          <span class="address-detail">{{lang 'account.addresses.phone' phone_number=phone}}</span>
         </address>
 
-        <form class="account-address-list-item-actions" action="{{delete_url}}" method="post">
-          <a class="button" href="{{edit_url}}">{{lang 'account.common.edit'}}</a>
-          <button type="submit" class="button">{{lang 'account.common.delete'}}</button>
+        <form class="form account-address-list-item-actions" action="{{delete_url}}" method="post">
+          <a class="button button-small" href="{{edit_url}}">{{lang 'account.common.edit'}}</a>
+          <button type="submit" class="button button-small">{{lang 'account.common.delete'}}</button>
         </form>
 
       </div>

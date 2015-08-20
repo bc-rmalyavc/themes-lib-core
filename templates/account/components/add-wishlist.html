@@ -3,9 +3,9 @@
   <header class="wishlist-header">
 
     {{#if wishlist.id}}
-      <h2 class="account-sub-heading border">{{lang 'account.wishlists.edit'}}</h2>
+      <h2 class="account-sub-heading">{{lang 'account.wishlists.edit'}}</h2>
     {{else}}
-      <h2 class="account-sub-heading border">{{lang 'account.wishlists.new'}}</h2>
+      <h2 class="account-sub-heading">{{lang 'account.wishlists.new'}}</h2>
       <p class="account-wishlist-tagline">{{lang 'account.wishlists.tag_line'}}</p>
     {{/if}}
 
@@ -19,17 +19,19 @@
 
     <input type="hidden" name="submit">
 
-    <div class="form-field">
+    <div class="form-field required">
       <label class="form-label" for="wishlistname">
-        {{lang 'forms.wishlist.name'}}
-        <small>{{lang 'account.common.required'}}</small>
+        <span class="form-label-text" data-required="{{lang 'account.common.required'}}">{{lang 'account.wishlists.wishlist_name'}}</span>
+        <input type="text" class="form-input" name="wishlistname" id="wishlistname" value="{{wishlist.name}}">
       </label>
-      <input type="text" class="form-input" name="wishlistname" id="wishlistname" value="{{wishlist.name}}">
     </div>
 
-    <div class="form-field">
-      <label class="form-label" for="publicwishlist">{{lang 'forms.wishlist.public'}}</label>
-      <input type="checkbox" name="publicwishlist" id="publicwishlist" {{#if wishlist.is_public}}checked{{/if}}>
+    <div class="form-field form-inline">
+      <label class="form-label" for="publicwishlist">
+        <input class="form-input input-checkbox" type="checkbox" name="publicwishlist" id="publicwishlist" {{#if wishlist.is_public}}checked{{/if}}>
+        <span class="form-input-mask"></span>
+        <span class="form-label-text">{{lang 'account.wishlists.make_public'}}</span>
+      </label>
     </div>
 
     <div class="form-field">

@@ -1,46 +1,39 @@
-<h2 class="account-sub-heading border">{{lang 'account.orders.details.order_contents'}}</h2>
+<h2 class="account-sub-heading">{{lang 'account.orders.details.order_contents'}}</h2>
 
 <ul class="account-list">
-
   <li class="account-list-item">
+    <div class="account-list-item-row">
 
-    <div class="account-list-item-row order">
-
-      {{#each this.items}}
+      {{#each items}}
         <div class="account-list-item-row-inner {{#if @last}}last{{/if}}">
           <div class="account-list-item-image">
-            <a href="{{../details_url}}">
-              <img src="{{getImage image}}" alt="image.alt">
-            </a>
+            <!-- TODO: Gift cert image -->
+            <img src="{{getImage image 'account_product_thumbnail'}}" alt="{{image.alt}}">
           </div>
-          <div class="account-list-item-name">
-            <a href="{{../details_url}}">{{name}}</a>
-          </div>
-          <div class="account-list-item-options">
-            {{#each options}}
-              <div class="account-list-item-option">
+          <div class="account-list-item-info">
+            <div class="account-list-item-name">{{name}}</div>
+            <div class="account-list-item-options">
+              {{#each options}}
                 <span class="account-list-item-label">{{name}}:</span>
-                <span class="account-list-item-value">{{value}}</span>
-              </div>
-            {{/each}}
-          </div>
-          <div class="account-list-item-quantity">
-            <span class="account-list-item-label">{{lang 'account.orders.list.quantity'}}:</span> {{quantity}}
-          </div>
-          <div class="account-list-item-order-price">
-            <span class="account-list-item-label">{{lang 'account.orders.list.price'}}:</span> {{price.formatted}}
-          </div>
-          {{#if download_url}}
-            <div class="account-list-item-order-download">
-               <span class="account-list-item-label">{{lang 'account.orders.list.download'}}:</span>
-               <a href="{{download_url}}">{{lang 'account.orders.list.download_items'}}</a>
+                {{value}}{{#unless @last}}<br />{{/unless}}
+              {{/each}}
             </div>
-          {{/if}}
+            <div class="account-list-item-quantity">
+              <span class="account-list-item-label">{{lang 'account.orders.list.quantity'}}:</span> {{quantity}}
+            </div>
+            <div class="account-list-item-order-price">
+              <span class="account-list-item-label">{{lang 'account.orders.list.price'}}:</span> {{price.formatted}}
+            </div>
+            {{#if download_url}}
+              <div class="account-list-item-order-download">
+                <span class="account-list-item-label">{{lang 'account.orders.list.download'}}:</span>
+                <a href="{{download_url}}">{{lang 'account.orders.list.download_items'}}</a>
+              </div>
+            {{/if}}
+          </div>
         </div>
       {{/each}}
 
     </div>
-
   </li>
-
 </ul>

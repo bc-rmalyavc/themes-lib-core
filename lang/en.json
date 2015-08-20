@@ -1,24 +1,19 @@
 {
   "account": {
     "common": {
-      "yes": "yes",
-      "no": "no",
-      "edit": "edit",
-      "delete": "delete",
-      "share": "share",
-      "required": "required",
-      "cancel": "cancel"
-    },
-    "paginator": {
-      "previous": "previous",
-      "next": "next",
-      "page_x_of_x": "Page {current} of {total}"
+      "yes": "Yes",
+      "no": "No",
+      "edit": "Edit",
+      "delete": "Delete",
+      "share": "Share",
+      "required": "Required",
+      "cancel": "Cancel"
     },
     "menu": {
       "orders": "Orders",
       "returns": "Returns",
       "addresses": "Addresses",
-      "wishlists": "Wish Lists",
+      "wishlists": "Wishlists",
       "recently_viewed": "Recently Viewed",
       "settings": "Account Settings",
       "messages": "Messages"
@@ -27,13 +22,15 @@
       "heading": "Orders",
       "return_items": "Return Items",
       "summary": "Summary",
+      "empty": "You haven't placed any orders.",
       "details": {
         "heading": "Order #{number}",
         "summary": "Summary",
         "order_contents": "Order Contents",
-        "ship_to": "Ship To:",
-        "bill_to": "Bill To:",
-        "payment_details": "Payment Info:",
+        "ship_to": "Ship To",
+        "bill_to": "Bill To",
+        "ship_bill_to": "Ship and Bill To",
+        "payment_details": "Payment Info",
         "order_total": "Order Total:",
         "payment_date": "Payment Date:",
         "payment_method": "Payment Method:",
@@ -41,7 +38,11 @@
         "comments": "Order Instructions/Comments",
         "contact_text": "If you have any questions or concerns about your order don’t hesitate to contact us!",
         "download_items": "Download Items",
+        "store_credit": "Store credit",
+        "print_invoice": "Print Invoice",
+        "reorder": "Reorder",
         "shipments": {
+          "title": "Shipments",
           "date": "Date Shipped",
           "method": "Shipping Method",
           "link": "Tracking Link"
@@ -57,7 +58,8 @@
         "reason": "Return Reason",
         "action": "Return Action",
         "comments": "Comments",
-        "return_details": "Details:"
+        "return_details": "Details",
+        "request_return": "Submit Return Request"
       },
       "downloads": {
         "heading": "Order #{number} Downloads",
@@ -79,9 +81,9 @@
         "hide_details": "Hide Details"
       },
       "invoice": {
-        "order_details": "Order Details:",
-        "order_number": "Order #:",
-        "order_date": "Order Date:",
+        "order_details": "{store_name} Order #{order_id}",
+        "order_number": "Order ID: #{order_id}",
+        "order_date": "Order Date: {order_date}",
         "order_contains": "Order Contains:"
       }
     },
@@ -89,32 +91,36 @@
       "heading": "Addresses",
       "add_heading": "Add New Address",
       "primary": "Primary",
-      "phone": "Phone: ",
+      "phone": "Phone: {phone_number}",
       "new_address": "New Address",
-      "no_addresses": "You currently have no addresses added to your profile"
+      "no_addresses": "You currently have no addresses added to your profile",
+      "submit": "Save Address"
     },
     "wishlists": {
       "heading": "Wishlists",
-      "tag_line": "Fill in the form below to create a wish list. Click the \"Save\" button when you're done.",
+      "tag_line": "Fill in the form below to create a wishlist. Click the \"Save\" button when you're done.",
       "new": "New Wishlist",
       "num_items": "Items",
       "add_item": "Add to wishlist",
-      "remove_item": "X",
-      "name": "Wishlist Name",
-      "shared": "Shared",
+      "wishlist_name": "Wishlist Name",
+      "make_public": "Make wishlist public",
+      "public": "Public",
       "action": "Action",
       "add": "Add Wishlist",
       "delete_all": "Delete All",
       "edit": "Edit Wishlist",
-      "view_heading": "Wish List: {name}",
+      "view_heading": "Wishlist: {name}",
       "share_intro": "Share this wishlist with friends:",
       "num_products": "{num_products, plural, one {1 product} other {# products}}",
       "create": "Create Wishlist",
       "save": "Save Wishlist",
-      "compare": "Compare"
+      "compare": "Compare",
+      "empty": "You have no wishlists."
     },
     "recent_items": {
-      "heading" : "Recently Viewed"
+      "heading" : "Recently Viewed",
+      "compare": "Compare",
+      "empty": "You haven't viewed any items recently."
     },
     "returns": {
       "heading": "Returns",
@@ -128,6 +134,7 @@
       "reason": "Reason for Return",
       "action": "Return Action",
       "comments": "Your Comments",
+      "empty": "You haven't made any returns.",
       "list": {
         "return_number": "Return #{id}",
         "product_details": "Returning {num_products}",
@@ -175,12 +182,12 @@
       }
     },
     "inbox": {
-      "order": "Order:",
-      "order_display": "Order #{id} - Placed on {date} for {total}",
+      "order": "Order",
+      "order_display": "Order #{id} / {date} / {total}",
       "subject": "Subject",
       "message": "Message",
-      "submit_value": "Send Message",
-      "clear_value": "Clear"
+      "submit": "Send Message",
+      "clear": "Clear"
     },
     "products": {
       "current_stock": "Current Stock:",

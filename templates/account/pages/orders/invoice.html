@@ -1,24 +1,28 @@
-<h1 class="account-invoice-details">{{lang 'account.orders.invoice.order_details'}}</h1>
-<div class="account-invoice-order-id">{{lang 'account.orders.invoice.order_number'}}{{order.id}}</div>
-<div class="account-invoice-order-date">{{lang 'account.orders.invoice.order_date'}} {{order.date}}</div>
+
+<h1 class="account-invoice-details">{{lang 'account.orders.invoice.order_details' store_name=settings.store_name order_id=order.id}}</h1>
+<div class="account-invoice-order-id">{{lang 'account.orders.invoice.order_number' order_id=order.id}}</div>
+<div class="account-invoice-order-date">{{lang 'account.orders.invoice.order_date' order_date=order.date}}</div>
 <div class="account-invoice-order-contains">{{lang 'account.orders.invoice.order_contains'}}</div>
 
 {{#each order.items}}
   <ul class="account-invoice-order-item-list">
     <li class="account-invoice-order-item">{{quantity}} &times; {{name}}</li>
     {{#if options}}
-      <li class="account-invoice-order-item">(
-        {{#each options}}
-        {{name}}: {{value}}{{#unless @last}},{{/unless}}
-        {{/each}}
-        )
-      </li>
+      {{#each options}}
+        <li class="account-invoice-order-item">
+          {{name}}: {{value}}{{#unless @last}},{{/unless}}
+        </li>
+      {{/each}}
     {{/if}}
   </ul>
 {{/each}}
 
-<ul class="account-invoice-order-totals-list">
-  {{#each order.total_rows}}
-    <li class="account-invoice-order-totals-item">{{class_name}}: {{value}}</li>
-  {{/each}}
-</ul>
+<div class="account-invoice-order-totals-list">
+  <p>
+    {{#each order.total_rows}}
+      <span class="account-invoice-order-totals-item">{{label}}: <strong>{{value.formatted}}</strong></span>{{#unless @last}}<br/>{{/unless}}
+    {{/each}}
+  </p>
+</div>
+
+<script>window.setTimeout(function() {window.print();}, 1000);</script>

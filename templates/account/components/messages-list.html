@@ -1,21 +1,20 @@
 <ul class="account-list account-messages">
 
-  {{#if messages}}
-
-    <div class="account-list-header">
-      <div class="account-list-header-item date">
-        <span class="account-list-header-label">{{lang 'account.messages.list.message_date'}}</span>
-      </div>
-
-      <div class="account-list-header-item subject">
-        <span class="account-list-header-label">{{lang 'account.messages.list.message_subject'}}</span>
-      </div>
-
-      <div class="account-list-header-item message">
-        <span class="account-list-header-label">{{lang 'account.messages.list.message_name'}}</span>
-      </div>
+  <li class="account-list-header">
+    <div class="account-list-header-item date">
+      <span class="account-list-header-label">{{lang 'account.messages.list.message_date'}}</span>
     </div>
 
+    <div class="account-list-header-item subject">
+      <span class="account-list-header-label">{{lang 'account.messages.list.message_subject'}}</span>
+    </div>
+
+    <div class="account-list-header-item message">
+      <span class="account-list-header-label">{{lang 'account.messages.list.message_name'}}</span>
+    </div>
+  </li>
+
+  {{#if messages}}
     {{#each messages}}
       <li class="account-list-item">
         <div class="account-list-item-details">
@@ -30,7 +29,7 @@
           <div class="account-list-item-cell message {{#unless unread}}is-read{{/unless}}">
             <span>
               {{#if is_reply}}
-                {{lang 'account.messages.merchant_said' store_name=../settings.store_name}}
+                {{lang 'account.messages.merchant_said' store_name=../../settings.store_name}}
               {{else}}
                 {{lang 'account.messages.customer_said'}}
               {{/if}}
@@ -42,8 +41,7 @@
     {{/each}}
 
   {{else}}
-
-    <p>{{lang 'account.messages.no_messages'}}</p>
-
+    <li class="account-list-item account-empty">{{lang 'account.messages.no_messages'}}</li>
   {{/if}}
+
 </ul>
