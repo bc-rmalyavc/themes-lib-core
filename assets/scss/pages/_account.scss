@@ -282,6 +282,10 @@ $account-border-radius: 0px !default;
   margin-bottom: 20px;
 }
 
+.account-wrapper .form-actions {
+  clear: both;
+}
+
 
 // Returns
 .account-list-item-return-order {
