@@ -11,7 +11,7 @@
           <ul class="account-product-grid">
             {{#each customer.recently_viewed_products.items}}
               <li class="account-product-item">
-                {{> components/account/product-item show_compare=../show_compare show_rating=../settings.show_product_rating}}
+                {{> account/components/product-item show_compare=../show_compare show_rating=../settings.show_product_rating}}
               </li>
             {{/each}}
           </ul>
