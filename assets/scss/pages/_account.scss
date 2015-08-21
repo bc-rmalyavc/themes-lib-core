@@ -4,6 +4,9 @@ $account-nav-color: #636363 !default;
 $account-accent-color: #5dc5e3 !default;
 $account-border-color: #e4e4e4 !default;
 $account-header-color: #f5f6f7 !default;
+$account-gutter: 30px !default;
+$account-font-size: 15px !default;
+$account-border-radius: 0px !default;
 
 
 // Grid
@@ -22,138 +25,106 @@ $account-header-color: #f5f6f7 !default;
   padding-bottom: $width / ($context + $gutter) * 100%;
 }
 
-@mixin account-image-fill {
-  position: absolute;
-  top: -100%;
-  right: -100%;
-  bottom: -100%;
-  left: -100%;
-  min-width: 100%;
-  min-height: 100%;
-  margin: auto;
-}
 
 // Account Body
 .account-body {
-  float: left;
-  width: 75%;
 
   .pagination {
-    float: left;
-    width: 100%;
     padding-top: 15px;
     margin-top: 50px;
     border-top: 1px solid $account-header-color;
   }
 }
 
-// Account Headings
-.account-heading {
-  float: left;
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 40px;
-  font-size: 25px;
-  text-transform: capitalize;
-}
-
-.account-sub-heading {
-  float: left;
-  width: 100%;
-  margin-top: 60px;
-  margin-bottom: 30px;
-  font-size: 20px;
-  text-transform: capitalize;
-
-  &.border {
-    padding-bottom: 30px;
-    border-bottom: 1px solid $account-border-color;
-  }
-}
-
 
 // Navigation
-.account-nav {
-  float: left;
-  width: 25%;
-  padding-right: 50px;
-}
-
 .account-nav-list {
   padding: 0;
   list-style: none;
   border: 1px solid $account-border-color;
-  border-radius: 4px;
+  border-radius: $account-border-radius;
 }
 
 .account-nav-item {
-  padding: 15px;
   border-top: 1px solid $account-border-color;
+  line-height: 30px;
 
   &:first-child {
     border-top: 0;
   }
 
   &.active {
+    padding: 15px;
     color: $account-accent-color;
     border-left: 3px solid $account-accent-color;
   }
 
   > a {
-    color: $account-nav-color;
-
-    &:hover {
-      color: $account-accent-color;
-    }
+    display: block;
+    padding: 15px;
   }
 }
 
 
 // List Views
 .account-list {
-  float: left;
-  width: 100%;
   list-style: none;
 }
 
 .account-list-header {
-  float: left;
-  width: 100%;
-  background-color: $account-header-color;
+  background-color: $account-light-color;
+  font-size: 0;
 }
 
-.account-list-header-item {
-  display: block;
-  float: left;
+.account-list-header-item,
+.account-list-item-cell {
+  display: inline-block;
   width: 15%;
   padding: 10px;
+  font-size: $account-font-size;
+  vertical-align: top;
+
+  .account-messages & {
+    width: 20%;
+
+    &.message {
+      width: 60%;
+    }
+  }
+
+  .account-shipments &,
+  .account-wishlists &,
+  .account-new-return & {
+    width: 25%;
+  }
+
+  .account-shipments &:last-child {
+    width: 50%;
+  }
 }
 
 .account-list-item {
-  display: block;
-  float: left;
-  width: 100%;
   border-top: 1px solid $account-border-color;
 
-  &:first-of-type {
-    border: 0;
+  &:first-of-type,
+  &:nth-of-type(2) {
+    border: none;
+  }
+
+  &.account-empty {
+    padding: 30px 10px;
   }
 }
 
 .account-list-item-details {
-  float: left;
-  width: 100%;
+  font-size: 0;
 }
 
 .account-list-item-cell {
-  display: block;
-  float: left;
-  width: 15%;
-  padding: 10px;
-  font-size: 12px;
-  line-height: 60px;
+  padding: 30px 10px;
 
   &.details-button {
+    @extend %clearfix;
     width: 25%;
     padding-right: 0;
 
@@ -188,97 +159,66 @@ $account-header-color: #f5f6f7 !default;
 
 .account-list-item-row {
   display: none;
-  float: left;
-  width: 100%;
-  padding-top: 35px;
+  padding-top: 5px;
   padding-bottom: 35px;
 
-  .visible & {
+  .visible &,
+  .account-order & {
     display: block;
   }
 }
 
 .account-list-item-row-inner {
-  display: block;
-  float: left;
-  width: 100%;
-  margin-bottom: 20px;
-  font-size: 12px;
+  margin-bottom: 30px;
+  font-size: 0;
 
   &.last {
     margin-bottom: 0;
   }
 }
 
-.account-list-item-row-inner-details {
-  float: left;
-  width: 30%;
-}
-
-.account-list-item-row-inner-notes {
-  float: left;
-  width: 70%;
-}
-
-.account-list-item-note-wrap {
-  float: left;
-  width: 100%;
-
-  &.return {
-    width: 70%;
-  }
-}
-
-.account-list-item-note {
-  float: left;
-  width: auto;
-  padding-bottom: 20px;
-  margin-right: 75px;
-  font-size: 12px;
-  line-height: 15px;
-
-  > span {
-    display: block;
-    padding-bottom: 5px;
-    font-size: 15px;
-    color: $account-accent-color;
-  }
-}
-
-.account-list-item-order-returns {
-  float: left;
-  width: 50%;
-
-  .account-order-status-return {
-    float: right;
-  }
+.account-list-item-image,
+.account-list-item-info {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .account-list-item-image {
-  position: relative;
-  float: left;
-  width: 100px;
-  height: 100px;
-  margin-right: 15px;
-  overflow: hidden;
-  border: 1px solid $account-border-color;
+  max-width: 100px + ($account-gutter / 2);
+  padding-right: $account-gutter / 2;
 
   img {
-    position: absolute;
-    top: -100%;
-    right: -100%;
-    bottom: -100%;
-    left: -100%;
     min-width: 100%;
     min-height: 100%;
-    margin: auto;
   }
+}
+
+.account-list-item-info {
+  padding-left: $account-gutter / 2;
+  padding-right: $account-gutter / 2;
+  font-size: $account-font-size;
 }
 
 .account-list-item-name {
   padding-bottom: 5px;
-  font-size: 15px;
-  line-height: 15px;
+  font-size: $account-font-size;
+}
+
+.account-list-item-notes {
+  font-size: 0;
+}
+
+.account-list-item-note {
+  display: inline-block;
+  margin-top: 20px;
+  padding-right: $account-gutter;
+  font-size: $account-font-size;
+
+  > span {
+    display: block;
+    padding-bottom: 5px;
+    font-size: 12px;
+  }
 }
 
 
@@ -287,33 +227,35 @@ $account-header-color: #f5f6f7 !default;
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 12px;
-  font-weight: bold;
 }
 
 .account-order-info {
-  float: left;
+  font-size: 0;
 }
 
 .account-order-info-shipping,
 .account-order-info-billing,
 .account-order-info-payment {
-  display: block;
-  float: left;
+  display: inline-block;
   width: 33.3333%;
+  font-size: $account-font-size;
+  vertical-align: top;
 }
 
 .account-order-info-shipments,
-.account-order-info-comments,
-.account-order-info-contact {
-  display: block;
-  float: left;
-  width: 100%;
+.account-order-info-comments {
+  font-size: $account-font-size;
+}
+
+.account-order-invoice {
+  margin-top: 20px;
 }
 
 
 // Forms
 .account-wrapper .form-label {
   display: inline-block;
+  width: 100%;
   margin-bottom: 5px;
   color: $account-accent-color;
 }
@@ -323,27 +265,15 @@ $account-header-color: #f5f6f7 !default;
 .account-wrapper input[type='password'] {
   // scss-lint:disable ImportantRule
   width: 100% !important;
-  height: 45px;
-  background: $account-light-color;
-  border: 1px solid $account-border-color;
-  border-radius: 4px;
 }
 
 .account-wrapper textarea {
   width: 100%;
   min-height: 175px;
-  background: $account-light-color;
-  border: 1px solid $account-border-color;
-  border-radius: 4px;
 }
 
 .account-wrapper select {
   width: 100%;
-  height: 45px;
-  line-height: 45px;
-  text-indent: 7px;
-  background: $account-light-color;
-  border: 1px solid $account-border-color;
 }
 
 .account-wrapper .form-field {
@@ -355,46 +285,11 @@ $account-header-color: #f5f6f7 !default;
 
 // Returns
 .account-list-item-return-order {
-  float: left;
   margin-top: 30px;
 }
 
 
-// Messages
-.account-messages {
-  .account-list-header-item {
-    width: 20%;
-
-    &.message {
-      width: 60%;
-    }
-  }
-
-  .account-list-item-cell {
-    width: 20%;
-
-    &.message {
-      width: 60%;
-    }
-  }
-}
-
-
 // Addresses
-.account-address-form {
-  @include account-row(800, 20);
-
-  .form-field {
-    @include account-column(200, 410, 10);
-  }
-
-  .form-actions {
-    @include account-column(200, 200, 5);
-    float: left;
-    margin-top: 30px;
-  }
-}
-
 .account-address-list {
   @include account-row(1300, 60);
   float: left;
@@ -406,10 +301,10 @@ $account-header-color: #f5f6f7 !default;
   @include account-perfect-square(200, 660, 30);
   position: relative;
   float: left;
-  margin-bottom: 4.34782%;
+  margin-bottom: 30px;
   overflow: hidden;
   border: 1px solid $account-border-color;
-  border-radius: 4px;
+  border-radius: $account-border-radius;
 }
 
 .account-address-list-item-content .address-detail {
@@ -450,58 +345,8 @@ $account-header-color: #f5f6f7 !default;
 
 
 // Wishlists
-.account-wishlists-table {
-  float: left;
-  width: 100%;
-  margin-top: 0;
+.account-wishlists {
   margin-bottom: 30px;
-  border: 0;
-
-  th {
-    padding-left: 0;
-    text-align: left;
-    border: 0;
-  }
-
-  td {
-    padding-left: 0;
-    border-left: 0;
-    border-color: $account-border-color;
-  }
-
-  + .form-actions {
-    display: block;
-    float: left;
-    width: 100%;
-    margin-bottom: 75px;
-  }
-}
-
-.account-share-wishlist {
-  display: block;
-  float: left;
-  width: 100%;
-  padding: 35px;
-  margin-bottom: 40px;
-  background-color: $account-header-color;
-
-  h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 15px;
-    line-height: 15px;
-    text-align: center;
-  }
-}
-
-.account-share-wishlist-url {
-  text-align: center;
-
-  > input {
-    display: inline-block;
-    width: 70%;
-    text-align: center;
-  }
 }
 
 
@@ -514,17 +359,19 @@ $account-header-color: #f5f6f7 !default;
   @include account-column(200, 660, 30);
   float: left;
   margin-bottom: 60px;
+  font-size: $account-font-size;
 }
 
 .account-product-item-image {
   @include account-column(200, 200, 0);
   @include account-perfect-square(200, 200, 0);
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   overflow: hidden;
 
+  > a,
   > a img {
-    @include account-image-fill;
+    display: block;
   }
 }
 
@@ -582,8 +429,15 @@ $account-header-color: #f5f6f7 !default;
 }
 
 
-// Account Settings
-.account-settings-form {
+// Recently Viewed
+.account-recently-viewed {
+  font-size: 0;
+}
+
+
+// Account Forms
+.account-settings-form,
+.account-address-form {
   @include account-row(800, 20);
 
   .form-field {
@@ -592,7 +446,6 @@ $account-header-color: #f5f6f7 !default;
 
   .form-actions {
     @include account-column(200, 200, 5);
-    float: left;
     margin-top: 30px;
   }
 }
