@@ -364,7 +364,6 @@ $account-border-radius: 0px !default;
 
 .account-product-item-image {
   @include account-column(200, 200, 0);
-  @include account-perfect-square(200, 200, 0);
   position: relative;
   margin-bottom: 20px;
   overflow: hidden;
