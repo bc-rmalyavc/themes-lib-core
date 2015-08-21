@@ -1,7 +1,7 @@
 <section class="account-wrapper">
   {{> account/components/navigation account_page='orders'}}
 
-  <div class="account-body">
+  <div class="account-body account-order">
 
     <h1 class="account-heading">{{lang 'account.orders.details.heading' number=order.id}}</h1>
 
@@ -125,31 +125,31 @@
 
             </li>
 
-          </ul>
+            {{#each shipments}}
+              <li class="account-list-item">
+                <div class="account-list-item-details">
+                  <div class="account-list-item-cell">{{date_shipped}}</div>
+                  <div class="account-list-item-cell">{{shipping_provider}}</div>
+                  <div class="account-list-item-cell">
+                    {{#if shipping_track.url}}
+                      <a href="{{shipping_track.url}}">
+                    {{/if}}
 
-          {{#each shipments}}
-            <li class="account-list-item">
-              <div class="account-list-item-details">
-                <div class="account-list-item-cell">{{date_shipped}}</div>
-                <div class="account-list-item-cell">{{shipping_provider}}</div>
-                <div class="account-list-item-cell">
-                  {{#if shipping_track.url}}
-                    <a href="{{shipping_track.url}}">
-                  {{/if}}
+                    {{#if show_shipping_method}}
+                      {{shipping_track.number}} &mdash; {{shipping_method}}
+                    {{else}}
+                      {{shipping_track.number}}
+                    {{/if}}
 
-                  {{#if show_shipping_method}}
-                    {{shipping_track.number}} &mdash; {{shipping_method}}
-                  {{else}}
-                    {{shipping_track.number}}
-                  {{/if}}
-
-                  {{#if shipping_track.url}}
-                    </a>
-                  {{/if}}
+                    {{#if shipping_track.url}}
+                      </a>
+                    {{/if}}
+                  </div>
                 </div>
-              </div>
-            </li>
-          {{/each}}
+              </li>
+            {{/each}}
+
+          </ul>
 
         </section>
       {{/if}}
