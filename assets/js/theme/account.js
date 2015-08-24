@@ -1,5 +1,5 @@
-import PageManager from '../page-manager';
 import $ from 'jquery';
+import PageManager from '../page-manager';
 
 export default class Account extends PageManager {
   constructor() {
@@ -8,7 +8,7 @@ export default class Account extends PageManager {
   }
 
   _bindEvents() {
-    this.$el.on('click', '.account-order-details', (event) => {
+    $('.account-order-details').on('click', (event) => {
       event.preventDefault();
       this._toggleDetails(event);
     });
