@@ -7,7 +7,8 @@
       {{#each items}}
         <div class="account-list-item-row-inner {{#if @last}}last{{/if}}">
           <div class="account-list-item-image">
-            <!-- TODO: Gift cert image -->
+            <!-- TODO: Add default placeholder image -->
+            <!-- https://github.com/bigcommerce/stencil/blob/master/templates/components/products/card.html#L3 -->
             <img src="{{getImage image 'account_product_thumbnail'}}" alt="{{image.alt}}">
           </div>
           <div class="account-list-item-info">
