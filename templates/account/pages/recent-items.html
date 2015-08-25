@@ -7,7 +7,7 @@
     {{#if customer.recently_viewed_products.items}}
       <form class="form" action="{{customer.recently_viewed_products.compare_url}}" method="post">
         <div class="account-recently-viewed">
-          <!-- TODO: Limit to 3 products? -->
+          {{!-- TODO: Limit to 3 products? --}}
           <ul class="account-product-grid">
             {{#each customer.recently_viewed_products.items}}
               <li class="account-product-item">
@@ -17,12 +17,12 @@
           </ul>
         </div>
 
-        <!-- TODO: Should there be show_compare data? -->
-        <!--
+        {{!-- TODO: Should there be show_compare data? --}}
+        {{!--
         {{#if show_compare}}
           <button class="button" type="submit">{{lang 'account.recent_items.compare'}}</button>
         {{/if}}
-        -->
+        --}}
       </form>
     {{else}}
       <p>{{lang 'account.recent_items.empty'}}</p>

@@ -4,7 +4,7 @@
     <img src="{{getImage image 'account-product'}}" alt="{{image.alt}}">
   </a>
 
-  <!-- TODO: This needs some lovin' -->
+  {{!-- TODO: This needs some lovin' --}}
   <div class="account-product-item-remove-item">
     <a href="{{remove_url}}">&times;</a>
   </div>
@@ -24,7 +24,7 @@
   </div>
 
   <div class="account-product-item-price">
-    <!-- TODO: BigCommerce is rendering the incorrect price JSON on 'recently viewed' pages, so price shows up blank -->
+    {{!-- TODO: BigCommerce is rendering the incorrect price JSON on 'recently viewed' pages, so price shows up blank --}}
     <div class="account-product-item-price-text">{{> components/products/price price=price}}</div>
   </div>
 

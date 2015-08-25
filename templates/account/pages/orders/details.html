@@ -96,13 +96,13 @@
           {{lang 'account.orders.details.print_invoice'}}
         </a>
 
-        <!-- TODO: Make sure BC has fixed the reorder_url linking issue -->
+        {{!-- TODO: Make sure BC has fixed the reorder_url linking issue --}}
         <a class="account-order-invoice button button-small" href="{{order.reorder_url}}">
           {{lang 'account.orders.details.reorder'}}
         </a>
       </section>
 
-      <!-- TODO: Test with real shipments -->
+      {{!-- TODO: Test with real shipments --}}
       {{#if shipments}}
         <section class="account-order-info-shipments">
           <h2 class="account-sub-heading">{{lang 'account.orders.details.shipments.title'}}</h2>
