@@ -21,7 +21,7 @@
       <form action="{{#if wishlist.id}}{{urls.account.wishlists.edit}}{{else}}{{urls.account.wishlists.add}}{{/if}}" class="form wishlist-form" method="post">
         <input type="hidden" name="submit">
 
-        <div class="form-field required">
+        <div class="form-field form-required">
           <label class="form-label" for="wishlistname">
             <span class="form-label-text" data-required="{{lang 'account.common.required'}}">{{lang 'account.wishlists.wishlist_name'}}</span>
             <input type="text" class="form-input" name="wishlistname" id="wishlistname" value="{{wishlist.name}}">

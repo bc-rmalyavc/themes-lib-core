@@ -40,7 +40,7 @@
 
                 <div class="account-list-item-cell message {{#unless unread}}is-read{{/unless}}">
                   <span>
-                    <select class="form-input input-select" name="return_qty[{{id}}]">
+                    <select class="form-select" name="return_qty[{{id}}]">
                       {{#enumerate 0 quantity}}
                         <option value="{{this}}">{{this}}</option>
                       {{/enumerate}}
@@ -56,12 +56,12 @@
 
         <h2 class="account-sub-heading">{{lang 'account.orders.return.return_details'}}</h2>
 
-        <div class="form-field required">
+        <div class="form-field form-required">
           <label for="return_reason" class="form-label">
             <span class="form-label-text" data-required="{{lang 'account.common.required'}}">
               {{lang 'account.orders.return.reason'}}
             </span>
-            <select name="return_reason" id="return_reason" class="form-input input-select">
+            <select name="return_reason" id="return_reason" class="form-select">
               {{#each forms.return.reasons}}
                 <option value="{{this}}">{{this}}</option>
               {{/each}}
@@ -72,7 +72,7 @@
         <div class="form-field">
           <label for="return_action" class="form-label">
             <span class="form-label-text">{{lang 'account.orders.return.action'}}</span>
-            <select name="return_action" id="return_action" class="form-input input-select">
+            <select name="return_action" id="return_action" class="form-select">
               {{#each forms.return.actions}}
                 <option value="{{this}}">{{this}}</option>
               {{/each}}

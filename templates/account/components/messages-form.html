@@ -2,12 +2,12 @@
 
 <form class="form" id="inbox-form" action="{{urls.account.send_message}}" method="post">
 
-  <div class="form-field required">
+  <div class="form-field form-required">
     <label class="form-label" for="message_order_id">
       <span class="form-label-text" data-required="{{lang 'account.common.required'}}">
         {{lang 'account.inbox.order'}}
       </span>
-      <select class="form-input input-select" name="message_order_id" id="message_order_id">
+      <select class="form-select" name="message_order_id" id="message_order_id">
         {{#each customer.inbox.orders}}
           <option value="{{id}}">{{lang 'account.inbox.order_display' id=id date=date total=amount.formatted}}</option>
         {{/each}}
@@ -15,7 +15,7 @@
     </label>
   </div>
 
-  <div class="form-field required">
+  <div class="form-field form-required">
     <label class="form-label" for="message_subject">
       <span class="form-label-text" data-required="{{lang 'account.common.required'}}">
         {{lang 'account.inbox.subject'}}
@@ -24,7 +24,7 @@
     </label>
   </div>
 
-  <div class="form-field required">
+  <div class="form-field form-required">
     <label class="form-label" for="message_content">
       <span class="form-label-text" data-required="{{lang 'account.common.required'}}">
         {{lang 'account.inbox.message'}}
