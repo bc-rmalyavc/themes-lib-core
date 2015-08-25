@@ -21,10 +21,6 @@ $account-border-radius: 0px !default;
   margin-right: $gutter / ($context + $gutter) / 2 * 100%;
 }
 
-@mixin account-perfect-square($width, $context, $gutter) {
-  padding-bottom: $width / ($context + $gutter) * 100%;
-}
-
 
 // Account Body
 .account-body {
@@ -298,20 +294,21 @@ $account-border-radius: 0px !default;
   @include account-row(1300, 60);
   float: left;
   width: 100%;
+  font-size: 0;
 }
 
 .account-address-list-item {
   @include account-column(200, 660, 30);
-  @include account-perfect-square(200, 660, 30);
   position: relative;
-  float: left;
-  margin-bottom: 30px;
-  overflow: hidden;
+  display: inline-block;
+  margin-bottom: $account-gutter;
   border: 1px solid $account-border-color;
   border-radius: $account-border-radius;
+  font-size: $account-font-size;
+  vertical-align: top;
 }
 
-.account-address-detail {
+.account-address-list-item-content .address-detail {
   display: block;
 }
 
@@ -337,9 +334,7 @@ $account-border-radius: 0px !default;
 }
 
 .account-address-list-item-wrap {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  min-height: 200px;
   padding: 30px;
 }
 
