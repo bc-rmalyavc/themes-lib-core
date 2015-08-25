@@ -5,10 +5,12 @@
 
 {{#each order.items}}
   <ul class="account-invoice-order-item-list">
+    {{!-- TODO: Translate? --}}
     <li class="account-invoice-order-item">{{quantity}} &times; {{name}}</li>
     {{#if options}}
       {{#each options}}
         <li class="account-invoice-order-item">
+          {{!-- TODO: Translate? --}}
           {{name}}: {{value}}{{#unless @last}},{{/unless}}
         </li>
       {{/each}}
@@ -19,6 +21,7 @@
 <div class="account-invoice-order-totals-list">
   <p>
     {{#each order.total_rows}}
+      {{!-- TODO: Translate? --}}
       <span class="account-invoice-order-totals-item">{{label}}: <strong>{{value.formatted}}</strong></span>{{#unless @last}}<br/>{{/unless}}
     {{/each}}
   </p>
