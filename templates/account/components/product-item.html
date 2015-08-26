@@ -5,9 +5,11 @@
   </a>
 
   {{!-- TODO: This needs some lovin' --}}
-  <div class="account-product-item-remove-item">
-    <a href="{{remove_url}}">&times;</a>
-  </div>
+  {{#if show_remove}}
+    <div class="account-product-item-remove-item">
+      <a href="{{remove_url}}">&times;</a>
+    </div>
+  {{/if}}
 
 </div>
 
