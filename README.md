@@ -40,6 +40,7 @@ The account pages rely on a few partials from your theme's components. Make sure
 - `components/alerts/alert-info.html`
 - `components/alerts/alert-error.html`
 - `components/alerts/alert-success.html`
+- `components/common/forms/*`
 - `components/common/pagination.html`
 
 ### Styles
