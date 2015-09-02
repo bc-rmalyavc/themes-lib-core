@@ -4,10 +4,19 @@ A collection of all the bits and pieces needed to make the BC Account Pages func
 
 These templates are a work-in-progress, so please feel free to jump in on the fun !
 
+## Installation
+
+Add or update the account pages code into your theme using the `install.sh` script. Make sure your theme directory doesn't have any uncommited changes in case something goes wrong!
+
+```
+./install.sh ../path/to/my-theme
+```
+
+This installs templates into `templates/account/`, styles into `assets/scss/modules/account/`, and a single JS file at `assets/js/theme/account.js`. These files should be added to git, but be careful not to edit them—they belong to this project and should only be updated here.
 
 ## Templates
 
-Account templates are set up in a way so that they should function independent to your theme's page wrapper markup and frontmatter. All account markup is located within an `account/` directory, which should be dropped into your theme's `templates/` directory. 
+Account templates are set up in a way so that they should function independent to your theme's page wrapper markup and frontmatter. All account markup is located within an `account/` directory, which should be dropped into your theme's `templates/` directory.
 
 From there, for each account page template in your theme, link to its equivalent block:
 
@@ -23,7 +32,7 @@ more_frontmatter: yup
 
 <div class="theme-specific-outer">
   <div class="theme-specific-inner">
-      {{> account/pages/edit}}
+    {{> account/pages/edit}}
   </div>
 </div>
 
