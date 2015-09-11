@@ -1,0 +1,135 @@
+.account-list {
+  list-style: none;
+}
+
+.account-list-header {
+  font-size: 0;
+  background-color: $account-light-color;
+}
+
+.account-list-header-item,
+.account-list-item-cell {
+  display: inline-block;
+  width: 15%;
+  padding: 10px;
+  font-size: $account-font-size;
+  vertical-align: top;
+
+  .account-messages & {
+    width: 20%;
+
+    &.message {
+      width: 60%;
+    }
+  }
+
+  .account-shipments &,
+  .account-wishlists &,
+  .account-new-return & {
+    width: 25%;
+  }
+
+  .account-shipments &:last-child {
+    width: 50%;
+  }
+}
+
+.account-list-item {
+  border-top: 1px solid $account-border-color;
+
+  &:first-of-type,
+  &:nth-of-type(2) {
+    border: 0;
+  }
+
+  &.account-empty {
+    padding: 30px 10px;
+  }
+}
+
+.account-list-item-details {
+  font-size: 0;
+}
+
+.account-list-item-cell {
+  padding: 30px 10px;
+
+  &.details-button {
+    @extend %clearfix;
+    width: 25%;
+    padding-right: 0;
+
+    > span {
+      float: right;
+      width: 75%;
+    }
+
+    a {
+      width: 100%;
+    }
+  }
+}
+
+.account-list-item-row {
+  display: none;
+  padding-top: 5px;
+  padding-bottom: 35px;
+
+  .visible &,
+  .account-order & {
+    display: block;
+  }
+}
+
+.account-list-item-row-inner {
+  margin-bottom: 30px;
+  font-size: 0;
+
+  &.last {
+    margin-bottom: 0;
+  }
+}
+
+.account-list-item-image,
+.account-list-item-info {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.account-list-item-image {
+  max-width: 100px + ($account-gutter / 2);
+  padding-right: $account-gutter / 2;
+
+  img {
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
+.account-list-item-info {
+  padding-right: $account-gutter / 2;
+  padding-left: $account-gutter / 2;
+  font-size: $account-font-size;
+}
+
+.account-list-item-name {
+  padding-bottom: 5px;
+  font-size: $account-font-size;
+}
+
+.account-list-item-notes {
+  font-size: 0;
+}
+
+.account-list-item-note {
+  display: inline-block;
+  padding-right: $account-gutter;
+  margin-top: 20px;
+  font-size: $account-font-size;
+
+  > span {
+    display: block;
+    padding-bottom: 5px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,74 @@
+// Product Grid
+
+.account-product-grid {
+  @include account-row(1300, 60);
+}
+
+// Product Item
+
+.account-product-item {
+  @include account-column(200, 660, 30);
+  float: left;
+  margin-bottom: 60px;
+  font-size: $account-font-size;
+}
+
+.account-product-item-image {
+  @include account-column(200, 200, 0);
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  > a,
+  > a img {
+    display: block;
+  }
+}
+
+.account-product-item-title {
+  text-align: center;
+
+  > h2 {
+    font-size: 16px;
+  }
+}
+
+.account-product-item-brand {
+  text-align: center;
+
+  > h3 {
+    font-size: 14px;
+  }
+}
+
+.account-product-item-price {
+  text-align: center;
+
+  > h4 {
+    font-size: 12px;
+  }
+}
+
+.account-product-item-ratings {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.account-product-item-remove-item {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  a {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    background-color: $account-light-color;
+    border: 0;
+    border-radius: 50%;
+  }
+}
+
+.account-product-item-add-to-cart {
+  text-align: center;
+}

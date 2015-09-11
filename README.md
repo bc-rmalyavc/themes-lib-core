@@ -29,20 +29,16 @@ more_frontmatter: yup
 ---
 
 {{#partial "page"}}
-
-<div class="theme-specific-outer">
-  <div class="theme-specific-inner">
-    {{> account/pages/edit}}
+  <div class="theme-specific-wrapper">
+    {{> account/pages/account/edit}}
   </div>
-</div>
-
 {{/partial}}
 
 {{> layout/base}}
-
 ```
 
-## Theme requirements
+## Theme Requirements
+
 The account pages rely on a few partials from your theme's components. Make sure they exist and that they're handling the passed variables in the same way:
 
 - `components/products/ratings.html`
@@ -54,49 +50,34 @@ The account pages rely on a few partials from your theme's components. Make sure
 
 ## Styles
 
-SCSS: [/assets/scss/pages/_account.scss](/assets/scss/pages/_account.scss)
+Import the account styles into your theme with `@import "modules/account/account";`. Some styles can be adjusted by defining the following variables before the import:
+
+- `$account-light-color`—Base background color for some elements.
+- `$account-accent-color`—Main accent color.
+- `$account-border-color`—Border color for separators.
+- `$account-border-radius`—Border radius used on some elements.
+- `$account-gutter`—A general layout size. Multiples of this will be used for paddings.
+- `$account-font-size`—The base font size.
 
 Below is an example of what your theme's `pages/_account.scss` could look like. This example is setting custom variables, and main wrapping structure, along with page titles and section titles. Make sure you import this file before the module's component scss.
-
-`@import "pages/account";`
-`@import "components/account";`
 
 ```
 // Variables
 $account-light-color: $input-background-color;
-$account-nav-color: $body-color;
 $account-accent-color: $accent-color;
 $account-border-color: $border-color;
-$account-header-color: $heading-color;
 $account-gutter: $gutter;
 $account-font-size: $font-size;
 
+// Import
+@import "modules/account/account";
+
+// Overrides
 .account-wrapper {
   @extend %wrapper;
   margin-top: $gutter*2;
-  font-size: 0;
-
-  .section-title {
-    margin-top: 50px;
-    margin-bottom: 30px;
-  }
 }
 
-.account-nav,
-.account-body {
-  display: inline-block;
-  padding-left: $gutter;
-  padding-right: $gutter;
-  vertical-align: top;
-  font-size: $font-size;
-}
-
-// Account Body
-.account-body {
-  width: 75%;
-}
-
-// Account Headings
 .account-heading {
   @extend .page-title;
   margin-top: 0;
@@ -108,109 +89,11 @@ $account-font-size: $font-size;
   @extend .section-title;
 }
 
-// Navigation
-.account-nav {
-  width: 25%;
-}
-
-// List Views
 .account-list-item-note > span {
   @extend %meta-text-treatment;
 }
 ```
 
-## TODO:
-
-• Still have to make this all responsive :D
-
-
-# Auth Pages
-
-## Templates
-
-Auth templates are set up in a way so that they should function independent to your theme's page wrapper markup and frontmatter. All auth markup is located within an `auth/` directory, which should be dropped into your theme's `templates/` directory. 
-
-From there, for each auth page template in your theme, link to its equivalent block:
-
-```
-<!-- templates/pages/auth/login.html -->
-
----
-frontmatter: here
-more_frontmatter: yup
----
-
-{{#partial "page"}}
-
-<div class="theme-specific-outer">
-  <div class="theme-specific-inner">
-      {{> auth/pages/login}}
-  </div>
-</div>
-
-{{/partial}}
-
-{{> layout/base}}
-
-```
-
-
-## Theme Requirements
-
-The auth pages rely on a few partials from your theme's components. Make sure they exist and that they're handling the passed variables in the same way:
-
-- `components/alerts/alert-info.html`
-- `components/alerts/alert-error.html`
-- `components/alerts/alert-success.html`
-- `components/common/forms/`
-
-
-## Styles
-
-Below is an example of what your theme's `pages/_auth.scss` could look like. This example is setting custom variables, and main wrapping structure, along with page titles and section titles. Make sure you import this file before the module's component scss.
-
-`@import "pages/auth";`
-`@import "modules/auth";`
-
-```
-// Variables
-$auth-gutter: $gutter * 2;
-$auth-font-size: $font-size;
-
-.auth-wrapper {
-  @extend %wrapper;
-}
-
-.auth-heading {
-  @extend .page-title;
-}
-
-.auth-sub-heading {
-  @extend .section-title;
-  margin-bottom: 30px;
-}
-
-.auth-button-alt {
-  @extend .form-submit-alternative;
-}
-
- // Login
-.auth-customer-login {
-  @include breakpoint(ms) {
-    width: 100%;
-  }
-}
-
-.auth-new-customer {
-  @include breakpoint(ms) {
-    width: 100%;
-    margin-top: $auth-gutter;
-  }
-}
-```
-
-
 ## TODO
 
-• Still have to make this all responsive :D
-
+- Still have to make this all responsive :D

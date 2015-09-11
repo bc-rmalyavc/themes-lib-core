@@ -1,47 +1,48 @@
+<section class="account-wrapper account-auth">
+  <h1 class="account-heading">{{lang 'account.auth.login.title'}}</h1>
 
-<h1 class="auth-heading">{{lang 'auth.login.title'}}</h1>
+  <div class="account-body">
+    {{#if forms.login.error}}
+      {{> components/alerts/alert-error forms.login.error}}
+    {{/if}}
+    {{#if forms.login.success}}
+      {{> components/alerts/alert-success forms.login.success}}
+    {{/if}}
 
-<div class="auth-wrapper">
-  {{#if forms.login.error}}
-    {{> components/alerts/alert-error forms.login.error}}
-  {{/if}}
-  {{#if forms.login.success}}
-    {{> components/alerts/alert-success forms.login.success}}
-  {{/if}}
+    <div class="auth-customer-login">
+      <h2 class="auth-sub-heading">{{lang 'account.auth.login.title'}}</h2>
+      <form class="auth-login-form form" action="{{urls.auth.check_login}}" method="post">
+        <div class="form-field">
+          <label class="form-label" for="login_email">
+            <span class="form-label-text">{{lang 'account.auth.forms.email_address'}}</span>
+            <input class="form-input" name="login_email" id="login_email" type="email">
+          </label>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="login_pass">
+            <span class="form-label-text">{{lang 'account.auth.login.password'}}</span>
+            <input class="form-input" id="login_pass" type="password" name="login_pass">
+          </label>
+        </div>
+        <div class="form-actions">
+          <input type="submit" class="button" value="{{lang 'account.auth.login.submit'}}">
+          <a class="auth-button-alt" href="{{urls.auth.forgot_password}}">{{lang 'account.auth.login.forgot_password'}}</a>
+        </div>
+      </form>
+    </div>
 
-  <div class="auth-customer-login">
-    <h2 class="auth-sub-heading">{{lang 'auth.login.title'}}</h2>
-    <form class="auth-login-form form" action="{{urls.auth.check_login}}" method="post">
-      <div class="form-field">
-        <label class="form-label" for="login_email">
-          <span class="form-label-text">{{lang 'auth.forms.email_address'}}</span>
-          <input class="form-input" name="login_email" id="login_email" type="email">
-        </label>
-      </div>
-      <div class="form-field">
-        <label class="form-label" for="login_pass">
-          <span class="form-label-text">{{lang 'auth.login.password'}}</span>
-          <input class="form-input" id="login_pass" type="password" name="login_pass">
-        </label>
-      </div>
-      <div class="form-actions">
-        <input type="submit" class="button" value="{{lang 'auth.login.submit'}}">
-        <a class="auth-button-alt" href="{{urls.auth.forgot_password}}">{{lang 'auth.login.forgot_password'}}</a>
-      </div>
-    </form>
+    <div class="auth-new-customer">
+      <h2 class="auth-sub-heading">{{lang 'account.auth.login.new_customer.title'}}</h2>
+      <p class="auth-new-customer-intro">{{lang 'account.auth.login.new_customer.intro'}}</p>
+      <ul class="auth-new-customer-facts">
+        <li>{{lang 'account.auth.login.new_customer.fact1'}}</li>
+        <li>{{lang 'account.auth.login.new_customer.fact2'}}</li>
+        <li>{{lang 'account.auth.login.new_customer.fact3'}}</li>
+        <li>{{lang 'account.auth.login.new_customer.fact4'}}</li>
+        <li>{{lang 'account.auth.login.new_customer.fact5'}}</li>
+      </ul>
+      <a class="button" href="{{urls.auth.create_account}}">{{lang 'account.auth.login.new_customer.create_account'}}</a>
+    </div>
+
   </div>
-
-  <div class="auth-new-customer">
-    <h2 class="auth-sub-heading">{{lang 'auth.login.new_customer.title'}}</h2>
-    <p class="auth-new-customer-intro">{{lang 'auth.login.new_customer.intro'}}</p>
-    <ul class="auth-new-customer-facts">
-      <li>{{lang 'auth.login.new_customer.fact1'}}</li>
-      <li>{{lang 'auth.login.new_customer.fact2'}}</li>
-      <li>{{lang 'auth.login.new_customer.fact3'}}</li>
-      <li>{{lang 'auth.login.new_customer.fact4'}}</li>
-      <li>{{lang 'auth.login.new_customer.fact5'}}</li>
-    </ul>
-    <a class="button" href="{{urls.auth.create_account}}">{{lang 'auth.login.new_customer.create_account'}}</a>
-  </div>
-
-</div>
+</section>

@@ -1,43 +1,44 @@
+<section class="account-wrapper account-auth">
+  <h1 class="account-heading">{{lang 'account.auth.create_account.title'}}</h1>
 
-<h1 class="auth-heading">{{lang 'auth.create_account.title'}}</h1>
-
-<div class="auth-wrapper">
-  {{#if forms.create_account.error}}
-    <div class="auth-error">
-      {{> components/alerts/alert-error forms.create_account.error}}
-    </div>
-  {{/if}}
-
-  <form class="auth-create-account-form form" action="{{urls.auth.save_new_account}}" method="post" data-create-account-form>
-    {{#each forms.create_account.account_fields}}
-      {{{dynamicComponent 'components/common/forms'}}}
-    {{/each}}
-
-    {{#each forms.create_account.address_fields}}
-      {{{dynamicComponent 'components/common/forms'}}}
-    {{/each}}
-
-    {{inject 'required' (lang 'auth.forms.required')}}
-    {{inject 'state_error' (lang 'auth.forms.errors.state_error')}}
-
-    {{#if forms.create_account.recaptcha.enabled}}
-      <div class="form-field">
-        <label class="form-label" for="captcha">
-          <span class="form-label-text">{{lang 'auth.create_account.captcha'}}</span>
-
-          <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k={{forms.create_account.recaptcha.public_key}}"></script>
-          <noscript>
-            <iframe src="https://www.google.com/recaptcha/api/noscript?k={{forms.create_account.recaptcha.public_key}}" height="300" width="500" frameborder="0"></iframe>
-            <br>
-            <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
-            <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
-          </noscript>
-        </label>
+  <div class="account-body">
+    {{#if forms.create_account.error}}
+      <div class="auth-error">
+        {{> components/alerts/alert-error forms.create_account.error}}
       </div>
     {{/if}}
 
-    <div class="form-actions">
-      <input class="button" type="submit" value="{{lang 'auth.create_account.submit'}}" />
-    </div>
-  </form>
-</div>
+    <form class="auth-create-account-form form" action="{{urls.auth.save_new_account}}" method="post" data-create-account-form>
+      {{#each forms.create_account.account_fields}}
+        {{{dynamicComponent 'components/common/forms'}}}
+      {{/each}}
+
+      {{#each forms.create_account.address_fields}}
+        {{{dynamicComponent 'components/common/forms'}}}
+      {{/each}}
+
+      {{inject 'required' (lang 'account.auth.forms.required')}}
+      {{inject 'state_error' (lang 'account.auth.forms.errors.state_error')}}
+
+      {{#if forms.create_account.recaptcha.enabled}}
+        <div class="form-field">
+          <label class="form-label" for="captcha">
+            <span class="form-label-text">{{lang 'account.auth.create_account.captcha'}}</span>
+
+            <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k={{forms.create_account.recaptcha.public_key}}"></script>
+            <noscript>
+              <iframe src="https://www.google.com/recaptcha/api/noscript?k={{forms.create_account.recaptcha.public_key}}" height="300" width="500" frameborder="0"></iframe>
+              <br>
+              <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+              <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+            </noscript>
+          </label>
+        </div>
+      {{/if}}
+
+      <div class="form-actions">
+        <input class="button" type="submit" value="{{lang 'account.auth.create_account.submit'}}" />
+      </div>
+    </form>
+  </div>
+</section>

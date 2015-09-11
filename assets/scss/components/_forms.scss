@@ -1,0 +1,50 @@
+.account-wrapper {
+  .form-label {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 5px;
+    color: $account-accent-color;
+  }
+
+  // scss-lint:disable QualifyingElement
+  input[type='text'],
+  input[type='password'] {
+    // scss-lint:disable ImportantRule
+    width: 100% !important;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 175px;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .form-field {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-actions {
+    clear: both;
+  }
+}
+
+// Account Forms
+
+.account-settings-form,
+.account-address-form {
+  @include account-row(800, 20);
+
+  .form-field {
+    @include account-column(200, 410, 10);
+  }
+
+  .form-actions {
+    @include account-column(200, 200, 5);
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,47 @@
+.account-order-details-label {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.account-order-info {
+  font-size: 0;
+}
+
+.account-order-info-shipping,
+.account-order-info-billing,
+.account-order-info-payment {
+  display: inline-block;
+  width: 33.3333%;
+  font-size: $account-font-size;
+  vertical-align: top;
+}
+
+.account-order-info-shipments,
+.account-order-info-comments {
+  font-size: $account-font-size;
+}
+
+.account-order-invoice {
+  margin-top: 20px;
+}
+
+// Listing
+
+.account-order-details {
+  .show-details {
+    display: block;
+
+    .visible & {
+      display: none;
+    }
+  }
+
+  .hide-details {
+    display: none;
+
+    .visible & {
+      display: block;
+    }
+  }
+}

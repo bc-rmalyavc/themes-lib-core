@@ -1,10 +1,3 @@
-$auth-gutter: 30px !default;
-$auth-font-size: 15px !default;
-
-.auth-wrapper {
-  font-size: 0;
-}
-
 .auth-error {
   margin-right: $auth-gutter / 2;
   margin-left: $auth-gutter / 2;
@@ -17,20 +10,19 @@ $auth-font-size: 15px !default;
   width: 50%;
   padding-right: $auth-gutter / 2;
   padding-left: $auth-gutter / 2;
-  vertical-align: top;
   font-size: $auth-font-size;
+  vertical-align: top;
 }
 
 .auth-new-customer-intro {
-
   &:empty {
     display: none;
   }
 }
 
 .auth-new-customer-facts {
-  margin-bottom: 30px;
   padding-left: 20px;
+  margin-bottom: 30px;
   list-style: disc;
 
   li:empty {

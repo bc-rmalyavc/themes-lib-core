@@ -21,5 +21,5 @@ sync() {
 }
 
 sync "Templates" "$DIR/templates/account" "$1/templates/"
-sync "Styles" "$DIR/assets/scss/pages/_account.scss" "$1/assets/scss/modules/account/"
+sync "Styles" "$DIR/assets/scss/" "$1/assets/scss/modules/account/"
 sync "Scripts" "$DIR/assets/js/theme/account.js" "$1/assets/js/theme/"

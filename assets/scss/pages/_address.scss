@@ -1,0 +1,51 @@
+.account-address-list {
+  @include account-row(1300, 60);
+  float: left;
+  width: 100%;
+  font-size: 0;
+}
+
+.account-address-list-item {
+  @include account-column(200, 660, 30);
+  position: relative;
+  display: inline-block;
+  margin-bottom: $account-gutter;
+  font-size: $account-font-size;
+  vertical-align: top;
+  border: 1px solid $account-border-color;
+  border-radius: $account-border-radius;
+}
+
+.account-address-list-item-content .address-detail {
+  display: block;
+}
+
+.account-address-list-item-add-new {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  float: left;
+  width: 100%;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  margin-top: -5px;
+  font-size: 18px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+
+  > .add-icon {
+    display: block;
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+.account-address-list-item-wrap {
+  min-height: 200px;
+  padding: 30px;
+}
+
+.account-address-list-item-actions {
+  margin-top: 30px;
+}

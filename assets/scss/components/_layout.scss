@@ -1,0 +1,21 @@
+.account-wrapper {
+  @extend %clearfix;
+  font-size: 0;
+}
+
+.account-nav,
+.account-body {
+  display: inline-block;
+  padding-right: $account-gutter;
+  padding-left: $account-gutter;
+  font-size: $account-font-size;
+  vertical-align: top;
+}
+
+.account-body {
+  width: 75%;
+}
+
+.account-nav {
+  width: 25%;
+}
