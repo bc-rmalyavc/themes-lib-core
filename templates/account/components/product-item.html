@@ -4,11 +4,10 @@
     <img src="{{getImage image 'account-product'}}" alt="{{image.alt}}">
   </a>
 
-  {{!-- TODO: This needs some lovin' --}}
   {{#if show_remove}}
-    <div class="account-product-item-remove-item">
-      <a href="{{remove_url}}">&times;</a>
-    </div>
+    <form action="{{remove_url}}" class="form account-product-item-remove-item" method="post">
+      <input type="submit" value="&times;" />
+    </form>
   {{/if}}
 
 </div>
