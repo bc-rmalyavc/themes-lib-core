@@ -6,8 +6,8 @@
 .account-nav,
 .account-body {
   display: inline-block;
-  padding-right: $account-gutter;
-  padding-left: $account-gutter;
+  padding-right: $account-gutter / 2;
+  padding-left: $account-gutter / 2;
   font-size: $account-font-size;
   vertical-align: top;
 }
