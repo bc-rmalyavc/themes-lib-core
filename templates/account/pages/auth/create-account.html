@@ -8,7 +8,7 @@
       </div>
     {{/if}}
 
-    <form class="auth-create-account-form form" action="{{urls.auth.save_new_account}}" method="post" data-create-account-form>
+    <form class="auth-create-account-form form" action="{{urls.auth.save_new_account}}" method="post" data-create-account-form data-validates>
       {{#each forms.create_account.account_fields}}
         {{{dynamicComponent 'components/common/forms'}}}
       {{/each}}
