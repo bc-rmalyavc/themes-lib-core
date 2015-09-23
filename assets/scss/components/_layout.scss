@@ -14,6 +14,10 @@
 
 .account-body {
   width: 75%;
+
+  & > *:first-child {
+    margin-top: 0;
+  }
 }
 
 .account-nav {
