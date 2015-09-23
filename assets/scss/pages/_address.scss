@@ -1,17 +1,24 @@
+.account-addresses .account-body {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .account-address-list {
-  @include account-row(1300, 60);
-  float: left;
-  width: 100%;
   font-size: 0;
 }
 
 .account-address-list-item {
-  @include account-column(200, 660, 30);
   position: relative;
   display: inline-block;
+  width: 33.333%;
   margin-bottom: $account-gutter;
+  padding-right: $account-gutter / 2;
+  padding-left: $account-gutter / 2;
   font-size: $account-font-size;
   vertical-align: top;
+}
+
+.account-address-list-item-wrap {
   border: 1px solid $account-border-color;
   border-radius: $account-border-radius;
 }

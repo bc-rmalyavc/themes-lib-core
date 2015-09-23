@@ -1,4 +1,4 @@
-<section class="account-wrapper">
+<section class="account-wrapper account-addresses">
   {{#if header_top}}
     <h1 class="account-heading">{{lang 'account.addresses.heading'}}</h1>
   {{/if}}
@@ -8,7 +8,7 @@
     {{#unless header_top}}
       <h1 class="account-heading">{{lang 'account.addresses.heading'}}</h1>
     {{/unless}}
-    
+
     {{#unless customer.addresses}}
       {{> components/alerts/alert-info (lang 'account.addresses.no_addresses')}}
     {{/unless}}
