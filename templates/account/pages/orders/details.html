@@ -5,9 +5,11 @@
   {{> account/components/navigation account_page='orders'}}
 
   <div class="account-body account-order">
-    {{#unless header_top}}
+    {{#if header_top}}
+      <h2 class="account-sub-heading">{{lang 'account.orders.details.heading' number=order.id}}</h2>
+    {{else}}
       <h1 class="account-heading">{{lang 'account.orders.details.heading' number=order.id}}</h1>
-    {{/unless}}
+    {{/if}}
 
     <div class="account-order-details">
       <div class="account-order-details-total">{{lang 'account.orders.list.order_total'}}: {{money order.total.value}}</div>
