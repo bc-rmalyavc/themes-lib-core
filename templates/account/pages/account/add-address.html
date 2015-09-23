@@ -9,7 +9,7 @@
   {{> account/components/navigation account_page='addresses'}}
 
   <div class="account-body">
-    {{#unless}}
+    {{#unless header_top}}
       {{#if forms.address.address_id}}
         <h1 class="account-heading">{{lang 'forms.address.edit.heading'}}</h1>
       {{else}}
