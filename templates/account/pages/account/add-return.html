@@ -1,9 +1,13 @@
 <section class="account-wrapper">
+  {{#if header_top}}
+    <h1 class="account-heading">{{lang 'account.returns.from_order' id=forms.return.order_id}}</h1>
+  {{/if}}
   {{> account/components/navigation account_page='returns'}}
 
   <div class="account-body">
-
-    <h1 class="account-heading">{{lang 'account.returns.from_order' id=forms.return.order_id}}</h1>
+    {{#unless header_top}}
+      <h1 class="account-heading">{{lang 'account.returns.from_order' id=forms.return.order_id}}</h1>
+    {{/unless}}
 
     {{#if forms.return.order_products.length}}
 

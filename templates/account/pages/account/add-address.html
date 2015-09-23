@@ -1,12 +1,21 @@
 <section class="account-wrapper">
-  {{> account/components/navigation account_page='addresses'}}
-
-  <div class="account-body">
+  {{#if header_top}}
     {{#if forms.address.address_id}}
       <h1 class="account-heading">{{lang 'forms.address.edit.heading'}}</h1>
     {{else}}
       <h1 class="account-heading">{{lang 'forms.address.add.heading'}}</h1>
     {{/if}}
+  {{/if}}
+  {{> account/components/navigation account_page='addresses'}}
+
+  <div class="account-body">
+    {{#unless}}
+      {{#if forms.address.address_id}}
+        <h1 class="account-heading">{{lang 'forms.address.edit.heading'}}</h1>
+      {{else}}
+        <h1 class="account-heading">{{lang 'forms.address.add.heading'}}</h1>
+      {{/if}}
+    {{/unless}}
 
     {{#if forms.address.error}}
       {{> components/alerts/alert-error forms.address.error}}

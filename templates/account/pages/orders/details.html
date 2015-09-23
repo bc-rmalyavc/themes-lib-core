@@ -1,9 +1,13 @@
 <section class="account-wrapper">
+  {{#if header_top}}
+    <h1 class="account-heading">{{lang 'account.orders.details.heading' number=order.id}}</h1>
+  {{/if}}
   {{> account/components/navigation account_page='orders'}}
 
   <div class="account-body account-order">
-
-    <h1 class="account-heading">{{lang 'account.orders.details.heading' number=order.id}}</h1>
+    {{#unless header_top}}
+      <h1 class="account-heading">{{lang 'account.orders.details.heading' number=order.id}}</h1>
+    {{/unless}}
 
     <div class="account-order-details">
       <div class="account-order-details-total">{{lang 'account.orders.list.order_total'}}: {{money order.total.value}}</div>

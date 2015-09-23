@@ -1,8 +1,14 @@
 <section class="account-wrapper">
+  {{#if header_top}}
+    <h1 class="account-heading">{{lang 'account.wishlists.view_heading' name=wishlist.name}}</h1>
+  {{/if}}
   {{> account/components/navigation account_page='wishlists'}}
 
   <div class="account-body">
-    <h1 class="account-heading">{{lang 'account.wishlists.view_heading' name=wishlist.name}}</h1>
+    {{#unless header_top}}
+      <h1 class="account-heading">{{lang 'account.wishlists.view_heading' name=wishlist.name}}</h1>
+    {{/unless}}
+
     {{#if wishlist.is_public}}
       <h2 class="account-sub-heading">{{lang 'account.wishlists.share_intro'}}</h2>
       <div class="account-share-wishlist-url">

@@ -1,8 +1,13 @@
 <section class="account-wrapper">
+  {{#if header_top}}
+    <h1 class="account-heading">{{lang 'account.recent_items.heading'}}</h1>
+  {{/if}}
   {{> account/components/navigation account_page='recent_items'}}
 
   <div class="account-body">
-    <h1 class="account-heading">{{lang 'account.recent_items.heading'}}</h1>
+    {{#unless header_top}}
+      <h1 class="account-heading">{{lang 'account.recent_items.heading'}}</h1>
+    {{/unless}}
 
     {{#if customer.recently_viewed_products.items}}
       <form class="form" action="{{customer.recently_viewed_products.compare_url}}" method="post">
