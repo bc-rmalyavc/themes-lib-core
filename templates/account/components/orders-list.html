@@ -30,23 +30,23 @@
       <li class="account-list-item" id="order-{{id}}">
         <div class="account-list-item-details">
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.orders.list.order_number'}}">
             <span><a href="{{details_url}}">{{id}}</a></span>
           </div>
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.orders.list.order_total'}}">
             <span>{{total.formatted}}</span>
           </div>
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.orders.list.order_date'}}">
             <span>{{date}}</span>
           </div>
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.orders.list.order_update'}}">
             <span>{{last_update_date}}</span>
           </div>
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.orders.list.order_status'}}">
             <span>{{status}}</span>
           </div>
 

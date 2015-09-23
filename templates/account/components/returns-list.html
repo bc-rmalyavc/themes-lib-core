@@ -31,23 +31,23 @@
 
         <div class="account-list-item-details">
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.returns.list.return_number'}}">
             <span>{{id}}</span>
           </div>
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.returns.list.return_quantity'}}">
             <span>{{lang 'account.returns.list.product_details' num_products=quantity}}</span>
           </div>
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.returns.list.return_date'}}">
             <span>{{date_requested}}</span>
           </div>
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.returns.list.return_action'}}">
             <span>{{action}}</span>
           </div>
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.returns.list.return_status'}}">
             {{#compare status 'ReturnStatusPending' operator='==='}}
               <span class="account-return-status-label">{{lang 'account.returns.status.pending'}}</span>
             {{/compare}}

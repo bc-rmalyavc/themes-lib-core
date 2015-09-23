@@ -18,15 +18,15 @@
     {{#each messages}}
       <li class="account-list-item">
         <div class="account-list-item-details">
-          <div class="account-list-item-cell date">
+          <div class="account-list-item-cell date" data-title="{{lang 'account.messages.list.message_date'}}">
             <span>{{date}}</span>
           </div>
 
-          <div class="account-list-item-cell subject">
+          <div class="account-list-item-cell subject" data-title="{{lang 'account.messages.list.message_subject'}}">
             <span>{{subject}}</span>
           </div>
 
-          <div class="account-list-item-cell message {{#unless unread}}is-read{{/unless}}">
+          <div class="account-list-item-cell message {{#unless unread}}is-read{{/unless}}" data-title="{{lang 'account.messages.list.message_name'}}">
             <span>
               {{#if is_reply}}
                 {{lang 'account.messages.merchant_said' store_name=../../settings.store_name}}
