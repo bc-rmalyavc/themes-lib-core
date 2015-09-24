@@ -3,9 +3,7 @@
 
   <div class="account-body">
     {{#if forms.create_account.error}}
-      <div class="auth-error">
-        {{> components/alerts/alert-error forms.create_account.error}}
-      </div>
+      {{> components/alerts/alert-error forms.create_account.error}}
     {{/if}}
 
     <form class="auth-create-account-form form" action="{{urls.auth.save_new_account}}" method="post" data-create-account-form data-validates>
