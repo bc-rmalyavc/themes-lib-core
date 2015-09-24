@@ -23,7 +23,6 @@
   }
 
   .form-field {
-    float: left;
     width: 100%;
     margin-bottom: 20px;
   }
@@ -37,15 +36,21 @@
 
 .account-settings-form,
 .account-address-form {
-  @include account-row(800, 20);
+  font-size: 0;
 
   .form-field {
-    @include account-column(200, 410, 10);
+    display: inline-block;
+    width: 50%;
+    padding-right: $account-gutter / 2;
+    padding-left: $account-gutter / 2;
+    vertical-align: top;
+    font-size: $account-font-size;
   }
 
   .form-actions {
-    @include account-column(200, 200, 5);
     margin-top: 30px;
+    padding-right: $account-gutter / 2;
+    padding-left: $account-gutter / 2;
   }
 }
 
