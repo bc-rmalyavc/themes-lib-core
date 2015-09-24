@@ -11,23 +11,12 @@
 
     {{#if customer.recently_viewed_products.items}}
       <form class="form" action="{{customer.recently_viewed_products.compare_url}}" method="post">
-        <div class="account-recently-viewed">
+        <div class="account-recently-viewed {{products_per_row_class}}">
           {{!-- TODO: Limit to 3 products? --}}
-          <ul class="account-product-grid">
-            {{#each customer.recently_viewed_products.items}}
-              <li class="account-product-item">
-                {{> account/components/product-item show_compare=../show_compare show_rating=../settings.show_product_rating}}
-              </li>
-            {{/each}}
-          </ul>
+          {{#each customer.recently_viewed_products.items}}
+            {{> components/products/product-item this quick_shop=../quick_shop}}
+          {{/each}}
         </div>
-
-        {{!-- TODO: Should there be show_compare data? --}}
-        {{!--
-        {{#if show_compare}}
-          <button class="button" type="submit">{{lang 'account.recent_items.compare'}}</button>
-        {{/if}}
-        --}}
       </form>
     {{else}}
       <p>{{lang 'account.recent_items.empty'}}</p>

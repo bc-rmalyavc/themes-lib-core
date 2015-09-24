@@ -10,19 +10,6 @@ $account-border-radius: 0 !default;
 $auth-gutter: $account-gutter;
 $auth-font-size: $account-font-size;
 
-// Mixins
-
-@mixin account-row($context, $gutter) {
-  margin-left: $gutter / ($context + $gutter) / 2 * -100%;
-  margin-right: $gutter / ($context + $gutter) / 2 * -100%;
-}
-
-@mixin account-column($width, $context, $gutter) {
-  width: $width / ($context + $gutter) * 100%;
-  margin-left: $gutter / ($context + $gutter) / 2 * 100%;
-  margin-right: $gutter / ($context + $gutter) / 2 * 100%;
-}
-
 // Imports
 
 @import "components/layout";
