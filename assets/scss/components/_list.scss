@@ -68,6 +68,12 @@
       width: 100%;
     }
   }
+
+  &:before {
+    content: attr(data-title);
+    display: none;
+    padding-bottom: 5px;
+  }
 }
 
 .account-list-item-row {
