@@ -26,15 +26,15 @@
       <li class="account-list-item">
         <div class="account-list-item-details">
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.wishlists.wishlist_name'}}">
             <a href="{{view_url}}">{{name}}</a>
           </div>
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.wishlists.num_items'}}">
             {{num_items}}
           </div>
 
-          <div class="account-list-item-cell">
+          <div class="account-list-item-cell" data-title="{{lang 'account.wishlists.public'}}">
             {{#if is_public}}
               {{lang 'account.common.yes'}}
             {{else}}

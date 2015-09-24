@@ -34,15 +34,15 @@
             <li class="account-list-item">
               <div class="account-list-item-details">
 
-                <div class="account-list-item-cell item">
+                <div class="account-list-item-cell item" data-title="{{lang 'account.orders.return.order_item'}}">
                   <span>{{name}}</span>
                 </div>
 
-                <div class="account-list-item-cell price">
+                <div class="account-list-item-cell price" data-title="{{lang 'account.orders.return.item_price'}}">
                   <span>{{price.formatted}}</span>
                 </div>
 
-                <div class="account-list-item-cell message {{#unless unread}}is-read{{/unless}}">
+                <div class="account-list-item-cell message {{#unless unread}}is-read{{/unless}}" data-title="{{lang 'account.orders.return.quantity'}}">
                   <span>
                     <select class="form-select" name="return_qty[{{id}}]">
                       {{#enumerate 0 quantity}}

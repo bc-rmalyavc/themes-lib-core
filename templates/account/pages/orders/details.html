@@ -101,7 +101,7 @@
             {{/if}}
           {{/each}}
         </ul>
-        
+
         <a class="account-order-invoice button button-small" href="{{order.invoice_url}}">
           {{lang 'account.orders.details.print_invoice'}}
         </a>
@@ -148,9 +148,9 @@
             {{#each shipments}}
               <li class="account-list-item">
                 <div class="account-list-item-details">
-                  <div class="account-list-item-cell">{{date_shipped}}</div>
-                  <div class="account-list-item-cell">{{shipping_provider}}</div>
-                  <div class="account-list-item-cell">
+                  <div class="account-list-item-cell" data-title="{{lang 'account.orders.details.shipments.date'}}">{{date_shipped}}</div>
+                  <div class="account-list-item-cell" data-title="{{lang 'account.orders.details.shipments.method'}}">{{shipping_provider}}</div>
+                  <div class="account-list-item-cell" data-title="{{lang 'account.orders.details.shipments.link'}}">
                     {{#if shipping_track.url}}
                       <a href="{{shipping_track.url}}">
                     {{/if}}
