@@ -8,10 +8,16 @@
 .auth-new-customer {
   display: inline-block;
   width: 50%;
-  padding-right: $auth-gutter / 2;
-  padding-left: $auth-gutter / 2;
   font-size: $auth-font-size;
   vertical-align: top;
+}
+
+.auth-customer-login {
+  padding-right: $auth-gutter / 2;
+}
+
+.auth-new-customer {
+  padding-left: $auth-gutter / 2;
 }
 
 .auth-new-customer-intro {
@@ -33,7 +39,10 @@
 // Create Account
 // Forgot Password
 // Account Created
-.auth-create-account-form,
+.auth-create-account-form {
+  font-size: $auth-font-size;
+}
+
 .auth-forgot-password,
 .auth-account-created {
   padding-right: $auth-gutter / 2;
