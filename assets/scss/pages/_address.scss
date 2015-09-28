@@ -1,10 +1,7 @@
-.account-addresses .account-body,
-.account-add-address .account-body {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.account-address-list {
+.account-address-list,
+.account-address-form {
+  margin-right: -($account-gutter / 2);
+  margin-left: -($account-gutter / 2);
   font-size: 0;
 }
 
@@ -56,4 +53,8 @@
 
 .account-address-list-item-actions {
   margin-top: 30px;
+}
+
+.account-address-detail {
+  display: block;
 }
