@@ -270,7 +270,8 @@
         "state_error": "There was a problem retrieving states/provinces"
       },
       "login": {
-        "title": "Log in",
+        "title": "Account",
+        "log_in": "Log in",
         "password": "Password",
         "submit": "Submit",
         "forgot_password": "Forgot Password",
