@@ -72,6 +72,9 @@
     {{#each customer.wishlists}}
       <input type="hidden" value="{{this.id}}" name="deletewishlist[]"/>
     {{/each}}
-    <input class="account-button-alt" type="submit" value="{{lang 'account.wishlists.delete_all'}}" id="wishlist-delete">
+
+    {{#if customer.wishlists}}
+      <input class="account-button-alt" type="submit" value="{{lang 'account.wishlists.delete_all'}}" id="wishlist-delete">
+    {{/if}}
   </div>
 </form>
