@@ -16,7 +16,7 @@
       </div>
     {{/if}}
 
-    <section class="{{products_per_row_class}}">
+    <section class="account-wishlist {{products_per_row_class}}">
       <h2 class="account-sub-heading">{{lang 'account.wishlists.wishlist_contents'}}</h2>
       {{#each wishlist.items}}
         {{> components/products/product-item this quick_shop=../quick_shop show_remove=true}}
