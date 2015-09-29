@@ -32,6 +32,7 @@
         "ship_bill_to": "Ship and Bill To",
         "payment_details": "Payment Info",
         "payment_method": "Payment Method",
+        "payment_method_card": "{payment_method} ending in {digits}",
         "contact_us": "Contact Us",
         "comments": "Order Instructions/Comments",
         "contact_text": "If you have any questions or concerns about your order don’t hesitate to contact us!",

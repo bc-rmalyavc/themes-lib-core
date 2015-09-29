@@ -90,7 +90,7 @@
               {{#compare order.payment_method 'storecredit' operator='==='}}
                 <span class="order-payment-value">{{lang 'account.orders.details.store_credit'}}</span>
               {{else}}
-                <span class="order-payment-value">{{order.payment_method}} ending in {{order.card_number_last_four}}</span>
+                <span class="order-payment-value">{{lang 'account.orders.details.payment_method_card' payment_method=order.payment_method digits=order.card_number_last_four}}</span>
               {{/compare}}
             </li>
             {{#each order.total_rows}}
