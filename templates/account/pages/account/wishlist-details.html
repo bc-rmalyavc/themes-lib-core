@@ -19,7 +19,7 @@
     <section class="account-wishlist {{products_per_row_class}}">
       <h2 class="account-sub-heading">{{lang 'account.wishlists.wishlist_contents'}}</h2>
       {{#each wishlist.items}}
-        {{> components/products/product-item this quick_shop=../quick_shop show_remove=true}}
+        {{> components/products/product-item this quick_shop=../quick_shop show_remove=true remove_url=remove_url}}
       {{/each}}
     </section>
   </div>
