@@ -15,8 +15,12 @@
     {{#if forms.inbox.success}}
       {{> components/alerts/alert-success forms.inbox.success}}
     {{/if}}
+
     {{> account/components/messages-list messages=customer.inbox.messages}}
-    {{> account/components/messages-form}}
+
+    {{#if customer.inbox.orders}}
+      {{> account/components/messages-form}}
+    {{/if}}
   </div>
 
 </section>
