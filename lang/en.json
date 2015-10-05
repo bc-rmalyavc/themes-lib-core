@@ -113,7 +113,7 @@
       "edit": "Edit Wishlist",
       "view_heading": "Wishlist: {name}",
       "share_intro": "Share this wishlist with friends",
-      "wishlist_content": "Wishlist Contents",
+      "wishlist_contents": "Wishlist Contents",
       "num_products": "{num_products, plural, one {1 product} other {# products}}",
       "create": "Create Wishlist",
       "save": "Save Wishlist",
