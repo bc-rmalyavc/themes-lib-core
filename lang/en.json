@@ -1,310 +1,331 @@
 {
-  "account": {
-    "common": {
-      "yes": "Yes",
-      "no": "No",
-      "edit": "Edit",
-      "delete": "Delete",
-      "share": "Share",
-      "required": "Required",
-      "cancel": "Cancel"
+  "core": {
+    "pagination": {
+      "page": "Page",
+      "of": "of",
+      "previous": "Previous",
+      "next": "Next"
     },
-    "menu": {
-      "orders": "Orders",
-      "returns": "Returns",
-      "addresses": "Addresses",
-      "wishlists": "Wishlists",
-      "recently_viewed": "Recently Viewed",
-      "settings": "Account Settings",
-      "messages": "Messages"
-    },
-    "orders": {
-      "heading": "Orders",
-      "return_items": "Return Items",
-      "summary": "Summary",
-      "empty": "You haven't placed any orders.",
-      "details": {
-        "heading": "Order #{number}",
-        "summary": "Summary",
-        "order_contents": "Order Contents",
-        "ship_to": "Ship To",
-        "bill_to": "Bill To",
-        "ship_bill_to": "Ship and Bill To",
-        "payment_details": "Payment Info",
-        "payment_method": "Payment Method",
-        "payment_method_card": "{payment_method} ending in {digits}",
-        "contact_us": "Contact Us",
-        "comments": "Order Instructions/Comments",
-        "contact_text": "If you have any questions or concerns about your order don’t hesitate to contact us!",
-        "download_items": "Download Items",
-        "store_credit": "Store credit",
-        "print_invoice": "Print Invoice",
-        "reorder": "Reorder",
-        "refunded_quantity": "{qty} refunded",
-        "gift_wrapping": "Gift wrapping",
-        "shipments": {
-          "title": "Shipments",
-          "date": "Date Shipped",
-          "method": "Shipping Method",
-          "link": "Tracking Link"
-        }
-      },
-      "return": {
-        "already_returned": "This order contains no products that can be returned. Have you already returned all of the items within this order?",
-        "back_button": "Go back",
-        "order_item": "Item",
-        "item_price": "Price",
-        "quantity": "Qty To Return",
-        "why": "Why are you returning these items?",
-        "reason": "Return Reason",
-        "action": "Return Action",
-        "comments": "Comments",
-        "return_details": "Details",
-        "request_return": "Submit Return Request"
-      },
-      "downloads": {
-        "heading": "Order #{number} Downloads",
-        "download_files_below": "Below you can download the files for",
-        "expired_content": "This file can not be downloaded because it has already expired."
-      },
-      "list": {
-        "order_item_name": "Item",
-        "order_number": "Order #",
-        "order_total": "Total",
-        "order_date": "Placed",
-        "order_update": "Updated",
-        "order_status": "Status",
-        "order_comment": "Comments",
-        "quantity": "Quantity",
-        "price": "Price",
-        "download": "Files",
-        "download_items": "Download Items",
-        "show_details": "Show Details",
-        "hide_details": "Hide Details"
-      },
-      "invoice": {
-        "order_details": "{store_name} Order #{order_id}",
-        "order_number": "Order ID: #{order_id}",
-        "order_date": "Order Date: {order_date}",
-        "order_contains": "Order Contains:"
+    "product": {
+      "compare": "Compare",
+      "sale": "On Sale",
+      "quickshop": {
+        "view": "Quick View"
       }
     },
-    "addresses": {
-      "heading": "Addresses",
-      "add_heading": "Add New Address",
-      "primary": "Primary",
-      "phone": "Phone: {phone_number}",
-      "new_address": "New Address",
-      "no_addresses": "You currently have no addresses added to your profile",
-      "submit": "Save Address"
+    "rating": {
+      "total_votes": "({votes})"
     },
-    "wishlists": {
-      "heading": "Wishlists",
-      "tag_line": "Fill in the form below to create a wishlist. Click the \"Save\" button when you're done.",
-      "new": "New Wishlist",
-      "num_items": "Items",
-      "add_item": "Add to wishlist",
-      "wishlist_name": "Wishlist Name",
-      "make_public": "Make wishlist public",
-      "public": "Public",
-      "action": "Action",
-      "add": "Add Wishlist",
-      "delete_all": "Delete All",
-      "edit": "Edit Wishlist",
-      "view_heading": "Wishlist: {name}",
-      "share_intro": "Share this wishlist with friends",
-      "wishlist_contents": "Wishlist Contents",
-      "num_products": "{num_products, plural, one {1 product} other {# products}}",
-      "create": "Create Wishlist",
-      "save": "Save Wishlist",
-      "compare": "Compare",
-      "empty": "You have no wishlists."
-    },
-    "recent_items": {
-      "heading" : "Recently Viewed",
-      "compare": "Compare",
-      "empty": "You haven't viewed any items recently."
-    },
-    "returns": {
-      "heading": "Returns",
-      "new_return": "New Return",
-      "from_order": "Return Items from Order #{id}",
-      "date_requested": "Return Requested",
-      "successful_heading": "Return Request Submitted",
-      "successful": "Your return was submitted successfully. We'll respond as soon as we can.",
-      "return": "Return to Orders",
-      "last_update": "Last Update",
-      "reason": "Reason for Return",
-      "action": "Return Action",
-      "comments": "Your Comments",
-      "empty": "You haven't made any returns.",
-      "list": {
-        "return_number": "Return #{id}",
-        "product_details": "Returning {num_products}",
-        "return_item_name": "Item",
-        "return_number": "Return #",
-        "return_quantity": "Quantity",
-        "return_date": "Requested",
-        "return_action": "Action",
-        "return_status": "Status",
-        "show_details": "Show Details",
-        "hide_details": "Hide Details"
-      },
-      "status": {
-        "pending": "Pending",
-        "received": "Received",
-        "authorized": "Authorized",
-        "repaired": "Repaired",
-        "refunded": "Refunded",
-        "rejected": "Rejected",
-        "cancelled": "Cancelled"
-      }
-    },
-    "settings": {
-      "heading": "Account Settings",
-      "first_name": "First Name",
-      "last_name": "Last Name",
-      "email": "Email Address",
-      "company": "Company",
-      "phone": "Phone Number",
-      "old_password": "Old Password",
-      "new_password": "New Password",
-      "confirm_password": "Confirm Password",
-      "update_details": "Update Details"
-    },
-    "messages": {
-      "heading": "Messages",
-      "customer_said": "You said:",
-      "merchant_said": "{store_name} said:",
-      "send_message": "Send a Message",
-      "no_messages": "You have no messages at this time.",
-      "list": {
-        "message_date": "Date",
-        "message_subject": "Subject",
-        "message_name": "Message"
-      }
-    },
-    "inbox": {
-      "order": "Order",
-      "order_display": "Order #{id} / {date} / {total}",
-      "subject": "Subject",
-      "message": "Message",
-      "submit": "Send Message",
-      "clear": "Clear"
-    },
-    "products": {
-      "current_stock": "Current Stock:",
-      "quantity": "Quantity:",
-      "quantity_decrease": "Decrease Quantity:",
-      "quantity_increase": "Increase Quantity:",
-      "related_products": "Related Products",
-      "top": "Most Popular Products",
-      "similar_by_views": "Customers Also Viewed",
-      "featured": "Featured Products",
-      "new": "New Products",
-      "tabs": {
-        "details": "Details",
-        "reviews": "Reviews",
-        "delivery": "Delivery"
-      },
-      "reviews": {
-        "captcha_heading": "Security Question",
-        "hide": "Hide Reviews",
-        "new": "Write a Review",
-        "show": "Show Reviews",
-        "header": "{total, plural, =0{0 Reviews} one {# Review} other {# Reviews}}",
-        "rating_label": "Rating",
-        "link_to_review": "({total, plural, =0{No reviews yet} one {# review} other {# reviews}})",
-        "post_on_by": "Posted by { name } on { date }",
-        "rating_label": "Rating",
-        "select_rating": "Select Rating",
-        "anonymous_poster": "Unknown",
-        "rating": {
-          "1": "1 star (worst)",
-          "2": "2 stars",
-          "3": "3 stars (average)",
-          "4": "4 stars",
-          "5": "5 stars (best)"
-        },
-        "write_a_review": "Write a Review",
-        "form_write": {
-          "name": "Name",
-          "email": "Email",
-          "subject": "Review Subject",
-          "comments": "Comments",
-          "submit_value": "Submit Review"
-        }
-      },
-      "videos": {
-        "header": "Videos",
-        "hide": "Hide Videos",
-        "show": "Show Videos"
-      },
-      "add_to_cart": "Add to Cart",
-      "options": "Options",
-      "sku": "SKU",
-      "condition": "Condition",
-      "availability": "Availability",
-      "shipping": "Shipping Cost",
-      "shipping_fixed": "{amount} (Fixed Shipping Cost)",
-      "shipping_free": "Free Shipping",
-      "sold_out": "Sold Out",
-      "pre_order": "Pre-Order Now",
-      "choose_options": "Choose Options",
-      "quick_view": "Quick view",
-      "compare": "Compare",
-      "max_filesize": "Maximum file size is",
-      "filetypes": "file types are",
-      "choose_an_option": "Please choose an option",
-      "select_one": "Please select one",
-      "description": "Description",
-      "retail_price": "MSRP {price}",
-      "price_with_tax": "{price} (Inc. {tax_label})",
-      "price_without_tax": "{price} (Ex. {tax_label})",
-      "weight": "Weight",
+    "price": {
+      "with_tax": "(Inc. {tax_label})",
+      "without_tax": "(Ex. {tax_label})",
       "you_save": "(You save {amount})"
     },
-    "auth": {
-      "forms": {
-        "email_address": "Email Address",
+    "account": {
+      "common": {
+        "yes": "Yes",
+        "no": "No",
+        "edit": "Edit",
+        "delete": "Delete",
+        "share": "Share",
         "required": "Required",
-        "state_error": "There was a problem retrieving states/provinces"
+        "cancel": "Cancel"
       },
-      "login": {
-        "title": "Account",
-        "log_in": "Log in",
-        "password": "Password",
-        "submit": "Submit",
-        "forgot_password": "Forgot Password",
-        "new_customer": {
-          "title": "New Customer",
-          "intro": "Create an account with us and you'll be able to:",
-          "fact1": "Check out faster",
-          "fact2": "Save multiple shipping addresses",
-          "fact3": "Access your order history",
-          "fact4": "Track new orders",
-          "fact5": "Save items to your wish list",
-          "create_account": "Create Account"
+      "menu": {
+        "orders": "Orders",
+        "returns": "Returns",
+        "addresses": "Addresses",
+        "wishlists": "Wishlists",
+        "recently_viewed": "Recently Viewed",
+        "settings": "Account Settings",
+        "messages": "Messages"
+      },
+      "orders": {
+        "heading": "Orders",
+        "return_items": "Return Items",
+        "summary": "Summary",
+        "empty": "You haven't placed any orders.",
+        "details": {
+          "heading": "Order #{number}",
+          "summary": "Summary",
+          "order_contents": "Order Contents",
+          "ship_to": "Ship To",
+          "bill_to": "Bill To",
+          "ship_bill_to": "Ship and Bill To",
+          "payment_details": "Payment Info",
+          "payment_method": "Payment Method",
+          "payment_method_card": "{payment_method} ending in {digits}",
+          "contact_us": "Contact Us",
+          "comments": "Order Instructions\/Comments",
+          "contact_text": "If you have any questions or concerns about your order don\u2019t hesitate to contact us!",
+          "download_items": "Download Items",
+          "store_credit": "Store credit",
+          "print_invoice": "Print Invoice",
+          "reorder": "Reorder",
+          "refunded_quantity": "{qty} refunded",
+          "gift_wrapping": "Gift wrapping",
+          "shipments": {
+            "title": "Shipments",
+            "date": "Date Shipped",
+            "method": "Shipping Method",
+            "link": "Tracking Link"
+          }
+        },
+        "return": {
+          "already_returned": "This order contains no products that can be returned. Have you already returned all of the items within this order?",
+          "back_button": "Go back",
+          "order_item": "Item",
+          "item_price": "Price",
+          "quantity": "Qty To Return",
+          "why": "Why are you returning these items?",
+          "reason": "Return Reason",
+          "action": "Return Action",
+          "comments": "Comments",
+          "return_details": "Details",
+          "request_return": "Submit Return Request"
+        },
+        "downloads": {
+          "heading": "Order #{number} Downloads",
+          "download_files_below": "Below you can download the files for",
+          "expired_content": "This file can not be downloaded because it has already expired."
+        },
+        "list": {
+          "order_item_name": "Item",
+          "order_number": "Order #",
+          "order_total": "Total",
+          "order_date": "Placed",
+          "order_update": "Updated",
+          "order_status": "Status",
+          "order_comment": "Comments",
+          "quantity": "Quantity",
+          "price": "Price",
+          "download": "Files",
+          "download_items": "Download Items",
+          "show_details": "Show Details",
+          "hide_details": "Hide Details"
+        },
+        "invoice": {
+          "order_details": "{store_name} Order #{order_id}",
+          "order_number": "Order ID: #{order_id}",
+          "order_date": "Order Date: {order_date}",
+          "order_contains": "Order Contains:"
         }
       },
-      "create_account": {
-        "title": "Create Account",
-        "submit": "Create Account",
-        "captcha": "Captcha"
+      "addresses": {
+        "heading": "Addresses",
+        "add_heading": "Add New Address",
+        "primary": "Primary",
+        "phone": "Phone: {phone_number}",
+        "new_address": "New Address",
+        "no_addresses": "You currently have no addresses added to your profile",
+        "submit": "Save Address"
       },
-      "account_created": {
-        "title": "Account Created",
-        "message": "Your {store_name} account was created with the email address: {email}",
-        "continue": "Continue"
+      "wishlists": {
+        "heading": "Wishlists",
+        "tag_line": "Fill in the form below to create a wishlist. Click the \"Save\" button when you're done.",
+        "new": "New Wishlist",
+        "num_items": "Items",
+        "add_item": "Add to wishlist",
+        "wishlist_name": "Wishlist Name",
+        "make_public": "Make wishlist public",
+        "public": "Public",
+        "action": "Action",
+        "add": "Add Wishlist",
+        "delete_all": "Delete All",
+        "edit": "Edit Wishlist",
+        "view_heading": "Wishlist: {name}",
+        "share_intro": "Share this wishlist with friends",
+        "wishlist_contents": "Wishlist Contents",
+        "num_products": "{num_products, plural, one {1 product} other {# products}}",
+        "create": "Create Wishlist",
+        "save": "Save Wishlist",
+        "compare": "Compare",
+        "empty": "You have no wishlists."
       },
-      "forgot_password": {
-        "title": "Forgot Password",
-        "message": "Forget your password?",
-        "submit": "Reset Password",
-        "success_message": "Great! We've sent you an email with instructions on how to reset your password."
+      "recent_items": {
+        "heading": "Recently Viewed",
+        "compare": "Compare",
+        "empty": "You haven't viewed any items recently."
       },
-      "new_password": {
-        "title": "New Password"
+      "returns": {
+        "heading": "Returns",
+        "new_return": "New Return",
+        "from_order": "Return Items from Order #{id}",
+        "date_requested": "Return Requested",
+        "successful_heading": "Return Request Submitted",
+        "successful": "Your return was submitted successfully. We'll respond as soon as we can.",
+        "return": "Return to Orders",
+        "last_update": "Last Update",
+        "reason": "Reason for Return",
+        "action": "Return Action",
+        "comments": "Your Comments",
+        "empty": "You haven't made any returns.",
+        "list": {
+          "return_number": "Return #",
+          "product_details": "Returning {num_products}",
+          "return_item_name": "Item",
+          "return_quantity": "Quantity",
+          "return_date": "Requested",
+          "return_action": "Action",
+          "return_status": "Status",
+          "show_details": "Show Details",
+          "hide_details": "Hide Details"
+        },
+        "status": {
+          "pending": "Pending",
+          "received": "Received",
+          "authorized": "Authorized",
+          "repaired": "Repaired",
+          "refunded": "Refunded",
+          "rejected": "Rejected",
+          "cancelled": "Cancelled"
+        }
+      },
+      "settings": {
+        "heading": "Account Settings",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "email": "Email Address",
+        "company": "Company",
+        "phone": "Phone Number",
+        "old_password": "Old Password",
+        "new_password": "New Password",
+        "confirm_password": "Confirm Password",
+        "update_details": "Update Details"
+      },
+      "messages": {
+        "heading": "Messages",
+        "customer_said": "You said:",
+        "merchant_said": "{store_name} said:",
+        "send_message": "Send a Message",
+        "no_messages": "You have no messages at this time.",
+        "list": {
+          "message_date": "Date",
+          "message_subject": "Subject",
+          "message_name": "Message"
+        }
+      },
+      "inbox": {
+        "order": "Order",
+        "order_display": "Order #{id} \/ {date} \/ {total}",
+        "subject": "Subject",
+        "message": "Message",
+        "submit": "Send Message",
+        "clear": "Clear"
+      },
+      "products": {
+        "current_stock": "Current Stock:",
+        "quantity": "Quantity:",
+        "quantity_decrease": "Decrease Quantity:",
+        "quantity_increase": "Increase Quantity:",
+        "related_products": "Related Products",
+        "top": "Most Popular Products",
+        "similar_by_views": "Customers Also Viewed",
+        "featured": "Featured Products",
+        "new": "New Products",
+        "tabs": {
+          "details": "Details",
+          "reviews": "Reviews",
+          "delivery": "Delivery"
+        },
+        "reviews": {
+          "captcha_heading": "Security Question",
+          "hide": "Hide Reviews",
+          "new": "Write a Review",
+          "show": "Show Reviews",
+          "header": "{total, plural, =0{0 Reviews} one {# Review} other {# Reviews}}",
+          "rating_label": "Rating",
+          "link_to_review": "({total, plural, =0{No reviews yet} one {# review} other {# reviews}})",
+          "post_on_by": "Posted by { name } on { date }",
+          "select_rating": "Select Rating",
+          "anonymous_poster": "Unknown",
+          "rating": {
+            "1": "1 star (worst)",
+            "2": "2 stars",
+            "3": "3 stars (average)",
+            "4": "4 stars",
+            "5": "5 stars (best)"
+          },
+          "write_a_review": "Write a Review",
+          "form_write": {
+            "name": "Name",
+            "email": "Email",
+            "subject": "Review Subject",
+            "comments": "Comments",
+            "submit_value": "Submit Review"
+          }
+        },
+        "videos": {
+          "header": "Videos",
+          "hide": "Hide Videos",
+          "show": "Show Videos"
+        },
+        "add_to_cart": "Add to Cart",
+        "options": "Options",
+        "sku": "SKU",
+        "condition": "Condition",
+        "availability": "Availability",
+        "shipping": "Shipping Cost",
+        "shipping_fixed": "{amount} (Fixed Shipping Cost)",
+        "shipping_free": "Free Shipping",
+        "sold_out": "Sold Out",
+        "pre_order": "Pre-Order Now",
+        "choose_options": "Choose Options",
+        "quick_view": "Quick view",
+        "compare": "Compare",
+        "max_filesize": "Maximum file size is",
+        "filetypes": "file types are",
+        "choose_an_option": "Please choose an option",
+        "select_one": "Please select one",
+        "description": "Description",
+        "retail_price": "MSRP {price}",
+        "price_with_tax": "{price} (Inc. {tax_label})",
+        "price_without_tax": "{price} (Ex. {tax_label})",
+        "weight": "Weight",
+        "you_save": "(You save {amount})"
+      },
+      "auth": {
+        "forms": {
+          "email_address": "Email Address",
+          "required": "Required",
+          "state_error": "There was a problem retrieving states\/provinces"
+        },
+        "login": {
+          "title": "Account",
+          "log_in": "Log in",
+          "password": "Password",
+          "submit": "Submit",
+          "forgot_password": "Forgot Password",
+          "new_customer": {
+            "title": "New Customer",
+            "intro": "Create an account with us and you'll be able to:",
+            "fact1": "Check out faster",
+            "fact2": "Save multiple shipping addresses",
+            "fact3": "Access your order history",
+            "fact4": "Track new orders",
+            "fact5": "Save items to your wish list",
+            "create_account": "Create Account"
+          }
+        },
+        "create_account": {
+          "title": "Create Account",
+          "submit": "Create Account",
+          "captcha": "Captcha"
+        },
+        "account_created": {
+          "title": "Account Created",
+          "message": "Your {store_name} account was created with the email address: {email}",
+          "continue": "Continue"
+        },
+        "forgot_password": {
+          "title": "Forgot Password",
+          "message": "Forget your password?",
+          "submit": "Reset Password",
+          "success_message": "Great! We've sent you an email with instructions on how to reset your password."
+        },
+        "new_password": {
+          "title": "New Password"
+        }
       }
     }
   }

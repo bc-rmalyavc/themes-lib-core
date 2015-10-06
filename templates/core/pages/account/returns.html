@@ -1,0 +1,14 @@
+<section class="account-wrapper account-returns-list">
+  {{#if header_top}}
+    <h1 class="account-heading">{{lang 'core.account.returns.heading'}}</h1>
+  {{/if}}
+  {{> core/account/navigation account_page='returns'}}
+
+  <div class="account-body">
+    {{#unless header_top}}
+      <h1 class="account-heading">{{lang 'core.account.returns.heading'}}</h1>
+    {{/unless}}
+    {{> core/account/returns-list returns=customer.returns}}
+  </div>
+
+</section>

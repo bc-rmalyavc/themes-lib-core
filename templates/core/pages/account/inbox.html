@@ -1,0 +1,26 @@
+<section class="account-wrapper account-inbox">
+  {{#if header_top}}
+    <h1 class="account-heading">{{lang 'core.account.messages.heading'}}</h1>
+  {{/if}}
+  {{> core/account/navigation account_page='messages'}}
+
+  <div class="account-body">
+    {{#unless header_top}}
+      <h1 class="account-heading">{{lang 'core.account.messages.heading'}}</h1>
+    {{/unless}}
+
+    {{#if forms.inbox.error}}
+      {{> core/alerts/alert-error forms.inbox.error}}
+    {{/if}}
+    {{#if forms.inbox.success}}
+      {{> core/alerts/alert-success forms.inbox.success}}
+    {{/if}}
+
+    {{> core/account/messages-list messages=customer.inbox.messages}}
+
+    {{#if customer.inbox.orders}}
+      {{> core/account/messages-form}}
+    {{/if}}
+  </div>
+
+</section>

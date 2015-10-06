@@ -1,0 +1,14 @@
+<section class="account-wrapper account-wishlists-list">
+  {{#if header_top}}
+    <h1 class="account-heading">{{lang 'core.account.wishlists.heading'}}</h1>
+  {{/if}}
+  {{> core/account/navigation account_page='wishlists'}}
+
+  <div class="account-body">
+    {{#unless header_top}}
+      <h1 class="account-heading">{{lang 'core.account.wishlists.heading'}}</h1>
+    {{/unless}}
+    {{> core/account/wishlist-list}}
+  </div>
+
+</section>

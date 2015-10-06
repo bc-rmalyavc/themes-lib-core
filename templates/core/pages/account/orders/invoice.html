@@ -1,0 +1,30 @@
+<h1 class="account-invoice-details">{{lang 'core.account.orders.invoice.order_details' store_name=settings.store_name order_id=order.id}}</h1>
+<div class="account-invoice-order-id">{{lang 'core.account.orders.invoice.order_number' order_id=order.id}}</div>
+<div class="account-invoice-order-date">{{lang 'core.account.orders.invoice.order_date' order_date=order.date}}</div>
+<div class="account-invoice-order-contains">{{lang 'core.account.orders.invoice.order_contains'}}</div>
+
+{{#each order.items}}
+  <ul class="account-invoice-order-item-list">
+    {{!-- TODO: Translate? --}}
+    <li class="account-invoice-order-item">{{quantity}} &times; {{name}}</li>
+    {{#if options}}
+      {{#each options}}
+        <li class="account-invoice-order-item">
+          {{!-- TODO: Translate? --}}
+          {{name}}: {{value}}{{#unless @last}},{{/unless}}
+        </li>
+      {{/each}}
+    {{/if}}
+  </ul>
+{{/each}}
+
+<div class="account-invoice-order-totals-list">
+  <p>
+    {{#each order.total_rows}}
+      {{!-- TODO: Translate? --}}
+      <span class="account-invoice-order-totals-item">{{label}}: <strong>{{value.formatted}}</strong></span>{{#unless @last}}<br/>{{/unless}}
+    {{/each}}
+  </p>
+</div>
+
+<script>window.setTimeout(function() {window.print();}, 1000);</script>

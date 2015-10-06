@@ -1,57 +1,48 @@
-# Account Pages
+# BC-Core
 
-A collection of all the bits and pieces needed to make the BC Account Pages function.
+A collection of shared templates, styles, and javascript that can be used in themes to save time.
 
 These templates are a work-in-progress, so please feel free to jump in on the fun !
 
 ## Installation
 
-Add or update the account pages code into your theme using the `install.sh` script. Make sure your theme directory doesn't have any uncommited changes in case something goes wrong!
+Add or update your theme using the `install.sh` script. It's a good idea to do this on a clean brach so you can easily see the changes.
 
 ```
-./install.sh ../path/to/my-theme
+/path/to/bc-core/install.sh /path/to/my-theme
 ```
 
-This installs templates into `templates/account/`, styles into `assets/scss/modules/account/`, and a single JS file at `assets/js/theme/account.js`. These files should be added to git, but be careful not to edit them—they belong to this project and should only be updated here.
+This adds the following directories to your theme:
+
+- `templates/core/`
+- `assets/js/core/`
+- `assets/scss/core/`
+
+These should be added to git, but remember that they do not belong to your theme—if you want to make a change either copy the file, or submit a PR to the bc-core repo.
+
+In addition, it also adds a `core` object to your `lang/en.json` file.
 
 ## Templates
 
-Account templates are set up in a way so that they should function independent to your theme's page wrapper markup and frontmatter. All account markup is located within an `account/` directory, which should be dropped into your theme's `templates/` directory.
+All core templates are installed into your theme at `templates/core`. These have no effect on your theme, unless you explicitly include them.
 
-From there, for each account page template in your theme, link to its equivalent block:
+## Account Pages
+
+The core account pages are designed so that you can import them from your account page templates in your theme and get a fully-functioning account section for free.
+
+For example:
 
 ```
 <!-- templates/pages/account/edit.html -->
-
----
-frontmatter: here
-more_frontmatter: yup
----
-
 {{#partial "page"}}
-  <div class="theme-specific-wrapper">
-    {{> account/pages/account/edit}}
-  </div>
+  {{> core/account/pages/account/edit}}
 {{/partial}}
-
 {{> layout/base}}
 ```
 
-## Theme Requirements
+### Styles
 
-The account pages rely on a few partials from your theme's components. Make sure they exist and that they're handling the passed variables in the same way:
-
-- `components/products/ratings.html`
-- `components/alerts/alert-info.html`
-- `components/alerts/alert-error.html`
-- `components/alerts/alert-success.html`
-- `components/common/forms/*`
-- `components/common/pagination.html`
-- `components/products/product-item.html`
-
-## Styles
-
-Import the account styles into your theme with `@import "modules/account/account";`. Some styles can be adjusted by defining the following variables before the import:
+Import the core styles into your theme with `@import "core/account";`. Some styles can be adjusted by defining the following variables before the import:
 
 - `$account-light-color`—Base background color for some elements.
 - `$account-accent-color`—Main accent color.
@@ -60,10 +51,10 @@ Import the account styles into your theme with `@import "modules/account/account
 - `$account-gutter`—A general layout size. Multiples of this will be used for paddings.
 - `$account-font-size`—The base font size.
 
-Below is an example of what your theme's `pages/_account.scss` could look like. This example is setting custom variables, and main wrapping structure, along with page titles and section titles. Make sure you import this file before the module's component scss.
+Below is an example of how you could include core styles into your theme. This example is overriding some core variables and styles.
 
 ```
-// Variables
+// Variable Overrides
 $account-light-color: $input-background-color;
 $account-accent-color: $accent-color;
 $account-border-color: $border-color;
@@ -71,30 +62,11 @@ $account-gutter: $gutter;
 $account-font-size: $font-size;
 
 // Import
-@import "modules/account/account";
+@import "core/account";
 
-// Overrides
+// Style Overrides
 .account-wrapper {
   @extend %wrapper;
   margin-top: $gutter*2;
 }
-
-.account-heading {
-  @extend .page-title;
-  margin-top: 0;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.account-sub-heading {
-  @extend .section-title;
-}
-
-.account-list-item-note > span {
-  @extend %meta-text-treatment;
-}
 ```
-
-## TODO
-
-- Still have to make this all responsive :D

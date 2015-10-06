@@ -1,0 +1,28 @@
+// Variables
+
+$account-light-color: #fff !default;
+$account-accent-color: #5dc5e3 !default;
+$account-border-color: #e4e4e4 !default;
+$account-gutter: 30px !default;
+$account-font-size: 15px !default;
+$account-border-radius: 0 !default;
+
+$auth-gutter: $account-gutter;
+$auth-font-size: $account-font-size;
+
+// Imports
+
+@import "account/components/layout";
+@import "account/components/forms";
+@import "account/components/list";
+@import "account/components/navigation";
+@import "account/components/pagination";
+
+@import "account/pages/address";
+@import "account/pages/edit-account";
+@import "account/pages/orders";
+@import "account/pages/recent-items";
+@import "account/pages/returns";
+@import "account/pages/wishlists";
+
+@import "account/pages/auth";

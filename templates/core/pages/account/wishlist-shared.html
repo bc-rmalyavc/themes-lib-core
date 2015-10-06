@@ -1,0 +1,20 @@
+<section class="account-wrapper account-wishlist-shared">
+  {{#if header_top}}
+    <h1 class="account-heading">{{lang 'core.account.wishlists.view_heading' name=wishlist.name}}</h1>
+  {{/if}}
+  {{> core/account/navigation account_page='wishlists'}}
+
+  <div class="account-body">
+    {{#unless header_top}}
+      <h1 class="account-heading">{{lang 'core.account.wishlists.view_heading' name=wishlist.name}}</h1>
+    {{/unless}}
+
+    <section class="{{products_per_row_class}}">
+      <h2 class="account-sub-heading">{{lang 'core.account.wishlists.wishlist_contents'}}</h2>
+      {{#each wishlist.items}}
+        {{> core/products/product-item show_remove=true}}
+      {{/each}}
+    </section>
+  </div>
+
+</section>

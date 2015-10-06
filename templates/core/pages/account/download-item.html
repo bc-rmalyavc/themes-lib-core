@@ -1,0 +1,65 @@
+<section class="account-wrapper account-download-item">
+  {{#if header_top}}
+    <h1 class="account-heading">{{lang 'core.account.orders.downloads.heading' number=downloads.order_id}}</h1>
+  {{/if}}
+  {{> core/account/navigation account_page='orders'}}
+
+  <div class="account-body">
+    {{#unless header_top}}
+      <h1 class="account-heading">{{lang 'core.account.orders.downloads.heading' number=downloads.order_id}}</h1>
+    {{/unless}}
+
+    <div class="account-downloads">
+
+      <figure class="account-downloads-image">
+        {{#if downloads.image}}
+          <img src="{{downloads.image}}" alt="{{downloads.product_name}}"/>
+          <figcaption class="account-downloads-image-caption">{{downloads.product_name}}</figcaption>
+        {{/if}}
+      </figure>
+
+      <div class="account-downloads-contents">
+        {{lang 'core.account.orders.downloads.download_files_below'}} <strong>{{downloads.product_name}}</strong>
+        <ul class="account-downloads-list">
+
+          {{#each downloads.items}}
+            <li>
+              <article class="account-downloads-list-item">
+                {{#if expired}}
+
+                  <h5 class="download-name is-expired">
+                    {{name}} <span class="download-size">({{size}})</span>
+                  </h5>
+
+                  <p class="download-meta">
+                    {{lang 'core.account.orders.downloads.expired_content'}}
+                  </p>
+
+                {{else}}
+
+                  <h5 class="download-name">
+                    <a href="{{url}}">{{name}}</a> <span class="download-size">({{size}})</span>
+                  </h5>
+
+                  {{#if description}}
+                    <p class="download-description">
+                      {{description}}
+                    </p>
+                  {{/if}}
+
+                  {{#if expiry_info}}
+                    <p class="download-meta">
+                      {{expiry_info}}
+                    </p>
+                  {{/if}}
+
+                {{/if}}
+              </article>
+            </li>
+          {{/each}}
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

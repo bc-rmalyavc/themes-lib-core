@@ -1,0 +1,112 @@
+<ul class="account-list account-orders">
+
+  <li class="account-list-header">
+
+    <div class="account-list-header-item">
+      <span class="account-list-header-label">{{lang 'core.account.orders.list.order_number'}}</span>
+    </div>
+
+    <div class="account-list-header-item">
+      <span class="account-list-header-label">{{lang 'core.account.orders.list.order_total'}}</span>
+    </div>
+
+    <div class="account-list-header-item">
+      <span class="account-list-header-label">{{lang 'core.account.orders.list.order_date'}}</span>
+    </div>
+
+    <div class="account-list-header-item">
+      <span class="account-list-header-label">{{lang 'core.account.orders.list.order_update'}}</span>
+    </div>
+
+    <div class="account-list-header-item">
+      <span class="account-list-header-label">{{lang 'core.account.orders.list.order_status'}}</span>
+    </div>
+
+  </li>
+
+  {{#if orders}}
+    {{#each orders}}
+
+      <li class="account-list-item" id="order-{{id}}">
+        <div class="account-list-item-details">
+
+          <div class="account-list-item-cell" data-title="{{lang 'core.account.orders.list.order_number'}}">
+            <span><a href="{{details_url}}">{{id}}</a></span>
+          </div>
+
+          <div class="account-list-item-cell" data-title="{{lang 'core.account.orders.list.order_total'}}">
+            <span>{{total.formatted}}</span>
+          </div>
+
+          <div class="account-list-item-cell" data-title="{{lang 'core.account.orders.list.order_date'}}">
+            <span>{{date}}</span>
+          </div>
+
+          <div class="account-list-item-cell" data-title="{{lang 'core.account.orders.list.order_update'}}">
+            <span>{{last_update_date}}</span>
+          </div>
+
+          <div class="account-list-item-cell" data-title="{{lang 'core.account.orders.list.order_status'}}">
+            <span>{{status}}</span>
+          </div>
+
+          <div class="account-list-item-cell details-button">
+            <span>
+              <a href="#order-{{id}}" class="button button-small account-order-details">
+                <span class="show-details">{{lang 'core.account.orders.list.show_details'}}</span>
+                <span class="hide-details">{{lang 'core.account.orders.list.hide_details'}}</span>
+              </a>
+            </span>
+          </div>
+
+        </div>
+
+        <div class="account-list-item-row">
+
+          {{#each items}}
+            <div class="account-list-item-row-inner {{#if @last}}last{{/if}}">
+
+              <div class="account-list-item-image">
+                <a href="{{../details_url}}">
+                  {{!-- TODO: Add default placeholder image --}}
+                  {{!-- https://github.com/bigcommerce/stencil/blob/master/templates/components/products/card.html#L3 --}}
+                  <img src="{{getImage image}}" alt="{{image.alt}}">
+                </a>
+              </div>
+
+              <div class="account-list-item-info">
+                <div class="account-list-item-name">
+                  <a href="{{../details_url}}">{{name}}</a>
+                </div>
+                <div class="account-list-item-options">
+                  {{#each options}}
+                    <span class="account-list-item-label">{{name}}:</span>
+                    {{value}}{{#unless @last}}<br/>{{/unless}}
+                  {{/each}}
+                </div>
+                <div class="account-list-item-quantity">
+                  <span class="account-list-item-label">{{lang 'core.account.orders.list.quantity'}}:</span> {{quantity}}
+                </div>
+              </div>
+
+            </div>
+          {{/each}}
+
+          {{#if ../settings.returns_enabled}}
+            {{#if return_url}}
+              <div class="account-list-item-return-order">
+                <a class="button button-small" href="{{return_url}}">
+                  {{lang 'core.account.orders.return_items'}}
+                </a>
+              </div>
+            {{/if}}
+          {{/if}}
+
+        </div>
+      </li>
+
+    {{/each}}
+  {{else}}
+    <li class="account-list-item account-empty">{{lang 'core.account.orders.empty'}}</li>
+  {{/if}}
+</ul>

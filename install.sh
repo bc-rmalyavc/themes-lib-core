@@ -20,6 +20,11 @@ sync() {
   rsync -v -h -r -i --delete "$2" "$3"
 }
 
-sync "Templates" "$DIR/templates/account" "$1/templates/"
-sync "Styles" "$DIR/assets/scss/" "$1/assets/scss/modules/account/"
-sync "Scripts" "$DIR/assets/js/theme/account.js" "$1/assets/js/theme/"
+sync "Templates" "$DIR/templates/core" "$1/templates/"
+sync "Styles" "$DIR/assets/scss/core" "$1/assets/scss/"
+sync "Scripts" "$DIR/assets/js/theme/core" "$1/assets/js/theme/"
+
+echo
+echo "----- Installing Translations"
+echo
+php "$DIR/install-lang.php" "$1/"
