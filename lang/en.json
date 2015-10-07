@@ -21,6 +21,39 @@
       "without_tax": "(Ex. {tax_label})",
       "you_save": "(You save {amount})"
     },
+    "giftcard": {
+      "heading": "Gift Certificates",
+      "purchase": {
+        "heading": "Purchase Gift Certificate",
+        "to_name": "Recipient's Name",
+        "to_email": "Recipient's Email",
+        "from_name": "Your Name",
+        "from_email": "Your Email",
+        "message": "Message (optional)",
+        "amount": "Amount",
+        "preview": "Preview Theme",
+        "theme": "Gift Certificate Theme",
+        "custom_range": "(Value must be between {min} and {max})",
+        "agree": "I understand that Gift Certificates expire after {days, plural, one {1 day} other {# days}}",
+        "agree2": "I agree that Gift Certificates are nonrefundable",
+        "submit_value": "Add Gift Certificate to Cart",
+        "update_value": "Update Gift Certificate"
+      },
+      "balance": {
+        "heading": "Check Gift Certificate Balance",
+        "intro": "You can check the balance of a gift certificate by typing the code in to the box below.",
+        "code": "Gift Certificate Code",
+        "submit_value": "Check Balance"
+      },
+      "redeem": {
+        "heading": "Redeem Gift Certificate",
+        "intro": "To redeem a gift certificate at {store_name}, follow the simple steps below.",
+        "item1": "You need your unique gift certificate code, which is part of the gift certificate that was emailed to you as an attachment. It will look something like Z50-Y6K-COS-402.",
+        "item2": "Browse the store and add items to your cart as you normally would.",
+        "item3": "Click the '<a href=\"{cart_url}\">View Cart</a>' link to view the contents of your shopping cart.",
+        "item4": "Type your gift certificate code in to the 'Redeem Gift Certificate' box and click 'Go'."
+      }
+    },
     "account": {
       "common": {
         "yes": "Yes",
