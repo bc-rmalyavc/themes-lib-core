@@ -2,13 +2,13 @@
   {{#if header_top}}
     <h1 class="account-heading">{{lang 'core.account.wishlists.heading'}}</h1>
   {{/if}}
-  {{> core/account/navigation account_page='wishlists'}}
+  {{> core/account/_private/navigation account_page='wishlists'}}
 
   <div class="account-body">
     {{#unless header_top}}
       <h1 class="account-heading">{{lang 'core.account.wishlists.heading'}}</h1>
     {{/unless}}
-    {{> core/account/wishlist-list}}
+    {{> core/account/_private/wishlist-list}}
   </div>
 
 </section>

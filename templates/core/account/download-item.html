@@ -2,7 +2,7 @@
   {{#if header_top}}
     <h1 class="account-heading">{{lang 'core.account.orders.downloads.heading' number=downloads.order_id}}</h1>
   {{/if}}
-  {{> core/account/navigation account_page='orders'}}
+  {{> core/account/_private/navigation account_page='orders'}}
 
   <div class="account-body">
     {{#unless header_top}}

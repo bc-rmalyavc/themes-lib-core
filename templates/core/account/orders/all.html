@@ -1,14 +1,14 @@
-<section class="account-wrapper account-orders-completed">
+<section class="account-wrapper account-orders-all">
   {{#if header_top}}
     <h1 class="account-heading">{{lang 'core.account.orders.heading'}}</h1>
   {{/if}}
-  {{> core/account/navigation account_page='orders'}}
+  {{> core/account/_private/navigation account_page='orders'}}
 
   <div class="account-body">
     {{#unless header_top}}
       <h1 class="account-heading">{{lang 'core.account.orders.heading'}}</h1>
     {{/unless}}
-    {{> core/account/orders-list orders=customer.orders}}
+    {{> core/account/_private/orders-list orders=customer.orders}}
     {{> core/pagination pagination.orders}}
   </div>
 

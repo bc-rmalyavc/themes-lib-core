@@ -2,7 +2,7 @@
   {{#if header_top}}
     <h1 class="account-heading">{{lang 'core.account.messages.heading'}}</h1>
   {{/if}}
-  {{> core/account/navigation account_page='messages'}}
+  {{> core/account/_private/navigation account_page='messages'}}
 
   <div class="account-body">
     {{#unless header_top}}
@@ -16,10 +16,10 @@
       {{> core/alerts/alert-success forms.inbox.success}}
     {{/if}}
 
-    {{> core/account/messages-list messages=customer.inbox.messages}}
+    {{> core/account/_private/messages-list messages=customer.inbox.messages}}
 
     {{#if customer.inbox.orders}}
-      {{> core/account/messages-form}}
+      {{> core/account/_private/messages-form}}
     {{/if}}
   </div>
 

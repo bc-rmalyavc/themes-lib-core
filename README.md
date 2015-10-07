@@ -35,7 +35,7 @@ For example:
 ```
 <!-- templates/pages/account/edit.html -->
 {{#partial "page"}}
-  {{> core/account/pages/account/edit}}
+  {{> core/account/edit}}
 {{/partial}}
 {{> layout/base}}
 ```
