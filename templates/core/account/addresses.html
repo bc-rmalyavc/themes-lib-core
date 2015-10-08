@@ -1,52 +1,47 @@
-<section class="account-wrapper account-addresses">
-  {{#if header_top}}
-    <h1 class="account-heading">{{lang 'core.account.addresses.heading'}}</h1>
-  {{/if}}
-  {{> core/account/_private/navigation account_page='addresses'}}
+{{#partial 'account-heading'}}
+  {{lang 'core.account.addresses.heading'}}
+{{/partial}}
 
-  <div class="account-body">
-    {{#unless header_top}}
-      <h1 class="account-heading">{{lang 'core.account.addresses.heading'}}</h1>
-    {{/unless}}
+{{#partial 'account-content'}}
+  {{#unless customer.addresses}}
+    {{> core/alerts/alert-info (lang 'core.account.addresses.no_addresses')}}
+  {{/unless}}
 
-    {{#unless customer.addresses}}
-      {{> core/alerts/alert-info (lang 'core.account.addresses.no_addresses')}}
-    {{/unless}}
+  <ul class="account-address-list">
 
-    <ul class="account-address-list">
-
-      {{#each customer.addresses}}
-        <li class="account-address-list-item">
-          <div class="account-address-list-item-wrap">
-
-            <address class="account-address-list-item-content">
-              <span class="account-address-detail">{{first_name}} {{last_name}}</span>
-              <span class="account-address-detail">{{company}}</span>
-              <span class="account-address-detail">{{address1}}</span>
-              <span class="account-address-detail">{{address2}}</span>
-              <span class="account-address-detail">{{city}}, {{state}} {{zip}}</span>
-              <span class="account-address-detail">{{lang 'core.account.addresses.phone' phone_number=phone}}</span>
-            </address>
-
-            <form class="form account-address-list-item-actions" action="{{delete_url}}" method="post">
-              <a class="button button-small" href="{{edit_url}}">{{lang 'core.account.common.edit'}}</a>
-              <button type="submit" class="button button-small">{{lang 'core.account.common.delete'}}</button>
-            </form>
-
-          </div>
-        </li>
-      {{/each}}
-
+    {{#each customer.addresses}}
       <li class="account-address-list-item">
         <div class="account-address-list-item-wrap">
 
-          <a class="account-address-list-item-add-new" href="{{urls.account.add_address}}">
-            <span class="add-icon">+</span>
-            {{lang 'core.account.addresses.new_address'}}
-          </a>
+          <address class="account-address-list-item-content">
+            <span class="account-address-detail">{{first_name}} {{last_name}}</span>
+            <span class="account-address-detail">{{company}}</span>
+            <span class="account-address-detail">{{address1}}</span>
+            <span class="account-address-detail">{{address2}}</span>
+            <span class="account-address-detail">{{city}}, {{state}} {{zip}}</span>
+            <span class="account-address-detail">{{lang 'core.account.addresses.phone' phone_number=phone}}</span>
+          </address>
+
+          <form class="form account-address-list-item-actions" action="{{delete_url}}" method="post">
+            <a class="button button-small" href="{{edit_url}}">{{lang 'core.account.common.edit'}}</a>
+            <button type="submit" class="button button-small">{{lang 'core.account.common.delete'}}</button>
+          </form>
 
         </div>
       </li>
-    </ul>
-  </div>
-</section>
+    {{/each}}
+
+    <li class="account-address-list-item">
+      <div class="account-address-list-item-wrap">
+
+        <a class="account-address-list-item-add-new" href="{{urls.account.add_address}}">
+          <span class="add-icon">+</span>
+          {{lang 'core.account.addresses.new_address'}}
+        </a>
+
+      </div>
+    </li>
+  </ul>
+{{/partial}}
+
+{{> core/account/_private/layout nav='addresses' class='addresses'}}

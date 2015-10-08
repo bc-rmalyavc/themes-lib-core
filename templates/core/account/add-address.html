@@ -1,39 +1,30 @@
-<section class="account-wrapper account-add-address">
-  {{#if header_top}}
-    {{#if forms.address.address_id}}
-      <h1 class="account-heading">{{lang 'forms.address.edit.heading'}}</h1>
-    {{else}}
-      <h1 class="account-heading">{{lang 'forms.address.add.heading'}}</h1>
-    {{/if}}
+{{#partial 'account-heading'}}
+  {{#if forms.address.address_id}}
+    {{lang 'forms.address.edit.heading'}}
+  {{else}}
+    {{lang 'forms.address.add.heading'}}
   {{/if}}
-  {{> core/account/_private/navigation account_page='addresses'}}
+{{/partial}}
 
-  <div class="account-body">
-    {{#unless header_top}}
-      {{#if forms.address.address_id}}
-        <h1 class="account-heading">{{lang 'forms.address.edit.heading'}}</h1>
-      {{else}}
-        <h1 class="account-heading">{{lang 'forms.address.add.heading'}}</h1>
-      {{/if}}
-    {{/unless}}
+{{#partial 'account-content'}}
+  {{#if forms.address.error}}
+    {{> core/alerts/alert-error forms.address.error}}
+  {{/if}}
 
-    {{#if forms.address.error}}
-      {{> core/alerts/alert-error forms.address.error}}
+  <form class="form account-address-form" action="{{forms.address.action}}" id="address-form" method="post">
+    {{#if forms.address.address_id}}
+      <input type="hidden" name="shipid" value="{{forms.address.address_id}}">
     {{/if}}
 
-    <form class="form account-address-form" action="{{forms.address.action}}" id="address-form" method="post">
-      {{#if forms.address.address_id}}
-        <input type="hidden" name="shipid" value="{{forms.address.address_id}}">
-      {{/if}}
+    {{#each forms.address.shipping_fields}}
+      {{{dynamicComponent 'components/common/forms'}}}
+    {{/each}}
 
-      {{#each forms.address.shipping_fields}}
-        {{{dynamicComponent 'components/common/forms'}}}
-      {{/each}}
+    <div class="form-actions">
+      <input type="submit" class="button" value="{{lang 'core.account.addresses.submit'}}">
+      <a href="{{urls.account.addresses}}" class="account-button-alt">{{lang 'core.account.common.cancel'}}</a>
+    </div>
+  </form>
+{{/partial}}
 
-      <div class="form-actions">
-        <input type="submit" class="button" value="{{lang 'core.account.addresses.submit'}}">
-        <a href="{{urls.account.addresses}}" class="account-button-alt">{{lang 'core.account.common.cancel'}}</a>
-      </div>
-    </form>
-  </div>
-</section>
+{{> core/account/_private/layout nav='addresses' class='add-address'}}

@@ -1,56 +1,55 @@
-<section class="account-wrapper account-add-wishlist">
-  {{#if header_top}}
-    <h1 class="account-heading">{{lang 'core.account.wishlists.heading'}}</h1>
+{{#partial 'account-heading'}}
+  {{#if forms.address.address_id}}
+    {{lang 'forms.address.edit.heading'}}
+  {{else}}
+    {{lang 'forms.address.add.heading'}}
   {{/if}}
-  {{> core/account/_private/navigation account_page='wishlists'}}
+{{/partial}}
 
-  <div class="account-body">
-    {{#unless header_top}}
-      <h1 class="account-heading">{{lang 'core.account.wishlists.heading'}}</h1>
-    {{/unless}}
+{{#partial 'account-content'}}
+  <div class="wishlist-add">
+    <header class="wishlist-header">
+      {{#if forms.wishlist.id}}
+        <h2 class="account-sub-heading">{{lang 'core.account.wishlists.edit'}}</h2>
+      {{else}}
+        <h2 class="account-sub-heading">{{lang 'core.account.wishlists.new'}}</h2>
+        <p class="account-wishlist-tagline">{{lang 'core.account.wishlists.tag_line'}}</p>
+      {{/if}}
 
-    <div class="wishlist-add">
-      <header class="wishlist-header">
+      {{#if forms.wishlist.errors}}
+        {{> core/alerts/alert-error forms.wishlist.errors}}
+      {{/if}}
+    </header>
+
+    <form class="form wishlist-form" action="{{#if forms.wishlist.id}}{{urls.account.wishlists.edit}}{{else}}{{urls.account.wishlists.add}}{{/if}}" method="post">
+      <input type="hidden" name="submit">
+
+      <div class="form-field form-required">
+        <label class="form-label" for="wishlistname">
+          <span class="form-label-text" data-required="{{lang 'core.account.common.required'}}">{{lang 'core.account.wishlists.wishlist_name'}}</span>
+          <input type="text" class="form-input" name="wishlistname" id="wishlistname" value="{{forms.wishlist.name}}">
+        </label>
+      </div>
+
+      <div class="form-field form-inline">
+        <label class="form-label" for="publicwishlist">
+          <input class="form-input input-checkbox" type="checkbox" name="publicwishlist" id="publicwishlist" {{#if forms.wishlist.is_public}}checked{{/if}}>
+          <span class="form-input-mask"></span>
+          <span class="form-label-text">{{lang 'core.account.wishlists.make_public'}}</span>
+        </label>
+      </div>
+
+      <div class="form-actions">
         {{#if forms.wishlist.id}}
-          <h2 class="account-sub-heading">{{lang 'core.account.wishlists.edit'}}</h2>
+          <input type="submit" class="button" value="{{lang 'core.account.wishlists.save'}}">
+          <input type="hidden" name="wishlistid" value="{{forms.wishlist.id}}">
         {{else}}
-          <h2 class="account-sub-heading">{{lang 'core.account.wishlists.new'}}</h2>
-          <p class="account-wishlist-tagline">{{lang 'core.account.wishlists.tag_line'}}</p>
+          <input type="submit" class="button" value="{{lang 'core.account.wishlists.create'}}">
         {{/if}}
+      </div>
 
-        {{#if forms.wishlist.errors}}
-          {{> core/alerts/alert-error forms.wishlist.errors}}
-        {{/if}}
-      </header>
-
-      <form class="form wishlist-form" action="{{#if forms.wishlist.id}}{{urls.account.wishlists.edit}}{{else}}{{urls.account.wishlists.add}}{{/if}}" method="post">
-        <input type="hidden" name="submit">
-
-        <div class="form-field form-required">
-          <label class="form-label" for="wishlistname">
-            <span class="form-label-text" data-required="{{lang 'core.account.common.required'}}">{{lang 'core.account.wishlists.wishlist_name'}}</span>
-            <input type="text" class="form-input" name="wishlistname" id="wishlistname" value="{{forms.wishlist.name}}">
-          </label>
-        </div>
-
-        <div class="form-field form-inline">
-          <label class="form-label" for="publicwishlist">
-            <input class="form-input input-checkbox" type="checkbox" name="publicwishlist" id="publicwishlist" {{#if forms.wishlist.is_public}}checked{{/if}}>
-            <span class="form-input-mask"></span>
-            <span class="form-label-text">{{lang 'core.account.wishlists.make_public'}}</span>
-          </label>
-        </div>
-
-        <div class="form-actions">
-          {{#if forms.wishlist.id}}
-            <input type="submit" class="button" value="{{lang 'core.account.wishlists.save'}}">
-            <input type="hidden" name="wishlistid" value="{{forms.wishlist.id}}">
-          {{else}}
-            <input type="submit" class="button" value="{{lang 'core.account.wishlists.create'}}">
-          {{/if}}
-        </div>
-
-      </form>
-    </div>
+    </form>
   </div>
-</section>
+{{/partial}}
+
+{{> core/account/_private/layout nav='wishlists' class='add-wishlist'}}

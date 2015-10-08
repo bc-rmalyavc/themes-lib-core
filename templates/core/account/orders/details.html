@@ -1,16 +1,9 @@
-<section class="account-wrapper">
-  {{#if header_top}}
-    <h1 class="account-heading">{{lang 'core.account.orders.details.heading' number=order.id}}</h1>
-  {{/if}}
-  {{> core/account/_private/navigation account_page='orders'}}
+{{#partial 'account-heading'}}
+  {{lang 'core.account.orders.details.heading' number=order.id}}
+{{/partial}}
 
-  <div class="account-body account-order">
-    {{#if header_top}}
-      <h2 class="account-sub-heading">{{lang 'core.account.orders.details.heading' number=order.id}}</h2>
-    {{else}}
-      <h1 class="account-heading">{{lang 'core.account.orders.details.heading' number=order.id}}</h1>
-    {{/if}}
-
+{{#partial 'account-content'}}
+  <div class="account-order">
     <div class="account-order-details">
       <div class="account-order-details-total">{{lang 'core.account.orders.list.order_total'}}: {{money order.total.value}}</div>
       <div class="account-order-details-date">{{lang 'core.account.orders.list.order_date'}}: {{order.date}}</div>
@@ -188,5 +181,6 @@
       {{> core/account/_private/order-contents order}}
     </div>
   </div>
+{{/partial}}
 
-</section>
+{{> core/account/_private/layout nav='orders' class='orders-details'}}

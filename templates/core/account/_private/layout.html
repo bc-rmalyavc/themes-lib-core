@@ -1,0 +1,32 @@
+{{!
+  A wrapper for all account pages.
+
+  @block account-heading
+         The page's title.
+
+  @block account-content
+         The content for the main part of the layout.
+
+  @param nav string
+         The nav element to set as active. See navigation.html
+
+  @param header_top bool
+         If true, show page title at the top, above the nav.
+}}
+<section class="account-wrapper account-page-{{class}}">
+  {{#if header_top}}
+    <h1 class="account-heading">{{#block 'account-heading'}}{{/block}}</h1>
+  {{/if}}
+
+  {{> core/account/_private/navigation account_page=nav}}
+
+  <div class="account-body">
+    {{#unless header_top}}
+      <h1 class="account-heading">{{#block 'account-heading'}}{{/block}}</h1>
+    {{/unless}}
+
+    <div class="account-content">
+      {{#block 'account-content'}}{{/block}}
+    </div>
+  </div>
+</section>

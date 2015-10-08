@@ -1,15 +1,10 @@
-<section class="account-wrapper account-orders-all">
-  {{#if header_top}}
-    <h1 class="account-heading">{{lang 'core.account.orders.heading'}}</h1>
-  {{/if}}
-  {{> core/account/_private/navigation account_page='orders'}}
+{{#partial 'account-heading'}}
+  {{lang 'core.account.orders.heading'}}
+{{/partial}}
 
-  <div class="account-body">
-    {{#unless header_top}}
-      <h1 class="account-heading">{{lang 'core.account.orders.heading'}}</h1>
-    {{/unless}}
-    {{> core/account/_private/orders-list orders=customer.orders}}
-    {{> core/pagination pagination.orders}}
-  </div>
+{{#partial 'account-content'}}
+  {{> core/account/_private/orders-list orders=customer.orders}}
+  {{> core/pagination pagination.orders}}
+{{/partial}}
 
-</section>
+{{> core/account/_private/layout nav='orders' class='orders-all'}}

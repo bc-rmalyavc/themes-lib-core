@@ -1,14 +1,9 @@
-<section class="account-wrapper account-wishlists-list">
-  {{#if header_top}}
-    <h1 class="account-heading">{{lang 'core.account.wishlists.heading'}}</h1>
-  {{/if}}
-  {{> core/account/_private/navigation account_page='wishlists'}}
+{{#partial 'account-heading'}}
+  {{lang 'core.account.wishlists.heading'}}
+{{/partial}}
 
-  <div class="account-body">
-    {{#unless header_top}}
-      <h1 class="account-heading">{{lang 'core.account.wishlists.heading'}}</h1>
-    {{/unless}}
-    {{> core/account/_private/wishlist-list}}
-  </div>
+{{#partial 'account-content'}}
+  {{> core/account/_private/wishlist-list}}
+{{/partial}}
 
-</section>
+{{> core/account/_private/layout nav='wishlists' class='wishlists-list'}}

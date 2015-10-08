@@ -1,27 +1,21 @@
-<section class="account-wrapper account-wishlist-details">
-  {{#if header_top}}
-    <h1 class="account-heading">{{lang 'core.account.wishlists.view_heading' name=wishlist.name}}</h1>
+{{#partial 'account-heading'}}
+  {{lang 'core.account.wishlists.view_heading' name=wishlist.name}}
+{{/partial}}
+
+{{#partial 'account-content'}}
+  {{#if wishlist.is_public}}
+    <h2 class="account-sub-heading">{{lang 'core.account.wishlists.share_intro'}}</h2>
+    <div class="account-share-wishlist-url">
+      <input class="form-input" value="{{settings.base_url}}{{wishlist.share_url}}">
+    </div>
   {{/if}}
-  {{> core/account/_private/navigation account_page='wishlists'}}
 
-  <div class="account-body">
-    {{#unless header_top}}
-      <h1 class="account-heading">{{lang 'core.account.wishlists.view_heading' name=wishlist.name}}</h1>
-    {{/unless}}
+  <section class="account-wishlist {{products_per_row_class}}">
+    <h2 class="account-sub-heading">{{lang 'core.account.wishlists.wishlist_contents'}}</h2>
+    {{#each wishlist.items}}
+      {{> core/products/product-item show_remove=true remove_url=remove_url}}
+    {{/each}}
+  </section>
+{{/partial}}
 
-    {{#if wishlist.is_public}}
-      <h2 class="account-sub-heading">{{lang 'core.account.wishlists.share_intro'}}</h2>
-      <div class="account-share-wishlist-url">
-        <input class="form-input" value="{{settings.base_url}}{{wishlist.share_url}}">
-      </div>
-    {{/if}}
-
-    <section class="account-wishlist {{products_per_row_class}}">
-      <h2 class="account-sub-heading">{{lang 'core.account.wishlists.wishlist_contents'}}</h2>
-      {{#each wishlist.items}}
-        {{> core/products/product-item show_remove=true remove_url=remove_url}}
-      {{/each}}
-    </section>
-  </div>
-
-</section>
+{{> core/account/_private/layout nav='wishlists' class='wishlist-details'}}

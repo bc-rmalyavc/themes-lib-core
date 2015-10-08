@@ -1,26 +1,20 @@
-<section class="account-wrapper account-recent-items">
-  {{#if header_top}}
-    <h1 class="account-heading">{{lang 'core.account.recent_items.heading'}}</h1>
+{{#partial 'account-heading'}}
+  {{lang 'core.account.recent_items.heading'}}
+{{/partial}}
+
+{{#partial 'account-content'}}
+  {{#if customer.recently_viewed_products.items}}
+    <form class="form" action="{{customer.recently_viewed_products.compare_url}}" method="post">
+      <div class="account-recently-viewed {{products_per_row_class}}">
+        {{!-- TODO: Limit to 3 products? --}}
+        {{#each customer.recently_viewed_products.items}}
+          {{> core/products/product-item}}
+        {{/each}}
+      </div>
+    </form>
+  {{else}}
+    <p>{{lang 'core.account.recent_items.empty'}}</p>
   {{/if}}
-  {{> core/account/_private/navigation account_page='recent_items'}}
+{{/partial}}
 
-  <div class="account-body">
-    {{#unless header_top}}
-      <h1 class="account-heading">{{lang 'core.account.recent_items.heading'}}</h1>
-    {{/unless}}
-
-    {{#if customer.recently_viewed_products.items}}
-      <form class="form" action="{{customer.recently_viewed_products.compare_url}}" method="post">
-        <div class="account-recently-viewed {{products_per_row_class}}">
-          {{!-- TODO: Limit to 3 products? --}}
-          {{#each customer.recently_viewed_products.items}}
-            {{> core/products/product-item}}
-          {{/each}}
-        </div>
-      </form>
-    {{else}}
-      <p>{{lang 'core.account.recent_items.empty'}}</p>
-    {{/if}}
-  </div>
-
-</section>
+{{> core/account/_private/layout nav='recent_items' class='recent-items'}}

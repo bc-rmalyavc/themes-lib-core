@@ -1,108 +1,102 @@
-<section class="account-wrapper account-add-return">
-  {{#if header_top}}
-    <h1 class="account-heading">{{lang 'core.account.returns.from_order' id=forms.return.order_id}}</h1>
-  {{/if}}
-  {{> core/account/_private/navigation account_page='returns'}}
+{{#partial 'account-heading'}}
+  {{lang 'core.account.returns.from_order' id=forms.return.order_id}}
+{{/partial}}
 
-  <div class="account-body">
-    {{#unless header_top}}
-      <h1 class="account-heading">{{lang 'core.account.returns.from_order' id=forms.return.order_id}}</h1>
-    {{/unless}}
+{{#partial 'account-content'}}
+  {{#if forms.return.order_products.length}}
 
-    {{#if forms.return.order_products.length}}
+    <form action="{{urls.account.orders.save_new_return}}" class="form" method="post">
+      <input type="hidden" name="order_id" value="{{forms.return.order_id}}">
 
-      <form action="{{urls.account.orders.save_new_return}}" class="form" method="post">
-        <input type="hidden" name="order_id" value="{{forms.return.order_id}}">
+      <ul class="account-list account-new-return">
 
-        <ul class="account-list account-new-return">
-
-          <div class="account-list-header">
-            <div class="account-list-header-item item">
-              <span class="account-list-header-label">{{lang 'core.account.orders.return.order_item'}}</span>
-            </div>
-
-            <div class="account-list-header-item price">
-              <span class="account-list-header-label">{{lang 'core.account.orders.return.item_price'}}</span>
-            </div>
-
-            <div class="account-list-header-item quantity">
-              <span class="account-list-header-label">{{lang 'core.account.orders.return.quantity'}}</span>
-            </div>
+        <div class="account-list-header">
+          <div class="account-list-header-item item">
+            <span class="account-list-header-label">{{lang 'core.account.orders.return.order_item'}}</span>
           </div>
 
-          {{#each forms.return.order_products}}
-            <li class="account-list-item">
-              <div class="account-list-item-details">
+          <div class="account-list-header-item price">
+            <span class="account-list-header-label">{{lang 'core.account.orders.return.item_price'}}</span>
+          </div>
 
-                <div class="account-list-item-cell item" data-title="{{lang 'core.account.orders.return.order_item'}}">
-                  <span>{{name}}</span>
-                </div>
+          <div class="account-list-header-item quantity">
+            <span class="account-list-header-label">{{lang 'core.account.orders.return.quantity'}}</span>
+          </div>
+        </div>
 
-                <div class="account-list-item-cell price" data-title="{{lang 'core.account.orders.return.item_price'}}">
-                  <span>{{price.formatted}}</span>
-                </div>
+        {{#each forms.return.order_products}}
+          <li class="account-list-item">
+            <div class="account-list-item-details">
 
-                <div class="account-list-item-cell message {{#unless unread}}is-read{{/unless}}" data-title="{{lang 'core.account.orders.return.quantity'}}">
-                  <span>
-                    <select class="form-select" name="return_qty[{{id}}]">
-                      {{#enumerate 0 quantity}}
-                        <option value="{{this}}">{{this}}</option>
-                      {{/enumerate}}
-                    </select>
-                  </span>
-                </div>
-
+              <div class="account-list-item-cell item" data-title="{{lang 'core.account.orders.return.order_item'}}">
+                <span>{{name}}</span>
               </div>
-            </li>
-          {{/each}}
 
-        </ul>
+              <div class="account-list-item-cell price" data-title="{{lang 'core.account.orders.return.item_price'}}">
+                <span>{{price.formatted}}</span>
+              </div>
 
-        <h2 class="account-sub-heading">{{lang 'core.account.orders.return.return_details'}}</h2>
+              <div class="account-list-item-cell message {{#unless unread}}is-read{{/unless}}" data-title="{{lang 'core.account.orders.return.quantity'}}">
+                <span>
+                  <select class="form-select" name="return_qty[{{id}}]">
+                    {{#enumerate 0 quantity}}
+                      <option value="{{this}}">{{this}}</option>
+                    {{/enumerate}}
+                  </select>
+                </span>
+              </div>
 
-        <div class="form-field form-required">
-          <label for="return_reason" class="form-label">
-            <span class="form-label-text" data-required="{{lang 'core.account.common.required'}}">
-              {{lang 'core.account.orders.return.reason'}}
-            </span>
-            <select name="return_reason" id="return_reason" class="form-select">
-              {{#each forms.return.reasons}}
-                <option value="{{this}}">{{this}}</option>
-              {{/each}}
-            </select>
-          </label>
-        </div>
+            </div>
+          </li>
+        {{/each}}
 
-        <div class="form-field">
-          <label for="return_action" class="form-label">
-            <span class="form-label-text">{{lang 'core.account.orders.return.action'}}</span>
-            <select name="return_action" id="return_action" class="form-select">
-              {{#each forms.return.actions}}
-                <option value="{{this}}">{{this}}</option>
-              {{/each}}
-            </select>
-          </label>
-        </div>
+      </ul>
 
-        <div class="form-field">
-          <label for="return_comments" class="form-label">
-            <span class="form-label-text">{{lang 'core.account.orders.return.comments'}}</span>
-            <textarea class="form-input" rows="8" name="return_comments" id="return_comments"></textarea>
-          </label>
-        </div>
+      <h2 class="account-sub-heading">{{lang 'core.account.orders.return.return_details'}}</h2>
 
-        <div class="form-actions">
-          <input class="button" type="submit" value="{{lang 'core.account.orders.return.request_return'}}" />
-        </div>
+      <div class="form-field form-required">
+        <label for="return_reason" class="form-label">
+          <span class="form-label-text" data-required="{{lang 'core.account.common.required'}}">
+            {{lang 'core.account.orders.return.reason'}}
+          </span>
+          <select name="return_reason" id="return_reason" class="form-select">
+            {{#each forms.return.reasons}}
+              <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+        </label>
+      </div>
 
-      </form>
+      <div class="form-field">
+        <label for="return_action" class="form-label">
+          <span class="form-label-text">{{lang 'core.account.orders.return.action'}}</span>
+          <select name="return_action" id="return_action" class="form-select">
+            {{#each forms.return.actions}}
+              <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+        </label>
+      </div>
 
-    {{else}}
+      <div class="form-field">
+        <label for="return_comments" class="form-label">
+          <span class="form-label-text">{{lang 'core.account.orders.return.comments'}}</span>
+          <textarea class="form-input" rows="8" name="return_comments" id="return_comments"></textarea>
+        </label>
+      </div>
 
-      <p class="account-no-returns">{{lang 'core.account.orders.return.already_returned'}}</p>
-      <a href="{{urls.account.orders.all}}" class="button">{{lang 'core.account.orders.return.back_button'}}</a>
+      <div class="form-actions">
+        <input class="button" type="submit" value="{{lang 'core.account.orders.return.request_return'}}" />
+      </div>
 
-    {{/if}}
+    </form>
 
-  </div>
-</section>
+  {{else}}
+
+    <p class="account-no-returns">{{lang 'core.account.orders.return.already_returned'}}</p>
+    <a href="{{urls.account.orders.all}}" class="button">{{lang 'core.account.orders.return.back_button'}}</a>
+
+  {{/if}}
+{{/partial}}
+
+{{> core/account/_private/layout nav='returns' class='add-return'}}
