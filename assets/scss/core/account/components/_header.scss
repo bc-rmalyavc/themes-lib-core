@@ -1,0 +1,18 @@
+.account-header {
+  display: table;
+  width: 100%;
+}
+
+.account-heading,
+.account-toolbar {
+  display: table-cell;
+  vertical-align: baseline;
+}
+
+.account-toolbar {
+  text-align: right;
+}
+
+.account-tool {
+  cursor: pointer;
+}

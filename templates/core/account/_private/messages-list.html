@@ -1,47 +1,19 @@
-<ul class="account-list account-messages">
-
-  <li class="account-list-header">
-    <div class="account-list-header-item date">
-      <span class="account-list-header-label">{{lang 'core.account.messages.list.message_date'}}</span>
-    </div>
-
-    <div class="account-list-header-item subject">
-      <span class="account-list-header-label">{{lang 'core.account.messages.list.message_subject'}}</span>
-    </div>
-
-    <div class="account-list-header-item message">
-      <span class="account-list-header-label">{{lang 'core.account.messages.list.message_name'}}</span>
-    </div>
-  </li>
-
-  {{#if messages}}
+{{#if messages}}
+  <table class="account-messages-table table-clean">
     {{#each messages}}
-      <li class="account-list-item">
-        <div class="account-list-item-details">
-          <div class="account-list-item-cell date" data-title="{{lang 'core.account.messages.list.message_date'}}">
-            <span>{{date}}</span>
-          </div>
-
-          <div class="account-list-item-cell subject" data-title="{{lang 'core.account.messages.list.message_subject'}}">
-            <span>{{subject}}</span>
-          </div>
-
-          <div class="account-list-item-cell message {{#unless unread}}is-read{{/unless}}" data-title="{{lang 'core.account.messages.list.message_name'}}">
-            <span>
-              {{#if is_reply}}
-                {{lang 'core.account.messages.merchant_said' store_name=../../settings.store_name}}
-              {{else}}
-                {{lang 'core.account.messages.customer_said'}}
-              {{/if}}
-              {{message}}
-            </span>
-          </div>
-        </div>
-      </li>
+      <tr class="account-messages-table-message {{#if is_reply}}account-message-is-reply{{/if}} {{#unless unread}}account-message-is-read{{/unless}}">
+        <td>
+          <h2 class="account-message-subject">{{subject}}</h2>
+          <div class="account-message-content">{{message}}</div>
+        </td>
+        <td class="account-messages-table-date">
+          <time class="account-message-date">{{date}}</time>
+        </td>
+      </tr>
     {{/each}}
+  </table>
 
-  {{else}}
-    <li class="account-list-item account-empty">{{lang 'core.account.messages.no_messages'}}</li>
-  {{/if}}
+{{else}}
+  <div class="account-messages-empty account-empty">{{lang 'core.account.messages.no_messages'}}</li>
 
-</ul>
+{{/if}}

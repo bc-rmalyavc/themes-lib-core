@@ -1,30 +1,22 @@
 .account-wrapper {
-  .form-label {
+  .form-label-text {
     display: inline-block;
     width: 100%;
     margin-bottom: 5px;
     color: $account-accent-color;
   }
 
-  // scss-lint:disable QualifyingElement
-  input[type='text'],
-  input[type='password'] {
-    // scss-lint:disable ImportantRule
-    width: 100% !important;
-  }
-
-  textarea {
-    width: 100%;
-    min-height: 175px;
-  }
-
-  select {
-    width: 100%;
-  }
-
   .form-field {
+    margin-bottom: $account-gutter-inner;
+  }
+
+  .form-input,
+  .form-select {
     width: 100%;
-    margin-bottom: 20px;
+
+    &.account-form-half {
+      width: 50%;
+    }
   }
 
   .form-actions {
@@ -43,14 +35,14 @@
     width: 50%;
     padding-right: $account-gutter / 2;
     padding-left: $account-gutter / 2;
-    vertical-align: top;
     font-size: $account-font-size;
+    vertical-align: top;
   }
 
   .form-actions {
-    margin-top: 30px;
     padding-right: $account-gutter / 2;
     padding-left: $account-gutter / 2;
+    margin-top: 30px;
   }
 }
 

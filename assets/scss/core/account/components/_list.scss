@@ -1,3 +1,15 @@
+.account-wrapper {
+  table {
+    margin-top: $account-gutter-inner;
+    margin-bottom: $account-gutter-inner;
+  }
+
+  td,
+  th {
+    padding: $account-gutter-inner;
+  }
+}
+
 .account-list {
   list-style: none;
 }
@@ -70,9 +82,9 @@
   }
 
   &:before {
-    content: attr(data-title);
     display: none;
     padding-bottom: 5px;
+    content: attr(data-title);
   }
 }
 

@@ -230,7 +230,6 @@
         "heading": "Messages",
         "customer_said": "You said:",
         "merchant_said": "{store_name} said:",
-        "send_message": "Send a Message",
         "no_messages": "You have no messages at this time.",
         "list": {
           "message_date": "Date",
@@ -243,6 +242,7 @@
         "order_display": "Order #{id} \/ {date} \/ {total}",
         "subject": "Subject",
         "message": "Message",
+        "show_form": "Send Message",
         "submit": "Send Message",
         "clear": "Clear"
       },

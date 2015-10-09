@@ -22,10 +22,6 @@
   font-size: $account-font-size;
 }
 
-.account-order-invoice {
-  margin-top: 20px;
-}
-
 // Listing
 
 .account-order-details {
@@ -48,4 +44,5 @@
 
 .account-order-invoice {
   display: inline-block;
+  margin-top: 20px;
 }

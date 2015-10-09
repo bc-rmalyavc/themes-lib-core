@@ -1,4 +1,4 @@
-// Variables
+// Default Variables
 
 $account-light-color: #fff !default;
 $account-accent-color: #5dc5e3 !default;
@@ -6,6 +6,22 @@ $account-border-color: #e4e4e4 !default;
 $account-gutter: 30px !default;
 $account-font-size: 15px !default;
 $account-border-radius: 0 !default;
+$account-text-color: #5f5f5f !default;
+
+$account-card-background-color: #f5f5f5 !default;
+
+$account-alert-text-color: #666 !default;
+$account-alert-info-color: #eee !default;
+$account-alert-error-color: #fdd !default;
+$account-alert-success-color: #d5ffd8 !default;
+
+// Internal Variables
+
+$account-font-size-heading: $account-font-size + 2;
+
+$account-text-color-light: lighten($account-text-color,20%);
+
+$account-gutter-inner: $account-gutter / 2;
 
 $auth-gutter: $account-gutter;
 $auth-font-size: $account-font-size;
@@ -15,8 +31,12 @@ $auth-font-size: $account-font-size;
 @import "account/components/layout";
 @import "account/components/forms";
 @import "account/components/list";
+@import "account/components/header";
 @import "account/components/navigation";
 @import "account/components/pagination";
+@import "account/components/card";
+@import "account/components/alert";
+@import "account/components/toggle";
 
 @import "account/pages/address";
 @import "account/pages/edit-account";
@@ -24,5 +44,5 @@ $auth-font-size: $account-font-size;
 @import "account/pages/recent-items";
 @import "account/pages/returns";
 @import "account/pages/wishlists";
-
+@import "account/pages/messages";
 @import "account/pages/auth";

@@ -14,16 +14,12 @@
          If true, show page title at the top, above the nav.
 }}
 <section class="account-wrapper account-page-{{class}}">
-  {{#if header_top}}
-    <h1 class="account-heading">{{#block 'account-heading'}}{{/block}}</h1>
-  {{/if}}
+  {{#if header_top}}{{> core/account/_private/layout-heading}}{{/if}}
 
   {{> core/account/_private/navigation account_page=nav}}
 
   <div class="account-body">
-    {{#unless header_top}}
-      <h1 class="account-heading">{{#block 'account-heading'}}{{/block}}</h1>
-    {{/unless}}
+    {{#unless header_top}}{{> core/account/_private/layout-heading}}{{/unless}}
 
     <div class="account-content">
       {{#block 'account-content'}}{{/block}}
