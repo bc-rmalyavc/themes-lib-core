@@ -20,7 +20,7 @@ echo 'theme ', strlen($theme_json), ' ', $theme_path, PHP_EOL;
 
 // Update theme lang
 $theme_lang->core = $src_lang->core;
-$new_json = json_encode($theme_lang, JSON_PRETTY_PRINT);
+$new_json = json_encode($theme_lang, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 $new_json = preg_replace('/(^|\G) {4}/m', '  ', $new_json); // 4-to-2 indent
 file_put_contents($theme_path, $new_json);
 

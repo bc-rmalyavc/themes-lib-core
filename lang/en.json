@@ -89,7 +89,7 @@
           "payment_method": "Payment Method",
           "payment_method_card": "{payment_method} ending in {digits}",
           "contact_us": "Contact Us",
-          "comments": "Order Instructions\/Comments",
+          "comments": "Order Instructions/Comments",
           "contact_text": "If you have any questions or concerns about your order don\u2019t hesitate to contact us!",
           "download_items": "Download Items",
           "store_credit": "Store credit",
@@ -239,7 +239,7 @@
       },
       "inbox": {
         "order": "Order",
-        "order_display": "Order #{id} \/ {date} \/ {total}",
+        "order_display": "Order #{id} / {date} / {total}",
         "subject": "Subject",
         "message": "Message",
         "show_form": "Send Message",
@@ -321,7 +321,7 @@
         "forms": {
           "email_address": "Email Address",
           "required": "Required",
-          "state_error": "There was a problem retrieving states\/provinces"
+          "state_error": "There was a problem retrieving states/provinces"
         },
         "login": {
           "title": "Account",
