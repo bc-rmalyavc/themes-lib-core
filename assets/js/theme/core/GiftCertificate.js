@@ -1,4 +1,4 @@
-import PageManager from '../../page-manager';
+import PageManager from '../../PageManager';
 import $ from 'jquery';
 
 export default class GiftCertificate extends PageManager {
@@ -22,4 +22,3 @@ export default class GiftCertificate extends PageManager {
     });
   }
 }
-

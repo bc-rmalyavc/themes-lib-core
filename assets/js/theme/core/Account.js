@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import PageManager from '../../page-manager';
-import initAlertDismissable from './alert-dismissable';
+import PageManager from '../../PageManager';
+import initAlertDismissable from './alertDismissable';
 
 export default class Account extends PageManager {
   constructor() {
@@ -9,7 +9,7 @@ export default class Account extends PageManager {
   }
 
   _bindEvents() {
-    initAlertDismissable();
+    alertDismissable();
 
     const $body = $(document.body);
 
