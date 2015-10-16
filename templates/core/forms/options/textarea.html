@@ -1,14 +1,15 @@
 
-<div class="form-field form-field-customizations-textarea{{#if required}} form-required{{/if}}">
+<div class="form-field form-field-options form-field-textarea{{#if required}} form-required{{/if}}">
   <label class="form-label">
-    <div class="form-field-title product-customization-title">
+    <div class="form-field-title">
       {{display_name}}:
       {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
     </div>
     <div class="form-field-control">
-      <textarea class="form-input"
-        id="product-fields-{{id}}"
-        name="ProductFields[{{this.id}}]"
+      <textarea
+        class="form-input"
+        id="attribute-{{id}}"
+        name="attribute[{{id}}]"
         rows="4"
         placeholder="{{prefill}}">
       </textarea>
