@@ -1,0 +1,18 @@
+
+<div class="form-field form-field-options-textarea{{#if required}} form-required{{/if}}">
+  <label class="form-label">
+    <div class="form-field-title product-option-title">
+      {{display_name}}:
+      {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
+    </div>
+    <div class="form-field-control">
+      <textarea
+        class="form-input"
+        id="attribute-{{id}}"
+        name="attribute[{{id}}]"
+        rows="4"
+        placeholder="{{prefill}}">
+      </textarea>
+    </div>
+  </label>
+</div>

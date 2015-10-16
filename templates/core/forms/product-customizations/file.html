@@ -1,0 +1,12 @@
+
+<div class="form-field form-field-customizations-input-file{{#if required}} form-required{{/if}}">
+  <label class="form-label">
+    <div class="form-field-title product-customization-title">
+      {{display_name}}
+      {{#if required}}<span class="required">{{lang 'common.required'}}</span>{{/if}}
+    </div>
+    <div class="form-field-control">
+      <input class="form-input form-file" id="product-fields-{{id}}" name="ProductFields[{{this.id}}]" type="file">
+    </div>
+  </label>
+</div>
