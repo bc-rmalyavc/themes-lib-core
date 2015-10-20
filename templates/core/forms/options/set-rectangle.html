@@ -1,5 +1,5 @@
 
-<div class="form-field form-field-options form-field-set-rectangle{{#if required}} form-required{{/if}}">
+<div class="form-field form-field-options form-field-rectangle{{#if required}} form-required{{/if}}">
   <div class="form-field-title">
     {{display_name}}
     {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
@@ -7,12 +7,14 @@
   <div class="form-field-control">
     {{#each values}}
       <label class="form-label rectangle">
-        <input class="form-input form-rectangle"
+        <input
+          class="form-input form-rectangle"
           name="attribute[{{../id}}]"
           id="attribute-{{id}}"
           type="radio"
           value="{{id}}"
-          {{#if selected}}checked{{/if}}>
+          {{#if selected}}checked{{/if}}
+          {{#if ../required}}required{{/if}}>
         <span class="rectangle-text">{{label}}</span>
       </label>
     {{/each}}

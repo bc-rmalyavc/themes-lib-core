@@ -1,16 +1,22 @@
 
 <div class="form-field form-field-customizations form-field-select{{#if required}} form-required{{/if}}">
   <label class="form-label">
-    <div class="form-field-title">
+    <span class="form-field-title">
       {{display_name}}
       {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
-    </div>
-    <div class="form-field-control">
-      <select class="form-input input-select" id="product-fields-{{id}}" name="ProductFields[{{this.id}}]">
-        {{#each values}}
-          <option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>
-        {{/each}}
-      </select>
-    </div>
+    </span>
+    <span class="form-field-control">
+      <span class="form-select-wrapper">
+        <select
+          class="form-input input-select"
+          id="product-fields-{{id}}"
+          name="ProductFields[{{this.id}}]"
+          {{#if required}}required{{/if}}>
+          {{#each values}}
+            <option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+          {{/each}}
+        </select>
+      </span>
+    </span>
   </label>
 </div>

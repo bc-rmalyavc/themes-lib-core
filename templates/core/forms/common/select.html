@@ -1,20 +1,23 @@
 
 <div class="form-field form-field-common form-field-select {{#if required}} form-required{{/if}}" id="{{id}}">
   <label class="form-label">
-    <div class="form-field-title">
+    <span class="form-field-title">
       {{display_name}}
       {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
-    </div>
-    <div class="form-field-control">
-      <select
-        class="form-input form-select"
-        id="select-{{id}}"
-        name="{{name}}"
-        {{#if private_id}}data-field-type="{{private_id}}"{{/if}}>
-        {{#each values}}
-          <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
-        {{/each}}
-      </select>
-    </div>
+    </span>
+    <span class="form-field-control">
+      <span class="form-select-wrapper">
+        <select
+          class="form-input form-select"
+          id="select-{{id}}"
+          name="{{name}}"
+          {{#if private_id}}data-field-type="{{private_id}}"{{/if}}
+          {{#if required}}required{{/if}}>
+          {{#each values}}
+            <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+          {{/each}}
+        </select>
+      </span>
+    </span>
   </label>
 </div>

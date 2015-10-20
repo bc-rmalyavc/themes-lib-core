@@ -1,17 +1,18 @@
 
-<div class="form-field form-field-options form-field-input-text{{#if required}} form-required{{/if}}">
+<div class="form-field form-field-options form-field-text{{#if required}} form-required{{/if}}">
   <label class="form-label">
-    <div class="form-field-title">
+    <span class="form-field-title">
       {{display_name}}
       {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
-    </div>
-    <div class="form-field-control">
+    </span>
+    <span class="form-field-control">
       <input class="form-input"
         id="attribute-{{id}}"
         name="attribute[{{id}}]"
         type="text"
         placeholder="{{prefill}}"
-        value="">
-    </div>
+        value=""
+        {{#if required}}required{{/if}}>
+    </span>
   </label>
 </div>

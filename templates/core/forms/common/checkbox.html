@@ -15,7 +15,8 @@
             name="{{name}}"
             type="checkbox"
             value="{{value}}"
-            {{#if checked}}checked{{/if}}>
+            {{#if checked}}checked{{/if}}
+            {{#if required}}required{{/if}}>
           <span class="form-field-text">{{label}}</span>
         </label>
       {{/each}}

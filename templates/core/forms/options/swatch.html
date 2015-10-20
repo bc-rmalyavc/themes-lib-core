@@ -11,30 +11,32 @@
       <label class="swatch-wrap" data-swatch-value="{{label}}">
         <span class="sr-only">{{label}}</span>
 
-        <input class="form-input swatch-radio"
+        <input
+          class="form-input swatch-radio"
           id="attribute-{{id}}"
           type="radio"
           name="attribute[{{../id}}]"
           value="{{id}}"
-          {{#if selected}}checked{{/if}}>
+          {{#if selected}}checked{{/if}}
+          {{#if ../required}}required{{/if}}>
 
-        <div class="swatch {{#if data.[1]}}two-colors{{/if}}{{#if data.[2]}} three-colors{{/if}}">
+        <span class="swatch {{#if data.[1]}}two-colors{{/if}}{{#if data.[2]}} three-colors{{/if}}">
           {{#if pattern}}
-            <div class="swatch-color" style="background-image: url('{{pattern}}');"></div>
+            <span class="swatch-color" style="background-image: url('{{pattern}}');"></span>
           {{/if}}
 
           {{#if data.[0]}}
-            <div class="swatch-color" style="background-color: #{{data.[0]}}"></div>
+            <span class="swatch-color" style="background-color: #{{data.[0]}}"></span>
           {{/if}}
 
           {{#if data.[1]}}
-            <div class="swatch-color secondary" style="background-color: #{{data.[1]}}"></div>
+            <span class="swatch-color secondary" style="background-color: #{{data.[1]}}"></span>
           {{/if}}
 
           {{#if data.[2]}}
-            <div class="swatch-color tertiary" style="background-color: #{{data.[2]}}"></div>
+            <span class="swatch-color tertiary" style="background-color: #{{data.[2]}}"></span>
           {{/if}}
-        </div>
+        </span>
       </label>
     {{/each}}
   </div>

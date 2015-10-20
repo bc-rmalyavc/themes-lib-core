@@ -1,11 +1,11 @@
 
 <div class="form-field form-field-common form-field-text {{#if required}} form-required{{/if}}" id="{{id}}">
   <label class="form-label">
-    <div class="form-field-title">
+    <span class="form-field-title">
       {{label}}
       {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
-    </div>
-    <div class="form-field-control">
+    </span>
+    <span class="form-field-control">
       <input class="form-input"
         id="input-{{id}}"
         name="{{name}}"
@@ -13,7 +13,8 @@
         placeholder="{{prefill}}"
         {{#if value}}value="{{value}}"{{/if}}
         {{#if private_id}}data-field-type="{{private_id}}"{{/if}}
+        {{#if required}}required{{/if}}
         aria-required="{{required}}">
-    </div>
+    </span>
   </label>
 </div>

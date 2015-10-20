@@ -1,5 +1,5 @@
 
-<div class="form-field form-field-options form-field-input-checkbox{{#if required}} form-required{{/if}}">
+<div class="form-field form-field-options form-field-checkbox{{#if required}} form-required{{/if}}">
   <div class="form-field-title">
     {{display_name}}
     {{#if required}}<span class="required">{{lang 'common.required'}}</span>{{/if}}
@@ -7,13 +7,14 @@
 
   <div class="form-field-control">
     <label class="form-label {{class}}">
-      <input class="form-input form-checkbox"
+      <input
+        class="form-input form-checkbox"
         id="attribute-{{id}}"
         name="attribute[{{id}}]"
         type="checkbox"
         value="{{value}}"
         {{#if checked}}checked{{/if}}
-        {{#if required}}form-required{{/if}}>
+        {{#if required}}required{{/if}}>
       <span class="form-field-text">{{label}}</span>
     </label>
   </div>

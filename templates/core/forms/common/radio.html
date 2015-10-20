@@ -7,14 +7,15 @@
     </div>
     <div class="form-field-control">
       {{#each radios}}
-        <label class="form-label form-radio">
-          <input class="form-input"
+        <label class="form-label">
+          <input class="form-input form-radio"
             id="radio-{{../name}}-{{id}}"
             name="{{../name}}"
             type="radio"
             value="{{value}}"
             {{#if checked}}checked{{/if}}
             {{#if private_id}}data-field-type="{{private_id}}"{{/if}}
+            {{#if required}}required{{/if}}
             aria-required="{{required}}">
           <span class="form-field-text">{{label}}</span>
         </label>
