@@ -1,70 +1,67 @@
 
 <div class="form-field form-field-options form-field-product-list{{#if required }} form-required{{/if}}">
-  <label class="form-label">
+  <div class="form-field-title">
     {{display_name}}
-  </label>
+    {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
+  </div>
 
   <div class="form-field-control">
     {{#unless values.0.image}}
       {{!-- same as radio buttons if no image set --}}
-      <div class="form-inline">
-        {{#each values}}
-          <label class="form-label form-radio">
-            <input
-              class="form-input"
-              id="attribute_{{id}}_{{../id}}"
-              name="attribute[{{../id}}]"
-              type="radio"
-              value="{{id}}"
-              {{#if selected}}checked{{/if}}
-              {{#if ../required}}required{{/if}}>
-            <span class="form-field-text">{{label}}</span>
-          </label>
-        {{/each}}
-        <label class="form-label form-radio">
+      {{#each values}}
+        <label class="form-label">
           <input
-            class="form-input"
-            id="attribute_0_{{id}}"
-            name="attribute[{{id}}]"
-            type="radio" value="0"
-            {{#if defaultValue '==' 0}}checked{{/if}}
-            {{#if ../required}}required{{/if}}>
-          <span class="form-field-text">{{lang 'product.none'}}</span>
+            class="form-input form-radio"
+            name="attribute[{{../id}}]"
+            type="radio"
+            value="{{id}}"
+            {{#if selected}}checked{{/if}}
+            {{#if ../required}}required{{/if}}
+            aria-required="{{required}}">
+          <span class="form-field-text">{{label}}</span>
         </label>
-      </div>
+      {{/each}}
+      <label class="form-label">
+        <input
+          class="form-input form-radio"
+          name="attribute[{{id}}]"
+          type="radio" value="0"
+          {{#if defaultValue '==' 0}}checked{{/if}}
+          {{#if ../required}}required{{/if}}
+          aria-required="{{required}}">
+        <span class="form-field-text">{{lang 'product.none'}}</span>
+      </label>
     {{else}}
-      <ul class="product-picklist">
-        {{#each values}}
-          <li class="product-picklist-item">
-            <label class="product-picklist-label">
-              <input
-                class="product-picklist-radio"
-                id="attribute_{{id}}_{{../id}}"
-                name="attribute[{{../id}}]"
-                type="radio" value="{{id}}"
-                {{#if selected}}checked{{/if}}
-                {{#if ../required}}required{{/if}}>
-              <span class="product-picklist-image-wrap">
-                <img class="product-picklist-image" src="{{getImage image 'thumb'}}" alt="{{image.alt}}">
-              </span>
-              <span class="product-picklist-label-text form-field-text">{{label}}</span>
-            </label>
-          </li>
-        {{/each}}
-        <li class="product-picklist-item">
-          <label class="product-picklist-label picklist-none">
-            <input
-              class="product-picklist-radio"
-              id="attribute_0_{{id}}"
-              name="attribute[{{id}}]"
-              type="radio"
-              value="0"
-              {{#if defaultValue '==' 0}}checked{{/if}}
-              {{#if ../required}}required{{/if}}>
-            <span class="product-picklist-label-text form-field-text">{{lang 'product.none'}}</span>
-          </label>
-        </li>
-      </ul>
+      {{#each values}}
+        <label class="form-label product-picklist-item">
+          <input
+            class="form-input form-radio product-picklist-radio"
+            name="attribute[{{../id}}]"
+            type="radio" value="{{id}}"
+            {{#if selected}}checked{{/if}}
+            {{#if ../required}}required{{/if}}
+            aria-required="{{required}}">
+          <span class="product-picklist-item-body">
+            <span class="product-picklist-image-wrap">
+              <img class="product-picklist-image" src="{{getImage image 'thumb'}}" alt="{{image.alt}}">
+            </span>
+            <span class="product-picklist-label-text form-field-text">{{label}}</span>
+          </span>
+        </label>
+      {{/each}}
+      <label class="form-label product-picklist-item">
+        <input
+          class="form-input form-radio product-picklist-radio"
+          name="attribute[{{id}}]"
+          type="radio"
+          value="0"
+          {{#if defaultValue '==' 0}}checked{{/if}}
+          {{#if ../required}}required{{/if}}
+          aria-required="{{required}}">
+        <span class="product-picklist-item-body picklist-none">
+          <span class="product-picklist-label-text form-field-text">{{lang 'product.none'}}</span>
+        </span>
+      </label>
     {{/unless}}
   </div>
 </div>

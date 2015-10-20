@@ -18,7 +18,8 @@
           name="attribute[{{../id}}]"
           value="{{id}}"
           {{#if selected}}checked{{/if}}
-          {{#if ../required}}required{{/if}}>
+          {{#if ../required}}required{{/if}}
+          aria-required="{{required}}">
 
         <span class="swatch {{#if data.[1]}}two-colors{{/if}}{{#if data.[2]}} three-colors{{/if}}">
           {{#if pattern}}

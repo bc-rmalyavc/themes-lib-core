@@ -11,9 +11,10 @@
           class="form-input form-select"
           id="select-{{id}}"
           name="{{name}}"
-          {{#if private_id}}data-field-type="{{private_id}}"{{/if}}
-          {{#if required}}required{{/if}}>
-          {{#each values}}
+          {{#if required}}required{{/if}}
+          aria-required="{{required}}"
+          {{#if private_id}}data-field-type="{{private_id}}"{{/if}}>
+          {{#each options}}
             <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
           {{/each}}
         </select>

@@ -11,7 +11,8 @@
           class="form-input input-select"
           id="product-fields-{{id}}"
           name="ProductFields[{{this.id}}]"
-          {{#if required}}required{{/if}}>
+          {{#if required}}required{{/if}}
+          aria-required="{{required}}">
           {{#each values}}
             <option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>
           {{/each}}

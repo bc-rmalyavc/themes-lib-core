@@ -14,7 +14,8 @@
           type="radio"
           value="{{id}}"
           {{#if selected}}checked{{/if}}
-          {{#if ../required}}required{{/if}}>
+          {{#if ../required}}required{{/if}}
+          aria-required="{{required}}">
         <span class="rectangle-text">{{label}}</span>
       </label>
     {{/each}}

@@ -11,7 +11,8 @@
           class="form-input form-select"
           id="attribute-{{id}}"
           name="attribute[{{id}}]"
-          {{#if ../required}}required{{/if}}>
+          {{#if ../required}}required{{/if}}
+          aria-required="{{required}}">
           {{#each values}}
             <option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>
           {{/each}}

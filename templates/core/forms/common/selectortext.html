@@ -13,8 +13,8 @@
           name="{{name}}"
           type="text"
           value="{{value}}"
-          aria-required="{{required}}"
-          {{#if required}}required{{/if}}>
+          {{#if required}}required{{/if}}
+          aria-required="{{required}}">
       </span>
     </label>
   </noscript>
@@ -30,12 +30,12 @@
           class="form-input form-select"
           id="select-{{id}}"
           name="{{name}}"
-          {{# if required}}required{{/if}}
+          {{#if required}}required{{/if}}
           aria-required="{{required}}"
           data-label="{{label}}"
           {{#if private_id}}data-field-type="{{private_id}}"{{/if}}>
           {{#if options}}
-            <option value="">{{chooseprefix}}</option>
+            <option disabled>{{chooseprefix}}</option>
             {{#each options}}
               <option {{#if selected}} selected {{/if}}value="{{value}}">{{label}}</option>
             {{/each}}

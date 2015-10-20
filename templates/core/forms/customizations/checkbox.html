@@ -1,5 +1,5 @@
 
-<div class="form-field form-field-customizations form-field form-field-customizations form-field-checkbox{{#if required}} form-required{{/if}}">
+<div class="form-field form-field-customizations form-field-checkbox{{#if required}} form-required{{/if}}">
   <label class="form-label">
     <span class="form-field-control">
       <input class="form-input input-checkbox"
@@ -8,7 +8,8 @@
         type="checkbox"
         value="{{value}}"
         {{#if checked}}checked{{/if}}
-        {{#if required}}required{{/if}}>
+        {{#if required}}required{{/if}}
+        aria-required="{{required}}">
       <span class="form-field-text product-customization-text">{{display_name}}</span>
     </span>
   </label>
