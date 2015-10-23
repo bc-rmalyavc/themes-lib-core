@@ -8,11 +8,11 @@
 
     <form class="auth-create-account-form form" action="{{urls.auth.save_new_account}}" method="post" data-create-account-form data-validates>
       {{#each forms.create_account.account_fields}}
-        {{{dynamicComponent 'core/form/common'}}}
+        {{{dynamicComponent 'core/forms/common'}}}
       {{/each}}
 
       {{#each forms.create_account.address_fields}}
-        {{{dynamicComponent 'core/form/common'}}}
+        {{{dynamicComponent 'core/forms/common'}}}
       {{/each}}
 
       {{inject 'required' (lang 'core.account.auth.forms.required')}}
