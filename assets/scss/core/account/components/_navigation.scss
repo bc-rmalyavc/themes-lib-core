@@ -6,21 +6,25 @@
 }
 
 .account-nav-item {
-  line-height: 30px;
+  color: $account-link-color;
   border-top: 1px solid $account-border-color;
 
   &:first-child {
     border-top: 0;
   }
 
-  &.active {
-    padding: 15px;
+  &.is-active {
     color: $account-accent-color;
     border-left: 3px solid $account-accent-color;
   }
+}
 
-  > a {
-    display: block;
-    padding: 15px;
-  }
+.account-nav-link {
+  display: block;
+  padding: 15px;
+  color: inherit;
+}
+
+.account-nav-badge {
+  float: right;
 }
