@@ -1,0 +1,22 @@
+.account-page-created .account-content {
+  width: 100%;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+
+  p {
+    max-width: 500px;
+    margin-right: auto;
+    margin-bottom: $account-gutter;
+    margin-left: auto;
+    line-height: 1.5;
+  }
+
+  em {
+    font-family: monospace;
+    font-style: normal;
+    font-weight: bold;
+    background: $account-card-background-color;
+  }
+}

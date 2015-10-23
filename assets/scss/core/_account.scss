@@ -1,5 +1,6 @@
 // Default Variables
 
+$account-link-color: #888 !default;
 $account-light-color: #fff !default;
 $account-accent-color: #5dc5e3 !default;
 $account-border-color: #e4e4e4 !default;
@@ -30,6 +31,7 @@ $auth-font-size: $account-font-size;
 
 @import "account/components/layout";
 @import "account/components/forms";
+@import "account/components/button";
 @import "account/components/list";
 @import "account/components/header";
 @import "account/components/navigation";
@@ -45,4 +47,8 @@ $auth-font-size: $account-font-size;
 @import "account/pages/returns";
 @import "account/pages/wishlists";
 @import "account/pages/messages";
-@import "account/pages/auth";
+
+@import "account/pages/auth-login";
+@import "account/pages/auth-forgot";
+@import "account/pages/auth-create";
+@import "account/pages/auth-created";

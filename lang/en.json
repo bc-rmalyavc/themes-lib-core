@@ -316,49 +316,43 @@
         "price_without_tax": "{price} (Ex. {tax_label})",
         "weight": "Weight",
         "you_save": "(You save {amount})"
-      },
-      "auth": {
-        "forms": {
+      }
+    },
+
+    "auth": {
+      "login": {
+        "login_form": {
+          "heading": "Log in",
           "email_address": "Email Address",
-          "required": "Required",
-          "state_error": "There was a problem retrieving states/provinces"
-        },
-        "login": {
-          "title": "Account",
-          "log_in": "Log in",
           "password": "Password",
           "submit": "Submit",
-          "forgot_password": "Forgot Password",
-          "new_customer": {
-            "title": "New Customer",
-            "intro": "Create an account with us and you'll be able to:",
-            "fact1": "Check out faster",
-            "fact2": "Save multiple shipping addresses",
-            "fact3": "Access your order history",
-            "fact4": "Track new orders",
-            "fact5": "Save items to your wish list",
-            "create_account": "Create Account"
-          }
+          "forgot_password": "Forgot password?"
         },
-        "create_account": {
-          "title": "Create Account",
-          "submit": "Create Account",
-          "captcha": "Captcha"
-        },
-        "account_created": {
-          "title": "Account Created",
-          "message": "Your {store_name} account was created with the email address: {email}",
-          "continue": "Continue"
-        },
-        "forgot_password": {
-          "title": "Forgot Password",
-          "message": "Forget your password?",
-          "submit": "Reset Password",
-          "success_message": "Great! We've sent you an email with instructions on how to reset your password."
-        },
-        "new_password": {
-          "title": "New Password"
+        "create_form": {
+          "heading": "New Customer",
+          "intro": "Create an account with us and you'll be able to:",
+          "fact1": "Check out faster",
+          "fact2": "Save multiple shipping addresses",
+          "fact3": "Access your order history",
+          "fact4": "Track new orders",
+          "fact5": "Save items to your wish list",
+          "create_account": "Create Account"
         }
+      },
+      "create": {
+        "heading": "Create Account",
+        "submit": "Create Account"
+      },
+      "created": {
+        "heading": "Account Created",
+        "message": "Your <em>{store_name}</em> account was created with the email address: <em>{email}</em>",
+        "continue": "Continue"
+      },
+      "forgot": {
+        "heading": "Forgot Password",
+        "message": "Fill in your email below to request a new password. An email will be sent to the address below containing a link to verify your email address.",
+        "email_address": "Email Address",
+        "submit": "Reset Password"
       }
     }
   }

@@ -1,48 +1,40 @@
-<section class="account-wrapper account-auth">
-  <h1 class="account-heading">{{lang 'core.account.auth.login.title'}}</h1>
+{{#partial 'account-content'}}
+  {{#if forms.login.error}}
+    {{> core/alerts/alert-error forms.login.error}}
+  {{/if}}
 
-  <div class="account-body">
-    {{#if forms.login.error}}
-      {{> core/alerts/alert-error forms.login.error}}
-    {{/if}}
-    {{#if forms.login.success}}
-      {{> core/alerts/alert-success forms.login.success}}
-    {{/if}}
+  {{#if forms.login.success}}
+    {{> core/alerts/alert-success forms.login.success}}
+  {{/if}}
 
-    <div class="auth-customer-login">
-      <h2 class="auth-sub-heading">{{lang 'core.account.auth.login.log_in'}}</h2>
-      <form class="auth-login-form form" action="{{urls.auth.check_login}}" method="post" data-validates>
-        <div class="form-field">
-          <label class="form-label" for="login_email">
-            <span class="form-label-text">{{lang 'core.account.auth.forms.email_address'}}</span>
-            <input class="form-input" name="login_email" id="login_email" type="email" required>
-          </label>
-        </div>
-        <div class="form-field">
-          <label class="form-label" for="login_pass">
-            <span class="form-label-text">{{lang 'core.account.auth.login.password'}}</span>
-            <input class="form-input" id="login_pass" type="password" name="login_pass" required>
-          </label>
-        </div>
+  <div class="account-login-wrapper">
+    <div class="account-login">
+      <h2 class="account-sub-heading">{{lang 'core.auth.login.login_form.heading'}}</h2>
+
+      <form class="account-login-form form" action="{{urls.auth.check_login}}" method="post" data-validates>
+        {{> core/forms/common/email required=true label=(lang 'core.auth.login.login_form.email_address') id='login_email' name='login_email'}}
+        {{> core/forms/common/password required=true label=(lang 'core.auth.login.login_form.password') id='login_pass' name='login_pass'}}
+
         <div class="form-actions">
-          <input type="submit" class="button" value="{{lang 'core.account.auth.login.submit'}}">
-          <a class="auth-button-alt" href="{{urls.auth.forgot_password}}">{{lang 'core.account.auth.login.forgot_password'}}</a>
+          <input type="submit" class="button account-login-button" value="{{lang 'core.auth.login.login_form.submit'}}">
+          <a class="button account-button-secondary" href="{{urls.auth.forgot_password}}">{{lang 'core.auth.login.login_form.forgot_password'}}</a>
         </div>
       </form>
     </div>
 
-    <div class="auth-new-customer">
-      <h2 class="auth-sub-heading">{{lang 'core.account.auth.login.new_customer.title'}}</h2>
-      <p class="auth-new-customer-intro">{{lang 'core.account.auth.login.new_customer.intro'}}</p>
-      <ul class="auth-new-customer-facts">
-        <li>{{lang 'core.account.auth.login.new_customer.fact1'}}</li>
-        <li>{{lang 'core.account.auth.login.new_customer.fact2'}}</li>
-        <li>{{lang 'core.account.auth.login.new_customer.fact3'}}</li>
-        <li>{{lang 'core.account.auth.login.new_customer.fact4'}}</li>
-        <li>{{lang 'core.account.auth.login.new_customer.fact5'}}</li>
+    <div class="account-create">
+      <h2 class="account-sub-heading">{{lang 'core.auth.login.create_form.heading'}}</h2>
+      <p class="account-create-intro">{{lang 'core.auth.login.create_form.intro'}}</p>
+      <ul class="account-create-facts">
+        <li>{{lang 'core.auth.login.create_form.fact1'}}</li>
+        <li>{{lang 'core.auth.login.create_form.fact2'}}</li>
+        <li>{{lang 'core.auth.login.create_form.fact3'}}</li>
+        <li>{{lang 'core.auth.login.create_form.fact4'}}</li>
+        <li>{{lang 'core.auth.login.create_form.fact5'}}</li>
       </ul>
-      <a class="button" href="{{urls.auth.create_account}}">{{lang 'core.account.auth.login.new_customer.create_account'}}</a>
+      <a class="button" href="{{urls.auth.create_account}}">{{lang 'core.auth.login.create_form.create_account'}}</a>
     </div>
-
   </div>
-</section>
+{{/partial}}
+
+{{> core/account/_private/layout class='login' nav='hidden' header='hidden'}}

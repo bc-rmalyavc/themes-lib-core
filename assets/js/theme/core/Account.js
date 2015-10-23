@@ -9,7 +9,7 @@ export default class Account extends PageManager {
   }
 
   _bindEvents() {
-    alertDismissable();
+    initAlertDismissable();
 
     const $body = $(document.body);
 

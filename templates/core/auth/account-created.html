@@ -1,12 +1,9 @@
-<section class="account-wrapper account-auth">
-  <h1 class="account-heading">{{lang 'core.account.auth.account_created.title'}}</h1>
+{{#partial 'account-content'}}
+  <h1 class="account-sub-heading">{{lang 'core.auth.created.heading'}}</h1>
 
-  <div class="account-body">
-    <div class="auth-account-created">
-      <p>{{lang 'core.account.auth.account_created.message' store_name=settings.store_name email=customer.email}}</p>
-      <a class="button" href="{{urls.home}}">
-        {{lang 'core.account.auth.account_created.continue'}}
-      </a>
-    </div>
-  </div>
-</section>
+  <p>{{{lang 'core.auth.created.message' store_name=settings.store_name email=customer.email}}}</p>
+
+  <a class="button" href="{{urls.home}}">{{lang 'core.auth.created.continue'}}</a>
+{{/partial}}
+
+{{> core/account/_private/layout class='created' nav='hidden' header='hidden'}}
