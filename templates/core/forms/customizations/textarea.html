@@ -6,14 +6,14 @@
       {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
     </span>
     <span class="form-field-control">
-      <textarea class="form-input"
+      <textarea
+        class="form-input"
         id="product-fields-{{id}}"
         name="ProductFields[{{this.id}}]"
         rows="4"
         placeholder="{{prefill}}"
         {{#if required}}required{{/if}}
-        aria-required="{{required}}">
-      </textarea>
+        aria-required="{{required}}"></textarea>
     </span>
   </label>
 </div>
