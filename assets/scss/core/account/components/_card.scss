@@ -1,10 +1,14 @@
-.account-card {
-  padding: $account-gutter-inner;
-  margin: $account-gutter-inner 0;
+%account-card-style {
   background: $account-card-background-color;
-  border-radius: $account-border-radius;
 
   .form-input {
     background-color: $account-light-color;
   }
+}
+
+.account-card {
+  @extend %account-card-style;
+  padding: $account-gutter-inner;
+  margin: $account-gutter-inner 0;
+  border-radius: $account-border-radius;
 }

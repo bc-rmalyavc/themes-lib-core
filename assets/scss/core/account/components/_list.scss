@@ -1,153 +1,96 @@
-.account-wrapper {
-  table {
-    margin-top: $account-gutter-inner;
-    margin-bottom: $account-gutter-inner;
+// Layout
+// Each list item has 3 sections: thumbnail, body, and badge.
+
+.account-item {
+  position: relative;
+  display: table;
+  width: 100%;
+  border-bottom: 1px solid $account-border-color;
+
+  &:first-of-type {
+    border-top: 1px solid $account-border-color;
   }
-
-  td,
-  th {
-    padding: $account-gutter-inner;
-  }
 }
 
-.account-list {
-  list-style: none;
-}
-
-.account-list-header {
-  font-size: 0;
-  background-color: $account-light-color;
-}
-
-.account-list-header-item,
-.account-list-item-cell {
-  display: inline-block;
-  width: 15%;
-  padding: 10px;
-  font-size: $account-font-size;
+.account-item-thumbnail,
+.account-item-body,
+.account-item-badge {
+  display: table-cell;
+  padding-top: $account-gutter-inner;
+  padding-bottom: $account-gutter-inner;
   vertical-align: top;
-
-  .account-messages & {
-    width: 20%;
-
-    &.message {
-      width: 60%;
-    }
-  }
-
-  .account-shipments &,
-  .account-wishlists &,
-  .account-new-return & {
-    width: 25%;
-  }
-
-  .account-shipments &:last-child {
-    width: 50%;
-  }
 }
 
-.account-list-item {
-  border-top: 1px solid $account-border-color;
+// Link
+// Makes the entire item clickable
 
-  &:first-of-type,
-  &:nth-of-type(2) {
-    border: 0;
-  }
-
-  &.account-empty {
-    padding: 30px 10px;
-  }
+.account-item-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
 }
 
-.account-list-item-details {
-  font-size: 0;
-}
+// Thumbnail
 
-.account-list-item-cell {
-  padding: 30px 10px;
-
-  &.details-button {
-    @extend %clearfix;
-    width: 25%;
-    padding-right: 0;
-
-    > span {
-      float: right;
-      width: 75%;
-    }
-
-    a {
-      width: 100%;
-    }
-  }
-
-  &:before {
-    display: none;
-    padding-bottom: 5px;
-    content: attr(data-title);
-  }
-}
-
-.account-list-item-row {
-  display: none;
-  padding-top: 5px;
-  padding-bottom: 35px;
-
-  .visible &,
-  .account-order & {
-    display: block;
-  }
-}
-
-.account-list-item-row-inner {
-  margin-bottom: 30px;
-  font-size: 0;
-
-  &.last {
-    margin-bottom: 0;
-  }
-}
-
-.account-list-item-image,
-.account-list-item-info {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.account-list-item-image {
-  max-width: 100px + ($account-gutter / 2);
-  padding-right: $account-gutter / 2;
+.account-item-thumbnail {
+  min-width: 100px;
 
   img {
-    min-width: 100%;
-    min-height: 100%;
+    max-width: 100%;
+    height: auto;
   }
 }
 
-.account-list-item-info {
-  padding-right: $account-gutter / 2;
-  padding-left: $account-gutter / 2;
-  font-size: $account-font-size;
+// Body
+
+.account-item-body {
+  width: 100%;
+  padding-left: $account-gutter-inner;
 }
 
-.account-list-item-name {
-  padding-bottom: 5px;
-  font-size: $account-font-size;
-}
-
-.account-list-item-notes {
-  font-size: 0;
-}
-
-.account-list-item-note {
-  display: inline-block;
-  padding-right: $account-gutter;
-  margin-top: 20px;
+.account-item-title {
+  margin-top: 3px;
   font-size: $account-font-size;
 
-  > span {
-    display: block;
-    padding-bottom: 5px;
-    font-size: 12px;
+  a {
+    color: inherit;
   }
+}
+
+.account-item-description {
+  color: $account-text-color;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.account-item-details {
+  @extend %clearfix;
+  color: $account-text-color;
+  font-size: $account-font-size;
+}
+
+.account-item-detail {
+  float: left;
+  margin-top: $account-gutter-inner;
+  margin-right: $account-gutter;
+}
+
+.account-item-detail-title {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 3px;
+  color: mix($account-light-color,$account-text-color,60%);
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// Badge
+
+.account-item-badge {
+  white-space: nowrap;
 }

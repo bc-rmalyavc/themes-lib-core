@@ -73,77 +73,75 @@
         "settings": "Account Settings",
         "messages": "Messages"
       },
-      "orders": {
-        "heading": "Orders",
-        "return_items": "Return Items",
-        "summary": "Summary",
-        "empty": "You haven't placed any orders.",
-        "details": {
-          "heading": "Order #{number}",
-          "summary": "Summary",
-          "order_contents": "Order Contents",
-          "ship_to": "Ship To",
-          "bill_to": "Bill To",
-          "ship_bill_to": "Ship and Bill To",
-          "payment_details": "Payment Info",
-          "payment_method": "Payment Method",
-          "payment_method_card": "{payment_method} ending in {digits}",
-          "contact_us": "Contact Us",
-          "comments": "Order Instructions/Comments",
-          "contact_text": "If you have any questions or concerns about your order don\u2019t hesitate to contact us!",
-          "download_items": "Download Items",
-          "store_credit": "Store credit",
+
+      "receipt": {
+        "heading": "Order #{number}",
+        "billing_title": "Bill To",
+        "shipping_title": "Ship To",
+        "ship_to_multi_text": "Order will be shipped to multiple addresses.",
+        "actions": {
           "print_invoice": "Print Invoice",
-          "reorder": "Reorder",
-          "refunded_quantity": "{qty} refunded",
+          "reorder_items": "Reorder",
+          "return_items": "Request Return"
+        },
+        "items": {
+          "title": "Items",
+          "product_title": "{quantity} \u00D7 {name}",
+          "options": "Options",
+          "customizations": "Customizations",
           "gift_wrapping": "Gift wrapping",
-          "shipments": {
-            "title": "Shipments",
-            "date": "Date Shipped",
-            "method": "Shipping Method",
-            "link": "Tracking Link"
-          }
+          "refunded": "Refunded",
+          "reorder": "Reorder",
+          "download": "Download items"
         },
-        "return": {
-          "already_returned": "This order contains no products that can be returned. Have you already returned all of the items within this order?",
-          "back_button": "Go back",
-          "order_item": "Item",
-          "item_price": "Price",
-          "quantity": "Qty To Return",
-          "why": "Why are you returning these items?",
-          "reason": "Return Reason",
-          "action": "Return Action",
-          "comments": "Comments",
-          "return_details": "Details",
-          "request_return": "Submit Return Request"
-        },
-        "downloads": {
-          "heading": "Order #{number} Downloads",
-          "download_files_below": "Below you can download the files for",
-          "expired_content": "This file can not be downloaded because it has already expired."
-        },
-        "list": {
-          "order_item_name": "Item",
-          "order_number": "Order #",
-          "order_total": "Total",
-          "order_date": "Placed",
-          "order_update": "Updated",
-          "order_status": "Status",
-          "order_comment": "Comments",
-          "quantity": "Quantity",
-          "price": "Price",
-          "download": "Files",
-          "download_items": "Download Items",
-          "show_details": "Show Details",
-          "hide_details": "Hide Details"
-        },
-        "invoice": {
-          "order_details": "{store_name} Order #{order_id}",
-          "order_number": "Order ID: #{order_id}",
-          "order_date": "Order Date: {order_date}",
-          "order_contains": "Order Contains:"
+        "shipments": {
+          "title": "Shipments",
+          "date": "Date",
+          "provider": "Provider",
+          "link": "Tracking Number"
         }
       },
+
+      "return": {
+        "heading": "Return Items from Order #{id}",
+        "empty": "This order contains no products that can be returned. Have you already returned all of the items within this order?",
+        "order_item": "Item",
+        "item_price": "Price",
+        "quantity": "Qty To Return",
+        "reason": "Return Reason",
+        "action": "Return Action",
+        "comments": "Comments",
+        "request_return": "Submit Return Request"
+      },
+
+      "download": {
+        "heading": "{name} (#{number})",
+        "expired": "File has expired",
+        "days_remaining": "{days} days remaining",
+        "downloads_remaining": "{downloads} downloads remaining"
+      },
+
+      "invoice": {
+        "heading": "Order #{number}",
+        "billing_title": "Bill To",
+        "product_title": "Item",
+        "quantity_title": "Quantity",
+        "price_title": "Price",
+        "giftwrap": "Giftwrapping",
+        "quantity": "{quantity} \u00D7 {price}"
+      },
+
+      "orders": {
+        "heading_all": "Orders",
+        "heading_completed": "Completed Orders",
+        "items": {
+          "number": "Order #{number}",
+          "description": "{num_products, plural, one {1 item} other {# items}} totaling {cost}",
+          "placed": "Placed On",
+          "updated": "Updated On"
+        }
+      },
+
       "addresses": {
         "heading": "Addresses",
         "add_heading": "Add New Address",
@@ -182,27 +180,14 @@
       },
       "returns": {
         "heading": "Returns",
-        "new_return": "New Return",
-        "from_order": "Return Items from Order #{id}",
-        "date_requested": "Return Requested",
-        "successful_heading": "Return Request Submitted",
         "successful": "Your return was submitted successfully. We'll respond as soon as we can.",
-        "return": "Return to Orders",
-        "last_update": "Last Update",
-        "reason": "Reason for Return",
-        "action": "Return Action",
-        "comments": "Your Comments",
-        "empty": "You haven't made any returns.",
         "list": {
-          "return_number": "Return #",
-          "product_details": "Returning {num_products}",
-          "return_item_name": "Item",
-          "return_quantity": "Quantity",
-          "return_date": "Requested",
-          "return_action": "Action",
-          "return_status": "Status",
-          "show_details": "Show Details",
-          "hide_details": "Hide Details"
+          "title": "{quantity} \u00D7 {name}",
+          "number": "Return #{number}",
+          "date": "Requested",
+          "action": "Action",
+          "reason": "Reason",
+          "comments": "Comments"
         },
         "status": {
           "pending": "Pending",

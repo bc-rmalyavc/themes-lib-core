@@ -1,59 +1,59 @@
 {{#partial 'account-heading'}}
-  {{lang 'core.account.orders.downloads.heading' number=downloads.order_id}}
+  {{lang 'core.account.download.heading' number=downloads.order_id name=downloads.product_name}}
 {{/partial}}
 
 {{#partial 'account-content'}}
   <div class="account-downloads">
+    {{#if downloads.images}}
+      <div class="account-downloads-gallery">
+        <div class="account-downloads-gallery-image account-card">
+          <img src="{{getImage downloads.thumbnail}}" alt="{{downloads.images.thumbnail}}" data-account-download-image>
+        </div>
 
-    <figure class="account-downloads-image">
-      {{#if downloads.image}}
-        <img src="{{downloads.image}}" alt="{{downloads.product_name}}"/>
-        <figcaption class="account-downloads-image-caption">{{downloads.product_name}}</figcaption>
-      {{/if}}
-    </figure>
+        {{#if downloads.images.length '>' 1}}
+          <div class="account-downloads-gallery-thumbs">
+            {{#each downloads.images}}
+              <div class="account-downloads-gallery-thumb">
+                <img src="{{getImage this}}" alt="{{alt}}" data-account-download-thumb>
+              </div>
+            {{/each}}
+          </div>
+        {{/if}}
+      </div>
+    {{/if}}
 
-    <div class="account-downloads-contents">
-      {{lang 'core.account.orders.downloads.download_files_below'}} <strong>{{downloads.product_name}}</strong>
-      <ul class="account-downloads-list">
+    {{#each downloads.items}}
+      <div class="account-download {{#if expired}}is-expired{{/if}}">
+        <h1 class="account-download-title">
+          <span class="account-download-filename">
+            {{#unless expired}}<a class="account-download-link" href="{{url}}">{{/unless}}{{name}}{{#unless expired}}</a>{{/unless}}
+          </span>
+          <span class="account-download-filesize">{{size}}</span>
+        </h1>
 
-        {{#each downloads.items}}
-          <li>
-            <article class="account-downloads-list-item">
-              {{#if expired}}
+        {{#if description}}
+          <div class="account-download-description">{{description}}</div>
+        {{/if}}
 
-                <h5 class="download-name is-expired">
-                  {{name}} <span class="download-size">({{size}})</span>
-                </h5>
+        <div class="account-download-expiry">
+          {{#if expired}}
+            <span class="account-download-expiry-item">{{lang 'core.account.download.expired'}}</span>
+          {{else}}
+            {{#if days_remaining}}
+              <span class="account-download-expiry-item">
+                {{lang 'core.account.download.days_remaining' days=days_remaining}}
+              </span>
+            {{/if}}
 
-                <p class="download-meta">
-                  {{lang 'core.account.orders.downloads.expired_content'}}
-                </p>
-
-              {{else}}
-
-                <h5 class="download-name">
-                  <a href="{{url}}">{{name}}</a> <span class="download-size">({{size}})</span>
-                </h5>
-
-                {{#if description}}
-                  <p class="download-description">
-                    {{description}}
-                  </p>
-                {{/if}}
-
-                {{#if expiry_info}}
-                  <p class="download-meta">
-                    {{expiry_info}}
-                  </p>
-                {{/if}}
-
-              {{/if}}
-            </article>
-          </li>
-        {{/each}}
-
-      </ul>
-    </div>
+            {{#if downloads_remaining}}
+              <span class="account-download-expiry-item">
+                {{lang 'core.account.download.downloads_remaining' downloads=downloads_remaining}}
+              </span>
+            {{/if}}
+          {{/if}}
+        </div>
+      </div>
+    {{/each}}
   </div>
 {{/partial}}
 

@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import PageManager from '../../PageManager';
 import initAlertDismissable from './alertDismissable';
+import initDownloadGallery from './downloadGallery';
 
 export default class Account extends PageManager {
   constructor() {
@@ -10,13 +11,9 @@ export default class Account extends PageManager {
 
   _bindEvents() {
     initAlertDismissable();
+    initDownloadGallery();
 
     const $body = $(document.body);
-
-    $('.account-order-details').on('click', (event) => {
-      event.preventDefault();
-      this._toggleDetails(event);
-    });
 
     // Toggle - a simple way to toggle elements
     $body.on('click', '[data-account-toggle]', (event) => {
@@ -24,10 +21,5 @@ export default class Account extends PageManager {
       const $target = $($el.data('account-toggle'));
       $target.toggle();
     });
-  }
-
-  _toggleDetails(event) {
-    const id = event.currentTarget.hash;
-    $(id).toggleClass('visible');
   }
 }

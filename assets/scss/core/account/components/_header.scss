@@ -1,6 +1,7 @@
 .account-header {
   display: table;
   width: 100%;
+  margin-bottom: $account-gutter-inner;
 }
 
 .account-heading,
@@ -11,8 +12,17 @@
 
 .account-toolbar {
   text-align: right;
+
+  * {
+    display: inline;
+  }
 }
 
 .account-tool {
+  display: inline-block;
+  margin-left: 10px;
+  color: inherit;
+  border: 0;
+  background: none;
   cursor: pointer;
 }

@@ -1,125 +1,79 @@
-<ul class="account-list account-returns">
-
-  <li class="account-list-header">
-
-    <div class="account-list-header-item">
-      <span class="account-list-header-label">{{lang 'core.account.returns.list.return_number'}}</span>
-    </div>
-
-    <div class="account-list-header-item">
-      <span class="account-list-header-label">{{lang 'core.account.returns.list.return_quantity'}}</span>
-    </div>
-
-    <div class="account-list-header-item">
-      <span class="account-list-header-label">{{lang 'core.account.returns.list.return_date'}}</span>
-    </div>
-
-    <div class="account-list-header-item">
-      <span class="account-list-header-label">{{lang 'core.account.returns.list.return_action'}}</span>
-    </div>
-
-    <div class="account-list-header-item">
-      <span class="account-list-header-label">{{lang 'core.account.returns.list.return_status'}}</span>
-    </div>
-
-  </li>
-
-  {{#if returns}}
+{{#if returns}}
+  <div class="account-items">
     {{#each returns}}
-
-      <li class="account-list-item" id="return-{{id}}">
-
-        <div class="account-list-item-details">
-
-          <div class="account-list-item-cell" data-title="{{lang 'core.account.returns.list.return_number'}}">
-            <span>{{id}}</span>
-          </div>
-
-          <div class="account-list-item-cell" data-title="{{lang 'core.account.returns.list.return_quantity'}}">
-            <span>{{lang 'core.account.returns.list.product_details' num_products=quantity}}</span>
-          </div>
-
-          <div class="account-list-item-cell" data-title="{{lang 'core.account.returns.list.return_date'}}">
-            <span>{{date_requested}}</span>
-          </div>
-
-          <div class="account-list-item-cell" data-title="{{lang 'core.account.returns.list.return_action'}}">
-            <span>{{action}}</span>
-          </div>
-
-          <div class="account-list-item-cell" data-title="{{lang 'core.account.returns.list.return_status'}}">
-            {{#compare status 'ReturnStatusPending' operator='==='}}
-              <span class="account-return-status-label">{{lang 'core.account.returns.status.pending'}}</span>
-            {{/compare}}
-            {{#compare status 'ReturnStatusReceived' operator='==='}}
-              <span class="account-return-status-label">{{lang 'core.account.returns.status.received'}}</span>
-            {{/compare}}
-            {{#compare status 'ReturnStatusAuthorized' operator='==='}}
-              <span class="account-return-status-label">{{lang 'core.account.returns.status.authorized'}}</span>
-            {{/compare}}
-            {{#compare status 'ReturnStatusRepaired' operator='==='}}
-              <span class="account-return-status-label">{{lang 'core.account.returns.status.repaired'}}</span>
-            {{/compare}}
-            {{#compare status 'ReturnStatusRefunded' operator='==='}}
-              <span class="account-return-status-label">{{lang 'core.account.returns.status.refunded'}}</span>
-            {{/compare}}
-            {{#compare status 'ReturnStatusRejected' operator='==='}}
-              <span class="account-return-status-label">{{lang 'core.account.returns.status.rejected'}}</span>
-            {{/compare}}
-            {{#compare status 'ReturnStatusCancelled' operator='==='}}
-              <span class="account-return-status-label">{{lang 'core.account.returns.status.cancelled'}}</span>
-            {{/compare}}
-          </div>
-
-          <div class="account-list-item-cell details-button">
-            <span>
-              <a href="#return-{{id}}" class="button button-small account-order-details">
-                <span class="show-details">{{lang 'core.account.returns.list.show_details'}}</span>
-                <span class="hide-details">{{lang 'core.account.returns.list.hide_details'}}</span>
-              </a>
-            </span>
-          </div>
-
+      <article class="account-item">
+        <div class="account-item-thumbnail">
+          <img src="{{getImage product.image 'thumb' (cdn ../theme_settings.default_image_product)}}" alt="{{product.image.alt}}">
         </div>
 
-        <div class="account-list-item-row">
-          <div class="account-list-item-row-inner">
+        <div class="account-item-body">
+          <h1 class="account-item-title">
+            {{lang 'core.account.returns.list.number' number=id}}
+          </h1>
 
-            <div class="account-list-item-image">
-              <a href="{{product.url}}">
-                <img src="{{getImage product.image 'thumb'}}" alt="{{product.image.alt}}">
-              </a>
+          <p class="account-item-description">
+            {{lang 'core.account.returns.list.title' name=product.name quantity=quantity}}
+          </p>
+
+          <div class="account-item-details">
+            <div class="account-item-detail">
+              <h2 class="account-item-detail-title">{{lang 'core.account.returns.list.date'}}</h2>
+              <span class="account-item-detail-value">{{date_requested}}</span>
             </div>
 
-            <div class="account-list-item-info">
-              <div class="account-list-item-name">
-                <a href="{{product.url}}">{{product.name}}</a>
-              </div>
-              <div class="account-list-item-options">
-                {{#each product.options}}
-                  <span class="account-list-item-label">{{name}}:</span>
-                  {{value}}{{#unless @last}}<br/>{{/unless}}
-                {{/each}}
-              </div>
-              <div class="account-list-item-quantity">
-                <span class="account-list-item-label">{{lang 'core.account.returns.list.return_quantity'}}:</span> {{quantity}}
-              </div>
+            <div class="account-item-detail">
+              <h2 class="account-item-detail-title">{{lang 'core.account.returns.list.action'}}</h2>
+              <span class="account-item-detail-value">{{action}}</span>
             </div>
-
-            <div class="account-list-item-notes">
-              <div class="account-list-item-note"><span>{{lang 'core.account.returns.reason'}}</span> {{reason}}</div>
-              {{#if comments}}
-                <div class="account-list-item-note"><span>{{lang 'core.account.returns.comments'}}</span> {{comments}}</div>
-              {{/if}}
-            </div>
-
           </div>
+
+          <div class="account-item-details">
+            <div class="account-item-detail">
+              <h2 class="account-item-detail-title">{{lang 'core.account.returns.list.reason'}}</h2>
+              <span class="account-item-detail-value">{{reason}}</span>
+            </div>
+          </div>
+
+          {{#if comments}}
+            <div class="account-item-details">
+              <div class="account-item-detail">
+                <h2 class="account-item-detail-title">{{lang 'core.account.returns.list.comments'}}</h2>
+                <span class="account-item-detail-value">{{comments}}</span>
+              </div>
+            </div>
+          {{/if}}
         </div>
 
-      </li>
-
+        <div class="account-item-badge">
+          <h2 class="account-status">
+            {{#if status '===' 'ReturnStatusPending'}}
+              {{lang 'core.account.returns.status.pending'}}
+            {{/if}}
+            {{#if status '===' 'ReturnStatusReceived'}}
+              {{lang 'core.account.returns.status.received'}}
+            {{/if}}
+            {{#if status '===' 'ReturnStatusAuthorized'}}
+              {{lang 'core.account.returns.status.authorized'}}
+            {{/if}}
+            {{#if status '===' 'ReturnStatusRepaired'}}
+              {{lang 'core.account.returns.status.repaired'}}
+            {{/if}}
+            {{#if status '===' 'ReturnStatusRefunded'}}
+              {{lang 'core.account.returns.status.refunded'}}
+            {{/if}}
+            {{#if status '===' 'ReturnStatusRejected'}}
+              {{lang 'core.account.returns.status.rejected'}}
+            {{/if}}
+            {{#if status '===' 'ReturnStatusCancelled'}}
+              {{lang 'core.account.returns.status.cancelled'}}
+            {{/if}}
+          </h2>
+        </div>
+      </article>
     {{/each}}
-  {{else}}
-    <li class="account-list-item account-empty">{{lang 'core.account.returns.empty'}}</li>
-  {{/if}}
-</ul>
+  </div>
+
+{{else}}
+  <div class="account-empty">{{lang 'core.account.returns.no_returns'}}</li>
+
+{{/if}}

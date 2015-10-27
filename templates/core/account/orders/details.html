@@ -1,186 +1,57 @@
+{{!
+  Markup and styles related to this page use `receipt` instead of
+  `order-details`. Receipt is shorter and doesn't conflict with other "details"
+  sections.
+}}
+
 {{#partial 'account-heading'}}
-  {{lang 'core.account.orders.details.heading' number=order.id}}
+  {{lang 'core.account.receipt.heading' number=order.id}}
+{{/partial}}
+
+{{#partial 'account-toolbar'}}
+  <a class="account-tool" href="{{order.invoice_url}}">{{lang 'core.account.receipt.actions.print_invoice'}}</a>
+
+  <form class="account-order-invoice" action="{{order.reorder_url}}" method="post">
+    <input type="hidden" name="orderid" value="{{order.id}}">
+    {{#each order.items}}
+      <input type="hidden" name="reorderitem[{{order_product_id}}]">
+    {{/each}}
+    <input class="account-tool" type="submit" value="{{lang 'core.account.receipt.actions.reorder_items'}}">
+  </form>
+
+  {{#if order.is_complete}}
+    {{#if order.returns_enabled}}
+      <a href="{{order.return_url}}" class="account-tool">{{lang 'core.account.receipt.actions.return_items'}}</a>
+    {{/if}}
+  {{/if}}
 {{/partial}}
 
 {{#partial 'account-content'}}
-  <div class="account-order">
-    <div class="account-order-details">
-      <div class="account-order-details-total">{{lang 'core.account.orders.list.order_total'}}: {{money order.total.value}}</div>
-      <div class="account-order-details-date">{{lang 'core.account.orders.list.order_date'}}: {{order.date}}</div>
-      <div class="account-order-details-status">{{lang 'core.account.orders.list.order_status'}}: {{order.status_text}}</div>
-      {{#if order.comments.length}}
-        <div class="account-order-details-comments">{{lang 'core.account.orders.list.order_comment'}}: {{order.comments}}</div>
+  {{! Summary }}
+  {{> core/account/_private/receipt-summary}}
+
+  {{! Comments }}
+  {{#if order.comments}}
+    <section class="account-receipt-comments account-card">{{order.comments}}</section>
+  {{/if}}
+
+  {{! Shipments }}
+  {{> core/account/_private/receipt-shipments shipments=shipments}}
+
+  {{! Products }}
+  {{> core/account/_private/receipt-items order}}
+
+  {{! Totals }}
+  <div class="account-receipt-totals">
+    {{#each order.total_rows}}
+      {{#if value.value}}
+        <div class="account-receipt-total">
+          <div class="account-receipt-total-title">{{label}}</div>
+          <div class="account-receipt-total-value">{{value.formatted}}</div>
+        </div>
       {{/if}}
-    </div>
-
-    <h2 class="account-sub-heading">{{lang 'core.account.orders.details.summary'}}</h2>
-    <div class="account-order-info">
-      <div class="account-order-summary">
-        {{#if customer.shipping_address.length}}
-          <section class="account-order-info-shipping">
-            <p class="account-order-details-label">{{lang 'core.account.orders.details.ship_to'}}</p>
-            <ul class="order-address">
-              <li class="order-address-item">
-                <span class="order-address-item-content">{{order.shipping_address.full_name}}</span>
-              </li>
-              <li class="order-address-item">
-                <span class="order-address-item-content">{{order.shipping_address.company}}</span>
-              </li>
-              <li class="order-address-item">
-                <span class="order-address-item-content">{{order.shipping_address.address_lines.[0]}}</span>
-              </li>
-              <li class="order-address-item">
-                <span class="order-address-item-content">{{order.shipping_address.address_lines.[1]}}</span>
-              </li>
-              <li class="order-address-item">
-                <span class="order-address-item-content">{{order.shipping_address.city}}</span>
-                <span class="order-address-item-content">{{order.shipping_address.state}}</span>
-                <span class="order-address-item-content">&nbsp;{{order.shipping_address.zip}}</span>
-              </li>
-              <li class="order-address-item">
-                <span class="order-address-item-content">{{order.shipping_address.country}}</span>
-              </li>
-            </ul>
-          </section>
-        {{/if}}
-
-        <section class="account-order-info-billing">
-          {{#if customer.shipping_address.length}}
-            <p class="account-order-details-label">{{lang 'core.account.orders.details.bill_to'}}</p>
-          {{else}}
-            <p class="account-order-details-label">{{lang 'core.account.orders.details.ship_bill_to'}}</p>
-          {{/if}}
-
-          <ul class="order-address">
-            <li class="order-address-item">
-              <span class="order-address-item-content">{{order.billing_address.full_name}}</span>
-            </li>
-            <li class="order-address-item">
-              <span class="order-address-item-content">{{order.billing_address.company}}</span>
-            </li>
-            <li class="order-address-item">
-              <span class="order-address-item-content">{{order.billing_address.address_lines.[0]}}</span>
-            </li>
-            <li class="order-address-item">
-              <span class="order-address-item-content">{{order.billing_address.address_lines.[1]}}</span>
-            </li>
-            <li class="order-address-item">
-              <span class="order-address-item-content">{{order.billing_address.city}},</span>
-              <span class="order-address-item-content">{{order.billing_address.state}}</span>
-              <span class="order-address-item-content">{{order.billing_address.zip}}</span>
-            </li>
-            <li class="order-address-item">
-              <span class="order-address-item-content">{{order.billing_address.country}}</span>
-            </li>
-          </ul>
-        </section>
-
-        <section class="account-order-info-payment">
-          <p class="account-order-details-label">{{lang 'core.account.orders.details.payment_details'}}</p>
-          <ul class="order-address">
-            <li class="order-address-item">
-              <span class="order-payment-description">{{lang 'core.account.orders.details.payment_method'}}:</span>
-              {{#compare order.payment_method 'storecredit' operator='==='}}
-                <span class="order-payment-value">{{lang 'core.account.orders.details.store_credit'}}</span>
-              {{else}}
-                <span class="order-payment-value">{{lang 'core.account.orders.details.payment_method_card' payment_method=order.payment_method digits=order.card_number_last_four}}</span>
-              {{/compare}}
-            </li>
-            {{#each order.total_rows}}
-              {{#if value.value}}
-                <li class="order-address-item">
-                  <span class="order-payment-description">{{label}}:</span>
-                  <span class="order-payment-value">{{value.formatted}}</span>
-                </li>
-              {{/if}}
-            {{/each}}
-          </ul>
-
-          <a class="account-order-invoice button button-small" href="{{order.invoice_url}}">
-            {{lang 'core.account.orders.details.print_invoice'}}
-          </a>
-
-          <form class="account-order-invoice" action="{{order.reorder_url}}" method="post">
-            <input type="hidden" name="orderid" value="{{order.id}}">
-            {{#each order.items}}
-              <input type="hidden" name="reorderitem[{{order_product_id}}]">
-            {{/each}}
-            <input class="button button-small" type="submit" value="{{lang 'core.account.orders.details.reorder'}}">
-          </form>
-
-          {{#if order.is_complete}}
-            {{#if order.returns_enabled}}
-              <a href="{{order.return_url}}" class="button button-small">{{lang 'core.account.orders.return_items'}}</a>
-            {{/if}}
-          {{/if}}
-
-        </section>
-
-        {{!-- TODO: Test with real shipments --}}
-        {{#if shipments}}
-          <section class="account-order-info-shipments">
-            <h2 class="account-sub-heading">{{lang 'core.account.orders.details.shipments.title'}}</h2>
-
-            <ul class="account-list account-shipments">
-
-              <li class="account-list-header">
-
-                <div class="account-list-header-item">
-                  <span class="account-list-header-label">{{lang 'core.account.orders.details.shipments.date'}}</span>
-                </div>
-
-                <div class="account-list-header-item">
-                  <span class="account-list-header-label">{{lang 'core.account.orders.details.shipments.method'}}</span>
-                </div>
-
-                <div class="account-list-header-item">
-                  <span class="account-list-header-label">{{lang 'core.account.orders.details.shipments.link'}}</span>
-                </div>
-
-              </li>
-
-              {{#each shipments}}
-                <li class="account-list-item">
-                  <div class="account-list-item-details">
-                    <div class="account-list-item-cell" data-title="{{lang 'core.account.orders.details.shipments.date'}}">{{date_shipped}}</div>
-                    <div class="account-list-item-cell" data-title="{{lang 'core.account.orders.details.shipments.method'}}">{{shipping_provider}}</div>
-                    <div class="account-list-item-cell" data-title="{{lang 'core.account.orders.details.shipments.link'}}">
-                      {{#if shipping_track.url}}
-                        <a href="{{shipping_track.url}}">
-                      {{/if}}
-
-                      {{#if show_shipping_method}}
-                        {{shipping_track.number}} &mdash; {{shipping_method}}
-                      {{else}}
-                        {{shipping_track.number}}
-                      {{/if}}
-
-                      {{#if shipping_track.url}}
-                        </a>
-                      {{/if}}
-                    </div>
-                  </div>
-                </li>
-              {{/each}}
-
-            </ul>
-
-          </section>
-        {{/if}}
-
-        {{#if order.comments}}
-          <section class="account-order-info-comments">
-            <h2 class="account-sub-heading">{{lang 'core.account.orders.details.comments'}}</h2>
-            <p class="order-details-info">
-              {{order.comments}}
-            </p>
-          </section>
-        {{/if}}
-      </div>
-
-      {{> core/account/_private/order-contents order}}
-    </div>
+    {{/each}}
   </div>
 {{/partial}}
 
-{{> core/account/_private/layout nav_page='orders' class='orders-details'}}
+{{> core/account/_private/layout nav_page='orders' class='orders-receipt'}}

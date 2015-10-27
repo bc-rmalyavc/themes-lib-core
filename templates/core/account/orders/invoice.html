@@ -1,30 +1,94 @@
-<h1 class="account-invoice-details">{{lang 'core.account.orders.invoice.order_details' store_name=settings.store_name order_id=order.id}}</h1>
-<div class="account-invoice-order-id">{{lang 'core.account.orders.invoice.order_number' order_id=order.id}}</div>
-<div class="account-invoice-order-date">{{lang 'core.account.orders.invoice.order_date' order_date=order.date}}</div>
-<div class="account-invoice-order-contains">{{lang 'core.account.orders.invoice.order_contains'}}</div>
+{{#partial 'account-heading'}}
+  {{lang 'core.account.invoice.heading' number=order.id}}
+{{/partial}}
 
-{{#each order.items}}
-  <ul class="account-invoice-order-item-list">
-    {{!-- TODO: Translate? --}}
-    <li class="account-invoice-order-item">{{quantity}} &times; {{name}}</li>
-    {{#if options}}
-      {{#each options}}
-        <li class="account-invoice-order-item">
-          {{!-- TODO: Translate? --}}
-          {{name}}: {{value}}{{#unless @last}},{{/unless}}
+{{#partial 'account-content'}}
+  <h2 class="account-invoice-date">{{order.date}}</h2>
+
+  <div class="account-invoice-addresses">
+    <div class="account-invoice-address">
+      <h2 class="account-invoice-address-title">{{lang 'core.account.invoice.billing_title'}}</h2>
+      <ul class="account-receipt-address-body">
+        <li>{{order.billing_address.full_name}}</li>
+        <li>{{order.billing_address.company}}</li>
+        <li>{{order.billing_address.address_lines.[0]}}</li>
+        <li>{{order.billing_address.address_lines.[1]}}</li>
+        <li>
+          {{order.billing_address.city}},
+          {{order.billing_address.state}}
+          {{order.billing_address.zip}}
         </li>
-      {{/each}}
-    {{/if}}
-  </ul>
-{{/each}}
+        <li>{{order.billing_address.country}}</li>
+      </ul>
+    </div>
 
-<div class="account-invoice-order-totals-list">
-  <p>
-    {{#each order.total_rows}}
-      {{!-- TODO: Translate? --}}
-      <span class="account-invoice-order-totals-item">{{label}}: <strong>{{value.formatted}}</strong></span>{{#unless @last}}<br/>{{/unless}}
+    <div class="account-invoice-address">
+      <h2 class="account-invoice-address-title">{{settings.store_name}}</h2>
+      <div class="account-invoice-address-body">{{nl2br settings.address}}</div>
+    </div>
+  </div>
+
+  <table class="table table-clean account-table-tight account-invoice-table">
+    <tr>
+      <th colspan="2">{{lang 'core.account.invoice.product_title'}}</th>
+      <th>{{lang 'core.account.invoice.quantity_title'}}</th>
+      <th>{{lang 'core.account.invoice.price_title'}}</th>
+    </tr>
+
+    {{#each order.items}}
+      <tr>
+        <td>
+          {{#if image}}
+            <img class="account-invoice-item-thumbnail" src="{{getImage image}}" alt="{{image.alt}}">
+          {{/if}}
+        </td>
+        <td>
+          <div class="account-invoice-item-name">{{name}}</div>
+          <div class="account-invoice-details">
+            {{#if options}}
+              {{#each options}}
+                <div class="account-invoice-detail">
+                  <span class="account-invoice-detail-name">{{name}}:</span>
+                  <span class="account-invoice-detail-value">{{value}}</span>
+                </div>
+              {{/each}}
+            {{/if}}
+
+            {{#if customizations}}
+              {{#each customizations}}
+                <div class="account-invoice-detail">
+                  <span class="account-invoice-detail-name">{{name}}:</span>
+                  <span class="account-invoice-detail-value">{{value}}</span>
+                </div>
+              {{/each}}
+            {{/if}}
+
+            {{#if gift_wrapping_name}}
+              <div class="account-invoice-detail">
+                <span class="account-invoice-detail-name">{{lang 'core.account.invoice.giftwrap'}}:</span>
+                <span class="account-invoice-detail-value">{{gift_wrapping_name}}</span>
+              </div>
+            {{/if}}
+          </div>
+        </td>
+        <td>
+          <span class="account-invoice-item-quantity">
+            {{lang 'core.account.invoice.quantity' quantity=quantity price=price.formatted}}
+          </span>
+        </td>
+        <td><span class="account-invoice-item-price">{{total.formatted}}</span></td>
+      </tr>
     {{/each}}
-  </p>
-</div>
+  </table>
 
-<script>window.setTimeout(function() {window.print();}, 1000);</script>
+  <table class="table table-clean account-table-tight account-invoice-totals">
+    {{#each order.total_rows}}
+      <tr>
+        <td><div class="account-invoice-total-title">{{label}}</div></td>
+        <td>{{value.formatted}}</td>
+      </tr>
+    {{/each}}
+  </table>
+{{/partial}}
+
+{{> core/account/_private/layout nav='hidden' class='invoice'}}
