@@ -1,4 +1,5 @@
 <form class="form account-messages-form account-toggle-hidden account-card" action="{{urls.account.send_message}}" method="post">
+  {{! TODO: Reuse forms/common/select partial when Handlebars is updated to v4 }}
   <div class="form-field form-required">
     <label class="form-label">
       <span class="form-label-text" data-required="{{lang 'core.account.common.required'}}">
@@ -12,23 +13,8 @@
     </label>
   </div>
 
-  <div class="form-field form-required">
-    <label class="form-label">
-      <span class="form-label-text" data-required="{{lang 'core.account.common.required'}}">
-        {{lang 'core.account.inbox.subject'}}
-      </span>
-      <input type="text" class="form-input account-form-half" name="message_subject">
-    </label>
-  </div>
-
-  <div class="form-field form-required">
-    <label class="form-label">
-      <span class="form-label-text" data-required="{{lang 'core.account.common.required'}}">
-        {{lang 'core.account.inbox.message'}}
-      </span>
-      <textarea class="form-input" name="message_content" rows="7"></textarea>
-    </label>
-  </div>
+  {{> core/forms/common/text name='message_subject' required=true label=(lang 'core.account.inbox.subject')}}
+  {{> core/forms/common/multiline name='message_content' required=true rows=7 label=(lang 'core.account.inbox.message')}}
 
   <div class="form-actions">
     <input class="button" type="submit" value="{{lang 'core.account.inbox.submit'}}">
