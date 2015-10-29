@@ -115,9 +115,9 @@
     </label>
     <div class="form-field form-inline form-field-group giftcard-theme-select">
       {{#each forms.gift_certificate.themes}}
-        <label class="form-label" for="giftcard-theme-{{this}}">
-          <input class="form-radio" id="giftcard-theme-{{this}}" name="certificate_theme" type="radio" value="{{this}}.html">
-          <span class="form-label-text"> {{this}} </span>
+        <label class="form-label" for="giftcard-theme-{{display}}">
+          <input class="form-radio" id="giftcard-theme-{{display}}" name="certificate_theme" type="radio" value="{{value}}">
+          <span class="form-label-text">{{display}}</span>
         </label>
       {{/each}}
     </div>
