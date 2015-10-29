@@ -11,36 +11,36 @@
 
   <div class="form-field required">
     <label class="form-label" for="giftcard-from-name">
-      <div class="form-label-text form-input-title">
+      <span class="form-field-title">
         {{lang 'core.giftcard.purchase.from_name'}}
-      </div>
+      </span>
       <input type="text" class="form-input" id="giftcard-from-name" name="from_name" value="{{forms.gift_certificate.values.from_name}}" required>
     </label>
   </div>
 
   <div class="form-field required">
     <label class="form-label" for="giftcard-from-email">
-      <div class="form-label-text form-input-title">
+      <span class="form-field-title">
         {{lang 'core.giftcard.purchase.from_email'}}
-      </div>
+      </span>
       <input type="email" class="form-input" id="giftcard-from-email" name="from_email" value="{{forms.gift_certificate.values.from_email}}" required>
     </label>
   </div>
 
   <div class="form-field required">
     <label class="form-label" for="giftcard-to-name">
-      <div class="form-label-text form-input-title">
+      <span class="form-field-title">
         {{lang 'core.giftcard.purchase.to_name'}}
-      </div>
+      </span>
       <input type="text" class="form-input" id="giftcard-to-name" name="to_name" value="{{forms.gift_certificate.values.to_name}}" required>
     </label>
   </div>
 
   <div class="form-field required">
     <label class="form-label" for="giftcard-to-email">
-      <div class="form-label-text form-input-title">
+      <span class="form-field-title">
         {{lang 'core.giftcard.purchase.to_email'}}
-      </div>
+      </span>
       <input type="text" class="form-input" id="giftcard-to-email" name="to_email" value="{{forms.gift_certificate.values.to_email}}" required>
     </label>
   </div>
@@ -48,9 +48,9 @@
   {{#if forms.gift_certificate.can_use_custom_amount}}
     <div class="form-field required">
       <label class="form-label" for="giftcard-amount">
-        <div class="form-label-text form-input-title">
+        <span class="form-field-title">
           {{lang 'core.giftcard.purchase.amount'}}
-        </div>
+        </span>
         <input type="number"
           class="form-input"
           id="giftcard-amount"
@@ -66,9 +66,9 @@
   {{else}}
     <div class="form-field required">
       <label class="form-label" for="giftcard-selected-amount">
-        <div class="form-label-text form-input-title">
+        <span class="form-field-title">
           {{lang 'core.giftcard.purchase.amount'}}
-        </div>
+        </span>
       </label>
       <select class="form-input form-select" id="giftcard-selected-amount" name="selected_amount">
         {{#each forms.gift_certificate.amount_options}}
@@ -82,9 +82,9 @@
     <div class="form-field form-inline required">
       <label class="form-label" for="giftcard-agree">
         <input type="checkbox" class="form-checkbox" name="agree" id="giftcard-agree" required>
-        <div class="form-label-text form-input-title">
+        <span class="form-label-text">
           {{lang 'core.giftcard.purchase.agree' days=forms.gift_certificate.expires_in_days}}
-        </div>
+        </span>
       </label>
     </div>
   {{/if}}
@@ -92,15 +92,15 @@
   <div class="form-field form-inline required">
     <label class="form-label" for="giftcard-agree2">
       <input type="checkbox" class="form-checkbox" name="agree2" id="giftcard-agree2" required>
-      <div class="form-label-text form-input-title">
+      <span class="form-label-text">
         {{lang 'core.giftcard.purchase.agree2'}}
-      </div>
+      </span>
     </label>
   </div>
 
   <div class="form-field">
     <label class="form-label" for="giftcard-message">
-      <span class="form-label-text">
+      <span class="form-field-title">
         {{lang 'core.giftcard.purchase.message'}}
       </span>
     </label>
@@ -109,9 +109,9 @@
 
   <div class="form-field required">
     <label class="form-label">
-      <div class="form-label-text form-input-title">
+      <span class="form-field-title">
         {{lang 'core.giftcard.purchase.theme'}}
-      </div>
+      </span>
     </label>
     <div class="form-field form-inline form-field-group giftcard-theme-select">
       {{#each forms.gift_certificate.themes}}
