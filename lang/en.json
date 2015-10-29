@@ -203,13 +203,9 @@
         "heading": "Account Settings",
         "first_name": "First Name",
         "last_name": "Last Name",
-        "email": "Email Address",
         "company": "Company",
         "phone": "Phone Number",
-        "old_password": "Old Password",
-        "new_password": "New Password",
-        "confirm_password": "Confirm Password",
-        "update_details": "Update Details"
+        "submit": "Update Details"
       },
       "messages": {
         "heading": "Messages",

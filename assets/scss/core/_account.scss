@@ -44,7 +44,6 @@ $auth-font-size: $account-font-size;
 @import "account/components/shipments";
 
 @import "account/pages/address";
-@import "account/pages/edit-account";
 @import "account/pages/orders-receipt";
 @import "account/pages/recent-items";
 @import "account/pages/returns";
@@ -52,6 +51,7 @@ $auth-font-size: $account-font-size;
 @import "account/pages/messages";
 @import "account/pages/download";
 @import "account/pages/invoice";
+@import "account/pages/settings";
 
 @import "account/pages/auth-login";
 @import "account/pages/auth-forgot";

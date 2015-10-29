@@ -6,55 +6,25 @@
   {{#if forms.edit_account.error}}
     {{> core/alerts/alert-error forms.edit_account.error}}
   {{/if}}
+
   {{#if forms.edit_account.success}}
     {{> core/alerts/alert-success forms.edit_account.success}}
   {{/if}}
 
-  <form action="{{urls.account.update_action}}" class="form account-settings-form" method="post">
-
-    <div class="form-field form-required">
-      <label class="form-label" for="account_firstname">
-        <span class="form-label-text" data-required="{{lang 'core.account.common.required'}}">
-          {{lang 'core.account.settings.first_name'}}
-        </span>
-        <input type="text" class="form-input" name="account_firstname" id="account_firstname" value="{{forms.edit_account.first_name}}">
-      </label>
-    </div>
-
-    <div class="form-field form-required">
-      <label class="form-label" for="account_lastname">
-        <span class="form-label-text" data-required="{{lang 'core.account.common.required'}}">
-          {{lang 'core.account.settings.last_name'}}
-        </span>
-        <input type="text" class="form-input" name="account_lastname" id="account_lastname" value="{{forms.edit_account.last_name}}">
-      </label>
-    </div>
-
-    <div class="form-field">
-      <label class="form-label" for="account_companyname">
-        <span class="form-label-text">{{lang 'core.account.settings.company'}}</span>
-        <input type="text" class="form-input" name="account_companyname" id="account_companyname" value="{{forms.edit_account.company_name}}">
-      </label>
-    </div>
-
-    <div class="form-field form-required">
-      <label class="form-label" for="account_phone">
-        <span class="form-label-text" data-required="{{lang 'core.account.common.required'}}">
-          {{lang 'core.account.settings.phone'}}
-        </span>
-        <input type="text" class="form-input" name="account_phone" id="account_phone" value="{{forms.edit_account.phone}}">
-      </label>
-    </div>
+  <form action="{{urls.account.update_action}}" class="account-settings-form" method="post">
+    {{> core/forms/common/text name='account_firstname' required=true label=(lang 'core.account.settings.first_name') value=forms.edit_account.first_name}}
+    {{> core/forms/common/text name='account_lastname' required=true label=(lang 'core.account.settings.last_name') value=forms.edit_account.last_name}}
+    {{> core/forms/common/text name='account_companyname' label=(lang 'core.account.settings.company') value=forms.edit_account.company_name}}
+    {{> core/forms/common/text name='account_phone' required=true label=(lang 'core.account.settings.phone') value=forms.edit_account.phone}}
 
     {{#each forms.edit_account.fields}}
       {{{dynamicComponent 'core/forms/common'}}}
     {{/each}}
 
     <div class="form-actions">
-      <button class="button">{{lang 'core.account.settings.update_details'}}</button>
+      <button class="button">{{lang 'core.account.settings.submit'}}</button>
     </div>
-
   </form>
 {{/partial}}
 
-{{> core/account/_private/layout nav_page='settings' class='edit-account'}}
+{{> core/account/_private/layout nav_page='settings' class='settings'}}

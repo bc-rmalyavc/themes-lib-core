@@ -22,29 +22,3 @@
     clear: both;
   }
 }
-
-// Account Forms
-
-.account-settings-form,
-.account-address-form {
-  font-size: 0;
-
-  .form-field {
-    display: inline-block;
-    width: 50%;
-    padding-right: $account-gutter / 2;
-    padding-left: $account-gutter / 2;
-    font-size: $account-font-size;
-    vertical-align: top;
-  }
-
-  .form-actions {
-    padding-right: $account-gutter / 2;
-    padding-left: $account-gutter / 2;
-    margin-top: 30px;
-  }
-}
-
-.account-order-info-payment .buttom-small {
-  margin-bottom: 5px;
-}
