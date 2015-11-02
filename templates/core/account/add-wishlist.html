@@ -1,20 +1,17 @@
 {{#partial 'account-heading'}}
-  {{#if forms.address.address_id}}
-    {{lang 'forms.address.edit.heading'}}
+  {{#if forms.wishlist.id}}
+    {{lang 'core.account.wishlists.edit'}}
   {{else}}
-    {{lang 'forms.address.add.heading'}}
+    {{lang 'core.account.wishlists.new'}}
   {{/if}}
 {{/partial}}
 
 {{#partial 'account-content'}}
   <div class="wishlist-add">
     <header class="wishlist-header">
-      {{#if forms.wishlist.id}}
-        <h2 class="account-sub-heading">{{lang 'core.account.wishlists.edit'}}</h2>
-      {{else}}
-        <h2 class="account-sub-heading">{{lang 'core.account.wishlists.new'}}</h2>
+      {{#unless forms.wishlist.id}}
         <p class="account-wishlist-tagline">{{lang 'core.account.wishlists.tag_line'}}</p>
-      {{/if}}
+      {{/unless}}
 
       {{#if forms.wishlist.errors}}
         {{> core/alerts/alert-error forms.wishlist.errors}}
