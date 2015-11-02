@@ -9,10 +9,6 @@
 {{#partial 'account-content'}}
   <div class="wishlist-add">
     <header class="wishlist-header">
-      {{#unless forms.wishlist.id}}
-        <p class="account-wishlist-tagline">{{lang 'core.account.wishlists.tag_line'}}</p>
-      {{/unless}}
-
       {{#if forms.wishlist.errors}}
         {{> core/alerts/alert-error forms.wishlist.errors}}
       {{/if}}

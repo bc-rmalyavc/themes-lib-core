@@ -153,7 +153,6 @@
       },
       "wishlists": {
         "heading": "Wishlists",
-        "tag_line": "Fill in the form below to create a wishlist. Click the \"Save\" button when you're done.",
         "new": "New Wishlist",
         "num_items": "Items",
         "add_item": "Add to wishlist",
