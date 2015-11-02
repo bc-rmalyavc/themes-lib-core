@@ -7,9 +7,9 @@
     </div>
     <div class="form-field-control">
       {{#each radios}}
-        <label class="form-label">
-          <input class="form-input form-radio"
-            id="radio-{{../name}}-{{id}}"
+        <label class="form-label" for="radio-{{../name}}-{{#if id}}{{id}}{{else}}{{display}}{{/if}}">
+          <input class="form-radio"
+            id="radio-{{../name}}-{{#if id}}{{id}}{{else}}{{display}}{{/if}}"
             name="{{../name}}"
             type="radio"
             value="{{value}}"
@@ -17,7 +17,13 @@
             {{#if private_id}}data-field-type="{{private_id}}"{{/if}}
             {{#if required}}required{{/if}}
             aria-required="{{required}}">
-          <span class="form-label-text">{{label}}</span>
+          <span class="form-label-text">
+            {{#if label}}
+              {{label}}
+            {{else}}
+              {{display}}
+            {{/if}}
+          </span>
         </label>
       {{/each}}
     </div>
