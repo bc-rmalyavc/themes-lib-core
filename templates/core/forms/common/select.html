@@ -40,7 +40,11 @@
 <div class="form-field form-field-common form-field-select {{#if required}} form-required{{/if}}" id="{{id}}">
   <label class="form-label">
     <span class="form-field-title">
-      {{display_name}}
+      {{#if display_name}}
+        {{display_name}}
+      {{else}}
+        {{label}}
+      {{/if}}
       {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
     </span>
     <span class="form-field-control">
