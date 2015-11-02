@@ -12,9 +12,11 @@
 
   <section class="account-wishlist {{products_per_row_class}}">
     <h2 class="account-sub-heading">{{lang 'core.account.wishlists.wishlist_contents'}}</h2>
-    {{#each wishlist.items}}
-      {{> core/products/product-item show_remove=true remove_url=remove_url}}
-    {{/each}}
+    <div class="account-wishlist-items">
+      {{#each wishlist.items}}
+        {{> core/products/product-item show_remove=true remove_url=remove_url}}
+      {{/each}}
+    </div>
   </section>
 {{/partial}}
 
