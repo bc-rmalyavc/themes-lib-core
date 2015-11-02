@@ -1,14 +1,14 @@
 {{> core/gift-certificate/_private/navigation page='balance'}}
 
 <div class="giftcard-body">
-  <h2 class="giftcard-heading">{{lang 'core.giftcard.balance.heading'}}</h2>
+  <h1 class="giftcard-heading">{{lang 'core.giftcard.balance.heading'}}</h1>
   <p class="giftcard-balance-intro">{{lang 'core.giftcard.balance.intro' }}</p>
 
   {{#if gift_certificate}}
     {{#if gift_certificate.error}}
       {{> core/alerts/alert-error gift_certificate.error}}
     {{else}}
-      <h1>{{gift_certificate.balance.formatted}}</h1>
+      <h2>{{gift_certificate.balance.formatted}}</h2>
       <h3>{{gift_certificate.code}}</h3>
     {{/if}}
   {{/if}}
