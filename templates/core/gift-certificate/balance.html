@@ -1,30 +1,32 @@
 {{> core/gift-certificate/_private/navigation page='balance'}}
 
-<h3 class="giftcard-balance-heading">{{lang 'core.giftcard.balance.heading'}}</h3>
-<p class="giftcard-balance-intro">{{lang 'core.giftcard.balance.intro' }}</p>
+<div class="giftcard-body">
+  <h3 class="giftcard-balance-heading">{{lang 'core.giftcard.balance.heading'}}</h3>
+  <p class="giftcard-balance-intro">{{lang 'core.giftcard.balance.intro' }}</p>
 
-{{#if gift_certificate}}
-  {{#if gift_certificate.error}}
-    {{> core/alerts/alert-error gift_certificate.error}}
-  {{else}}
-    <h1>{{gift_certificate.balance.formatted}}</h1>
-    <h3>{{gift_certificate.code}}</h3>
+  {{#if gift_certificate}}
+    {{#if gift_certificate.error}}
+      {{> core/alerts/alert-error gift_certificate.error}}
+    {{else}}
+      <h1>{{gift_certificate.balance.formatted}}</h1>
+      <h3>{{gift_certificate.code}}</h3>
+    {{/if}}
   {{/if}}
-{{/if}}
 
-<form class="form form-giftcard-balance" id="giftcard-balance" method="get">
-  <input type="hidden" name="action" value="balance">
-  <div class="form-field required">
-    <label class="form-label sr-only" for="giftcard-code">
-      <span class="form-field-title">
-        {{lang 'core.giftcard.balance.code' }}
-      </span>
-    </label>
-    <div class="input-appended">
-      <div class="form-input-wrapper">
-        <input class="form-input" id="giftcard-code" name="giftcertificatecode" placeholder="{{lang 'core.giftcard.balance.code' }}">
+  <form class="form form-giftcard-balance" id="giftcard-balance" method="get">
+    <input type="hidden" name="action" value="balance">
+    <div class="form-field required">
+      <label class="form-label sr-only" for="giftcard-code">
+        <span class="form-field-title">
+          {{lang 'core.giftcard.balance.code' }}
+        </span>
+      </label>
+      <div class="input-appended">
+        <div class="form-input-wrapper">
+          <input class="form-input" id="giftcard-code" name="giftcertificatecode" placeholder="{{lang 'core.giftcard.balance.code' }}">
+        </div>
+        <input type="submit" class="button button-primary" value="{{lang 'core.giftcard.balance.submit_value' }}">
       </div>
-      <input type="submit" class="button button-primary" value="{{lang 'core.giftcard.balance.submit_value' }}">
     </div>
-  </div>
-</form>
+  </form>
+</div>
