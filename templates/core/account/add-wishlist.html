@@ -31,12 +31,19 @@
         </label>
       </div>
 
-      <div class="form-field form-inline">
-        <label class="form-label" for="publicwishlist">
-          <input class="form-input input-checkbox" type="checkbox" name="publicwishlist" id="publicwishlist" {{#if forms.wishlist.is_public}}checked{{/if}}>
-          <span class="form-input-mask"></span>
-          <span class="form-label-text">{{lang 'core.account.wishlists.make_public'}}</span>
-        </label>
+      <div class="form-field form-field-checkbox">
+        <div class="form-field-control">
+          <label class="form-label" for="publicwishlist">
+            <input
+              class="form-checkbox"
+              id="checkbox-publicwishlist"
+              name="publicwishlist"
+              type="checkbox"
+              {{#if forms.wishlist.is_public}}checked{{/if}}
+              aria-required="false">
+            <span class="form-label-text">{{lang 'core.account.wishlists.make_public'}}</span>
+          </label>
+        </div>
       </div>
 
       <div class="form-actions">
