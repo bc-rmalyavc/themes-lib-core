@@ -18,14 +18,14 @@
          If true, include the product's rating if there are enough votes.
 }}
 <article class="product-item">
-  {{#if price.saved}}
-    <div class="product-item-sale-tag">{{lang 'core.product.sale'}}</div>
-  {{/if}}
-
   <figure class="product-item-thumbnail">
     <a href="{{url}}" title="{{name}}">
       <img src="{{getImage image 'gallery'}}" alt="{{image.alt}}">
     </a>
+
+    {{#if price.saved}}
+      <div class="product-item-sale-tag">{{lang 'core.product.sale'}}</div>
+    {{/if}}
   </figure>
 
   <div class="product-item-details">
