@@ -4,8 +4,8 @@
 
 {{#partial 'account-content'}}
   {{#if wishlist.is_public}}
-    <h2 class="account-sub-heading">{{lang 'core.account.wishlists.share_intro'}}</h2>
     <div class="account-share-wishlist-url">
+      <h2 class="account-sub-heading">{{lang 'core.account.wishlists.share_intro'}}</h2>
       <input class="form-input" value="{{settings.base_url}}{{wishlist.share_url}}">
     </div>
   {{/if}}
