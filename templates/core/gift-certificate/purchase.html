@@ -2,7 +2,7 @@
 
 <div class="giftcard-body">
   {{#each forms.gift_certificate.errors}}
-    {{> core/alerts/alert-error this}}
+    {{> core/alerts/alert-error}}
   {{/each}}
 
   <form class="form giftcard-form" method="post" id="giftcard-form" action="{{forms.gift_certificate.action}}" data-giftcard-purchase-form>
@@ -48,7 +48,7 @@
         </label>
         <select class="form-input form-select" id="giftcard-selected-amount" name="selected_amount">
           {{#each forms.gift_certificate.amount_options}}
-            <option value="{{this.value}}">{{this.formatted}}</option>
+            <option value="{{value}}">{{formatted}}</option>
           {{/each}}
         </select>
       </div>
