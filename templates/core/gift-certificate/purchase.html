@@ -54,14 +54,7 @@
       </div>
     {{/if}}
 
-    <div class="form-field">
-      <label class="form-label" for="giftcard-message">
-        <span class="form-field-title">
-          {{lang 'core.giftcard.purchase.message'}}
-        </span>
-      </label>
-      <textarea class="form-input certificate-message" id="giftcard-message" name="message" rows="4" >{{forms.gift_certificate.values.message}}</textarea>
-    </div>
+    {{> core/forms/common/multiline label=(lang 'core.giftcard.purchase.message') name="message" rows=4 id="giftcard-message" value=forms.gift_certificate.values.message}}
 
     {{> core/forms/common/radio required=true label=(lang 'core.giftcard.purchase.theme') radios=forms.gift_certificate.themes name="certificate_theme"}}
 
