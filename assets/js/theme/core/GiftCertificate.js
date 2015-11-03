@@ -4,7 +4,7 @@ import $ from 'jquery';
 export default class GiftCertificate extends PageManager {
   constructor() {
     super();
-    this.$purchaseForm = $('[data-gift-certificate-purchase-form]');
+    this.$purchaseForm = $('[data-giftcard-purchase-form]');
   }
 
   loaded() {
