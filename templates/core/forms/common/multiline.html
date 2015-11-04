@@ -1,5 +1,5 @@
 
-<div class="form-field form-field-common form-field-multiline {{#if required}} form-required{{/if}}" id="{{id}}">
+<div class="form-field form-field-common form-field-multiline {{#if required}}form-required{{/if}}" id="{{id}}">
   <label class="form-label">
     <span class="form-field-title">
       {{label}}
@@ -12,7 +12,12 @@
         name="{{name}}"
         placeholder="{{prefill}}"
         rows="{{rows}}"
-        {{#if required}}required{{/if}}
+        {{#if required}}
+          required
+          {{#if validation_message}}
+            data-vd-message-required="{{validation_message}}"
+          {{/if}}
+        {{/if}}
         aria-required="{{required}}">{{value}}</textarea>
     </span>
   </label>
