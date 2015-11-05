@@ -5,7 +5,7 @@
     {{> core/alerts/alert-error}}
   {{/each}}
 
-  <form class="form giftcard-form" method="post" id="giftcard-form" action="{{forms.gift_certificate.action}}" data-giftcard-purchase-form>
+  <form class="form giftcard-form" method="post" id="giftcard-form" action="{{forms.gift_certificate.action}}" data-giftcard-purchase-form data-validated-form>
     {{#if forms.gift_certificate.cart_item_id}}
       <input type="hidden" name="cartitemid" value="{{forms.gift_certificate.cart_item_id}}">
     {{/if}}
@@ -34,7 +34,8 @@
             value="{{forms.gift_certificate.values.amount.value}}"
             data-min-formatted="{{forms.gift_certificate.minimum.formatted}}"
             data-max-formatted="{{forms.gift_certificate.maximum.formatted}}"
-            step="any">
+            step="any"
+            required>
         </label>
         <small class="form-help-message">{{lang 'core.giftcard.purchase.custom_range' min=forms.gift_certificate.minimum.formatted max=forms.gift_certificate.maximum.formatted}}</small>
       </div>
@@ -46,7 +47,7 @@
             <span class="required-text">{{lang 'common.required'}}</span>
           </span>
         </label>
-        <select class="form-input form-select" id="giftcard-selected-amount" name="selected_amount">
+        <select class="form-input form-select" id="giftcard-selected-amount" name="selected_amount" required>
           {{#each forms.gift_certificate.amount_options}}
             <option value="{{value}}">{{formatted}}</option>
           {{/each}}

@@ -13,7 +13,7 @@
     {{/if}}
   {{/if}}
 
-  <form class="form form-giftcard-balance" id="giftcard-balance" method="get">
+  <form class="form form-giftcard-balance" id="giftcard-balance" method="get" data-validated-form>
     <input type="hidden" name="action" value="balance">
 
     {{> core/forms/common/text required=true id="giftcard-code" name="giftcertificatecode" label=(lang 'core.giftcard.balance.code') prefill=(lang 'core.giftcard.balance.code')}}
