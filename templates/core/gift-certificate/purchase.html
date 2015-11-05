@@ -5,7 +5,7 @@
     {{> core/alerts/alert-error}}
   {{/each}}
 
-  <form class="form giftcard-form" method="post" id="giftcard-form" action="{{forms.gift_certificate.action}}" data-giftcard-purchase-form data-validated-form>
+  <form class="form giftcard-form" method="post" id="giftcard-form" action="{{forms.gift_certificate.action}}" data-giftcard-purchase-form>
     {{#if forms.gift_certificate.cart_item_id}}
       <input type="hidden" name="cartitemid" value="{{forms.gift_certificate.cart_item_id}}">
     {{/if}}
