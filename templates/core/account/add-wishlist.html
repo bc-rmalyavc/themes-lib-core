@@ -17,12 +17,7 @@
     <form class="form wishlist-form" action="{{#if forms.wishlist.id}}{{urls.account.wishlists.edit}}{{else}}{{urls.account.wishlists.add}}{{/if}}" method="post">
       <input type="hidden" name="submit">
 
-      <div class="form-field form-required">
-        <label class="form-label" for="wishlistname">
-          <span class="form-field-title" data-required="{{lang 'core.account.common.required'}}">{{lang 'core.account.wishlists.wishlist_name'}}</span>
-          <input type="text" class="form-input" name="wishlistname" id="wishlistname" value="{{forms.wishlist.name}}">
-        </label>
-      </div>
+      {{> core/forms/common/text required=true name="wishlistname" id="wishlistname" value=forms.wishlist.name label=(lang 'core.account.wishlists.wishlist_name')}}
 
       <div class="form-field form-field-checkbox">
         <div class="form-field-control">
