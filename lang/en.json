@@ -138,7 +138,8 @@
           "number": "Order #{number}",
           "description": "{num_products, plural, one {1 item} other {# items}} totaling {cost}",
           "placed": "Placed On",
-          "updated": "Updated On"
+          "updated": "Updated On",
+          "empty": "You haven't placed any orders yet."
         }
       },
 
