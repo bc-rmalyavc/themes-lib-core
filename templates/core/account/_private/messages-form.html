@@ -1,11 +1,11 @@
-<form class="form account-messages-form account-toggle-hidden account-card" action="{{urls.account.send_message}}" method="post">
+<form class="form account-messages-form account-toggle-hidden account-card" action="{{urls.account.send_message}}" method="post" data-validated-form>
   {{! TODO: Reuse forms/common/select partial when Handlebars is updated to v4 }}
   <div class="form-field form-required">
     <label class="form-label">
       <span class="form-field-title" data-required="{{lang 'core.account.common.required'}}">
         {{lang 'core.account.inbox.order'}}
       </span>
-      <select class="form-input account-form-half" name="message_order_id">
+      <select class="form-input account-form-half" name="message_order_id" required>
         {{#each customer.inbox.orders}}
           <option value="{{id}}">{{lang 'core.account.inbox.order_display' id=id date=date total=amount.formatted}}</option>
         {{/each}}

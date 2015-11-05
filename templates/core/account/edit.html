@@ -11,7 +11,7 @@
     {{> core/alerts/alert-success forms.edit_account.success}}
   {{/if}}
 
-  <form action="{{urls.account.update_action}}" class="account-settings-form" method="post">
+  <form action="{{urls.account.update_action}}" class="account-settings-form" method="post" data-validated-form>
     {{> core/forms/common/text name='account_firstname' required=true label=(lang 'core.account.settings.first_name') value=forms.edit_account.first_name}}
     {{> core/forms/common/text name='account_lastname' required=true label=(lang 'core.account.settings.last_name') value=forms.edit_account.last_name}}
     {{> core/forms/common/text name='account_companyname' label=(lang 'core.account.settings.company') value=forms.edit_account.company_name}}

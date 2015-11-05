@@ -2,6 +2,7 @@ import $ from 'jquery';
 import PageManager from '../../PageManager';
 import initAlertDismissable from './alertDismissable';
 import initDownloadGallery from './downloadGallery';
+import FormValidator from '../utils/FormValidator';
 
 export default class Account extends PageManager {
   constructor() {
@@ -21,5 +22,9 @@ export default class Account extends PageManager {
       const $target = $($el.data('account-toggle'));
       $target.toggle();
     });
+  }
+
+  loaded() {
+    new FormValidator(this.context).initGlobal();
   }
 }

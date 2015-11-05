@@ -14,7 +14,7 @@
       {{/if}}
     </header>
 
-    <form class="form wishlist-form" action="{{#if forms.wishlist.id}}{{urls.account.wishlists.edit}}{{else}}{{urls.account.wishlists.add}}{{/if}}" method="post">
+    <form class="form wishlist-form" action="{{#if forms.wishlist.id}}{{urls.account.wishlists.edit}}{{else}}{{urls.account.wishlists.add}}{{/if}}" method="post" data-validated-form>
       <input type="hidden" name="submit">
 
       {{> core/forms/common/text required=true name="wishlistname" id="wishlistname" value=forms.wishlist.name label=(lang 'core.account.wishlists.wishlist_name')}}

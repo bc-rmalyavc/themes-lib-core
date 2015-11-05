@@ -11,7 +11,7 @@
     {{> core/alerts/alert-error forms.address.error}}
   {{/if}}
 
-  <form class="form account-address-form" action="{{forms.address.action}}" id="address-form" method="post">
+  <form class="form account-address-form" action="{{forms.address.action}}" id="address-form" method="post" data-validated-form>
     {{#if forms.address.address_id}}
       <input type="hidden" name="shipid" value="{{forms.address.address_id}}">
     {{/if}}

@@ -4,7 +4,7 @@
 
 {{#partial 'account-content'}}
   {{#if forms.return.order_products.length}}
-    <form action="{{urls.account.orders.save_new_return}}" class="form" method="post">
+    <form action="{{urls.account.orders.save_new_return}}" class="form" method="post" data-validated-form>
       <input type="hidden" name="order_id" value="{{forms.return.order_id}}">
 
       <table class="table table-clean account-return-table account-table-tight">
