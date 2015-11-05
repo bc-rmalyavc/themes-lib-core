@@ -7,7 +7,7 @@
     {{> core/alerts/alert-error forms.create_account.error}}
   {{/if}}
 
-  <form class="account-create-form form" action="{{urls.auth.save_new_account}}" method="post" data-validates>
+  <form class="account-create-form form" action="{{urls.auth.save_new_account}}" method="post" data-validated-form>
     <div class="account-create-details">
       {{#each forms.create_account.account_fields}}
         {{{dynamicComponent 'core/forms/common'}}}
