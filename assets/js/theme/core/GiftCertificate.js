@@ -1,6 +1,5 @@
 import PageManager from '../../PageManager';
 import $ from 'jquery';
-import FormValidator from '../utils/FormValidator';
 
 export default class GiftCertificate extends PageManager {
   constructor() {
@@ -9,8 +8,6 @@ export default class GiftCertificate extends PageManager {
   }
 
   loaded() {
-    new FormValidator(this.context).initGlobal();
-
     if (this.$purchaseForm.length) {
       this._bindPreview();
     }
