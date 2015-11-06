@@ -1,31 +1,48 @@
 import PageManager from '../../PageManager';
 import $ from 'jquery';
-import FormValidator from '../utils/FormValidator';
 
 export default class GiftCertificate extends PageManager {
   constructor() {
     super();
     this.$purchaseForm = $('[data-giftcard-purchase-form]');
-    this.validatorOptions = {
-      onValid: (event) => {
-        this._bindPreview(event);
+    this._bindEvents();
+  }
+
+  _bindEvents() {
+    this.$purchaseForm.on('change', (event) => {
+      this._showPreview();
+    });
+  }
+
+  /**
+   * Show or update the giftcard preview.
+   */
+  _showPreview() {
+    const $theme = this.$purchaseForm.find('[data-giftcard-theme]');
+
+    // Only show a preview if a theme is selected
+    if (!$theme.find('.form-input:checked').length) {
+      return;
+    }
+
+    // Calculate preview URL based on form state
+    const baseUrl = $theme.data('giftcard-preview-url');
+    const data = this.$purchaseForm.serialize();
+    const url = `${baseUrl}&${data}`;
+
+    // Create preview
+    const $preview = $('<iframe>', {
+      src: url,
+      load: (event) => {
+        // Calculate iframe height based on its document height
+        const height = $(event.currentTarget.contentDocument).height();
+        $(event.currentTarget).height(height);
       },
-    };
-  }
+    });
 
-  loaded() {
-    if (this.$purchaseForm.length) {
-      this.Validator = new FormValidator(this.context);
-      this.Validator.initSingle(this.$purchaseForm, this.validatorOptions);
-    }
-  }
-
-  _bindPreview() {
-    const $buttonClicked = $(document.activeElement);
-    if ($buttonClicked.data('preview-url')) {
-      event.preventDefault();
-      const previewUrl = `${$buttonClicked.data('preview-url')}&${this.$purchaseForm.serialize()}`;
-      window.open(previewUrl);
-    }
+    // Update preview
+    $theme.find('.giftcard-form-preview')
+      .addClass('has-preview')
+      .html($preview);
   }
 }
