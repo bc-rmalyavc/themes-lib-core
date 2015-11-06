@@ -1,0 +1,51 @@
+{{!
+  Rating form field. Shows a radio input for each possible rating.
+
+  Not used by stencil.
+
+  @param label string
+         The title of this form field.
+
+  @param name string
+         The name attribute for the form inputs.
+
+  @param min number
+         The minimum rating value.
+
+  @param max number
+         The maximum rating value.
+
+  @param value number (optional)
+         The selected rating.
+
+  @param required bool (optional)
+         If true, this field is required for the form submission.
+
+  @param icon string (optional)
+         Some markup to insert into the labels.
+
+  @param id string (optional)
+         An HTML ID to give the field element.
+}}
+<div class="form-field form-field-rating {{#if required}}form-required{{/if}}" {{#if id}}id="{{id}}"{{/if}}>
+  <div class="form-field-title">
+    {{label}}
+    {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
+  </div>
+  <div class="form-field-control">
+    {{#for min max}}
+      <input class="form-input form-radio"
+        id="form-rating-{{../name}}-{{$index}}"
+        name="{{../name}}"
+        type="radio"
+        value="{{$index}}"
+        {{#if ../value '===' $index}}checked{{/if}}
+        {{#if ../required}}required{{/if}}
+        aria-required="{{../required}}">
+      <label class="form-label" for="form-rating-{{../name}}-{{$index}}">
+        {{#if ../icon}}{{{icon}}}{{/if}}
+        <span class="form-label-text">{{lang 'forms.rating.label' rating=$index min=../min max=../max}}</span>
+      </label>
+    {{/for}}
+  </div>
+</div>
