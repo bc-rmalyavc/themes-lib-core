@@ -1,18 +1,21 @@
 
-<div class="form-field form-field-customizations form-field-file{{#if required}} form-required{{/if}}">
+<div class="form-field form-field-customizations form-field-file {{#if required}}form-required{{/if}}">
   <label class="form-label">
     <span class="form-field-title">
       {{display_name}}
       {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
     </span>
     <span class="form-field-control">
-      <input
-        class="form-input form-file"
-        id="product-fields-{{id}}"
-        name="ProductFields[{{this.id}}]"
-        type="file"
-        {{#if required}}required{{/if}}
-        aria-required="{{required}}">
+      <span class="form-file-wrapper" data-button-label="{{lang 'forms.file.upload'}}">
+        <input
+          class="form-input form-file"
+          id="product-fields-{{id}}"
+          name="ProductFields[{{this.id}}]"
+          type="file"
+          {{#if required}}required{{/if}}
+          aria-required="{{required}}">
+      </span>
     </span>
+    <span class="form-file-types">{{lang 'forms.file.types' file_types=file_types}}</span>
   </label>
 </div>
