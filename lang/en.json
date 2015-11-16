@@ -9,6 +9,7 @@
     "product": {
       "compare": "Compare",
       "sale": "On Sale",
+      "pick_one": "Pick one",
       "quickshop": {
         "view": "Quick View"
       }
