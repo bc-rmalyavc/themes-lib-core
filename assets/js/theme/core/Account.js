@@ -2,10 +2,10 @@ import $ from 'jquery';
 import PageManager from '../../PageManager';
 import initAlertDismissable from './alertDismissable';
 import initDownloadGallery from './downloadGallery';
+import updateState from './updateState';
 
 export default class Account extends PageManager {
-  constructor() {
-    super();
+  loaded() {
     this._bindEvents();
   }
 
@@ -13,10 +13,12 @@ export default class Account extends PageManager {
     initAlertDismissable();
     initDownloadGallery();
 
-    const $body = $(document.body);
+    updateState(false, () => {
+      // TODO
+    });
 
     // Toggle - a simple way to toggle elements
-    $body.on('click', '[data-account-toggle]', (event) => {
+    $(document.body).on('click', '[data-account-toggle]', (event) => {
       const $el = $(event.currentTarget);
       const $target = $($el.data('account-toggle'));
       $target.toggle();
