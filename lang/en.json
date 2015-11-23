@@ -135,6 +135,7 @@
       "orders": {
         "heading_all": "Orders",
         "heading_completed": "Completed Orders",
+        "view_all": "View All",
         "items": {
           "number": "Order #{number}",
           "description": "{num_products, plural, one {1 item} other {# items}} totaling {cost}",
