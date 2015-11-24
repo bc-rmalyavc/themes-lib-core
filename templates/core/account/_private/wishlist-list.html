@@ -1,26 +1,24 @@
 <ul class="account-list account-wishlists">
 
-  <li class="account-list-header">
-
-    <div class="account-list-header-item">
-      <span class="account-list-header-label">{{lang 'core.account.wishlists.wishlist_name'}}</span>
-    </div>
-
-    <div class="account-list-header-item">
-      <span class="account-list-header-label">{{lang 'core.account.wishlists.num_items'}}</span>
-    </div>
-
-    <div class="account-list-header-item">
-      <span class="account-list-header-label">{{lang 'core.account.wishlists.public'}}</span>
-    </div>
-
-    <div class="account-list-header-item">
-      <span class="account-list-header-label">{{lang 'core.account.wishlists.action'}}</span>
-    </div>
-
-  </li>
-
   {{#if customer.wishlists}}
+    <li class="account-list-header">
+      <div class="account-list-header-item">
+        <span class="account-list-header-label">{{lang 'core.account.wishlists.wishlist_name'}}</span>
+      </div>
+
+      <div class="account-list-header-item">
+        <span class="account-list-header-label">{{lang 'core.account.wishlists.num_items'}}</span>
+      </div>
+
+      <div class="account-list-header-item">
+        <span class="account-list-header-label">{{lang 'core.account.wishlists.public'}}</span>
+      </div>
+
+      <div class="account-list-header-item">
+        <span class="account-list-header-label">{{lang 'core.account.wishlists.action'}}</span>
+      </div>
+    </li>
+
     {{#each customer.wishlists}}
 
       <li class="account-list-item">
