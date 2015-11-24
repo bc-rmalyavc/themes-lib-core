@@ -26,6 +26,12 @@
     {{#if price.saved}}
       <div class="product-item-sale-tag">{{lang 'core.product.sale'}}</div>
     {{/if}}
+
+    {{#if show_remove}}
+      <form class="form product-item-remove" action="{{remove_url}}" method="post">
+        <input type="submit" value="&times;">
+      </form>
+    {{/if}}
   </figure>
 
   <div class="product-item-details">
@@ -52,12 +58,6 @@
         <input type="checkbox" class="form-input form-checkbox" name="products[]" value="{{id}}" id="compare-{{id}}">
         <span class="form-label-text">{{lang 'core.product.compare'}}</span>
       </label>
-    {{/if}}
-
-    {{#if show_remove}}
-      <form class="form product-item-remove" action="{{remove_url}}" method="post">
-        <input type="submit" value="&times;">
-      </form>
     {{/if}}
   </div>
 
