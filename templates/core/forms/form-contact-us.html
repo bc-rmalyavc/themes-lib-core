@@ -12,7 +12,7 @@
     {{> core/forms/common/text label=(lang 'contact.phone') name="contact_phone" id="contact_phone" prefill=(lang 'contact.phone_placeholder') value=customer.phone}}
   {{/if}}
 
-  {{> core/forms/common/text label=(lang 'contact.email') name="contact_email" id="contact_email" required="true" prefill=(lang 'contact.email_placeholder') value=customer.email}}
+  {{> core/forms/common/email label=(lang 'contact.email') name="contact_email" id="contact_email" required="true" prefill=(lang 'contact.email_placeholder') value=customer.email}}
 
   {{#if forms.contact.order}}
     {{> core/forms/common/text label=(lang 'contact.order') name="contact_orderno" id="contact_orderno" prefill=(lang 'contact.order_placeholder')}}
