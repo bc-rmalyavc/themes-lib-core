@@ -18,11 +18,11 @@
 
     {{> core/forms/common/text required=true label=(lang 'core.giftcard.purchase.from_name') name="from_name" id="from_name" value=forms.gift_certificate.values.from_name}}
 
-    {{> core/forms/common/text required=true label=(lang 'core.giftcard.purchase.from_email') name="from_email" id="from_email" value=forms.gift_certificate.values.from_email}}
+    {{> core/forms/common/email required=true label=(lang 'core.giftcard.purchase.from_email') name="from_email" id="from_email" value=forms.gift_certificate.values.from_email}}
 
     {{> core/forms/common/text required=true label=(lang 'core.giftcard.purchase.to_name') name="to_name" id="to_name" value=forms.gift_certificate.values.to_name}}
 
-    {{> core/forms/common/text required=true label=(lang 'core.giftcard.purchase.to_email') name="to_email" id="to_email" value=forms.gift_certificate.values.to_email}}
+    {{> core/forms/common/email required=true label=(lang 'core.giftcard.purchase.to_email') name="to_email" id="to_email" value=forms.gift_certificate.values.to_email}}
 
     {{#if forms.gift_certificate.can_use_custom_amount}}
       <div class="form-field required">
