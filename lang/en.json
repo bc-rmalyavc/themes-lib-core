@@ -173,7 +173,8 @@
         "create": "Create Wishlist",
         "save": "Save Wishlist",
         "compare": "Compare",
-        "empty": "You have no wishlists."
+        "empty": "You have no wishlists.",
+        "details_empty": "There are no items in this wishlist."
       },
       "recent_items": {
         "heading": "Recently Viewed",
