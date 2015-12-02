@@ -40,6 +40,26 @@ For example:
 {{> layout/base}}
 ```
 
+## Giftcard Pages
+
+The three giftcard pages work in the same way except each of your templates need to include two partials, one for the page content and one for the navigation.
+
+By default the navigation will be styled as three inline-block links in a horizontal row. To drop this styling and use your own, set `$giftcard-nav-use-default-styles` to false in your scss.
+
+```
+<!-- templates/pages/gift-certificate/purchase.html -->
+{{#partial "page"}}
+  <article class="page-container">
+    {{> core/gift-certificate/navigation page='purchase'}}
+    <div class="page-content">
+      {{> core/gift-certificate/purchase}}
+    </div>
+  </article>
+{{/partial}}
+{{> layout/base}}
+```
+
+
 ### Styles
 
 Import the core styles into your theme with `@import "core/account";`. Some styles can be adjusted by defining the following variables before the import:
