@@ -22,9 +22,9 @@
     <span class="required-text">{{lang 'common.required'}}</span>
   </div>
   <div class="form-field-control">
-    <script src="https://www.google.com/recaptcha/api/challenge?k={{product.reviews.captcha}}"></script>
+    <script src="https://www.google.com/recaptcha/api/challenge?k={{captcha}}"></script>
     <noscript>
-      <iframe src="https://www.google.com/recaptcha/api/noscript?k={{product.reviews.captcha}}" height="300" width="500" frameborder="0"></iframe>
+      <iframe src="https://www.google.com/recaptcha/api/noscript?k={{captcha}}" height="300" width="500" frameborder="0"></iframe>
       <textarea
         class="form-input"
         {{#if id}}id="form-captcha-{{id}}"{{/if}}
