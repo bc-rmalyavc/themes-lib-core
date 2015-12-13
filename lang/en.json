@@ -185,6 +185,7 @@
       "returns": {
         "heading": "Returns",
         "successful": "Your return was submitted successfully. We'll respond as soon as we can.",
+        "no_returns": "You made any returns yet.",
         "list": {
           "title": "{quantity} \u00D7 {name}",
           "number": "Return #{number}",

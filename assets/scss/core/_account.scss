@@ -23,14 +23,14 @@ $account-breakpoint-medium: 900px !default; // menu changes from 35% to 25% widt
 
 // Internal Variables
 
-$account-font-size-heading: $account-font-size + 2;
+$account-font-size-heading: $account-font-size + 2 !default;
 
-$account-text-color-light: lighten($account-text-color,20%);
+$account-text-color-light: lighten($account-text-color,20%) !default;
 
-$account-gutter-inner: $account-gutter / 2;
+$account-gutter-inner: $account-gutter / 2 !default;
 
-$auth-gutter: $account-gutter;
-$auth-font-size: $account-font-size;
+$auth-gutter: $account-gutter !default;
+$auth-font-size: $account-font-size !default;
 
 // Imports
 
