@@ -9,9 +9,16 @@
 }
 
 .account-body {
-  width: 75%;
-  padding-left: $account-gutter-inner;
-  margin-left: 25%;
+  @media screen and (min-width: $account-breakpoint-small) {
+    width: 65%;
+    padding-left: $account-gutter-inner;
+    margin-left: 35%;
+  }
+
+  @media screen and (min-width: $account-breakpoint-medium) {
+    width: 75%;
+    margin-left: 25%;
+  }
 
   > :first-child {
     margin-top: 0;
@@ -25,7 +32,17 @@
 }
 
 .account-nav {
-  float: left;
-  width: 25%;
-  padding-right: $account-gutter-inner;
+  @media screen and (max-width: $account-breakpoint-small - 1) {
+    margin-bottom: $gutter;
+  }
+
+  @media screen and (min-width: $account-breakpoint-small) {
+    float: left;
+    width: 35%;
+    padding-right: $account-gutter-inner;
+  }
+
+  @media screen and (min-width: $account-breakpoint-medium) {
+    width: 25%;
+  }
 }

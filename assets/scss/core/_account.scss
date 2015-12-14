@@ -18,6 +18,9 @@ $account-alert-success-color: #d5ffd8 !default;
 
 $giftcard-nav-use-default-styles: true !default;
 
+$account-breakpoint-small: 620px !default; // menu changes from full-width to column
+$account-breakpoint-medium: 900px !default; // menu changes from 35% to 25% width
+
 // Internal Variables
 
 $account-font-size-heading: $account-font-size + 2;
