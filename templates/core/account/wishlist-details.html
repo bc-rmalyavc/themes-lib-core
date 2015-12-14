@@ -15,7 +15,7 @@
     {{#if wishlist.items}}
       <div class="account-wishlist-items">
         {{#each wishlist.items}}
-          {{> core/products/product-item show_remove=true remove_url=remove_url}}
+          {{> core/account/_private/account-product-item show_remove=true remove_url=remove_url}}
         {{/each}}
       </div>
     {{else}}

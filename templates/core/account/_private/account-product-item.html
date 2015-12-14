@@ -17,44 +17,44 @@
   @param show_rating bool
          If true, include the product's rating if there are enough votes.
 }}
-<article class="product-item">
-  <figure class="product-item-thumbnail">
+<article class="account-product-item">
+  <figure class="account-product-item-thumbnail">
     <a href="{{url}}" title="{{name}}">
       <img src="{{getImage image 'gallery'}}" alt="{{image.alt}}">
     </a>
 
     {{#if price.saved}}
-      <div class="product-item-sale-tag">{{lang 'core.product.sale'}}</div>
+      <div class="account-product-item-sale-tag">{{lang 'core.product.sale'}}</div>
     {{/if}}
 
     {{#if show_remove}}
-      <form class="form product-item-remove" action="{{remove_url}}" method="post">
+      <form class="form account-product-item-remove" action="{{remove_url}}" method="post">
         <input type="submit" value="&times;">
       </form>
     {{/if}}
   </figure>
 
-  <div class="product-item-details">
+  <div class="account-product-item-details">
     {{#if show_rating}}
       {{> core/products/rating rating=rating}}
     {{/if}}
 
-    <h3 class="product-item-title">
+    <h3 class="account-product-item-title">
       <a href="{{url}}" title="{{name}}">{{name}}</a>
     </h3>
 
     {{#if brand.name}}
-      <span class="product-item-brand">
+      <span class="account-product-item-brand">
         <a href="{{brand.url}}">{{brand.name}}</a>
       </span>
     {{/if}}
 
-    <div class="product-item-price">
+    <div class="account-product-item-price">
       {{> core/products/price}}
     </div>
 
     {{#if show_compare}}
-      <label class="form-label product-item-compare" for="compare-{{id}}">
+      <label class="form-label account-product-item-compare" for="compare-{{id}}">
         <input type="checkbox" class="form-input form-checkbox" name="products[]" value="{{id}}" id="compare-{{id}}">
         <span class="form-label-text">{{lang 'core.product.compare'}}</span>
       </label>
@@ -62,6 +62,6 @@
   </div>
 
   {{#if show_quickshop}}
-    <a href="{{url}}" class="product-item-quickshop" data-quick-shop data-product-id="{{id}}">{{lang 'core.product.quickshop.view'}}</a>
+    <a href="{{url}}" class="account-product-item-quickshop" data-quick-shop data-product-id="{{id}}">{{lang 'core.product.quickshop.view'}}</a>
   {{/if}}
 </article>

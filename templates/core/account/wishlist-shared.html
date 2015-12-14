@@ -7,7 +7,7 @@
     <h2 class="account-sub-heading">{{lang 'core.account.wishlists.wishlist_contents'}}</h2>
     <div class="account-wishlist-items">
       {{#each wishlist.items}}
-        {{> core/products/product-item show_remove=true}}
+        {{> core/account/_private/account-product-item show_remove=true}}
       {{/each}}
     </div>
   </section>
