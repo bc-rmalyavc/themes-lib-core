@@ -2,13 +2,13 @@
 // A label used to mark the status of an item
 
 .account-status {
-  margin: 0;
   padding: 6px 10px 5px;
-  color: $account-light-color;
+  margin: 0;
   font-size: 12px;
   font-weight: normal;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   line-height: 1;
-  background: #8E8E8E; // TODO: Colors for each status
+  letter-spacing: 1px;
+  color: $account-light-color;
+  text-transform: uppercase;
+  background: #8e8e8e; // TODO: Colors for each status
 }
