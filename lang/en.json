@@ -336,7 +336,8 @@
       "new_password": {
         "password": "New Password",
         "password2": "Confirm Password",
-        "submit": "Update Password"
+        "submit": "Update Password",
+        "passwords_no_match": "Your passwords do not match."
       },
       "forgot": {
         "heading": "Forgot Password",
