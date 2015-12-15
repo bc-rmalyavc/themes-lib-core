@@ -3,7 +3,11 @@
     display: inline-block;
     width: 100%;
     margin-bottom: 5px;
-    color: $account-accent-color;
+  }
+
+  .form-field-checkbox,
+  .form-field-radio {
+    .form-label-text { width: auto; }
   }
 
   .form-field {
