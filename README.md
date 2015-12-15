@@ -59,17 +59,19 @@ By default the navigation will be styled as three inline-block links in a horizo
 {{> layout/base}}
 ```
 
+The giftcard PageManager class should be all you need for the giftcard functionality to work in your theme:
 
-### Styles
+```javascript
+// assets/js/theme/GiftCertificate.js
 
-Import the core styles into your theme with `@import "core/account";`. Some styles can be adjusted by defining the following variables before the import:
+import GiftCertificate from './core/GiftCertificate';
 
-- `$account-light-color`—Base background color for some elements.
-- `$account-accent-color`—Main accent color.
-- `$account-border-color`—Border color for separators.
-- `$account-border-radius`—Border radius used on some elements.
-- `$account-gutter`—A general layout size. Multiples of this will be used for paddings.
-- `$account-font-size`—The base font size.
+export default GiftCertificate;
+```
+
+## Styles
+
+Import the core styles into your theme with `@import "core/account";`. Have a look at the root `core/_account.scss` for a reference of what variables are at your disposal.
 
 Below is an example of how you could include core styles into your theme. This example is overriding some core variables and styles.
 
@@ -87,6 +89,11 @@ $account-font-size: $font-size;
 // Style Overrides
 .account-wrapper {
   @extend %wrapper;
-  margin-top: $gutter*2;
+  margin-top: $gutter * 2;
 }
 ```
+
+## Caveats
+
+ - As of December 15, 2015, please style your own product grids and wishlist lists.
+ - You will need a `default_image` path in your config.json theme settings for the missing image fallback to work.
