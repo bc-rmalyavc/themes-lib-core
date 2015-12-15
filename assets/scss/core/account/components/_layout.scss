@@ -10,14 +10,13 @@
 
 .account-body {
   @media screen and (min-width: $account-breakpoint-small) {
+    float: right;
     width: 65%;
     padding-left: $account-gutter-inner;
-    margin-left: 35%;
   }
 
   @media screen and (min-width: $account-breakpoint-medium) {
     width: 75%;
-    margin-left: 25%;
   }
 
   > :first-child {
