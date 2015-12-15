@@ -8,7 +8,7 @@
       <div class="account-recently-viewed account-product-wrapper {{products_per_row_class}}">
         {{!-- TODO: Limit to 3 products? --}}
         {{#each customer.recently_viewed_products.items}}
-          {{> core/account/_private/account-product-item}}
+          {{> core/account/_private/account-product-item default_image=../theme_settings.default_image}}
         {{/each}}
       </div>
     </form>

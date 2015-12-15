@@ -20,7 +20,7 @@
 <article class="account-product-item">
   <figure class="account-product-item-thumbnail">
     <a href="{{url}}" title="{{name}}">
-      <img src="{{getImage image 'gallery'}}" alt="{{image.alt}}">
+      <img src="{{getImage image 'gallery' (cdn default_image)}}" alt="{{image.alt}}">
     </a>
 
     {{#if price.saved}}
