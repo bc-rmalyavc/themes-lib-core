@@ -17,7 +17,7 @@
           aria-required="{{required}}">
           <option disabled>{{lang 'forms.date.year'}}</option>
           {{#each year.items}}
-            <option {{#equals ../year.value value}}selected{{/equals}} value="{{value}}">{{label}}</option>
+            <option {{#if ../year.value '==' value}}selected{{/if}} value="{{value}}">{{label}}</option>
           {{/each}}
         </select>
       </span>
@@ -31,7 +31,7 @@
           aria-required="{{required}}">
           <option disabled>{{lang 'forms.date.month'}}</option>
           {{#each month.items}}
-            <option {{#equals ../month.value value}}selected{{/equals}} value="{{value}}">{{label}}</option>
+            <option {{#if ../month.value '==' value}}selected{{/if}} value="{{value}}">{{label}}</option>
           {{/each}}
         </select>
       </span>
@@ -45,7 +45,7 @@
           aria-required="{{required}}">
           <option disabled>{{lang 'forms.date.day'}}</option>
           {{#each day.items}}
-            <option {{#equals ../day.value value}}selected{{/equals}} value="{{value}}">{{label}}</option>
+            <option {{#if ../day.value '==' value}}selected{{/if}} value="{{value}}">{{label}}</option>
           {{/each}}
         </select>
       </span>

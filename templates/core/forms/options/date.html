@@ -11,27 +11,31 @@
       <span class="form-select-wrapper form-date-year">
         <select class="form-input form-select" name="attribute[{{id}}][year]" {{#if required}}required{{/if}} aria-required="{{required}}">
           <option disabled>{{lang 'forms.date.year'}}</option>
-          {{#enumerate earliest_year latest_year}}
-            <option value="{{this}}" {{#equals ../selected_date.year this}}selected="selected"{{/equals}}>{{this}}</option>
-          {{/enumerate}}
+          {{#if earliest_year '===' latest_year}}
+            <option value="{{$index}}" selected="selected">{{$index}}</option>
+          {{else}}
+            {{#for earliest_year latest_year}}
+              <option value="{{$index}}" {{#if ../selected_date.year '==' $index}}selected="selected"{{/if}}>{{$index}}</option>
+            {{/for}}
+          {{/if}}
         </select>
       </span>
 
       <span class="form-select-wrapper form-date-month">
         <select class="form-input form-select" name="attribute[{{id}}][month]" {{#if required}}required{{/if}} aria-required="{{required}}">
           <option disabled>{{lang 'forms.date.month'}}</option>
-          {{#enumerate 1 12}}
-            <option value="{{this}}" {{#equals ../selected_date.month this}}selected="selected"{{/equals}}>{{getShortMonth this}}</option>
-          {{/enumerate}}
+          {{#for 1 12}}
+            <option value="{{$index}}" {{#if ../selected_date.month '==' $index}}selected="selected"{{/if}}>{{getShortMonth $index}}</option>
+          {{/for}}
         </select>
       </span>
 
       <span class="form-select-wrapper form-date-day">
         <select class="form-input form-select" name="attribute[{{id}}][day]" {{#if required}}required{{/if}} aria-required="{{required}}">
           <option disabled>{{lang 'forms.date.day'}}</option>
-          {{#enumerate 1 31}}
-            <option value="{{this}}" {{#equals ../selected_date.day this}}selected="selected"{{/equals}}>{{this}}</option>
-          {{/enumerate}}
+          {{#for 1 31}}
+            <option value="{{$index}}" {{#if ../selected_date.day '==' $index}}selected="selected"{{/if}}>{{$index}}</option>
+          {{/for}}
         </select>
         </span>
     </span>
