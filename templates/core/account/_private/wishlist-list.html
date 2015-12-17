@@ -1,66 +1,49 @@
-<ul class="account-list account-wishlists">
+{{#if customer.wishlists}}
 
-  {{#if customer.wishlists}}
-    <li class="account-list-header">
-      <div class="account-list-header-item">
-        <span class="account-list-header-label">{{lang 'core.account.wishlists.wishlist_name'}}</span>
-      </div>
-
-      <div class="account-list-header-item">
-        <span class="account-list-header-label">{{lang 'core.account.wishlists.num_items'}}</span>
-      </div>
-
-      <div class="account-list-header-item">
-        <span class="account-list-header-label">{{lang 'core.account.wishlists.public'}}</span>
-      </div>
-
-      <div class="account-list-header-item">
-        <span class="account-list-header-label">{{lang 'core.account.wishlists.action'}}</span>
-      </div>
-    </li>
-
+  <div class="account-items">
     {{#each customer.wishlists}}
-
-      <li class="account-list-item">
-        <div class="account-list-item-details">
-
-          <div class="account-list-item-cell" data-title="{{lang 'core.account.wishlists.wishlist_name'}}">
+      <article class="account-item">
+        <div class="account-item-body">
+          <h1 class="account-item-title account-item-title-large">
             <a href="{{view_url}}">{{name}}</a>
-          </div>
+          </h1>
 
-          <div class="account-list-item-cell" data-title="{{lang 'core.account.wishlists.num_items'}}">
-            {{num_items}}
-          </div>
+          <div class="account-item-details">
+            <div class="account-item-detail">
+              <h2 class="account-item-detail-title">{{lang 'core.account.wishlists.num_items'}}</h2>
+              <span class="account-item-detail-value">{{num_items}}</span>
+            </div>
 
-          <div class="account-list-item-cell" data-title="{{lang 'core.account.wishlists.public'}}">
-            {{#if is_public}}
-              {{lang 'core.account.common.yes'}}
-            {{else}}
-              {{lang 'core.account.common.no'}}
-            {{/if}}
-          </div>
-
-          <div class="account-list-item-cell">
-            <form method="post" action="{{delete_url}}" class="form">
-              <div class="form-actions">
-                <a href="{{edit_url}}" class="button button-small">{{lang 'core.account.common.edit'}}</a>
-                <input class="button button-small" type="submit" value="{{lang 'core.account.common.delete'}}">
+            <div class="account-item-detail">
+              <h2 class="account-item-detail-title">{{lang 'core.account.wishlists.public'}}</h2>
+              <span class="account-item-detail-value">
                 {{#if is_public}}
-                  <a href="{{share_url}}" class="button button-small" role="button">{{lang 'core.account.common.share'}}</a>
+                  {{lang 'core.account.common.yes'}}
+                {{else}}
+                  {{lang 'core.account.common.no'}}
                 {{/if}}
-              </div>
-            </form>
+              </span>
+            </div>
           </div>
-
         </div>
-      </li>
-
+        <div class="account-item-actions">
+          <form method="post" action="{{delete_url}}" class="form">
+            <div class="form-actions">
+              <a href="{{edit_url}}" class="button button-small">{{lang 'core.account.common.edit'}}</a>
+              <input class="button button-small" type="submit" value="{{lang 'core.account.common.delete'}}">
+              {{#if is_public}}
+                <a href="{{share_url}}" class="button button-small" role="button">{{lang 'core.account.common.share'}}</a>
+              {{/if}}
+            </div>
+          </form>
+        </div>
+      </article>
     {{/each}}
+  </div>
 
-  {{else}}
-    <li class="account-empty">{{lang 'core.account.wishlists.empty'}}</li>
-  {{/if}}
-</ul>
+{{else}}
+  <div class="account-empty">{{lang 'core.account.returns.wishlists.empty'}}</div>
+{{/if}}
 
 <form class="form" action="{{this.urls.account.wishlists.delete}}" method="post">
   <div class="form-actions">

@@ -158,7 +158,7 @@
       "wishlists": {
         "heading": "Wishlists",
         "new": "New Wishlist",
-        "num_items": "Items",
+        "num_items": "# Items",
         "add_item": "Add to wishlist",
         "wishlist_name": "Wishlist Name",
         "make_public": "Make wishlist public",

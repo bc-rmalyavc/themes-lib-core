@@ -1,6 +1,10 @@
 // Layout
 // Each list item has 3 sections: thumbnail, body, and badge.
 
+.account-items {
+  margin-bottom: $account-gutter;
+}
+
 .account-item {
   position: relative;
   display: table;
@@ -14,7 +18,8 @@
 
 .account-item-thumbnail,
 .account-item-body,
-.account-item-badge {
+.account-item-badge,
+.account-item-actions {
   display: table-cell;
   padding-top: $account-gutter-inner;
   padding-bottom: $account-gutter-inner;
@@ -60,6 +65,10 @@
   }
 }
 
+.account-item-title-large {
+  font-size: $account-font-size * 1.2;
+}
+
 .account-item-description {
   margin-top: 0;
   margin-bottom: 5px;
@@ -92,6 +101,7 @@
 
 // Badge
 
-.account-item-badge {
+.account-item-badge,
+.account-item-actions {
   white-space: nowrap;
 }
