@@ -16,7 +16,7 @@
         {{> core/forms/common/password required=true label=(lang 'core.auth.login.login_form.password') id='login_pass' name='login_pass'}}
 
         <div class="form-actions">
-          <input type="submit" class="button account-login-button" value="{{lang 'core.auth.login.login_form.submit'}}">
+          <input type="submit" class="button account-button-primary account-login-button" value="{{lang 'core.auth.login.login_form.submit'}}">
           <a class="button account-button-secondary" href="{{urls.auth.forgot_password}}">{{lang 'core.auth.login.login_form.forgot_password'}}</a>
         </div>
       </form>
@@ -32,7 +32,7 @@
         <li>{{lang 'core.auth.login.create_form.fact4'}}</li>
         <li>{{lang 'core.auth.login.create_form.fact5'}}</li>
       </ul>
-      <a class="button" href="{{urls.auth.create_account}}">{{lang 'core.auth.login.create_form.create_account'}}</a>
+      <a class="button account-button-primary" href="{{urls.auth.create_account}}">{{lang 'core.auth.login.create_form.create_account'}}</a>
     </div>
   </div>
 {{/partial}}
