@@ -335,6 +335,7 @@
         "continue": "Continue"
       },
       "new_password": {
+        "heading": "New Password",
         "password": "New Password",
         "password2": "Confirm Password",
         "submit": "Update Password",
