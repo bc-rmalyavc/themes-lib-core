@@ -1,15 +1,10 @@
-.account-page-forgot .account-content {
+.account-page-forgot .account-body {
   width: 100%;
   max-width: 600px;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-
-  p {
-    max-width: 500px;
-    margin-right: auto;
-    margin-left: auto;
-  }
+  float: none;
 }
 
 .account-forgot-form {

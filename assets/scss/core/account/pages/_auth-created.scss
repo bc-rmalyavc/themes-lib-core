@@ -1,15 +1,13 @@
-.account-page-created .account-content {
+.account-page-created .account-body {
   width: 100%;
   max-width: 600px;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+  float: none;
 
   p {
-    max-width: 500px;
-    margin-right: auto;
     margin-bottom: $account-gutter;
-    margin-left: auto;
     line-height: 1.5;
   }
 
