@@ -33,17 +33,17 @@
 
     {{#if price.without_tax}}
       <span class="price-withouttax" data-price="without-tax">
-        <span class="price-value" data-price-value="without-tax">
-          {{price.without_tax.formatted}}
-        </span>
-
         {{#if price.rrp_without_tax}}
           <span class="price-rrp" data-price-rrp="without-tax">
             {{price.rrp_without_tax.formatted}}
           </span>
         {{/if}}
 
-        {{#if show_tax_labels}}
+        <span class="price-value" data-price-value="without-tax">
+          {{price.without_tax.formatted}}
+        </span>
+
+        {{#if price.with_tax}}
           <span class="price-tax-label">{{lang 'core.price.without_tax' tax_label=price.tax_label}}</span>
         {{/if}}
       </span>
@@ -52,18 +52,18 @@
 
     {{#if price.with_tax}}
       <span class="price-withtax" data-price="with-tax">
-        <span class="price-value" data-price-value="with-tax">
-          {{price.with_tax.formatted}}
-        </span>
-
         {{#if price.rrp_with_tax}}
           <span class="price-rrp" data-price-rrp="with-tax">
             {{price.rrp_with_tax.formatted}}
           </span>
         {{/if}}
+
+        <span class="price-value" data-price-value="with-tax">
+          {{price.with_tax.formatted}}
+        </span>
       </span>
 
-      {{#if show_tax_labels}}
+      {{#if price.without_tax}}
         <span class="price-tax-label">{{lang 'core.price.with_tax' tax_label=price.tax_label}}</span>
       {{/if}}
     {{/if}}
