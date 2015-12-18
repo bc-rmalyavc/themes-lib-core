@@ -11,11 +11,6 @@ $account-text-color: #5f5f5f !default;
 
 $account-card-background-color: #f5f5f5 !default;
 
-$account-alert-text-color: #666 !default;
-$account-alert-info-color: #eee !default;
-$account-alert-error-color: #fdd !default;
-$account-alert-success-color: #d5ffd8 !default;
-
 $giftcard-nav-use-default-styles: true !default;
 
 $account-breakpoint-small: 620px !default; // menu changes from full-width to column
@@ -42,7 +37,6 @@ $auth-font-size: $account-font-size !default;
 @import "account/components/navigation";
 @import "account/components/pagination";
 @import "account/components/card";
-@import "account/components/alert";
 @import "account/components/toggle";
 @import "account/components/status";
 @import "account/components/shipments";
