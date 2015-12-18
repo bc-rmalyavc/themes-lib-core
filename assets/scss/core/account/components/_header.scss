@@ -19,10 +19,17 @@
 }
 
 .account-tool {
+  position: relative;
+  z-index: 10;
   display: inline-block;
+  padding: 0;
+  background: transparent;
   margin-left: 10px;
-  color: inherit;
   cursor: pointer;
-  background: none;
+  color: inherit;
   border: 0;
+
+  &:hover { color: $account-link-color; }
+
+  &:focus { outline: 0; }
 }
