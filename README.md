@@ -32,7 +32,7 @@ The core account pages are designed so that you can import them from your accoun
 
 For example:
 
-```
+```html
 <!-- templates/pages/account/edit.html -->
 {{#partial "page"}}
   {{> core/account/edit}}
@@ -46,7 +46,7 @@ The three giftcard pages work in the same way except each of your templates need
 
 By default the navigation will be styled as three inline-block links in a horizontal row. To drop this styling and use your own, set `$giftcard-nav-use-default-styles` to false in your scss.
 
-```
+```html
 <!-- templates/pages/gift-certificate/purchase.html -->
 {{#partial "page"}}
   <article class="page-container">
@@ -67,6 +67,16 @@ The giftcard PageManager class should be all you need for the giftcard functiona
 import GiftCertificate from './core/GiftCertificate';
 
 export default GiftCertificate;
+```
+
+## Unavailable pages
+
+Partials for maintenance/hibernation pages come with their own stripped-down layout file and therefore should be included standalone without any reference to the base.html layout:
+
+```html
+<!-- templates/pages/unavailable/maintenance.html -->
+{{> core/unavailable/maintenance}}
+
 ```
 
 ## Styles
@@ -95,5 +105,5 @@ $account-font-size: $font-size;
 
 ## Caveats
 
- - As of December 15, 2015, please style your own product grids and wishlist lists.
+ - As of December 21, 2015, please style your own product grids.
  - You will need a `default_image` path in your config.json theme settings for the missing image fallback to work.
