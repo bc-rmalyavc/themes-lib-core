@@ -3,8 +3,11 @@ import updateState from './updateState';
 
 export default class Account extends PageManager {
   loaded() {
-    updateState(false, () => {
-      // TODO
-    });
+    updateState(false, this.selectWrapCallback);
   }
+
+  /**
+   * Optional callback fired when a fresh state <select> element is added to the DOM
+   */
+  selectWrapCallback($selectEl) {}
 }

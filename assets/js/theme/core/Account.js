@@ -13,9 +13,7 @@ export default class Account extends PageManager {
     initAlertDismissable();
     initDownloadGallery();
 
-    updateState(false, () => {
-      // TODO
-    });
+    updateState(false, this.selectWrapCallback);
 
     // Toggle - a simple way to toggle elements
     $(document.body).on('click', '[data-account-toggle]', (event) => {
@@ -24,4 +22,9 @@ export default class Account extends PageManager {
       $target.toggle();
     });
   }
+
+  /**
+   * Optional callback fired when a fresh state <select> element is added to the DOM
+   */
+  selectWrapCallback($selectEl) {}
 }

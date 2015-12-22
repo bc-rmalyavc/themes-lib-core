@@ -18,12 +18,12 @@ function stateAsSelect(responseData, stateAttrs, useId, shouldWrap) {
   }
 
   const $stateSelect = $('<select>', {
-    class: "form-input form-select",
+    class: 'form-input form-select',
     id: stateAttrs.stateId,
     name: stateAttrs.stateName,
     required: true,
-    "aria-required": true,
-    "data-field-type": "State",
+    'aria-required': true,
+    'data-field-type': 'State',
     html: stateArray.join(' ')
   });
 
@@ -41,7 +41,7 @@ function stateAsInput(stateAttrs) {
     type: "text",
     id: stateAttrs.stateId,
     name: stateAttrs.stateName,
-    "data-field-type": "State"
+    'data-field-type': 'State'
   });
 
   return $stateInput;
@@ -89,7 +89,7 @@ function fetchAndUpdateStateInput(event, useId, callback) {
       if (callback) { callback($newStateElement); }
     } else {
       $selectedText.remove();
-      $newStateElementParent.removeClass('form-select-wrapper')
+      $newStateElementParent.removeClass('form-select-wrapper');
     }
   });
 }
