@@ -103,6 +103,31 @@ $account-font-size: $font-size;
 }
 ```
 
+## Javascript
+
+Core includes all javascript needed for the account pages to work -- just import and them immediately export the **Account.js**, **Auth.js** and **GiftCertificate.js** classes into your own theme:
+
+```js
+// assets/js/theme/Account.js
+import Account from './core/Account';
+
+export default Account;
+```
+
+###Additional `<select>` JS
+But! If you're require additional javascript for your select inputs, extend Auth and Account  instead of exporting them and enjoy to the `selectWrapCallback()` method which is called every time a new `<select>` element is appended to the DOM (on any auth or account pages). Important when swapping between a select and text input in account address fields.
+
+```js
+// assets/js/theme/Auth.js
+import CoreAuth from './core/Auth';
+
+export default class Auth extends CoreAuth {
+  selectWrapCallback($selectEl) {
+    console.log('there is a new select element on the page', $selectEl);
+  }
+};
+```
+
 ## Caveats
 
  - As of December 21, 2015, please style your own product grids.
