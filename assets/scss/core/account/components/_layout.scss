@@ -33,7 +33,7 @@
 
 .account-nav {
   @media screen and (max-width: $account-breakpoint-small - 1) {
-    margin-bottom: $gutter;
+    margin-bottom: $account-gutter;
   }
 
   @media screen and (min-width: $account-breakpoint-small) {
