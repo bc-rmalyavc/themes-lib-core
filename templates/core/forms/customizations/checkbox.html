@@ -10,7 +10,10 @@
         {{#if checked}}checked{{/if}}
         {{#if required}}required{{/if}}
         aria-required="{{required}}">
-      <span class="form-label-text product-customization-text">{{display_name}}</span>
+      <span class="form-label-text product-customization-text">
+        {{display_name}}
+        {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
+      </span>
     </span>
   </label>
 </div>
