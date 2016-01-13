@@ -149,6 +149,7 @@
       "addresses": {
         "heading": "Addresses",
         "add_heading": "Add New Address",
+        "edit_heading": "Edit Address",
         "primary": "Primary",
         "phone": "Phone: {phone_number}",
         "new_address": "New Address",

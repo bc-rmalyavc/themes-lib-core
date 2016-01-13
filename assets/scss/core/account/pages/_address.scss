@@ -1,57 +1,35 @@
-.account-address-list,
-.account-address-form {
-  margin-right: -($account-gutter / 2);
-  margin-left: -($account-gutter / 2);
-  font-size: 0;
-}
+// Address List
 
-.account-address-list-item {
-  position: relative;
-  display: inline-block;
-  width: 33.333%;
-  padding-right: $account-gutter / 2;
-  padding-left: $account-gutter / 2;
-  margin-bottom: $account-gutter;
-  font-size: $account-font-size;
-  vertical-align: top;
-}
-
-.account-address-list-item-content .address-detail {
-  display: block;
-}
-
-.account-address-list-item-add-new {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: block;
-  float: left;
-  width: 100%;
-  padding-top: 50%;
-  padding-bottom: 50%;
-  margin-top: -5px;
-  font-size: 18px;
-  text-align: center;
-  transform: translate(-50%, -50%);
-
-  > .add-icon {
-    display: block;
-    font-size: 40px;
-    line-height: 40px;
+.account-page-add-address {
+  .account-content {
+    padding-top: $account-gutter-inner;
+    border-top: 1px solid $account-border-color;
   }
-}
-
-.account-address-list-item-wrap {
-  min-height: 200px;
-  padding: 30px;
-  border: 1px solid $account-border-color;
-  border-radius: $account-border-radius;
-}
-
-.account-address-list-item-actions {
-  margin-top: 30px;
 }
 
 .account-address-detail {
   display: block;
+}
+
+// Add Address
+
+.account-address-form {
+  padding-top: $account-gutter-inner;
+
+  @include media($min: $account-breakpoint-medium) {
+    .form-field {
+      float: left;
+      width: 50%;
+      padding-right: $account-gutter-inner;
+
+      &:nth-of-type(2n) {
+        padding-right: 0;
+        padding-left: $account-gutter-inner;
+      }
+    }
+  }
+
+  .form-actions {
+    padding-top: $account-gutter-inner;
+  }
 }

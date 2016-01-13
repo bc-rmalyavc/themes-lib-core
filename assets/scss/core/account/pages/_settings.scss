@@ -11,6 +11,7 @@
 
 .account-settings-form {
   @extend %clearfix;
+  padding-top: $account-gutter-inner;
 
   .form-field {
     float: left;
@@ -26,7 +27,5 @@
 
   .form-actions {
     padding-top: $account-gutter-inner;
-    margin-top: $account-gutter-inner;
-    border-top: 1px solid $account-border-color;
   }
 }

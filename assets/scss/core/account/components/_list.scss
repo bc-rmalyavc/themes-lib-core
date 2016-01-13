@@ -53,7 +53,10 @@
 
 .account-item-body {
   width: 100%;
-  padding-left: $account-gutter-inner;
+
+  .account-item-thumbnail + & {
+    padding-left: $account-gutter-inner;
+  }
 }
 
 .account-item-title {
