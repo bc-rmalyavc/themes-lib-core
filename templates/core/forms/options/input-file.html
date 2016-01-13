@@ -16,11 +16,13 @@
           aria-required="{{required}}">
       </span>
     </span>
-    {{#if file_types '!==' ''}}
-      <span class="form-file-types">{{lang 'forms.file.types' file_types=file_types}}</span>
-    {{/if}}
-    {{#if file_size '>' 0}}
-      <span class="form-file-size">{{lang 'forms.file.size' bytes=file_size}}</span>
-    {{/if}}
   </label>
+
+  {{#if file_types '!==' ''}}
+    <span class="form-file-types">{{lang 'forms.file.types' file_types=file_types}}</span>
+  {{/if}}
+
+  {{#if file_size '>' 0}}
+    <span class="form-file-size">{{lang 'forms.file.size' bytes=file_size}}</span>
+  {{/if}}
 </div>
