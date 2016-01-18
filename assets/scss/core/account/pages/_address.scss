@@ -16,7 +16,7 @@
 .account-address-form {
   padding-top: $account-gutter-inner;
 
-  @include media($min: $account-breakpoint-medium) {
+  @media screen and (min-width: $account-breakpoint-medium) {
     .form-field {
       float: left;
       width: 50%;
