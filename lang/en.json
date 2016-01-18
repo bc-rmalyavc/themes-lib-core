@@ -312,7 +312,7 @@
           "heading": "Log in",
           "email_address": "Email Address",
           "password": "Password",
-          "submit": "Submit",
+          "submit": "Log In",
           "forgot_password": "Forgot password?"
         },
         "create_form": {
