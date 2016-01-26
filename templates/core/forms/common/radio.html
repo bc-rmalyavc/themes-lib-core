@@ -15,8 +15,8 @@
             value="{{value}}"
             {{#if checked}}checked{{/if}}
             {{#if private_id}}data-field-type="{{private_id}}"{{/if}}
-            {{#if required}}required{{/if}}
-            aria-required="{{required}}">
+            {{#if ../required}}required{{/if}}
+            aria-required="{{../required}}">
           <span class="form-label-text">
             {{#if label}}
               {{label}}
