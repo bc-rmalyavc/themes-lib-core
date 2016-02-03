@@ -13,6 +13,7 @@
             name="message_order_id"
             required
             aria-required="true">
+            <option disabled selected value="">{{lang 'core.account.inbox.order_pick_one'}}</option>
             {{#each customer.inbox.orders}}
               <option value="{{id}}">{{lang 'core.account.inbox.order_display' id=id date=date total=amount.formatted}}</option>
             {{/each}}

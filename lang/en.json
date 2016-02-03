@@ -226,6 +226,7 @@
       },
       "inbox": {
         "order": "Order",
+        "order_pick_one": "Select an order...",
         "order_display": "Order #{id} / {date} / {total}",
         "subject": "Subject",
         "message": "Message",
