@@ -15,7 +15,7 @@
     {{#if wishlist.items}}
       <div class="account-wishlist-items account-product-wrapper">
         {{#each wishlist.items}}
-          {{> core/account/_private/account-product-item show_remove=true remove_url=remove_url default_image=../theme_settings.default_image}}
+          {{> core/account/_private/account-product-item show_remove=true remove_url=remove_url default_image=../theme_settings.default_image show_bg=../show_bg}}
         {{/each}}
       </div>
     {{else}}
