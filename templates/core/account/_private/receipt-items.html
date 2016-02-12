@@ -1,14 +1,14 @@
-{{#if items}}
+{{#if order.items}}
   <div class="account-items account-receipt-items">
     <h2 class="account-sub-heading">{{lang 'core.account.receipt.items.title'}}</h2>
 
-    {{#each items}}
+    {{#each order.items}}
       <article class="account-item">
         <div class="account-item-thumbnail">
-          {{!-- TODO: Add default placeholder image --}}
-          {{!-- https://github.com/bigcommerce/stencil/blob/master/templates/components/products/card.html#L3 --}}
-          {{#if image}}
-            <img src="{{getImage image 'account_product_thumbnail' (cdn theme_settings.default_image)}}" alt="{{image.alt}}">
+          {{#if type '===' 'giftcertificate'}}
+            <img src="{{cdn ../../theme_settings.default_image_gift_certificate}}">
+          {{else}}
+            <img src="{{getImage image 'account_product_thumbnail' (cdn ../../theme_settings.default_image)}}" alt="{{image.alt}}">
           {{/if}}
         </div>
 
