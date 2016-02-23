@@ -307,7 +307,23 @@
         "you_save": "(You save {amount})"
       }
     },
-
+    "invoice": {
+        "for_order": "{name} Invoice for Order #{id}",
+        "phone": "Phone: {number}",
+        "email": "Email: {email}",
+        "order": "Order:",
+        "payment_method": "Payment Method:",
+        "order_date": "Order Date:",
+        "shipping_method": "Shipping Method:",
+        "order_items": "Order Items",
+        "qty": "Qty",
+        "code": "Code/SKU",
+        "shipping_address": "Shipping Address",
+        "product_name": "Product Name",
+        "price": "Price",
+        "total": "Total",
+        "comments": "Comments"
+    },
     "auth": {
       "login": {
         "login_form": {

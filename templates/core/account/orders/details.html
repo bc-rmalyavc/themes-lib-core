@@ -9,7 +9,7 @@
 {{/partial}}
 
 {{#partial 'account-toolbar'}}
-  <a class="account-tool" href="{{order.invoice_url}}">{{lang 'core.account.receipt.actions.print_invoice'}}</a>
+  <a class="account-tool" href="{{order.invoice_url}}" target="_blank">{{lang 'core.account.receipt.actions.print_invoice'}}</a>
 
   <form class="account-order-invoice" action="{{order.reorder_url}}" method="post">
     <input type="hidden" name="orderid" value="{{order.id}}">

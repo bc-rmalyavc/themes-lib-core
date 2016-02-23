@@ -79,6 +79,22 @@ Partials for maintenance/hibernation pages come with their own stripped-down lay
 
 ```
 
+## Invoices
+
+The printable invoice template (`/templates/core/account/orders/invoice.html`) is a standalone template with its own layout that does not rely on theme.scss at all. It uses invoice.css, which you'll need to include as a separate file under `/assets/scss`:
+
+```scss
+// assets/scss/invoice.scss
+@import "core/invoice";
+
+// this template doesn't really merit any overrides,
+// but you could do this if you really wanted to:
+body {
+  font-family: $primary-font;
+}
+
+```
+
 ## Styles
 
 Import the core styles into your theme with `@import "core/account";`. Have a look at the root `core/_account.scss` for a reference of what variables are at your disposal.
