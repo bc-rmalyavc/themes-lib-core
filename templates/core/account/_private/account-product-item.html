@@ -20,7 +20,7 @@
 <article class="account-product-item">
   <figure class="account-product-item-thumbnail" {{#if show_bg}}style="background-image: url({{getImage image 'product_item' (cdn default_image)}})"{{/if}}>
     <a href="{{url}}" title="{{name}}">
-      <img src="{{getImage image 'gallery' (cdn default_image)}}" alt="{{image.alt}}">
+      <img src="{{getImage image 'account-product-thumbnail' (cdn default_image)}}" alt="{{image.alt}}">
     </a>
 
     {{#if price.saved}}

@@ -95,6 +95,23 @@ body {
 
 ```
 
+## Images
+
+The core templates rely on a few image size strings to be defined in your `settings._images` object:
+
+**account-product-thumbnail:** All product images: product grids, orders/returns lists, and downloadable products.
+
+**account-logo:** The version of your theme's logo used both on the maintenance/hibernation pages as well is in the header of the printable invoice.
+
+**product-picklist-thumb:** The product thumbnail pulled in by the Picklist product option type.
+
+### Default image
+
+You also must have a `settings.default_image` defined, which is a path to your theme's fallback image, i.e. `"/assets/img/no-image.svg"`.
+
+#### TODO
+`default_image` should be kebab-case, as we seem to moving in the direction of that being the convention.
+
 ## Styles
 
 Import the core styles into your theme with `@import "core/account";`. Have a look at the root `core/_account.scss` for a reference of what variables are at your disposal.
@@ -146,5 +163,4 @@ export default class Auth extends CoreAuth {
 
 ## Caveats
 
- - As of December 21, 2015, please style your own product grids.
- - You will need a `default_image` path in your config.json theme settings for the missing image fallback to work.
+ - As of February 24, 2015, please style your own product grids.

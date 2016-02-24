@@ -7,7 +7,7 @@
     {{#if downloads.images}}
       <div class="account-downloads-gallery">
         <div class="account-downloads-gallery-image account-card">
-          <img src="{{getImage downloads.thumbnail}}" alt="{{downloads.images.thumbnail}}" data-account-download-image>
+          <img src="{{getImage downloads.thumbnail 'account-product-thumbnail' (cdn ../theme_settings.default_image)}}" alt="{{downloads.images.thumbnail}}" data-account-download-image>
         </div>
 
         {{#if downloads.images.length '>' 1}}

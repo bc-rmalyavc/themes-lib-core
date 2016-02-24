@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-### [2.0.1] - unreleased
+### [2.0.1] - 2016-02-24
 
 #### Changed
  - login/signup columns now break into a single column at `$account-breakpoint-small`
