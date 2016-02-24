@@ -7,6 +7,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 #### Changed
  - login/signup columns now break into a single column at `$account-breakpoint-small`
  - account-create form columns now break into a single column at `$account-breakpoint-small`
+ - `{{getImage}}` image size strings are namespaced and consistent (see readme)
+
 
 ### [2.0.0] - 2016-02-22
 
