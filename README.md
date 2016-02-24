@@ -99,11 +99,13 @@ body {
 
 The core templates rely on a few image size strings to be defined in your `settings._images` object:
 
+**core-swatch:** For swatch (product option) patterns. The maximum size is 150x150.
+
 **account-product-thumbnail:** All product images: product grids, orders/returns lists, and downloadable products.
 
 **account-logo:** The version of your theme's logo used both on the maintenance/hibernation pages as well is in the header of the printable invoice.
 
-**product-picklist-thumb:** The product thumbnail pulled in by the Picklist product option type.
+**core-product-picklist:** The product thumbnail pulled in by the Picklist product option type.
 
 ### Default image
 

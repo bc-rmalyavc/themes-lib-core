@@ -23,7 +23,7 @@
 
         <span class="swatch {{#if data.[1]}}two-colors{{/if}}{{#if data.[2]}} three-colors{{/if}}">
           {{#if pattern}}
-            <span class="swatch-color" style="background-image: url('{{pattern}}');"></span>
+            <span class="swatch-color" style="background-image: url('{{getImage image 'core-swatch'}}');"></span>
           {{/if}}
 
           {{#if data.[0]}}

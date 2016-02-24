@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [2.0.2] - 2016-02-24
+
+#### Changed
+- Change the product-picklist-thumb image requirement to `core-product-picklist`
+  to be inline (same namespace) with the other core-image requirements
+
+#### Added
+
+- Added `core-swatch` image to the swatch product-option markup and to the
+  readme requirements
+
 ### [2.0.1] - 2016-02-24
 
 #### Changed
