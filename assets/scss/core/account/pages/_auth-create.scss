@@ -13,14 +13,17 @@
 }
 
 .account-create-form {
-  .form-field {
-    float: left;
-    width: 50%;
-    padding-right: $account-gutter-inner;
 
-    &:nth-of-type(2n) {
-      padding-right: 0;
-      padding-left: $account-gutter-inner;
+  @media screen and (min-width: $account-breakpoint-small) {
+    .form-field {
+      float: left;
+      width: 50%;
+      padding-right: $account-gutter-inner;
+
+      &:nth-of-type(2n) {
+        padding-right: 0;
+        padding-left: $account-gutter-inner;
+      }
     }
   }
 }
@@ -39,6 +42,13 @@
 
 .account-create-captcha {
   display: inline-block;
-  margin-right: $account-gutter-inner;
   vertical-align: middle;
+
+  @media screen and (max-width: $account-breakpoint-small - 1) {
+    margin-bottom: $account-gutter-inner;
+  }
+
+  @media screen and (min-width: $account-breakpoint-small) {
+    margin-right: $account-gutter-inner;
+  }
 }
