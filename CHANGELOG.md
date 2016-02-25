@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [2.0.3] - 2016-02-25
+
+#### Changed
+- Replaced a reference to an older image string of `product_image`. It is now `account-product-thumbnail`
+
 ### [2.0.2] - 2016-02-24
 
 #### Changed
