@@ -22,6 +22,27 @@
       "without_tax": "(Ex. {tax_label})",
       "you_save": "(You save {amount})"
     },
+    "contact": {
+      "full_name": "Full Name",
+      "full_name_placeholder": "Full Name",
+      "phone": "Phone Number",
+      "phone_placeholder": "Phone Number",
+      "email": "Email Address",
+      "email_placeholder": "Email Address",
+      "order": "Order Number",
+      "order_placeholder": "Order Number",
+      "company": "Company Name",
+      "company_placeholder": "Company Name",
+      "rma": "RMA Number",
+      "rma_placeholder": "RMA Number",
+      "captcha": "Are you human?",
+      "captcha_placeholder": "Captcha",
+      "captcha_desc": "Please copy the characters from the image into the text field below. Doing this helps us prevent automated submissions.",
+      "question": "Comments/Questions",
+      "question_placeholder": "Enter your comments here",
+      "submit": "Submit Message",
+      "successful": "We've received your feedback and will respond shortly if required. <a href=\"{shopPath}\">Continue</a>."
+    },
     "giftcard": {
       "heading": "Gift Certificates",
       "purchase": {
