@@ -357,11 +357,11 @@
         "create_form": {
           "heading": "New Customer",
           "intro": "Create an account with us and you'll be able to:",
-          "fact1": "Check out faster",
-          "fact2": "Save multiple shipping addresses",
-          "fact3": "Access your order history",
-          "fact4": "Track new orders",
-          "fact5": "Save items to your wish list",
+          "fact_faster": "Check out faster",
+          "fact_addresses": "Save multiple shipping addresses",
+          "fact_order_history": "Access your order history",
+          "fact_track_orders": "Track new orders",
+          "fact_wishlist": "Save items to your wish list",
           "create_account": "Create Account"
         }
       },
