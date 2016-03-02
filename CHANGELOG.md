@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [2.0.5] - 2016-03-02
+
+#### Changed
+- Updated the create account bullets to hide the wishlist text if wishlist is disabled.
+
 ### [2.0.4] - 2016-02-26
 
 #### Added
