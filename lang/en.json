@@ -85,8 +85,10 @@
         "delete": "Delete",
         "share": "Share",
         "required": "Required",
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "store_credit": "You have <strong>{store_credit}</strong> of store credit. To use it, simply place your order and you will be able to choose store credit as the payment method when it comes time to pay for your order."
       },
+
       "menu": {
         "orders": "Orders",
         "returns": "Returns",

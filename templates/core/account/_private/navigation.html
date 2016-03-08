@@ -36,4 +36,8 @@
       <a class="account-nav-link" href="{{urls.account.details}}">{{lang 'core.account.menu.settings'}}</a>
     </li>
   </ul>
+
+  {{#if customer.store_credit.value '>' 0}}
+    {{> core/alerts/alert-success (lang 'core.account.common.store_credit' store_credit=customer.store_credit.formatted)}}
+  {{/if}}
 </nav>

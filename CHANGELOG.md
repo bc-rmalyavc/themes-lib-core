@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [2.0.6] - unreleased
+
+#### Added
+ - An alert below the nav for explaining a customer's store credit, if a credit exists.
+
 ### [2.0.5] - 2016-03-02
 
 #### Changed
