@@ -2,15 +2,21 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-### [2.0.6] - unreleased
+### [2.0.6] - 2016-03-08
+
+#### Changed
+ - Gift certificate page properly accounts for only one theme being enabled from the CP
+ - Gift certificate preview doesn't refresh when checkboxes change
 
 #### Added
  - An alert below the nav for explaining a customer's store credit, if a credit exists.
+
 
 ### [2.0.5] - 2016-03-02
 
 #### Changed
 - Updated the create account bullets to hide the wishlist text if wishlist is disabled.
+
 
 ### [2.0.4] - 2016-02-26
 
@@ -23,6 +29,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 #### Changed
 - Replaced a reference to an older image string of `product_image`. It is now `account-product-thumbnail`
 
+
 ### [2.0.2] - 2016-02-24
 
 #### Changed
@@ -33,6 +40,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Added `core-swatch` image to the swatch product-option markup and to the
   readme requirements
+
 
 ### [2.0.1] - 2016-02-24
 

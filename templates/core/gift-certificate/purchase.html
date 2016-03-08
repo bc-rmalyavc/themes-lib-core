@@ -97,11 +97,15 @@
     }}
 
     <div class="form-field giftcard-form-theme" data-giftcard-theme data-giftcard-preview-url="{{forms.gift_certificate.preview}}">
-      {{> core/forms/common/radio
-          required=true label=(lang 'core.giftcard.purchase.theme')
-          radios=forms.gift_certificate.themes
-          name='certificate_theme'
-      }}
+      {{#if forms.gift_certificate.themes.length '>' 1}}
+        {{> core/forms/common/radio
+            required=true label=(lang 'core.giftcard.purchase.theme')
+            radios=forms.gift_certificate.themes
+            name='certificate_theme'
+        }}
+      {{else}}
+        <input type="radio" class="giftcard-single-theme form-input" name="certificate_theme" value="{{forms.gift_certificate.themes.0.value}}" checked>
+      {{/if}}
       <div class="giftcard-form-preview"></div>
     </div>
 
@@ -114,7 +118,8 @@
             name="agree"
             type="checkbox"
             aria-required="true"
-            required>
+            required
+            data-no-refresh>
           <span class="form-label-text">
             {{lang 'core.giftcard.purchase.agree' days=forms.gift_certificate.expires_in_days}}
             <span class="required-text">{{lang 'common.required'}}</span>
@@ -131,7 +136,8 @@
           name="agree2"
           type="checkbox"
           aria-required="true"
-          required>
+          required
+          data-no-refresh>
         <span class="form-label-text">
           {{lang 'core.giftcard.purchase.agree2'}}
           <span class="required-text">{{lang 'common.required'}}</span>

@@ -12,6 +12,10 @@ export default class GiftCertificate extends PageManager {
     this.$purchaseForm.on('change', (event) => {
       this._showPreview();
     });
+
+    this.$purchaseForm.find('[data-no-refresh]').on('change', (event) => {
+      event.stopPropagation();
+    })
   }
 
   /**
