@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [2.0.7] - 2016-03-14
+
+#### Added
+ - `data-product-attribute` and `data-product-attribute-value` attributes on all product option inputs to hook into enabling/disabling based on SKU inventory
+
+#### Changed
+ - the 'Pick one...' default option for product selects is no longer disabled
+
+
 ### [2.0.6] - 2016-03-08
 
 #### Changed

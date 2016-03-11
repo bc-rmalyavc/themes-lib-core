@@ -1,5 +1,6 @@
 
-<div class="form-field form-field-options form-field-product-list{{#if required}} form-required{{/if}}">
+<div class="form-field form-field-options form-field-product-list{{#if required}} form-required{{/if}}"
+  data-product-attribute="product-list">
   <div class="form-field-title">
     {{display_name}}
     {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
@@ -9,7 +10,7 @@
     {{#unless values.0.image}}
       {{!-- same as radio buttons if no image set --}}
       {{#each values}}
-        <label class="form-label">
+        <label class="form-label" data-product-attribute-value="{{id}}">
           <input
             class="form-input form-radio"
             name="attribute[{{../id}}]"
@@ -33,7 +34,7 @@
       </label>
     {{else}}
       {{#each values}}
-        <label class="form-label product-picklist-item">
+        <label class="form-label product-picklist-item" data-product-attribute-value="{{id}}">
           <input
             class="form-input form-radio product-picklist-radio"
             name="attribute[{{../id}}]"

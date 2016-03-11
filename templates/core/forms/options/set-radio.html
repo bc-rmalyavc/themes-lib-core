@@ -1,12 +1,13 @@
 
-<div class="form-field form-field-options form-field-radio{{#if required}} form-required{{/if}}">
+<div class="form-field form-field-options form-field-radio{{#if required}} form-required{{/if}}"
+  data-product-attribute="set-radio">
   <div class="form-field-title product-option-title">
     {{display_name}}
     {{#if required}}<span class="required-text">{{lang 'common.required'}}</span>{{/if}}
   </div>
   <div class="form-field-control">
     {{#each values}}
-      <label class="form-label">
+      <label class="form-label" data-product-attribute-value="{{id}}">
         <input
           class="form-input form-radio"
           id="attribute-{{id}}"
