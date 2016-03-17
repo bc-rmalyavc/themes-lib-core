@@ -1,3 +1,5 @@
+/*eslint-disable no-unused-vars */
+
 import PageManager from '../../PageManager';
 import updateState from './updateState';
 

@@ -1,3 +1,4 @@
+
 import $ from 'jquery';
 import utils from 'bigcommerce/stencil-utils';
 
@@ -8,7 +9,7 @@ import utils from 'bigcommerce/stencil-utils';
  * @param  {bool}     useId - should we use the state name or ID as the value?
  * @return {jQuery}   a select input
  */
-function stateAsSelect(responseData, stateAttrs, useId, shouldWrap) {
+function stateAsSelect(responseData, stateAttrs, useId) {
   const stateArray = [];
   stateArray.push(`<option value="">${responseData.prefix}</option>`);
 

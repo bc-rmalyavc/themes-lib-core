@@ -1,3 +1,4 @@
+/*eslint-disable no-unused-vars */
 import $ from 'jquery';
 import PageManager from '../../PageManager';
 import initAlertDismissable from './alertDismissable';

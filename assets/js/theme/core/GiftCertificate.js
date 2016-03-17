@@ -9,7 +9,7 @@ export default class GiftCertificate extends PageManager {
   }
 
   _bindEvents() {
-    this.$purchaseForm.on('change', (event) => {
+    this.$purchaseForm.on('change', () => {
       this._showPreview();
     });
 
