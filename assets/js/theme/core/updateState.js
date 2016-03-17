@@ -13,6 +13,7 @@ function stateAsSelect(responseData, stateAttrs, useId) {
   const stateArray = [];
   stateArray.push(`<option value="">${responseData.prefix}</option>`);
 
+  //eslint-disable-next-line prefer-const
   for (let state of responseData.states) {
     const optionValue = useId ? state.id : state.name;
     stateArray.push(`<option value="${optionValue}">${state.name}</option>`);
@@ -25,7 +26,7 @@ function stateAsSelect(responseData, stateAttrs, useId) {
     required: true,
     'aria-required': true,
     'data-field-type': 'State',
-    html: stateArray.join(' ')
+    html: stateArray.join(' '),
   });
 
   return $stateSelect;
@@ -38,11 +39,11 @@ function stateAsSelect(responseData, stateAttrs, useId) {
  */
 function stateAsInput(stateAttrs) {
   const $stateInput = $('<input>', {
-    class: "form-input",
-    type: "text",
+    class: 'form-input',
+    type: 'text',
     id: stateAttrs.stateId,
     name: stateAttrs.stateName,
-    'data-field-type': 'State'
+    'data-field-type': 'State',
   });
 
   return $stateInput;
