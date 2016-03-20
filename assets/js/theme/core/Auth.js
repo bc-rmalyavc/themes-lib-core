@@ -1,5 +1,3 @@
-/*eslint-disable no-unused-vars */
-
 import PageManager from '../../PageManager';
 import updateState from './updateState';
 
@@ -11,5 +9,5 @@ export default class Account extends PageManager {
   /**
    * Optional callback fired when a fresh state <select> element is added to the DOM
    */
-  selectWrapCallback($selectEl) {}
+  selectWrapCallback($selectEl) {} //eslint-disable-line no-unused-vars
 }

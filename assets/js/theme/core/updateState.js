@@ -13,8 +13,7 @@ function stateAsSelect(responseData, stateAttrs, useId) {
   const stateArray = [];
   stateArray.push(`<option value="">${responseData.prefix}</option>`);
 
-  //eslint-disable-next-line prefer-const
-  for (let state of responseData.states) {
+  for (const state of responseData.states) {
     const optionValue = useId ? state.id : state.name;
     stateArray.push(`<option value="${optionValue}">${state.name}</option>`);
   }

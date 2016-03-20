@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import 'jquery-trend';
 
 /**
  * Core Alert components can be loaded with a `dismissable` param. If this
