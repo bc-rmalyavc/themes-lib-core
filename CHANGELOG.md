@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [2.0.8] - 2016-04-05
+
+#### Changed
+ - the 'Pick one...' default option for product selects disabled again. Adding to cart wasn't validating the empty value.
+
+
 ### [2.0.7] - 2016-03-14
 
 #### Added
