@@ -13,7 +13,7 @@
           name="ProductFields[{{this.id}}]"
           {{#if required}}required{{/if}}
           aria-required="{{required}}">
-          <option value="" disabled>{{lang 'product.pick_one'}}</option>
+          <option value="" {{#any values selected=true}}{{else}}selected{{/any}} disabled>{{lang 'product.pick_one'}}</option>
           {{#each values}}
             <option value="{{this}}" {{#if selected}}selected{{/if}}>{{this}}</option>
           {{/each}}
