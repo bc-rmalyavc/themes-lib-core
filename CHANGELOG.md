@@ -2,10 +2,17 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [3.0.0] - 2016-05-24
+
+#### Added
+ - Add an expanded pattern image to the swatch form field.
+
+
 ### [2.0.9] - 2016-05-18
 
 #### Changed
  - Add a clause selecting the 'Pick one...' option by default if no other option has been selected.
+
 
 ### [2.0.8] - 2016-04-05
 

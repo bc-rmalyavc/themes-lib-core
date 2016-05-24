@@ -1,5 +1,5 @@
 
-<div class="form-field form-field-options form-field-swatch{{#if required}} form-required{{/if}}" 
+<div class="form-field form-field-options form-field-swatch{{#if required}} form-required{{/if}}"
   data-swatch-selector
   data-product-attribute="swatch">
   <div class="form-field-title">
@@ -25,7 +25,7 @@
 
         <span class="swatch {{#if data.[1]}}two-colors{{/if}}{{#if data.[2]}} three-colors{{/if}}">
           {{#if pattern}}
-            <span class="swatch-color" style="background-image: url('{{getImage image 'core-swatch'}}');"></span>
+            <span class="swatch-color swatch-pattern" style="background-image: url('{{getImage image 'core-swatch'}}');"></span>
           {{/if}}
 
           {{#if data.[0]}}
@@ -40,6 +40,13 @@
             <span class="swatch-color tertiary" style="background-color: #{{data.[2]}}"></span>
           {{/if}}
         </span>
+
+        {{#if pattern}}
+          <span class="swatch-pattern-expanded">
+            <img class="swatch-pattern-image" src="{{getImage image 'core-swatch'}}">
+          </span>
+        {{/if}}
+
       </label>
     {{/each}}
   </div>
