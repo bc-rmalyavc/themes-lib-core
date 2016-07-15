@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [3.1.0] - 2016-07-18
+
+#### Added
+ - Added structured data / schema.org JSON-LD templates
+
+
 ### [3.0.0] - 2016-05-24
 
 #### Added
