@@ -165,4 +165,4 @@ export default class Auth extends CoreAuth {
 
 ## Caveats
 
- - As of February 24, 2015, please style your own product grids.
+ - As of February 24, 2015, please style your own product grids. Product grid templates can be passed a custom `products_per_row_class` to assist in grid styling.

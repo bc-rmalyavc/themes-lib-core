@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [3.2.0] - 2016-07-28
+
+#### Changed
+ - Improved the publicly shared wishlist template
+ 
+
 ### [3.1.0] - 2016-07-18
 
 #### Added
