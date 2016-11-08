@@ -2,11 +2,18 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [3.2.1] - unreleased
+
+#### Changed
+ - Altered logic of customizable form checkbox field so BC validates it correctly
+ - Added breakpoint for account tables to switch to full-width on narrow screens
+
+
 ### [3.2.0] - 2016-07-28
 
 #### Changed
  - Improved the publicly shared wishlist template
- 
+
 
 ### [3.1.0] - 2016-07-18
 
