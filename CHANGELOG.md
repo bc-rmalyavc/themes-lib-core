@@ -2,7 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-### [3.2.1] - unreleased
+### [3.2.2] - 2017-01-19
+
+#### Changed
+ - Altered GC on load syntax to work with jQuery 3
+
+### [3.2.1] - 2016-11-08
 
 #### Changed
  - Altered logic of customizable form checkbox field so BC validates it correctly

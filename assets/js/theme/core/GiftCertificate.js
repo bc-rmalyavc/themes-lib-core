@@ -37,11 +37,10 @@ export default class GiftCertificate extends PageManager {
     // Create preview
     const $preview = $('<iframe>', {
       src: url,
-      load: (event) => {
-        // Calculate iframe height based on its document height
-        const height = $(event.currentTarget.contentDocument).height();
-        $(event.currentTarget).height(height);
-      },
+    }).on('load', (event) => {
+      // Calculate iframe height based on its document height
+      const height = $(event.currentTarget.contentDocument).height();
+      $(event.currentTarget).height(height);
     });
 
     // Update preview
