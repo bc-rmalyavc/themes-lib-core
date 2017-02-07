@@ -37,7 +37,6 @@
       "rma_placeholder": "RMA Number",
       "captcha": "Are you human?",
       "captcha_placeholder": "Captcha",
-      "captcha_desc": "Please copy the characters from the image into the text field below. Doing this helps us prevent automated submissions.",
       "question": "Comments/Questions",
       "question_placeholder": "Enter your comments here",
       "submit": "Submit Message",
