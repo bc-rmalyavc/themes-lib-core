@@ -2,9 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [3.2.4] - 2017-03-08
+ 
+#### Fixed
+ - removed references to Page Manager
+
 ### [3.2.3] - 2017-01-19
 
-### Changed
+#### Changed
  - Update updateState.js to import stencil-utils properly with webpack
  
  

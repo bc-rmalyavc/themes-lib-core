@@ -1,9 +1,7 @@
-import PageManager from '../../PageManager';
 import $ from 'jquery';
 
-export default class GiftCertificate extends PageManager {
-  constructor() {
-    super();
+export default class GiftCertificate {
+  constructor(context) {
     this.$purchaseForm = $('[data-giftcard-purchase-form]');
     this._bindEvents();
   }
@@ -48,4 +46,9 @@ export default class GiftCertificate extends PageManager {
       .addClass('has-preview')
       .html($preview);
   }
+
+  // backwards compatibility for Page Manager
+  loaded() {}
+  before() {}
+  after() {}
 }

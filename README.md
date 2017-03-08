@@ -59,7 +59,7 @@ By default the navigation will be styled as three inline-block links in a horizo
 {{> layout/base}}
 ```
 
-The giftcard PageManager class should be all you need for the giftcard functionality to work in your theme:
+The giftcard class should be all you need for the giftcard functionality to work in your theme:
 
 ```javascript
 // assets/js/theme/GiftCertificate.js
