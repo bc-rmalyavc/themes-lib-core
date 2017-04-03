@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [3.2.5] - 2017-04-03
+
+#### Changed
+- The version of captcha to v2.  Everything should work OK on your old theme, but check the styling.
+
 ### [3.2.4] - 2017-03-08
  
 #### Fixed

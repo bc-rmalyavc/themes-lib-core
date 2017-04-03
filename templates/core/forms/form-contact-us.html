@@ -26,11 +26,9 @@
     {{> core/forms/common/text label=(lang 'core.contact.rma') name="contact_rma" id="contact_rma" prefill=(lang 'core.contact.rma_placeholder')}}
   {{/if}}
 
-  {{#if forms.contact.recaptcha.enabled}}
-    {{> core/forms/common/captcha label=(lang 'core.contact.captcha') name="recaptcha_response_field" captcha=forms.contact.recaptcha.public_key id="contact_captcha"}}
-  {{/if}}
-
   {{> core/forms/common/multiline label=(lang 'core.contact.question') name="contact_question" id="contact_question" required=true prefill=(lang 'core.contact.question_placeholder') rows=4}}
+
+  {{{forms.contact.recaptcha.markup}}}
 
   <div class="form-actions">
     <input class="button button-contact-submit" type="submit" value="{{lang 'core.contact.submit'}}">
