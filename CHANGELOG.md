@@ -7,6 +7,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 #### Changed
 - The version of captcha to v2.  Everything should work OK on your old theme, but check the styling.
 
+### Fixed
+- Quick fix in the structured data for post date
+
+
 ### [3.2.4] - 2017-03-08
  
 #### Fixed
