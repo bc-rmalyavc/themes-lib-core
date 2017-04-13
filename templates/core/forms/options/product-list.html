@@ -29,7 +29,7 @@
             name="attribute[{{id}}]"
             type="radio"
             value="0"
-            {{#if defaultValue '==' 0}}checked{{/if}}
+            {{#if prefill '==' 0}}checked{{/if}}
             {{#if ../required}}required{{/if}}
             aria-required="{{required}}">
           <span class="form-label-text">{{lang 'product.none'}}</span>
@@ -60,7 +60,7 @@
             name="attribute[{{id}}]"
             type="radio"
             value="0"
-            {{#if defaultValue '==' 0}}checked{{/if}}>
+            {{#if prefill '==' 0}}checked{{/if}}>
           <span class="product-picklist-item-body picklist-none">
             <span class="product-picklist-label-text form-label-text">{{lang 'product.none'}}</span>
           </span>
