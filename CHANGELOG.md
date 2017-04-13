@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [3.2.7] - 2017-04-13
+
+#### Fixed
+- Fixed product list picker to hide 'none' option when pick list is required
+
+#### Changed
+- How product description is parsed for structured data to allow users to input anything, even script tags
+
 ### [3.2.6] - 2017-04-11
 
 ### Fixed
@@ -18,7 +26,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ### [3.2.4] - 2017-03-08
- 
+
 #### Fixed
  - removed references to Page Manager
 
@@ -26,8 +34,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 #### Changed
  - Update updateState.js to import stencil-utils properly with webpack
- 
- 
+
+
 ### [3.2.2] - 2017-01-19
 
 #### Changed
