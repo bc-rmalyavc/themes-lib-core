@@ -25,6 +25,7 @@ sync "Styles" "$DIR/assets/scss/core" "$1/assets/scss/"
 sync "Scripts" "$DIR/assets/js/theme/core" "$1/assets/js/theme/"
 
 echo
-echo "----- Installing Translations"
+echo "----- Installing Translations and Config"
 echo
-php "$DIR/install-lang.php" "$1/"
+node "$DIR/install.js" "$1"
+echo "done"
