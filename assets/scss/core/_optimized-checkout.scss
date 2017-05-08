@@ -27,7 +27,7 @@
   // Configure media query to be 'desktop' breakpoint size
   // -----------------------------------------------------------------------------
   @media (min-width: 801px) {
-      text-align: stencilString("optimizedCheckout-logo-position");
+    text-align: stencilString("optimizedCheckout-logo-position");
   }
 }
 
@@ -196,6 +196,6 @@ a {
   font-weight: stencilFontWeight("optimizedCheckout-link-font");
 
   svg {
-      fill: stencilColor("optimizedCheckout-discountBanner-iconColor");
+    fill: stencilColor("optimizedCheckout-discountBanner-iconColor");
   }
 }
