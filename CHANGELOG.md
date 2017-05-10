@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
+### [3.3.0] - 2017-05-10
+
+#### Added
+- Optimized checkout theme settings and markup
+
+#### Changed
+- Install scripts to allow for updates of config.json and schema.json files
 
 ### [3.2.7] - 2017-04-13
 
