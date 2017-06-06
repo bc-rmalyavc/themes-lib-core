@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
+
+
+### [3.3.1] - 2017-06-06
+
+#### Fixed
+- Date option, when range and is limited to one year, allows for the merchant selected date to show
+
 ### [3.3.0] - 2017-05-10
 
 #### Added
