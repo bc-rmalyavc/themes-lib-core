@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+### [3.3.2] - 2017-07-11
+
+#### Fixed
+- Made disabled option for month and day the selected default for delivery/event date
+- Added CSS to clear account fields when error occurs
+
 ### [3.3.1] - 2017-06-06
 
 #### Fixed
