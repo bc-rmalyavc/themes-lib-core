@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [3.3.4] - 2017-07-13
+
+#### Fixed
+- Fixed location of alert message
+
 ### [3.3.3] - 2017-07-13
 
 #### Added
