@@ -380,7 +380,8 @@
         "password": "New Password",
         "password2": "Confirm Password",
         "submit": "Update Password",
-        "passwords_no_match": "Your passwords do not match."
+        "passwords_no_match": "Your passwords do not match.",
+        "password_length": "Your password must be at least {min_length} characters long"
       },
       "forgot": {
         "heading": "Forgot Password",
