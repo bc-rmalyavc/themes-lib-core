@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [3.3.5] - 2017-07-27
+
+#### Fixed
+- Fixed an issue causing returns to be limited to 99 units
+
 ### [3.3.4] - 2017-07-13
 
 #### Fixed
