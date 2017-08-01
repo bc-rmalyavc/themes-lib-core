@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [3.3.6] - 2017-08-01
+
+#### Added
+- Default translation strings for use with bc-zoom
+
 ### [3.3.5] - 2017-07-27
 
 #### Fixed
