@@ -49,6 +49,23 @@
 
       </label>
     {{/each}}
+    {{#unless required}}
+      <label class="swatch-wrap swatch-none"  data-swatch-value="{{lang 'product.none'}}" data-product-attribute-value="{{id}}">
+        <span class="form-label-text">{{lang 'product.none'}}</span>
+        <input
+          class="form-input swatch-radio"
+          name="attribute[{{../id}}]"
+          type="radio"
+          value="0"
+          {{#if prefill '==' 0}}checked{{/if}}
+          {{#if ../required}}required{{/if}}
+          aria-required="{{required}}"
+        >
+        <span class="swatch">
+          {{lang 'product.none'}}
+        </span>
+      </label>
+    {{/unless}}
   </div>
 
 </div>
