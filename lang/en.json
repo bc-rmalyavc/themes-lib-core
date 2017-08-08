@@ -388,9 +388,7 @@
         "heading": "New Password",
         "password": "New Password",
         "password2": "Confirm Password",
-        "submit": "Update Password",
-        "passwords_no_match": "Your passwords do not match.",
-        "password_length": "Your password must be at least {min_length} characters long"
+        "submit": "Update Password"
       },
       "forgot": {
         "heading": "Forgot Password",
@@ -404,6 +402,10 @@
       "maintenance_message": "This store is currently unavailable due to maintenance. It should be available again shortly. We apologize for any inconvenience caused.",
       "hibernation_heading": "We'll be back",
       "hibernation_message": "Thanks for visiting. Our store is currently unavailable. We apologize for any inconvenience caused."
+    },
+    "forms": {
+      "passwords_no_match": "Your passwords do not match.",
+      "password_length": "Your password must be at least {min_length} characters long"
     }
   }
 }
