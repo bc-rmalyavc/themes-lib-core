@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [unreleased] - unreleased
+
+#### Added
+- None product option added for non-required multiple choice product options
+- Translation string for 'none' product options
+
 ### [3.3.6] - 2017-08-01
 
 #### Added
