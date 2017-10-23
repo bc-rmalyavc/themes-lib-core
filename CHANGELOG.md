@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### [unreleased] - unreleased
+
+#### Added
+- Support for none in non-required multiple choice product options
+
 ### [3.3.6] - 2017-08-01
 
 #### Added
