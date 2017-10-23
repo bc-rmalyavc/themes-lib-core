@@ -27,6 +27,7 @@
           name="attribute[{{../id}}]"
           type="radio"
           value="0"
+          {{#if prefill '==' 0}}checked{{/if}}
           aria-required="{{required}}">
         <span class="form-label-text">{{lang 'core.product.none'}}</span>
       </label>
