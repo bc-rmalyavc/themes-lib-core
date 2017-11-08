@@ -62,16 +62,20 @@ function fetchAndUpdateStateInput(event, useId, callback) {
     stateId: $stateElement.attr('id'),
     stateName: $stateElement.attr('name'),
   };
+  const $stateWrapper = $('#FormField_12');
+  const required = $stateWrapper.find('.required-text');
 
   utils.api.country.getByName(country, (err, response) => {
     if (response.data.states.length) {
       // build and attach our select input
       const $stateSelect = stateAsSelect(response.data, stateAttrs, useId);
       $stateElement.replaceWith($stateSelect);
+      required.removeClass('hidden');
     } else {
       // build and attach our text input
       const $stateInput = stateAsInput(stateAttrs);
       $stateElement.replaceWith($stateInput);
+      required.addClass('hidden');
     }
 
     const $newStateElement = $('[data-field-type="State"]');
