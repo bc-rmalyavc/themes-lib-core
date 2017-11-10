@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.3.9] - 2017-11-10
 
 #### Fixed
 - When users are setting up addresses, if their country does not have states,
@@ -13,7 +13,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 #### Fixed
 - Corrected HTML logic for multiple checkboxes on the account sign up form when
   only a single checkbox is required. Requires an updated validetta.
-  
+
 ### [3.3.7] - 2017-10-23
 
 #### Added
