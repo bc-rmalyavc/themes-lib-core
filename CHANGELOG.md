@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.3.10] - 2017-11-14
+
+#### Fixed
+- Redo on the below account from state fix. Pervious fix didn't allow for required
+  fields to be denoted in the `form-title::after`, toggling the `form-required`
+  class is much less hackie and keep the HTML semantically sound, while still
+  hiding the asterisks when the field is not required.
+
 ## [3.3.9] - 2017-11-10
 
 #### Fixed
