@@ -10,6 +10,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 #### Changed
 - Added title to customized checkbox field to display consistently like other
   checkbox fields on the product page
+- Move contact form errors to outside of contact form avoiding form layout breaking
+  when an error occurs on forms with flexbox layouts
 
 ## [3.3.10] - 2017-11-14
 
