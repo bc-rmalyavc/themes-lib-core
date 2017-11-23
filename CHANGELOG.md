@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+
+#### Changed
+- Added title to customized checkbox field to display consistently like other
+  checkbox fields on the product page
+
 ## [3.3.10] - 2017-11-14
 
 #### Fixed
