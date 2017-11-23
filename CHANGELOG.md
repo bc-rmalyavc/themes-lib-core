@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased] - unreleased
 
+#### Fixed
+- Account address form layout so fields are not out of line
+
 #### Changed
 - Added title to customized checkbox field to display consistently like other
   checkbox fields on the product page
