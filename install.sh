@@ -23,6 +23,8 @@ sync() {
 sync "Templates" "$DIR/templates/core" "$1/templates/"
 sync "Styles" "$DIR/assets/scss/core" "$1/assets/scss/"
 sync "Scripts" "$DIR/assets/js/theme/core" "$1/assets/js/theme/"
+cp "$DIR/webpack/stencil.conf.js" "$1/"
+[ -f "$1/webpack.conf.js" ] && rm "$1/webpack.conf.js"
 
 echo
 echo "----- Installing Translations and Config"
