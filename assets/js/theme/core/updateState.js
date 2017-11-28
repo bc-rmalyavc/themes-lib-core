@@ -69,12 +69,12 @@ function fetchAndUpdateStateInput(event, useId, callback) {
       // build and attach our select input
       const $stateSelect = stateAsSelect(response.data, stateAttrs, useId);
       $stateElement.replaceWith($stateSelect);
-      $stateWrapper.toggleClass('form-required');
+      $stateWrapper.toggleClass('form-required', true);
     } else {
       // build and attach our text input
       const $stateInput = stateAsInput(stateAttrs);
       $stateElement.replaceWith($stateInput);
-      $stateWrapper.toggleClass('form-required');
+      $stateWrapper.toggleClass('form-required', false);
     }
 
     const $newStateElement = $('[data-field-type="State"]');
