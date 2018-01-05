@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased]
+
+#### Added
+- Select options helper to show/hide product options.
+
+#### Changed
+- No longer disable empty product option
+
 ## [3.3.12] - 2017-11-28
 
 #### Fixed
