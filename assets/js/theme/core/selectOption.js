@@ -38,6 +38,14 @@ function toggleOption(show) {
   // save the selected option
   const selectedOption = selectElement.find('option:selected');
 
+  // update .form-selected-text element
+  const text = selectElement.find(`[value="${selectedOption.val()}"]`).text();
+
+  let $prefix = selectElement.parents('.form-select-wrapper').data('selected-prefix');
+  $prefix = ($prefix ? `<span class="form-selected-text-prefix">${$prefix}</span>` : '');
+
+  selectElement.siblings('.form-selected-text').html($prefix + text);
+
   // move the option to the correct select element if required
   if (currentSelectElement.is(':disabled') && show) {
     const previousIndex = this.data('index');
