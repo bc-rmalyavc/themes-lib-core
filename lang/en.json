@@ -87,6 +87,33 @@
       "submit": "Submit Message",
       "successful": "We've received your feedback and will respond shortly if required. <a href=\"{shopPath}\">Continue</a>."
     },
+    "advanced_search": {
+      "cancel": "Cancel",
+      "brand": "Brands",
+      "by_price": "Search By Price",
+      "by_setting": "Search By Setting",
+      "categories": "Categories",
+      "featured_products": {
+        "disabled": "Only non-featured products",
+        "enabled": "Only featured products",
+        "title": "Featured Products"
+      },
+      "free_shipping": {
+        "free": "Only free shipping",
+        "paid": "Only paid shipping",
+        "title": "Free Shipping"
+      },
+      "from": "From",
+      "keyword": "Search Keyword",
+      "max_price": "Max",
+      "min_price": "Min",
+      "no_preference": "No Preference",
+      "price_range": "Price Range",
+      "search": "Search",
+      "searchsubs": "Automatically search sub categories",
+      "title": "Advanced Search",
+      "to": "to"
+    },
     "giftcard": {
       "heading": "Gift Certificates",
       "purchase": {
@@ -132,7 +159,6 @@
         "cancel": "Cancel",
         "store_credit": "You have <strong>{store_credit}</strong> of store credit. To use it, simply place your order and you will be able to choose store credit as the payment method when it comes time to pay for your order."
       },
-
       "menu": {
         "orders": "Orders",
         "returns": "Returns",
@@ -142,7 +168,6 @@
         "settings": "Account Settings",
         "messages": "Messages"
       },
-
       "receipt": {
         "heading": "Order #{number}",
         "billing_title": "Bill To",
@@ -170,7 +195,6 @@
           "link": "Tracking Number"
         }
       },
-
       "return": {
         "heading": "Return Items from Order #{id}",
         "empty": "This order contains no products that can be returned. Have you already returned all of the items within this order?",
@@ -182,14 +206,12 @@
         "comments": "Comments",
         "request_return": "Submit Return Request"
       },
-
       "download": {
         "heading": "{name} (#{number})",
         "expired": "File has expired",
         "days_remaining": "{days} days remaining",
         "downloads_remaining": "{downloads} downloads remaining"
       },
-
       "invoice": {
         "heading": "Order #{number}",
         "billing_title": "Bill To",
@@ -199,7 +221,6 @@
         "giftwrap": "Giftwrapping",
         "quantity": "{quantity} \u00D7 {price}"
       },
-
       "orders": {
         "heading_all": "Orders",
         "heading_completed": "Completed Orders",
@@ -212,7 +233,6 @@
           "empty": "You haven't placed any orders yet."
         }
       },
-
       "addresses": {
         "heading": "Addresses",
         "add_heading": "Add New Address",
@@ -375,21 +395,21 @@
       }
     },
     "invoice": {
-        "for_order": "{name} Invoice for Order #{id}",
-        "phone": "Phone: {number}",
-        "email": "Email: {email}",
-        "order": "Order:",
-        "payment_method": "Payment Method:",
-        "order_date": "Order Date:",
-        "shipping_method": "Shipping Method:",
-        "order_items": "Order Items",
-        "qty": "Qty",
-        "code": "Code/SKU",
-        "shipping_address": "Shipping Address",
-        "product_name": "Product Name",
-        "price": "Price",
-        "total": "Total",
-        "comments": "Comments"
+      "for_order": "{name} Invoice for Order #{id}",
+      "phone": "Phone: {number}",
+      "email": "Email: {email}",
+      "order": "Order:",
+      "payment_method": "Payment Method:",
+      "order_date": "Order Date:",
+      "shipping_method": "Shipping Method:",
+      "order_items": "Order Items",
+      "qty": "Qty",
+      "code": "Code/SKU",
+      "shipping_address": "Shipping Address",
+      "product_name": "Product Name",
+      "price": "Price",
+      "total": "Total",
+      "comments": "Comments"
     },
     "auth": {
       "login": {
