@@ -2,12 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## [3.3.14] - 2018-01-17
 
 #### Fixed
 - Update select label when using the options helper to show/hide product options.
 
-## [3.3.13]
+## [3.3.13] - 2018-01-09
 
 #### Added
 - Select options helper to show/hide product options.
