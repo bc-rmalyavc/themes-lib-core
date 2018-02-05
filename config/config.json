@@ -1,5 +1,7 @@
 {
   "settings": {
+    "geotrust-ssl-common-name": "",
+    "geotrust-ssl-seal-size": "M",
     "optimizedCheckout-header-backgroundColor": "#f7f7f7",
     "optimizedCheckout-show-backgroundImage": false,
     "optimizedCheckout-backgroundImage": "",
