@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.3.15] - 2018-02-13
+
+#### Changed
+- Remove `import $ from 'jquery';` at the top of js files, this will be imported
+globally in themes
+
 ## [3.3.14] - 2018-01-17
 
 #### Fixed
