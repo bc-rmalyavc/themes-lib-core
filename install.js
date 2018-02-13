@@ -44,6 +44,14 @@ merge(corePath('lang/en.json'), themePath('lang/en.json'), (coreLang, themeLang)
   return Object.assign({}, themeLang, coreLang);
 });
 
+// Install package.json
+merge(corePath('config/package.json'), themePath('package.json'), (corePackage, themePackage) => {
+  Object.keys(corePackage.devDependencies).forEach(key => {
+    themePackage.devDependencies[key] = corePackage.devDependencies[key];
+  });
+  return themePackage;
+});
+
 // Install config.json
 merge(corePath('config/config.json'), themePath('config.json'), (coreConfig, themeConfig) => {
   Object.keys(coreConfig.settings).forEach(key => {
