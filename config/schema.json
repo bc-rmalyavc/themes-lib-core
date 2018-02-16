@@ -1,8 +1,40 @@
 {
   "remove": [
+    "GeoTrust Seals",
     "Optimized Checkout"
   ],
   "insert": [
+    {
+      "name": "GeoTrust Seals",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "If you've purchased a GeoTrust SSL from BigCommerce, check your BigCommerce Account Dashboard for the correct Common Name to use here."
+        },
+        {
+          "type": "text",
+          "label": "SSL Common Name",
+          "force_reload": true,
+          "id": "geotrust-ssl-common-name"
+        },
+        {
+          "type": "select",
+          "label": "Seal Size",
+          "id": "geotrust-ssl-seal-size",
+          "options": [
+            {
+              "value": "M",
+              "label": "Medium"
+            },
+            {
+              "value": "S",
+              "label": "Small"
+            }
+          ],
+          "force_reload": true
+        }
+      ]
+    },
     {
       "name": "Optimized Checkout",
       "enable": "ucoEnabled",
