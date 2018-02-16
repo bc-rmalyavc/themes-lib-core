@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.3.16] - 2018-02-16
+
+#### Added
+- GeoTrust Seals added to theme settings for use across all themes
+
 ## [3.3.15] - 2018-02-13
 
 #### Changed
