@@ -1,5 +1,36 @@
 {
   "core": {
+    "amp": {
+      "footer": {
+        "brands": "Brands",
+        "call_us": "Call us at {phone_number}",
+        "categories": "Categories",
+        "contact": "Contact",
+        "pages": "Pages",
+        "sitemap_title": "Sitemap"
+      },
+      "header": {
+        "account": "Account",
+        "addresses": "Addresses",
+        "currency": "Select Currency: {code}",
+        "gift_certificate": "Gift Certificate",
+        "login": "Login",
+        "logout": "Logout",
+        "menu_toggle": "Menu Toggle",
+        "messages": "Messages",
+        "orders": "Orders",
+        "recently_viewed": "Recently viewed",
+        "returns": "Returns",
+        "search": "Search",
+        "search_empty": "Search field empty",
+        "settings": "Settings",
+        "sign_up": "Sign Up",
+        "store_credit": "You have {store_credit} of store credit. To use it, simply place your order and you will be able to choose store credit as the payment method when it comes time to pay for your order.",
+        "wishlists": "Wishlists"
+      },
+      "no_products": "No Products",
+      "view_all": "View All"
+    },
     "pagination": {
       "page": "Page",
       "of": "of",
@@ -8,12 +39,13 @@
     },
     "product": {
       "compare": "Compare",
-      "sale": "On Sale",
-      "pick_one": "Pick one",
       "none": "None",
+      "pick_one": "Pick one",
       "quickshop": {
         "view": "Quick View"
       },
+      "sale": "On Sale",
+      "sold_out": "Sold Out",
       "zoom": {
         "close": "Close (Esc)",
         "share": "Share",
@@ -27,6 +59,7 @@
       "total_votes": "({votes})"
     },
     "price": {
+      "from": "From",
       "with_tax": "(Inc. {tax_label})",
       "without_tax": "(Ex. {tax_label})",
       "you_save": "(You save {amount})"

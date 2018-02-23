@@ -14,7 +14,7 @@
         <span class="price-withtax" data-price="with-tax">
           {{#if page_type '!==' 'product'}}
             {{#if as_low_as}}
-              <span class="as-low-as-pricing">{{lang 'product.as_low_as'}}</span>
+              <span class="as-low-as-pricing">{{lang 'core.price.as_low_as'}}</span>
             {{/if}}
           {{/if}}
           {{#if price.rrp_with_tax}}
@@ -24,7 +24,7 @@
             {{price.with_tax.formatted}}
           </span>
           {{#if price.without_tax}}
-            <span class="price-tax-label">{{lang 'product.including_tax' tax_label=price.tax_label}}</span>
+            <span class="price-tax-label">{{lang 'core.price.with_tax' tax_label=price.tax_label}}</span>
           {{/if}}
         </span>
       {{/if}}
@@ -33,7 +33,7 @@
         <span class="price-withouttax" data-price="without-tax">
           {{#if page_type '!==' 'product'}}
             {{#if as_low_as}}
-              <span class="as-low-as-pricing">{{lang 'product.as_low_as'}}</span>
+              <span class="as-low-as-pricing">{{lang 'core.price.from'}}</span>
             {{/if}}
           {{/if}}
           {{#if price.rrp_without_tax}}
@@ -43,7 +43,7 @@
             {{price.without_tax.formatted}}
           </span>
           {{#if price.with_tax}}
-            <span class="price-tax-label">{{lang 'product.excluding_tax' tax_label=price.tax_label}}</span>
+            <span class="price-tax-label">{{lang 'core.price.without_tax' tax_label=price.tax_label}}</span>
           {{/if}}
         </span>
       {{/if}}
@@ -51,13 +51,13 @@
       {{#if show_saved}}
         {{#if price.saved}}
           <span class="price-saved" data-price-saved>
-            {{lang 'product.you_save'}} {{price.saved.formatted}}
+            {{lang 'core.price.you_save'}} {{price.saved.formatted}}
           </span>
         {{/if}}
       {{/if}}
     </span>
   {{else}}
-    <span class="price {{> components/product/price-class}}">
+    <span class="price {{> core/amp/common/price-class}}">
       {{#if price.with_tax}}
         <span class="price-withtax" data-price="with-tax">
           {{#if price.rrp_with_tax}}
@@ -67,7 +67,7 @@
             {{price.with_tax.formatted}}
           </span>
           {{#if price.without_tax}}
-            <span class="price-tax-label">{{lang 'product.including_tax' tax_label=price.tax_label}}</span>
+            <span class="price-tax-label">{{lang 'core.price.with_tax' tax_label=price.tax_label}}</span>
           {{/if}}
         </span>
       {{/if}}
@@ -81,7 +81,7 @@
             {{price.without_tax.formatted}}
           </span>
           {{#if price.with_tax}}
-            <span class="price-tax-label">{{lang 'product.excluding_tax' tax_label=price.tax_label}}</span>
+            <span class="price-tax-label">{{lang 'core.price.without_tax' tax_label=price.tax_label}}</span>
           {{/if}}
         </span>
       {{/if}}

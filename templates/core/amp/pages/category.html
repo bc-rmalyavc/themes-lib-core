@@ -2,7 +2,7 @@
 category:
   shop_by_price: true
   products:
-    limit: {{theme_settings.product_catalog_limit}}
+    limit: 50
 ---
 {{inject "productsPerPage" theme_settings.product_catalog_limit}}
 
@@ -48,14 +48,14 @@ category:
         {{#block 'amp-product-listing'}} {{/block}}
       {{else}}
         <h4 class="amp-product-catalog-empty">
-          {{lang 'amp.no_products'}}
+          {{lang 'core.amp.no_products'}}
         </h4>
       {{/if}}
     </div>
   </section>
 
   {{> core/amp/category/subcategories}}
-  {{> core/amp/common/footer}}
+  {{#block 'amp-footer'}} {{/block}}
 
   {{#if settings.amp_analytics_id}}
     <amp-analytics type="googleanalytics">

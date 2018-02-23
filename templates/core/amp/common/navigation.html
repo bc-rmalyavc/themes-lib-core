@@ -1,11 +1,11 @@
 <nav class="amp-navigation">
   <div class="amp-navigation-search">
-    {{> components/amp/common/quick-search}}
+    {{> core/amp/common/quick-search}}
   </div>
   <ul class="amp-navigation-list amp-category-navigation-list">
     {{#each categories}}
       <li class="amp-navigation-item">
-        {{> components/amp/common/navigation-loop}}
+        {{> core/amp/common/navigation-loop}}
       </li>
     {{/each}}
   </ul>
@@ -18,7 +18,7 @@
     {{#if settings.gift_certificates_enabled}}
       <li class="amp-navigation-item">
         <a class="amp-navigation-link" href="{{urls.gift_certificate.purchase}}">
-          {{lang 'amp.header.gift_certificate'}}
+          {{lang 'core.amp.header.gift_certificate'}}
         </a>
       </li>
     {{/if}}
@@ -33,7 +33,7 @@
           aria-controls="nav-pages-currency"
           aria-expanded="false"
         >
-          {{lang 'amp.header.currency' code=currency_selector.active_currency_code}}
+          {{lang 'core.amp.header.currency' code=currency_selector.active_currency_code}}
         </a>
         <div class="amp-navigation-currency" id="amp-navigation-currency" aria-hidden="true" tabindex="-1">
             <ul class="amp-navigation-currency-list">
@@ -60,7 +60,7 @@
           href="{{urls.account.index}}"
           data-collapsible="amp-navigation-account"
         >
-          {{lang 'amp.header.account'}}
+          {{lang 'core.amp.header.account'}}
         </a>
         <div
           class="amp-navigation-account"
@@ -74,7 +74,7 @@
                 class="amp-navigation-account-action amp-navigation-link"
                 href="{{urls.account.orders.all}}"
               >
-                {{lang 'amp.header.orders'}}
+                {{lang 'core.amp.header.orders'}}
               </a>
             </li>
             {{#if settings.returns_enabled}}
@@ -83,7 +83,7 @@
                   class="amp-navigation-account-action amp-navigation-link"
                   href="{{urls.account.returns}}"
                 >
-                  {{lang 'amp.header.returns'}}
+                  {{lang 'core.amp.header.returns'}}
                 </a>
               </li>
             {{/if}}
@@ -92,7 +92,7 @@
                 class="amp-navigation-account-action amp-navigation-link"
                 href="{{urls.account.inbox}}"
               >
-                {{lang 'amp.header.messages'}}
+                {{lang 'core.amp.header.messages'}}
               </a>
             </li>
             <li class="amp-navigation-account-item">
@@ -100,7 +100,7 @@
                 class="amp-navigation-account-action amp-navigation-link"
                 href="{{urls.account.addresses}}"
               >
-                {{lang 'amp.header.addresses'}}
+                {{lang 'core.amp.header.addresses'}}
               </a>
             </li>
             <li class="amp-navigation-account-item">
@@ -108,7 +108,7 @@
                 class="amp-navigation-account-action amp-navigation-link"
                 href="{{urls.account.wishlists.all}}"
               >
-                {{lang 'amp.header.wishlists'}}
+                {{lang 'core.amp.header.wishlists'}}
               </a>
             </li>
             <li class="amp-navigation-account-item">
@@ -116,7 +116,7 @@
                 class="amp-navigation-account-action amp-navigation-link"
                 href="{{urls.account.recent_items}}"
               >
-                {{lang 'amp.header.recently_viewed'}}
+                {{lang 'core.amp.header.recently_viewed'}}
               </a>
             </li>
             <li class="amp-navigation-account-item">
@@ -124,7 +124,7 @@
                 class="amp-navigation-account-action amp-navigation-link"
                 href="{{urls.account.details}}"
               >
-                {{lang 'amp.header.settings'}}
+                {{lang 'core.amp.header.settings'}}
               </a>
             </li>
           </ul>
@@ -133,23 +133,23 @@
       {{#if customer.store_credit.value '>' 0}}
         <li class="amp-navigation-item">
           <a class="amp-navigation-link amp-store-credit">
-            {{lang 'amp.header.store_credit' store_credit=customer.store_credit.formatted}}
+            {{lang 'core.amp.header.store_credit' store_credit=customer.store_credit.formatted}}
           </a>
         </li>
       {{/if}}
       <li class="amp-navigation-item">
         <a class="amp-navigation-link" href="{{urls.auth.logout}}">
-          {{lang 'amp.header.logout'}}
+          {{lang 'core.amp.header.logout'}}
         </a>
       </li>
     {{else}}
       <li class="amp-navigation-item">
         <a class="amp-navigation-link amp-account-link" href="{{urls.auth.login}}">
-          {{lang 'amp.header.login'}}
+          {{lang 'core.amp.header.login'}}
         </a>
         /
         <a class="amp-navigation-link amp-account-link" href="{{urls.auth.create_account}}">
-          {{lang 'amp.header.sign_up'}}
+          {{lang 'core.amp.header.sign_up'}}
         </a>
       </li>
     {{/if}}
