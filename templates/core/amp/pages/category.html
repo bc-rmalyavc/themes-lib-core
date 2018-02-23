@@ -1,9 +1,3 @@
----
-category:
-  shop_by_price: true
-  products:
-    limit: 50
----
 {{inject "productsPerPage" theme_settings.product_catalog_limit}}
 
 {{#partial "head"}}
@@ -45,7 +39,7 @@ category:
 
     <div class="amp-product-catalog-content">
       {{#if category.products.length}}
-        {{#block 'amp-product-listing'}} {{/block}}
+        {{#block "amp-product-listing"}} {{/block}}
       {{else}}
         <h4 class="amp-product-catalog-empty">
           {{lang 'core.amp.no_products'}}
@@ -55,7 +49,7 @@ category:
   </section>
 
   {{> core/amp/category/subcategories}}
-  {{#block 'amp-footer'}} {{/block}}
+  {{#block "amp-footer"}} {{/block}}
 
   {{#if settings.amp_analytics_id}}
     <amp-analytics type="googleanalytics">
@@ -96,4 +90,3 @@ category:
   {{/if}}
 
 {{/partial}}
-{{> layout/amp}}

@@ -18,7 +18,8 @@
       <amp-img
         class="
           amp-grid-item-image
-          {{#if image_style '==' "contain"}}
+          amp-image-ratio-{{ image_ratio }}
+          {{#if image_cropping '==' "contain"}}
             amp-contain-image
           {{/if}}
         "

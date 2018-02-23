@@ -2,13 +2,14 @@
   {{#each category.products}}
     <li class="amp-product-item">
       {{> core/amp/category/product-item
-        default=../theme_settings.default_image
+        default=../default
         show_rating=../settings.show_product_rating
-        as_low_as=../theme_settings.product_grid_as_low_as_pricing
-        image_style=../image_style
+        as_low_as=../as_low_as
+        image_ratio=../image_ratio
+        image_cropping=../image_cropping
       }}
     </li>
   {{/each}}
 </ul>
 
-{{> components/amp/category/pagination pagination.category}}
+{{> core/amp/category/pagination pagination.category}}

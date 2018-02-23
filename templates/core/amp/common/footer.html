@@ -48,7 +48,11 @@
     {{/if}}
   </article>
   <article class="amp-footer-credits">
-    <p>Powered by <a href="http://bigcommerce.com" rel="nofollow">BigCommerce</a></p>
-    <p>&copy; <script>document.write(new Date().getFullYear())</script> {{settings.store_name}}</p>
+    {{#if theme_credits}}
+      <p>Powered by <a href="http://bigcommerce.com" rel="nofollow">BigCommerce</a></p>
+    {{/if}}
+    {{#if store_copyright}}
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> {{settings.store_name}}</p>
+    {{/if}}
   </article>
 </footer>
