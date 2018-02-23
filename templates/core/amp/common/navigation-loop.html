@@ -1,0 +1,12 @@
+<a class="amp-navigation-link {{#if is_active}}is-active{{/if}}" href="/amp{{url}}">
+  {{name}}
+</a>
+{{#if children}}
+  <ul class="amp-navigation-list amp-navigation-list-tier">
+    {{#each children}}
+      <li class="amp-navigation-tier-item {{#if children}}has-children{{/if}}">
+        {{> components/amp/common/navigation-loop}}
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}
