@@ -12,15 +12,10 @@
     </div>
   {{/if}}
 
-
-  <div class="amp-grid-item-image-container">
+  <div class="amp-grid-item-image-container amp-image-{{ image_ratio }}">
     <a class="amp-grid-item-link" href="{{url}}">
       <amp-img
-        class="
-          amp-grid-item-image
-          amp-image-{{ image_ratio }}
-          amp-{{ image_cropping }}
-        "
+        class="amp-grid-item-image amp-{{ image_cropping }}"
         src="{{getImage image 'product-list' (cdn default)}}"
         layout="fill"
         alt="{{img.alt}}"

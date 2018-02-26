@@ -8,10 +8,10 @@
     <title>{{ head.title }}</title>
     {{{ head.meta_tags }}}
     {{{ head.config }}}
-    {{#block "head"}} {{/block}}
+    {{#block 'head'}} {{/block}}
     <link href="{{ head.favicon }}" rel="shortcut icon">
     <link href="https://fonts.googleapis.com/css?family=Karla:400|Roboto:400" rel="stylesheet">
-    {{#block "amp-style"}} {{/block}}
+    {{#block 'amp-style'}} {{/block}}
     {{{head.rsslinks}}}
     {{inject 'themeSettings' theme_settings}}
     {{inject 'genericError' (lang 'common.generic_error')}}
@@ -23,9 +23,9 @@
     {{#if settings.amp_analytics_id}}
       <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     {{/if}}
-    {{#block "amp-scripts"}}{{/block}}
+    {{#block 'amp-scripts'}}{{/block}}
   </head>
   <body>
-    {{#block "page"}} {{/block}}
+    {{#block 'page'}} {{/block}}
   </body>
 </html>

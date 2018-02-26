@@ -62,15 +62,26 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  padding-bottom: 100%;
   position: relative;
+}
+
+.amp-grid-item-image-container.amp-image-ratio-4-3 {
+  padding-bottom: 75%
+}
+
+.amp-grid-item-image-container.amp-image-ratio-1-1 {
+  padding-bottom: 100%
+}
+
+.amp-grid-item-image-container.amp-image-ratio-3-4 {
+  padding-bottom: 133.333%
 }
 
 amp-img.amp-grid-item-image img {
   object-fit: cover;
 }
 
-amp-img.amp-grid-item-image.amp-contain-image img {
+amp-img.amp-grid-item-image.amp-image-contain img {
   object-fit: contain;
 }
 
@@ -80,17 +91,10 @@ amp-img.amp-grid-item-image.amp-contain-image img {
 
 .amp-rating-stars {
   margin-top: 12px;
-  line-height: 10px;
-}
-
-.icon-star-full,
-.icon-star-empty {
-  width: 10px;
-  height: 10px;
 }
 
 .amp-grid-item-name {
-  font-size: 12px;
+  font-size: 14px;
   padding-right: 1rem;
   margin-top: 10px;
   margin-bottom: 0;
@@ -103,7 +107,6 @@ amp-img.amp-grid-item-image.amp-contain-image img {
 
 .price {
   color: #777777;
-  font-size: 12px;
 }
 
 .price-withtax {

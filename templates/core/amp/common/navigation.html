@@ -1,6 +1,10 @@
 <nav class="amp-navigation">
-  <div class="amp-navigation-search">
+  <div class="amp-navigation-header">
     {{> core/amp/common/quick-search}}
+
+    <button class="amp-header-button" on="tap:amp-menu.close">
+      <span class="sr-only">{{lang 'core.amp.header.menu_close'}}</span>
+    </button>
   </div>
   <ul class="amp-navigation-list amp-category-navigation-list">
     {{#each categories}}
@@ -27,13 +31,13 @@
     {{#if currency_selector.currencies.length '>' 1}}
       <li class="amp-navigation-item">
         <a
-          class="amp-navigation-link has-sub-menu"
+          class="amp-navigation-link has-sub-menu amp-currency-header"
           href="#"
           data-collapsible="nav-pages-currency"
           aria-controls="nav-pages-currency"
           aria-expanded="false"
         >
-          {{lang 'core.amp.header.currency' code=currency_selector.active_currency_code}}
+          {{lang 'core.amp.header.currency'}}
         </a>
         <div class="amp-navigation-currency" id="amp-navigation-currency" aria-hidden="true" tabindex="-1">
             <ul class="amp-navigation-currency-list">
