@@ -2,12 +2,12 @@
   {{#if category.subcategories}}
     <div class="amp-subcategories-container">
       <h5 class="amp-subcategories-heading">
-        {{category.name}}
+        {{lang 'core.amp.subcategories'}}
       </h5>
       <ul class="amp-subcategories-list">
         {{#each category.subcategories}}
           <li class="amp-subcategories-list-item">
-            <a class="amp-subcategories-list-action" href="{{url}}">
+            <a class="amp-subcategories-list-action" href="/amp{{url}}">
               {{name}}
             </a>
           </li>

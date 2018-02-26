@@ -18,10 +18,8 @@
       <amp-img
         class="
           amp-grid-item-image
-          amp-image-ratio-{{ image_ratio }}
-          {{#if image_cropping '==' "contain"}}
-            amp-contain-image
-          {{/if}}
+          amp-image-{{ image_ratio }}
+          amp-{{ image_cropping }}
         "
         src="{{getImage image 'product-list' (cdn default)}}"
         layout="fill"
