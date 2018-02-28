@@ -158,7 +158,7 @@ amp-img.amp-header-logo-image img {
   background-color: #ffffff;
   height: 100%;
   overflow-y: auto;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .amp-navigation .amp-header-button {
@@ -197,17 +197,58 @@ amp-img.amp-header-logo-image img {
   text-decoration: none;
 }
 
+.amp-navigation-tier-item.has-children > .amp-navigation-link {
+  color: #000;
+}
+
+.amp-category-navigation-list > .amp-navigation-item {
+
+}
+
+.amp-category-navigation-list .amp-navigation-item > .amp-navigation-link {
+  color: #000;
+}
+
 .amp-currency-header,
 .amp-navigation-link.is-active {
+  color: #000;
+}
+
+.amp-navigation-link.is-active {
+  color: #000;
   font-weight: 700;
+}
+
+.amp-navigation-tier-item {
+  background: #fff;
 }
 
 .amp-navigation-list-tier {
-  padding-left: .75rem;
+  position: relative;
+  border-left: 1px solid #f6f6f6;
+}
+
+.amp-navigation-list-tier .amp-navigation-tier-item {
+  padding-left: 0.75rem;
+}
+
+.amp-navigation-tier-item.has-children .amp-navigation-tier-item {
+  color: #000;
+  font-weight: 500;
+}
+
+.amp-navigation-list-tier .amp-navigation-link.is-active {
+  border-top: 0;
+  font-weight: 700;
 }
 
 .amp-active-currency {
+  color: #000;
   font-weight: 700;
+}
+
+.amp-navigation-currency-list {
+  list-style: none;
 }
 
 .amp-store-credit {
