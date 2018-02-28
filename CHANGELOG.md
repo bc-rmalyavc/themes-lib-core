@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.4.0] - 2018-02-28
+
+#### Added
+- Support for Google AMP category pages
+
 ## [3.3.16] - 2018-02-16
 
 #### Added
