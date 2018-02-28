@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.4.1] - 2018-02-28
+
+#### Fixed
+- Category links for AMP, fixed 
+
 ## [3.4.0] - 2018-02-28
 
 #### Added
