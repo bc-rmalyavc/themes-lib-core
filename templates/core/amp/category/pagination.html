@@ -8,7 +8,7 @@
     {{#if previous}}
       <a
         class="pagination-item pagination-previous"
-        href="/amp{{previous}}"
+        href="{{previous}}"
         {{#unless reload}}
           data-faceted-search-facet
         {{/unless}}
@@ -42,7 +42,7 @@
     {{#if next}}
       <a
         class="pagination-item pagination-next"
-        href="/amp{{next}}"
+        href="{{next}}"
         {{#unless reload}}
           data-faceted-search-facet
         {{/unless}}
