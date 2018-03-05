@@ -3,6 +3,8 @@
     {{> core/amp/common/quick-search}}
 
     <button class="amp-header-button" on="tap:amp-menu.close">
+      <div class="close close-left"></div>
+      <div class="close close-right"></div>
       <span class="sr-only">{{lang 'core.amp.header.menu_close'}}</span>
     </button>
   </div>
@@ -57,105 +59,107 @@
         </div>
       </li>
     {{/if}}
-    {{#if customer}}
-      <li class="amp-navigation-item">
-        <a
-          class="amp-navigation-link has-sub-menu"
-          href="{{urls.account.index}}"
-          data-collapsible="amp-navigation-account"
-        >
-          {{lang 'core.amp.header.account'}}
-        </a>
-        <div
-          class="amp-navigation-account"
-          id="nav-pages-account"
-          aria-hidden="true"
-          tabindex="-1"
-        >
-          <ul class="amp-navigation-account-list">
-            <li class="amp-navigation-account-item">
-              <a
-                class="amp-navigation-account-action amp-navigation-link"
-                href="{{urls.account.orders.all}}"
-              >
-                {{lang 'core.amp.header.orders'}}
-              </a>
-            </li>
-            {{#if settings.returns_enabled}}
+    {{#if settings.account_creation_enabled}}
+      {{#if customer}}
+        <li class="amp-navigation-item">
+          <a
+            class="amp-navigation-link has-sub-menu"
+            href="{{urls.account.index}}"
+            data-collapsible="amp-navigation-account"
+          >
+            {{lang 'core.amp.header.account'}}
+          </a>
+          <div
+            class="amp-navigation-account"
+            id="nav-pages-account"
+            aria-hidden="true"
+            tabindex="-1"
+          >
+            <ul class="amp-navigation-account-list">
               <li class="amp-navigation-account-item">
                 <a
                   class="amp-navigation-account-action amp-navigation-link"
-                  href="{{urls.account.returns}}"
+                  href="{{urls.account.orders.all}}"
                 >
-                  {{lang 'core.amp.header.returns'}}
+                  {{lang 'core.amp.header.orders'}}
                 </a>
               </li>
-            {{/if}}
-            <li class="amp-navigation-account-item">
-              <a
-                class="amp-navigation-account-action amp-navigation-link"
-                href="{{urls.account.inbox}}"
-              >
-                {{lang 'core.amp.header.messages'}}
-              </a>
-            </li>
-            <li class="amp-navigation-account-item">
-              <a
-                class="amp-navigation-account-action amp-navigation-link"
-                href="{{urls.account.addresses}}"
-              >
-                {{lang 'core.amp.header.addresses'}}
-              </a>
-            </li>
-            <li class="amp-navigation-account-item">
-              <a
-                class="amp-navigation-account-action amp-navigation-link"
-                href="{{urls.account.wishlists.all}}"
-              >
-                {{lang 'core.amp.header.wishlists'}}
-              </a>
-            </li>
-            <li class="amp-navigation-account-item">
-              <a
-                class="amp-navigation-account-action amp-navigation-link"
-                href="{{urls.account.recent_items}}"
-              >
-                {{lang 'core.amp.header.recently_viewed'}}
-              </a>
-            </li>
-            <li class="amp-navigation-account-item">
-              <a
-                class="amp-navigation-account-action amp-navigation-link"
-                href="{{urls.account.details}}"
-              >
-                {{lang 'core.amp.header.settings'}}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      {{#if customer.store_credit.value '>' 0}}
+              {{#if settings.returns_enabled}}
+                <li class="amp-navigation-account-item">
+                  <a
+                    class="amp-navigation-account-action amp-navigation-link"
+                    href="{{urls.account.returns}}"
+                  >
+                    {{lang 'core.amp.header.returns'}}
+                  </a>
+                </li>
+              {{/if}}
+              <li class="amp-navigation-account-item">
+                <a
+                  class="amp-navigation-account-action amp-navigation-link"
+                  href="{{urls.account.inbox}}"
+                >
+                  {{lang 'core.amp.header.messages'}}
+                </a>
+              </li>
+              <li class="amp-navigation-account-item">
+                <a
+                  class="amp-navigation-account-action amp-navigation-link"
+                  href="{{urls.account.addresses}}"
+                >
+                  {{lang 'core.amp.header.addresses'}}
+                </a>
+              </li>
+              <li class="amp-navigation-account-item">
+                <a
+                  class="amp-navigation-account-action amp-navigation-link"
+                  href="{{urls.account.wishlists.all}}"
+                >
+                  {{lang 'core.amp.header.wishlists'}}
+                </a>
+              </li>
+              <li class="amp-navigation-account-item">
+                <a
+                  class="amp-navigation-account-action amp-navigation-link"
+                  href="{{urls.account.recent_items}}"
+                >
+                  {{lang 'core.amp.header.recently_viewed'}}
+                </a>
+              </li>
+              <li class="amp-navigation-account-item">
+                <a
+                  class="amp-navigation-account-action amp-navigation-link"
+                  href="{{urls.account.details}}"
+                >
+                  {{lang 'core.amp.header.settings'}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        {{#if customer.store_credit.value '>' 0}}
+          <li class="amp-navigation-item">
+            <a class="amp-navigation-link amp-store-credit">
+              {{lang 'core.amp.header.store_credit' store_credit=customer.store_credit.formatted}}
+            </a>
+          </li>
+        {{/if}}
         <li class="amp-navigation-item">
-          <a class="amp-navigation-link amp-store-credit">
-            {{lang 'core.amp.header.store_credit' store_credit=customer.store_credit.formatted}}
+          <a class="amp-navigation-link" href="{{urls.auth.logout}}">
+            {{lang 'core.amp.header.logout'}}
+          </a>
+        </li>
+      {{else}}
+        <li class="amp-navigation-item">
+          <a class="amp-navigation-link amp-account-link" href="{{urls.auth.login}}">
+            {{lang 'core.amp.header.login'}}
+          </a>
+          /
+          <a class="amp-navigation-link amp-account-link" href="{{urls.auth.create_account}}">
+            {{lang 'core.amp.header.sign_up'}}
           </a>
         </li>
       {{/if}}
-      <li class="amp-navigation-item">
-        <a class="amp-navigation-link" href="{{urls.auth.logout}}">
-          {{lang 'core.amp.header.logout'}}
-        </a>
-      </li>
-    {{else}}
-      <li class="amp-navigation-item">
-        <a class="amp-navigation-link amp-account-link" href="{{urls.auth.login}}">
-          {{lang 'core.amp.header.login'}}
-        </a>
-        /
-        <a class="amp-navigation-link amp-account-link" href="{{urls.auth.create_account}}">
-          {{lang 'core.amp.header.sign_up'}}
-        </a>
-      </li>
     {{/if}}
   </ul>
 </nav>
