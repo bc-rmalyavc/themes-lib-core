@@ -1,7 +1,8 @@
 {
   "remove": [
     "GeoTrust Seals",
-    "Optimized Checkout"
+    "Optimized Checkout",
+    "Pricing"
   ],
   "insert": [
     {
@@ -610,6 +611,23 @@
               "label": "Transparent"
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "Pricing",
+      "settings": [
+        {
+          "type": "checkbox",
+          "label": "Display product sale badges",
+          "id": "sale-badges",
+          "force_reload": true
+        },
+        {
+          "type": "checkbox",
+          "label": "Display price ranges",
+          "force_reload": true,
+          "id": "price-ranges"
         }
       ]
     }
