@@ -15,10 +15,10 @@ body {
 
 body {
   font-size: 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;;
   font-weight: 400;
   line-height: 1.6;
-  color: #4f4f4f;
+  color: {{color_text}};
   padding-top: 55px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,14 +35,18 @@ li {
 }
 
 a {
-  color: #4f4f4f;
+  color: {{color_primary}};
   line-height: inherit;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #a5a5a5;
+  opacity: 0.7;
+}
+
+*:focus {
+  outline: 0;
 }
 
 p {
@@ -55,23 +59,11 @@ h3,
 h4,
 h5,
 h6 {
-  color: #2d2d2d;
+  color: {{color_headings}};
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-weight: 700;
   letter-spacing: .25px;
   margin-bottom: .78571rem;
   margin-top: 2.28571rem;
-}
-
-h1 small,
-h2 small,
-h3 small,
-h4 small,
-h5 small,
-h6 small {
-  color: #989898;
-  font-size: 60%;
-  line-height: 0;
 }
 
 h1 {
@@ -100,28 +92,11 @@ h6 {
 }
 
 hr {
-  border: solid #e8e8e8;
+  border: solid {{color_borders}};
   border-width: 1px 0 0;
   clear: both;
   height: 0;
   margin: 2rem 0 1.92857rem;
-}
-
-em,
-i {
-  font-style: italic;
-  line-height: inherit;
-}
-
-strong,
-b {
-  font-weight: 700;
-  line-height: inherit;
-}
-
-small {
-  font-size: 60%;
-  line-height: inherit;
 }
 
 ul,
@@ -158,8 +133,8 @@ dl dd {
 
 abbr,
 acronym {
-  border-bottom: 1px dotted #dfdfdf;
-  color: #4f4f4f;
+  border-bottom: 1px dotted {{color_borders}};
+  color: {{color_text}};
   cursor: help;
   font-size: 90%;
   text-transform: uppercase;
@@ -176,25 +151,10 @@ blockquote p {
 }
 
 cite {
-  color: #a5a5a5;
+  color: {{color_primary}};
   display: block;
   font-size: 1rem;
   line-height: 1.5;
-}
-
-.icon {
-  height: 1.14286rem;
-  width: 1.14286rem;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.icon svg {
-  display: inline-block;
-  fill: #4f4f4f;
-  height: 100%;
-  vertical-align: top;
-  width: 100%;
 }
 
 .body {
@@ -208,50 +168,6 @@ cite {
   max-width: 91.71429rem;
   padding: 0 1.5rem;
   position: relative;
-}
-
-.button {
-  border-radius: 0;
-  border-style: solid;
-  border-width: 1px;
-  cursor: pointer;
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0 0 1rem;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  background-color: transparent;
-  border-color: #dfdfdf;
-  color: #454545;
-  font-size: 1rem;
-  padding: .85714rem 2.28571rem;
-  border-radius: 4px;
-  outline: none;
-  vertical-align: middle;
-}
-
-.button:hover,
-.button:focus,
-.button.is-active,
-.button.active {
-  background-color: transparent;
-  border-color: #989898;
-  color: #666;
-}
-
-.button:active {
-  background-color: transparent;
-  border: 1px solid #454545;
-  color: #454545;
-}
-
-.button:focus,
-.button.is-active,
-.button.active {
-  outline: none;
 }
 
 .sr-only {
