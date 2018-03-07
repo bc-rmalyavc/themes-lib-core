@@ -1,5 +1,5 @@
 .amp-header {
-  background-color: #fff;
+  background-color: {{header_background}};
   border-bottom: 1px solid {{color_borders}};
   position: fixed;
   top: 0;
@@ -270,6 +270,7 @@ amp-img.amp-header-logo-image img {
   border-radius: 3px;
   padding-left: 12px;
   padding-right: 8px;
+  margin-bottom: 4px;
 }
 
 .amp-currency-header {
@@ -328,8 +329,13 @@ amp-img.amp-header-logo-image img {
 
 .amp-store-credit {
   text-transform: none;
+  padding: 1.25rem 0;
+  margin-top: 0.5rem;
   border-top: 1px solid {{color_borders}};
-  border-bottom: 1px solid {{color_borders}};
+}
+
+.amp-store-credit:hover {
+  opacity: 1;
 }
 
 .amp-account-link {
