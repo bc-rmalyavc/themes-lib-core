@@ -12,7 +12,8 @@
       "header": {
         "account": "Account",
         "addresses": "Addresses",
-        "currency": "Select Currency: {code}",
+        "all": "All",
+        "currency": "Currency: {code}",
         "gift_certificate": "Gift Certificate",
         "login": "Login",
         "logout": "Logout",

@@ -21,7 +21,9 @@
         <li>
         {{#each children}}
           <li class="amp-navigation-tier-item {{#if children}}has-children{{/if}}">
-            {{> core/amp/common/navigation-loop}}
+            {{> core/amp/common/navigation-loop
+              show_all=../show_all
+            }}
           </li>
         {{/each}}
       </ul>
