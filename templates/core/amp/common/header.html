@@ -8,12 +8,17 @@
 
 <header class="amp-header">
   <button class="amp-header-button" on="tap:amp-menu.toggle">
+    <div class="burger burger-top"></div>
+    <div class="burger burger-middle"></div>
+    <div class="burger burger-bottom"></div>
     <span class="sr-only">{{lang 'core.amp.header.menu_open'}}</span>
   </button>
 
   <div class="amp-header-logo">
     {{> core/amp/common/logo}}
   </div>
+
+  {{#block 'amp-cart-icon'}}{{/block}}
 </header>
 <amp-sidebar layout="nodisplay" id="amp-menu" data-menu>
   {{> core/amp/common/navigation}}
