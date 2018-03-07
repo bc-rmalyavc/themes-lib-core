@@ -3,20 +3,26 @@
     {{> core/amp/common/quick-search}}
 
     <button class="amp-header-button" on="tap:amp-menu.close">
+      <div class="close close-left"></div>
+      <div class="close close-right"></div>
       <span class="sr-only">{{lang 'core.amp.header.menu_close'}}</span>
     </button>
   </div>
   <ul class="amp-navigation-list amp-category-navigation-list">
     {{#each categories}}
       <li class="amp-navigation-item">
-        {{> core/amp/common/navigation-loop}}
+        {{> core/amp/common/navigation-loop
+          show_all=true
+        }}
       </li>
     {{/each}}
   </ul>
   <ul class="amp-navigation-list amp-page-navigation-list">
     {{#each pages}}
       <li class="amp-navigation-item">
-        <a class="amp-navigation-link" href="{{url}}">{{name}}</a>
+        {{> core/amp/common/navigation-loop
+          show_all=false
+        }}
       </li>
     {{/each}}
     {{#if settings.gift_certificates_enabled}}
@@ -29,133 +35,65 @@
   </ul>
   <ul class="amp-navigation-list amp-navigation-utilities">
     {{#if currency_selector.currencies.length '>' 1}}
-      <li class="amp-navigation-item">
-        <a
-          class="amp-navigation-link has-sub-menu amp-currency-header"
-          href="#"
-          data-collapsible="nav-pages-currency"
-          aria-controls="nav-pages-currency"
-          aria-expanded="false"
-        >
-          {{lang 'core.amp.header.currency' code=currency_selector.active_currency_code}}
-        </a>
-        <div class="amp-navigation-currency" id="amp-navigation-currency" aria-hidden="true" tabindex="-1">
-            <ul class="amp-navigation-currency-list">
-              {{#each currency_selector.currencies}}
-                <li class="amp-navigation-currency-item">
-                  <a
-                    class="amp-navigation-currency-switch"
-                    href="{{{switch_url}}}"
-                  >
-                    <span {{#if is_active}}class="amp-active-currency"{{/if}}>
-                      {{name}}
-                    </span>
-                  </a>
-                </li>
-              {{/each}}
-            </ul>
-        </div>
-      </li>
-    {{/if}}
-    {{#if customer}}
-      <li class="amp-navigation-item">
-        <a
-          class="amp-navigation-link has-sub-menu"
-          href="{{urls.account.index}}"
-          data-collapsible="amp-navigation-account"
-        >
-          {{lang 'core.amp.header.account'}}
-        </a>
-        <div
-          class="amp-navigation-account"
-          id="nav-pages-account"
-          aria-hidden="true"
-          tabindex="-1"
-        >
-          <ul class="amp-navigation-account-list">
-            <li class="amp-navigation-account-item">
-              <a
-                class="amp-navigation-account-action amp-navigation-link"
-                href="{{urls.account.orders.all}}"
-              >
-                {{lang 'core.amp.header.orders'}}
-              </a>
-            </li>
-            {{#if settings.returns_enabled}}
-              <li class="amp-navigation-account-item">
+      <amp-accordion class="amp-currency-dropdown" disable-session-states>
+        <section>
+          <h5
+            class="amp-navigation-link has-sub-menu amp-currency-header"
+          >
+            {{lang 'core.amp.header.currency' code=currency_selector.active_currency_code}}
+            <span class="arrow-down">
+              <svg width="9" height="14" viewBox="0 0 7 12" xmlns="http://www.w3.org/2000/svg" role="presentation">
+                <path d="M.34 10.66l.71.703L6.364 6.01 1.05.66l-.71.703L4.955 6.01" fill="currentColor"/>
+              </svg>
+            </span>
+          </h5>
+          <ul class="amp-navigation-currency-list">
+            {{#each currency_selector.currencies}}
+              <li class="amp-navigation-currency-item">
                 <a
-                  class="amp-navigation-account-action amp-navigation-link"
-                  href="{{urls.account.returns}}"
+                  class="amp-navigation-currency-switch"
+                  href="{{{switch_url}}}"
                 >
-                  {{lang 'core.amp.header.returns'}}
+                  <span {{#if is_active}}class="amp-active-currency"{{/if}}>
+                    {{name}}
+                  </span>
                 </a>
               </li>
-            {{/if}}
-            <li class="amp-navigation-account-item">
-              <a
-                class="amp-navigation-account-action amp-navigation-link"
-                href="{{urls.account.inbox}}"
-              >
-                {{lang 'core.amp.header.messages'}}
-              </a>
-            </li>
-            <li class="amp-navigation-account-item">
-              <a
-                class="amp-navigation-account-action amp-navigation-link"
-                href="{{urls.account.addresses}}"
-              >
-                {{lang 'core.amp.header.addresses'}}
-              </a>
-            </li>
-            <li class="amp-navigation-account-item">
-              <a
-                class="amp-navigation-account-action amp-navigation-link"
-                href="{{urls.account.wishlists.all}}"
-              >
-                {{lang 'core.amp.header.wishlists'}}
-              </a>
-            </li>
-            <li class="amp-navigation-account-item">
-              <a
-                class="amp-navigation-account-action amp-navigation-link"
-                href="{{urls.account.recent_items}}"
-              >
-                {{lang 'core.amp.header.recently_viewed'}}
-              </a>
-            </li>
-            <li class="amp-navigation-account-item">
-              <a
-                class="amp-navigation-account-action amp-navigation-link"
-                href="{{urls.account.details}}"
-              >
-                {{lang 'core.amp.header.settings'}}
-              </a>
-            </li>
+            {{/each}}
           </ul>
-        </div>
-      </li>
-      {{#if customer.store_credit.value '>' 0}}
+        </section>
+      </amp-accordion>
+    {{/if}}
+    {{#if settings.account_creation_enabled}}
+      {{#if customer}}
         <li class="amp-navigation-item">
-          <a class="amp-navigation-link amp-store-credit">
-            {{lang 'core.amp.header.store_credit' store_credit=customer.store_credit.formatted}}
+          <a
+            class="amp-navigation-link has-sub-menu"
+            href="{{urls.account.index}}"
+            data-collapsible="amp-navigation-account"
+          >
+            {{lang 'core.amp.header.account'}}
+          </a>
+        </li>
+        <li class="amp-navigation-item">
+          <a class="amp-navigation-link" href="{{urls.auth.logout}}">
+            {{lang 'core.amp.header.logout'}}
+          </a>
+        </li>
+        {{#if customer.store_credit.value '>' 0}}
+          <li class="amp-navigation-item">
+            <a class="amp-navigation-link amp-store-credit">
+              {{lang 'core.amp.header.store_credit' store_credit=customer.store_credit.formatted}}
+            </a>
+          </li>
+        {{/if}}
+      {{else}}
+        <li class="amp-navigation-item">
+          <a class="amp-navigation-link" href="{{urls.auth.login}}">
+            {{lang 'core.amp.header.account'}}
           </a>
         </li>
       {{/if}}
-      <li class="amp-navigation-item">
-        <a class="amp-navigation-link" href="{{urls.auth.logout}}">
-          {{lang 'core.amp.header.logout'}}
-        </a>
-      </li>
-    {{else}}
-      <li class="amp-navigation-item">
-        <a class="amp-navigation-link amp-account-link" href="{{urls.auth.login}}">
-          {{lang 'core.amp.header.login'}}
-        </a>
-        /
-        <a class="amp-navigation-link amp-account-link" href="{{urls.auth.create_account}}">
-          {{lang 'core.amp.header.sign_up'}}
-        </a>
-      </li>
     {{/if}}
   </ul>
 </nav>
