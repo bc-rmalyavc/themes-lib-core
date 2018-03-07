@@ -44,10 +44,15 @@
     <h5 class="amp-footer-heading">{{lang 'core.amp.footer.contact'}}</h5>
     <address>{{nl2br settings.address}}</address>
     {{#if settings.phone_number}}
-      <strong>{{lang 'core.amp.footer.call_us' phone_number=settings.phone_number}}</strong>
+      <p class="amp-footer-phone">
+        {{lang 'core.amp.footer.call_us' phone_number=settings.phone_number}}
+      </p>
     {{/if}}
   </article>
   <article class="amp-footer-credits">
+    {{#if social_media.length}}
+      {{#block 'amp-social'}} {{/block}}
+    {{/if}}
     {{#if theme_credits}}
       <p>{{theme_name}} theme by <a href="https://pixelunion.net" target="_blank" rel="nofollow">Pixel Union</a>, Powered by <a href="http://bigcommerce.com" rel="nofollow">BigCommerce</a></p>
     {{/if}}
