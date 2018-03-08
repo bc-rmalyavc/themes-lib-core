@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+#### Changed
+- Remove broken search from AMP Navigation
+
 ## [3.4.2] - 2018-03-07
 
 #### Added
