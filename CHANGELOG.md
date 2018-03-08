@@ -2,10 +2,18 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.4.2] - 2018-03-07
+
+#### Added
+- Accordion functionality added to AMP navigation elements to make it nicer
+
+#### Changed
+- Increased customizability of AMP for use in themes
+
 ## [3.4.1] - 2018-02-28
 
 #### Fixed
-- Category links for AMP, fixed 
+- Category links for AMP, fixed
 
 ## [3.4.0] - 2018-02-28
 
