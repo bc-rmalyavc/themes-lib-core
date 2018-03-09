@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+#### Fixed
+- Tappable area increased on AMP navigation close
+
 ## [3.4.3] - 2018-03-08
 #### Changed
 - Remove broken search from AMP Navigation
