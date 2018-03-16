@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+#### Changed
+- Footer and header colors for AMP pages now have their own background and text
+  variables to allow more flexibility to match theme color scheme.
+
 ## [3.4.4] - 2018-03-09
 #### Fixed
 - Tappable area increased on AMP navigation close
