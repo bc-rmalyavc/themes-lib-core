@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+#### Added
+- Header and footer scripts to checkout and order confirmation pages for use by
+  app developers in relation to the new checkout API
+
 ## [3.4.5] - 2018-03-16
 #### Changed
 - Footer and header colors for AMP pages now have their own background and text
