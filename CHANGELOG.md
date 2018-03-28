@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.4.6] - 2018-03-28
 #### Added
 - Header and footer scripts to checkout and order confirmation pages for use by
   app developers in relation to the new checkout API
