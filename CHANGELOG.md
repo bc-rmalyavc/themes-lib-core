@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+#### Fixed
+- Copyright script in AMP footer removed
+
 ## [3.5.0] - 2018-04-10
 #### Added
 - Advanced search form styles and js added
