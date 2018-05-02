@@ -13,7 +13,7 @@ export default class AdvancedSearch {
       for (const categoryId of selectedCategories) {
         const input = $('<input>', {
           type: 'hidden',
-          name: 'category',
+          name: 'category[]',
           value: categoryId,
         });
 

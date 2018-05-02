@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased]
+#### Fixed
+- Multiple category selection now works in advanced search
+
 ## [3.5.1] - 2018-04-17
 #### Fixed
 - Copyright script in AMP footer removed
