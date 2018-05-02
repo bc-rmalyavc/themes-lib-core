@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased]
+## [3.5.2]
 #### Fixed
 - Multiple category selection now works in advanced search
 
