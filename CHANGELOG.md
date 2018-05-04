@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.5.3]
+#### Fixed
+- Now when you click in the categories box on the advanced search panel, it wont
+  always toggle the first list item
+
 ## [3.5.2]
 #### Fixed
 - Multiple category selection now works in advanced search
