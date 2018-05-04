@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [unreleased] - unreleased
 #### Fixed
 - Advanced search cancel now actually closes the advanced search.
+- bug in advanced search where first checkbox was being checked when focusing
+  on checkbox area
 
 ## [3.6.1]
 #### Fixed
