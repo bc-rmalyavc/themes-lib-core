@@ -31,6 +31,18 @@
         "wishlists": "Wishlists"
       },
       "no_products": "No Products",
+      "product": {
+        "atc": "Add to Cart",
+        "choose_options": "Choose Options",
+        "description": "Description",
+        "pre_order": "Pre Order",
+        "quantity": "Quantity",
+        "reviews": "{num} Reviews",
+        "reviews_post_on_by": "Posted by { name } on { date }",
+        "share": "Share",
+        "sold_out": "Sold Out",
+        "videos": "Videos"
+      },
       "subcategories": "Subcategories",
       "view_all": "View All"
     },
