@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased]
+## [3.6.1]
 #### Fixed
 - The fancy AJAX add to cart fell apart on amp product pages, so it was removed
 
