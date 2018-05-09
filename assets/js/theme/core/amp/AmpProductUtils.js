@@ -1,6 +1,5 @@
 import utils from '@bigcommerce/stencil-utils';
 import AmpAlert from './AmpAlert';
-import ampProgressButton from './AmpProgressButton';
 
 export default class ProductUtils {
   constructor(el, options) {
@@ -60,7 +59,6 @@ export default class ProductUtils {
       this.cartOptionAlert.clear();
 
       utils.api.productAttributes.optionChange(this.productId, $form.serialize(), (err, response) => {
-
         const viewModel = this._getViewModel(this.$el);
         const data = response ? response.data : {};
 
@@ -182,18 +180,9 @@ export default class ProductUtils {
   _bindCartAdd(event, form) {
     // Do not do AJAX if browser doesn't support FormData
     if (window.FormData === undefined) { return; }
-
     event.preventDefault();
 
-    const $button = $(event.currentTarget)
-      .closest('[data-product-container]')
-      .find('[data-button-purchase]');
-
-    const quantity = this.$el.find('input.product-quantity').val();
     const formData = new FormData(form);
-
-    // update button state
-    ampProgressButton.progress($button);
 
     this.callbacks.willUpdate($(form));
 
@@ -203,39 +192,18 @@ export default class ProductUtils {
 
     // Add item to cart
     utils.api.cart.itemAdd(formData, (err, response) => {
-      let isError = false;
 
       if (err || response.data.error) {
-        isError = true;
         response = err || response.data.error;
-        ampProgressButton.complete($button);
+
+        /**
+         * interpret and display cart-add error message
+         */
+         this.cartAddAlert.message(response, 'error', true);
+         this.callbacks.didUpdate(response, $(form));
       } else {
-        ampProgressButton.confirmComplete($button);
+        return window.location = this.context.urlsCart;
       }
-
-      this.context.productTitle = $button.attr('data-product-title');
-      this._updateMessage(isError, response);
-      this.callbacks.didUpdate(isError, response, $(form));
     });
-  }
-
-  /**
-   * interpret and display cart-add response message
-   */
-  _updateMessage(isError, response) {
-    let message = '';
-
-    if (isError) {
-      message = response;
-    } else {
-      message = this.context.addSuccess;
-      message = message
-                  .replace('*product*', this.$el.find('[data-button-purchase]').data('product-title'))
-                  .replace('*cart_link*', `<a href=${this.context.urlsCart}>${this.context.cartLink}</a>`)
-                  .replace('*checkout_link*', `<a href=${this.context.urlsCheckout}>${this.context.checkoutLink}</a>`);
-
-    }
-
-    this.cartAddAlert.message(message, (isError ? 'error' : 'success'));
   }
 }
