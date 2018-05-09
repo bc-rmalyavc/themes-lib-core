@@ -202,7 +202,7 @@ export default class ProductUtils {
          this.cartAddAlert.message(response, 'error', true);
          this.callbacks.didUpdate(response, $(form));
       } else {
-        return window.location = this.context.urlsCart;
+        return window.top.location = this.context.urlsCart;
       }
     });
   }
