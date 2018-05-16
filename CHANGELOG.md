@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.6.2] - 2018-05-16
 #### Fixed
 - Advanced search cancel now actually closes the advanced search.
 - bug in advanced search where first checkbox was being checked when focusing
