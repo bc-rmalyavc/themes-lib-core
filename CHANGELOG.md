@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Advanced search cancel now actually closes the advanced search.
 - bug in advanced search where first checkbox was being checked when focusing
   on checkbox area
+- Correct spacing on AMP product options css file
 
 #### Added
 - .editorconfig file added to support proper code hygiene
