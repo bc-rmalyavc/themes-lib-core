@@ -21,5 +21,15 @@ export default class AdvancedSearch {
         $advancedSearchForm.append(input);
       }
     });
+
+    // The first checkbox gets autofocused and therefore checked
+    // when clicking anywhere on the form.
+    // This is making sure the input or label is clicked before clicking a
+    // checkbox
+    $('[data-search-category-tree]').on('click', (event) => {
+      if (!$(event.target).is('input, label')) {
+        event.preventDefault();
+      }
+    })
   }
 }
