@@ -8,6 +8,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - bug in advanced search where first checkbox was being checked when focusing
   on checkbox area
 
+#### Added
+- .editorconfig file added to support proper code hygiene
+
 ## [3.6.1]
 #### Fixed
 - The fancy AJAX add to cart fell apart on amp product pages, so it was removed
