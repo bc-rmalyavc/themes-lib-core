@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.6.3] - 2018-06-01
+#### Changed
+- Show pre-populated text in textareas as text and not placeholder
+
 ## [3.6.2] - 2018-05-16
 #### Fixed
 - Advanced search cancel now actually closes the advanced search.
