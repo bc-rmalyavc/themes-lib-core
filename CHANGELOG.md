@@ -7,6 +7,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - When a category is selected in the advanced search panel the category selection
   persists once the page is refreshed
 
+#### Changed
+- Show pre-populated text in text inputs as text and not placeholder
+
 ## [3.6.3] - 2018-06-01
 #### Changed
 - Show pre-populated text in textareas as text and not placeholder
