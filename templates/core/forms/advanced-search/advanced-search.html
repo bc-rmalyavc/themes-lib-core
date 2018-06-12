@@ -37,6 +37,17 @@
             {{/if}}
           {{/each}}
         </ol>
+
+        <script type="application/json" data-search-selected>
+          [{{#each forms.search.category_options}}
+            {{#if selected}}
+             {{metadata.id}},
+            {{/if}}
+            {{#if children}}
+              {{> core/forms/advanced-search/search-categories-selected}}
+            {{/if}}
+          {{/each}}]
+        </script>
       </div>
     </label>
   </div>
