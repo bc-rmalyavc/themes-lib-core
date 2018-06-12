@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+#### Fixed
+- When a category is selected in the advanced search panel the category selection
+  persists once the page is refreshed
+
 ## [3.6.3] - 2018-06-01
 #### Changed
 - Show pre-populated text in textareas as text and not placeholder

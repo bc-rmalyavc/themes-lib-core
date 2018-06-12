@@ -1,3 +1,5 @@
+import bonsai from 'jquery-bonsai';
+
 export default class AdvancedSearch {
   constructor() {
     const $advancedSearchForm = $('[data-advanced-search-form]');
@@ -31,5 +33,33 @@ export default class AdvancedSearch {
         event.preventDefault();
       }
     })
+
+    this._advancedSearchCategories();
+  }
+
+  _advancedSearchCategories() {
+    const categories = $('[data-advanced-search-form]').find('li');
+    const selectedCategoriesJson = $('[data-search-selected]').text().replace(/,\s*\]/,']');
+    let selected = [];
+    try {
+      selected = JSON.parse(selectedCategoriesJson);
+    } catch(error) {
+      console.log(error);
+    }
+
+    $(categories).each((index, element) => {
+      const $category = $(element);
+      const id = $category.data('value');
+
+      if (selected.indexOf(id) !== -1) {
+        $category.attr('data-checked', true);
+      }
+    });
+
+    $('#advanced-search-checkboxes').bonsai({
+      expanAll: true,
+      checkboxes: true,
+      createInputs: 'checkbox'
+    });
   }
 }
