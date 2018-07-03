@@ -23,14 +23,31 @@
 
   @param show_price_ranges bool
     If true, show sale badges inline with price.
+
+  @param show_amp_classes bool
+    If true include amp class component
 }}
 {{#if price}}
   {{#all show_price_ranges price.price_range}}
-    {{> core/products/price-range price_range=price.price_range}}
+    {{> core/products/price-range
+      price_range=price.price_range
+      show_amp_classes=show_amp_classes
+    }}
   {{else}}
-    <div class="price {{#all price.without_tax price.with_tax}}multiple-prices{{/all}}">
+    <div
+      class="
+        price
+        {{#all price.without_tax price.with_tax}}multiple-prices{{/all}}
+        {{#if show_amp_classes}}
+          {{> core/amp/common/price-class}}
+        {{/if}}
+        "
+      >
       {{#if price.without_tax}}
-        <div class="price-withouttax" data-product-price-wrapper="without-tax">
+        <div
+          class="price-withouttax"
+          data-product-price-wrapper="without-tax"
+        >
 
           {{#if price.rrp_without_tax}}
             <div class="price-rrp-wrapper">
@@ -55,9 +72,12 @@
           {{/if}}
 
           <div class="price-value-wrapper">
-            <label class="price-value-label">
-              {{lang 'core.product.price.now'}}
-            </label>
+            <!-- If there's another price show "now" label -->
+            {{#or price.rrp.with_tax price.non_sale_price_with_tax}}
+              <label class="price-value-label">
+                {{lang 'core.product.price.now'}}
+              </label>
+            {{/or}}
             <span class="price-value" data-product-price>
               {{price.without_tax.formatted}}
             </span>
@@ -84,7 +104,10 @@
       {{/if}}
 
       {{#if price.with_tax}}
-        <div class="price-withtax" data-product-price-wrapper="with-tax">
+        <div
+          class="price-withtax"
+          data-product-price-wrapper="with-tax"
+        >
 
           {{#if price.rrp_with_tax}}
             <div class="price-rrp-wrapper">
@@ -109,9 +132,12 @@
           {{/if}}
 
           <div class="price-value-wrapper">
-            <label class="price-value-label">
-              {{lang 'core.product.price.now'}}
-            </label>
+            <!-- If there's another price show "now" label -->
+            {{#or price.rrp.with_tax price.non_sale_price_with_tax}}
+              <label class="price-value-label">
+                {{lang 'core.product.price.now'}}
+              </label>
+            {{/or}}
             <span class="price-value" data-product-price>
               {{price.with_tax.formatted}}
             </span>

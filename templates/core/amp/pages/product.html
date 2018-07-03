@@ -30,9 +30,7 @@
 
 {{#partial "page"}}
   {{> core/amp/common/header}}
-  <div itemscope itemtype="http://schema.org/Product">
-    {{> core/amp/products/product-view schema=true}}
-  </div>
+  {{> core/amp/products/product-view}}
 
   {{#block "amp-footer"}} {{/block}}
 
@@ -73,5 +71,6 @@
       </script>
     </amp-analytics>
   {{/if}}
-
+  {{> core/structured-data/product}}
+  {{> core/structured-data/product-reviews}}
 {{/partial}}
