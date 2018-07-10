@@ -624,10 +624,23 @@
           "force_reload": true
         },
         {
-          "type": "checkbox",
-          "label": "Display price ranges",
-          "force_reload": true,
-          "id": "price-ranges"
+          "type": "select",
+          "label": "Ranged Price Format",
+          "id": "price_range_display",
+          "options": [
+            {
+              "value": "both",
+              "label": "Show lowest and highest price"
+            },
+            {
+              "value": "lowest",
+              "label": "Show lowest price"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Price display for products with variants"
         }
       ]
     }
