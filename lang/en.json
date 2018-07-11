@@ -68,11 +68,6 @@
         "zoom_action": "Zoom in/out",
         "previous": "Previous (arrow left)",
         "next": "Next (arrow right)"
-      },
-      "price": {
-        "msrp": "MSRP: ",
-        "was": "Was: ",
-        "now": "Now: "
       }
     },
     "rating": {
