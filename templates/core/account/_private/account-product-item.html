@@ -50,7 +50,9 @@
     {{/if}}
 
     <div class="account-product-item-price">
-      {{> core/products/price}}
+      {{> core/products/price
+        price=price
+      }}
     </div>
 
     {{#if show_compare}}

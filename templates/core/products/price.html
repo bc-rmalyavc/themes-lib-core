@@ -24,14 +24,14 @@
   @param sale_badge_classes string
     Class to append to sale badge
 
-  @param show_price_ranges bool
-    If true, show sale badges inline with price.
+  @param price_range_display string
+    If set to "both", show price as a range when applicable.
 
   @param show_amp_classes bool
     If true include amp class component
 }}
 {{#if price}}
-  {{#all show_price_ranges price.price_range}}
+  {{#all (if price_range_display '===' 'both') price.price_range}}
     {{> core/products/price-range
       price_range=price.price_range
       show_amp_classes=show_amp_classes

@@ -40,7 +40,7 @@
     "optimizedCheckout-step-textColor": "#ffffff",
     "optimizedCheckout-formField-backgroundColor": "white",
     "optimizedCheckout-formField-borderColor": "#989898",
-    "price-ranges": true,
+    "price_range_display": "both",
     "sale-badges": true
   }
 }
