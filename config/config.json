@@ -41,6 +41,9 @@
     "optimizedCheckout-formField-backgroundColor": "white",
     "optimizedCheckout-formField-borderColor": "#989898",
     "price_range_display": "both",
-    "sale-badges": true
+    "sale-badges": true,
+    "sale-price-label": "Now:",
+    "non-sale-price-label": "Was:",
+    "retail-price-label": "MSRP:"
   }
 }
