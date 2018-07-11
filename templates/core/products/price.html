@@ -76,7 +76,7 @@
 
           <div class="price-value-wrapper">
             <!-- If there's another price show "now" label -->
-            {{#or price.rrp.without_tax price.non_sale_price_without_tax}}
+            {{#or price.rrp_without_tax price.non_sale_price_without_tax}}
               <label class="price-value-label">
                 {{theme_settings.sale-price-label}}
               </label>
@@ -136,7 +136,7 @@
 
           <div class="price-value-wrapper">
             <!-- If there's another price show "now" label -->
-            {{#or price.rrp.with_tax price.non_sale_price_with_tax}}
+            {{#or price.rrp_with_tax price.non_sale_price_with_tax}}
               <label class="price-value-label">
                 {{theme_settings.sale-price-label}}
               </label>
