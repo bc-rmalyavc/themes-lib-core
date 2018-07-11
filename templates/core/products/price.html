@@ -55,7 +55,7 @@
           {{#if price.rrp_without_tax}}
             <div class="price-rrp-wrapper">
               <label class="price-rrp-label">
-                {{lang 'core.product.price.msrp'}}
+                {{theme_settings.retail-price-label}}
               </label>
               <span class="price-rrp" data-price-rrp>
                 {{price.rrp_without_tax.formatted}}
@@ -66,7 +66,7 @@
           {{#if price.non_sale_price_without_tax}}
             <div class="price-ns-wrapper">
               <label class="price-ns-label">
-                {{lang 'core.product.price.was'}}
+                {{theme_settings.non-sale-price-label}}
               </label>
               <span class="price-ns" data-price-rrp>
                 {{price.non_sale_price_without_tax.formatted}}
@@ -76,9 +76,9 @@
 
           <div class="price-value-wrapper">
             <!-- If there's another price show "now" label -->
-            {{#or price.rrp.with_tax price.non_sale_price_with_tax}}
+            {{#or price.rrp.without_tax price.non_sale_price_without_tax}}
               <label class="price-value-label">
-                {{lang 'core.product.price.now'}}
+                {{theme_settings.sale-price-label}}
               </label>
             {{/or}}
             <span class="price-value" data-product-price>
@@ -115,7 +115,7 @@
           {{#if price.rrp_with_tax}}
             <div class="price-rrp-wrapper">
               <label class="price-rrp-label">
-                {{lang 'core.product.price.msrp'}}
+                {{theme_settings.retail-price-label}}
               </label>
               <span class="price-rrp" data-price-rrp>
                 {{price.rrp_with_tax.formatted}}
@@ -126,7 +126,7 @@
           {{#if price.non_sale_price_with_tax}}
             <div class="price-ns-wrapper">
               <label class="price-ns-label">
-                {{lang 'core.product.price.was'}}
+                {{theme_settings.non-sale-price-label}}
               </label>
               <span class="price-ns" data-price-rrp>
                 {{price.non_sale_price_with_tax.formatted}}
@@ -138,7 +138,7 @@
             <!-- If there's another price show "now" label -->
             {{#or price.rrp.with_tax price.non_sale_price_with_tax}}
               <label class="price-value-label">
-                {{lang 'core.product.price.now'}}
+                {{theme_settings.sale-price-label}}
               </label>
             {{/or}}
             <span class="price-value" data-product-price>
