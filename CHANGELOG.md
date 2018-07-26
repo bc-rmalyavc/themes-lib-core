@@ -2,16 +2,19 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.6.4] - 2018-07-26
 #### Added
 - Price scss file to control the now core based pricing
 
 #### Fixed
-- When a category is selected in the advanced search panel the category selection
-  persists once the page is refreshed
+- When a category is selected in the advanced search panel the category
+  selection persists once the page is refreshed
 
 #### Changed
 - Show pre-populated text in text inputs as text and not placeholder
+- Pricing now lives in core, now all our themes can use the core files to build
+  and handle product prices across the theme, and access new theme settings so
+  our themes work like Cornerstone now
 
 ## [3.6.3] - 2018-06-01
 #### Changed
