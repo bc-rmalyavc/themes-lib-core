@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased] - unreleased
+#### Added
+- Price scss file to control the now core based pricing
+
 #### Fixed
 - When a category is selected in the advanced search panel the category selection
   persists once the page is refreshed
