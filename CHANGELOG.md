@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.6.5] - 2018-08-16
 #### Fixed
 - The options date field wasn't interacting with the form validator, not it is
 
