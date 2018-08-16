@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+#### Fixed
+- The options date field wasn't interacting with the form validator, not it is
+
 ## [3.6.4] - 2018-07-26
 #### Added
 - Price scss file to control the now core based pricing
