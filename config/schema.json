@@ -645,17 +645,20 @@
         {
           "type": "text",
           "label": "Product sale price label",
-          "id": "sale-price-label"
+          "id": "sale-price-label",
+          "force_reload": true
         },
         {
           "type": "text",
           "label": "Product before sale price label",
-          "id": "non-sale-price-label"
+          "id": "non-sale-price-label",
+          "force_reload": true
         },
         {
           "type": "text",
           "label": "Product retail price label",
-          "id": "retail-price-label"
+          "id": "retail-price-label",
+          "force_reload": true
         }
       ]
     }

@@ -31,7 +31,7 @@
     If true include amp class component
 }}
 {{#if price}}
-  {{#all (if price_range_display '===' 'both') price.price_range}}
+   {{#all (if price_range_display '===' 'both') price.price_range}}
     {{> core/products/price-range
       price_range=price.price_range
       show_amp_classes=show_amp_classes
@@ -76,11 +76,11 @@
 
           <div class="price-value-wrapper">
             {{!-- If there is another price show "now" label --}}
-            {{#or price.rrp_without_tax price.non_sale_price_without_tax}}
+            {{#if price.non_sale_price_without_tax}}
               <label class="price-value-label">
                 {{sale_price_label}}
               </label>
-            {{/or}}
+            {{/if}}
             <span class="price-value" data-product-price>
               {{price.without_tax.formatted}}
             </span>
@@ -96,11 +96,11 @@
               {{/if}}
             {{/if}}
 
-            {{#if show_sale_badges}}
+            {{#all show_sale_badges (unless price.with_tax)}}
               {{> core/products/sale-badge
                 classes=sale_badge_classes
               }}
-            {{/if}}
+            {{/all}}
           </div>
 
         </div>
@@ -136,11 +136,11 @@
 
           <div class="price-value-wrapper">
             {{!-- If there is another price show "now" label --}}
-            {{#or price.rrp_with_tax price.non_sale_price_with_tax}}
+            {{#if price.non_sale_price_with_tax}}
               <label class="price-value-label">
                 {{sale_price_label}}
               </label>
-            {{/or}}
+            {{/if}}
             <span class="price-value" data-product-price>
               {{price.with_tax.formatted}}
             </span>
@@ -156,11 +156,11 @@
               {{/if}}
             {{/if}}
 
-            {{#all show_sale_badges price.without_tax}}
+            {{#if show_sale_badges}}
               {{> core/products/sale-badge
                 classes=sale_badge_classes
               }}
-            {{/all}}
+            {{/if}}
           </div>
         </div>
       {{/if}}
