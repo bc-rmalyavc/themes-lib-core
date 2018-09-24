@@ -86,14 +86,14 @@
             </span>
 
             {{#if show_tax_labels}}
-              {{#if price.with_tax}}
+              {{#all price.with_tax price.without_tax}}
                 <span class="price-tax-label">
                   {{lang
                     'core.price.without_tax'
                     tax_label=price.tax_label
                   }}
                 </span>
-              {{/if}}
+              {{/all}}
             {{/if}}
 
             {{#all show_sale_badges (unless price.with_tax)}}
@@ -146,14 +146,14 @@
             </span>
 
             {{#if show_tax_labels}}
-              {{#if price.with_tax}}
+              {{#all price.with_tax price.without_tax}}
                 <span class="price-tax-label">
                   {{lang
                     'core.price.with_tax'
                     tax_label=price.tax_label
                   }}
                 </span>
-              {{/if}}
+              {{/all}}
             {{/if}}
 
             {{#if show_sale_badges}}
