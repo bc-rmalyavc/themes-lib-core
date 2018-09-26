@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.6.6] - 2018-09-26
 
 #### Fixed
 - Labels now appear when you update a product option
