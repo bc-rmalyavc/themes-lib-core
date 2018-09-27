@@ -2,7 +2,8 @@
   "remove": [
     "GeoTrust Seals",
     "Optimized Checkout",
-    "Pricing"
+    "Pricing",
+    "Payment Buttons"
   ],
   "insert": [
     {
@@ -14,13 +15,13 @@
         },
         {
           "type": "text",
-          "label": "SSL Common Name",
+          "label": "SSL common name",
           "force_reload": true,
           "id": "geotrust-ssl-common-name"
         },
         {
           "type": "select",
-          "label": "Seal Size",
+          "label": "Seal size",
           "id": "geotrust-ssl-seal-size",
           "options": [
             {
@@ -406,7 +407,7 @@
         },
         {
           "type": "color",
-          "label": "Text Color",
+          "label": "Text color",
           "id": "optimizedCheckout-link-color"
         },
         {
@@ -594,12 +595,12 @@
         },
         {
           "type": "color",
-          "label": "Border Color",
+          "label": "Border color",
           "id": "optimizedCheckout-formField-borderColor"
         },
         {
           "type": "select",
-          "label": "Background Color",
+          "label": "Background color",
           "id": "optimizedCheckout-formField-backgroundColor",
           "options": [
             {
@@ -625,7 +626,7 @@
         },
         {
           "type": "select",
-          "label": "Ranged Price Format",
+          "label": "Ranged price format",
           "id": "price_range_display",
           "options": [
             {
@@ -665,6 +666,128 @@
           "label": "Product price label",
           "id": "price-label",
           "force_reload": true
+        }
+      ]
+    },
+    {
+      "name": "Payment Buttons",
+      "enable": "smartButtons",
+      "settings": [
+        {
+          "type": "select",
+          "label": "Layout",
+          "id": "paymentbuttons-paypal-layout",
+          "force_reload": true,
+          "options": [
+            {
+              "value": "horizontal",
+              "label": "Horizontal"
+            },
+            {
+              "value": "vertical",
+              "label": "Vertical"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "label": "Color",
+          "id": "paymentbuttons-paypal-color",
+          "force_reload": true,
+          "options": [
+            {
+              "value": "gold",
+              "label": "Gold"
+            },
+            {
+              "value": "blue",
+              "label": "Blue"
+            },
+            {
+              "value": "silver",
+              "label": "Silver"
+            },
+            {
+              "value": "black",
+              "label": "Black"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "label": "Shape",
+          "id": "paymentbuttons-paypal-shape",
+          "force_reload": true,
+          "options": [
+            {
+              "value": "pill",
+              "label": "Pill"
+            },
+            {
+              "value": "rect",
+              "label": "Rectangle"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "label": "Size",
+          "id": "paymentbuttons-paypal-size",
+          "force_reload": true,
+          "options": [
+            {
+              "value": "small",
+              "label": "Small"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            },
+            {
+              "value": "large",
+              "label": "Large"
+            },
+            {
+              "value": "responsive",
+              "label": "Responsive"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "label": "Display label",
+          "id": "paymentbuttons-paypal-label",
+          "force_reload": true,
+          "options": [
+            {
+              "value": "checkout",
+              "label": "Paypal Checkout"
+            },
+            {
+              "value": "pay",
+              "label": "Pay with Paypal"
+            },
+            {
+              "value": "buynow",
+              "label": "Buy Now"
+            },
+            {
+              "value": "paypal",
+              "label": "Paypal"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "label": "Display the Paypal tagline",
+          "force_reload": true,
+          "id": "paymentbuttons-paypal-tagline"
+        },
+        {
+          "type": "checkbox",
+          "label": "Display the funding icons",
+          "force_reload": true,
+          "id": "paymentbuttons-paypal-fundingicons"
         }
       ]
     }
