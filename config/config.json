@@ -44,6 +44,7 @@
     "sale-badges": true,
     "sale-price-label": "Now:",
     "non-sale-price-label": "Was:",
-    "retail-price-label": "MSRP:"
+    "retail-price-label": "MSRP:",
+    "price-label": "",
   }
 }
