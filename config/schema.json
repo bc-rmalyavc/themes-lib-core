@@ -659,6 +659,12 @@
           "label": "Product retail price label",
           "id": "retail-price-label",
           "force_reload": true
+        },
+        {
+          "type": "text",
+          "label": "Product price label",
+          "id": "price-label",
+          "force_reload": true
         }
       ]
     }

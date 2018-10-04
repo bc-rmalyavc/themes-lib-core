@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.6.7] - 2018-10-04
+
+#### Added
+- Option for regular price label
+
 ## [3.6.6] - 2018-09-26
 
 #### Fixed

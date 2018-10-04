@@ -80,6 +80,10 @@
               <label class="price-value-label">
                 {{sale_price_label}}
               </label>
+            {{else}}
+              <label class="price-label">
+                {{price_label}}
+              </label>
             {{/if}}
             <span class="price-value" data-product-price>
               {{price.without_tax.formatted}}
@@ -139,6 +143,10 @@
             {{#if price.non_sale_price_with_tax}}
               <label class="price-value-label">
                 {{sale_price_label}}
+              </label>
+            {{else}}
+              <label class="price-label">
+                {{price_label}}
               </label>
             {{/if}}
             <span class="price-value" data-product-price>
