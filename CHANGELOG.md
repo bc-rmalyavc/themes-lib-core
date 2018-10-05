@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 #### Added
 - Option for regular price label
+- Added data-default to track default options for productUtils
 
 ## [3.6.6] - 2018-09-26
 
