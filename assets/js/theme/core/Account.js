@@ -1,3 +1,12 @@
+/**
+ *
+ * FormValidator does not currently exist in the core files, it is being
+ * imported from the theme so that the credit card form can benefit from being
+ * validated. Make sure the FormValidator file exists in the theme or that this
+ * page is not called if adding it to the theme you are working on
+ *
+ */
+
 import PageManager from '../../PageManager'
 import _ from 'lodash';
 import initAlertDismissable from './alertDismissable';

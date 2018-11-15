@@ -2,9 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.7.0] - 2018-11-12
+
 #### Added
 - Support for Paypal smart button settings added
+- Credit card vaulting added to account pages
 
 ## [3.6.7] - 2018-10-04
 
