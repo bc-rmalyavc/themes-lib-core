@@ -23,6 +23,7 @@ sync() {
 sync "Templates" "$DIR/templates/core" "$1/templates/"
 sync "Styles" "$DIR/assets/scss/core" "$1/assets/scss/"
 sync "Scripts" "$DIR/assets/js/theme/core" "$1/assets/js/theme/"
+sync "Images" "$DIR/assets/img/core" "$1/assets/img/"
 cp "$DIR/webpack/stencil.conf.js" "$1/"
 [ -f "$1/webpack.conf.js" ] && rm "$1/webpack.conf.js"
 
