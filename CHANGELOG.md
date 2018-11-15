@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+#### Added
+- Support for Paypal smart button settings added
+
 ## [3.6.7] - 2018-10-04
 
 #### Added

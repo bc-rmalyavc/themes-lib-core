@@ -45,6 +45,13 @@
     "sale-price-label": "Now:",
     "non-sale-price-label": "Was:",
     "retail-price-label": "MSRP:",
-    "price-label": ""
+    "price-label": "",
+    "paymentbuttons-paypal-layout": "horizontal",
+    "paymentbuttons-paypal-color": "gold",
+    "paymentbuttons-paypal-shape": "pill",
+    "paymentbuttons-paypal-size": "small",
+    "paymentbuttons-paypal-label": "checkout",
+    "paymentbuttons-paypal-tagline": true,
+    "paymentbuttons-paypal-fundingicons": false
   }
 }
