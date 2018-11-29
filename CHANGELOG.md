@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+
+#### Fixed
+- 'Was' price now has a strikethrough
+
 ## [3.7.0] - 2018-11-12
 
 #### Added

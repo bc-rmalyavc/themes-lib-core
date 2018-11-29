@@ -3,3 +3,8 @@
 .price-rrp-label {
   word-break: break-word;
 }
+
+.price-rrp,
+.price-ns {
+  text-decoration: line-through;
+}
