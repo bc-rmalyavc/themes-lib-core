@@ -2,8 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.7.2] - 2018-12-07
+#### Fixed
 - Show 'saved' price variant changes
+
+##### Structured Data
+- Breadcrumbs now visible on amp pages
+- Add 'date modified' to blog post structured data
 
 ## [3.7.1] - 2018-11-29
 
