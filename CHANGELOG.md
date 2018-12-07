@@ -23,6 +23,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 #### Fixed
 - Labels now appear when you update a product option
+- Tax labels only show when prices are shown with and without tax
 
 ## [3.6.5] - 2018-08-16
 #### Fixed
