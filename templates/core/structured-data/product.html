@@ -1,13 +1,13 @@
 {{!-- Product: include in product.html page template --}}
-
-<script type="application/ld+json" id="schema-product">
-  {
+<script id="schema-product">
+  var schema = document.createElement('script');
+  schema.type = 'application/ld+json';
+  schema.text = JSON.stringify({
     "@context": "http://schema.org/",
     "@type": "Product",
     "name": "{{product.title}}",
     "image": "{{getImage product.main_image}}",
     "description": "{{json product.description}}",
-    "sku": "{{product.sku}}",
     "brand": {
       "@type": "Thing",
       "name": "{{product.brand.name}}"
@@ -23,6 +23,9 @@
       "@type": "Offer",
       "itemCondition": "{{#if product.condition '===' 'New'}}http://schema.org/NewCondition{{/if}}{{#if product.condition '===' 'Used'}}http://schema.org/UsedCondition{{/if}}{{#if product.condition '===' 'Refurbished'}}http://schema.org/RefurbishedCondition{{/if}}",
       "availability": "{{#unless product.out_of_stock_message}}http://schema.org/InStock{{else}}http://schema.org/OutOfStock{{/unless}}",
+      "sku": "{{product.sku}}",
+      "priceCurrency": "{{currency_selector.active_currency_code}}",
+      "url": window.location.href,
       "seller": {
         "@type": "Organization",
         "name": "{{settings.store_name}}"
@@ -41,5 +44,9 @@
         {{/if}}
       }
     }
-  }
+  });
+
+  document.querySelector('body').appendChild(schema);
+  var script = document.getElementById('schema-product');
+  script.parentElement.removeChild(script);
 </script>
