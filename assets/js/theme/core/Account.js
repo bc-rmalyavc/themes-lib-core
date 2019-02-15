@@ -44,6 +44,12 @@ export default class Account extends PageManager {
 
     updateState(false, this.selectWrapCallback);
 
+    const $reorderForm = $('[data-account-reorder-form]');
+
+    if ($reorderForm.length) {
+      this.initReorderForm($reorderForm);
+    }
+
     // Toggle - a simple way to toggle elements
     $(document.body).on('click', '[data-account-toggle]', (event) => {
       const $el = $(event.currentTarget);
@@ -53,6 +59,34 @@ export default class Account extends PageManager {
 
     this.bindDeletePaymentMethod();
   }
+
+  initReorderForm($reorderForm) {
+    $reorderForm.on('submit', (event) => {
+      let submitForm = false;
+      let $productReorderCheckboxes = $('.account-item .form-checkbox:checked');
+
+      $reorderForm.find('[name^="reorderitem"]').remove();
+
+      $productReorderCheckboxes.each((index, productCheckbox) => {
+        let productId = $(productCheckbox).val();
+        console.log(productId);
+        const $input = $('<input>', {
+          type: 'hidden',
+          name: `reorderitem[${productId}]`,
+          value: '1'
+        });
+
+        submitForm = true;
+
+        $reorderForm.append($input);
+      });
+
+      if (!submitForm) {
+        event.preventDefault();
+        $('.account-toolbar .alert-error').show();
+      }
+    });
+}
 
   /**
    * Optional callback fired when a fresh state <select> element is added to the DOM
