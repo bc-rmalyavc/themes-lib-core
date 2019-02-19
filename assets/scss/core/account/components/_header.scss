@@ -8,6 +8,10 @@
 .account-toolbar {
   display: table-cell;
   vertical-align: baseline;
+
+  .alert-error {
+    display: none;
+  }
 }
 
 .account-toolbar {

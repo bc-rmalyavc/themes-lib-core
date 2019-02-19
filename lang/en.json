@@ -244,7 +244,8 @@
           "placed": "Placed On",
           "updated": "Updated On",
           "empty": "You haven't placed any orders yet."
-        }
+        },
+        "reorder_error": "Please select one or more items to reorder."
       },
       "addresses": {
         "heading": "Addresses",

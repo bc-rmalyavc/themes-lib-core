@@ -29,6 +29,13 @@
   }
 }
 
+.account-item-checkbox {
+  display: table-cell;
+  min-width: 30px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
 // Link
 // Makes the entire item clickable
 
@@ -109,7 +116,6 @@
 
 // Badge
 
-.account-item-badge,
 .account-item-actions {
   white-space: nowrap;
 }
