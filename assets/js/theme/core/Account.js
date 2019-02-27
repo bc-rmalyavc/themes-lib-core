@@ -69,7 +69,6 @@ export default class Account extends PageManager {
 
       $productReorderCheckboxes.each((index, productCheckbox) => {
         let productId = $(productCheckbox).val();
-        console.log(productId);
         const $input = $('<input>', {
           type: 'hidden',
           name: `reorderitem[${productId}]`,
