@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [3.7.4] - 2019-02-27
 #### Fixed
+- The call for price text was missing from the price update, now it's back
+
+## [3.7.4] - 2019-02-27
+#### Fixed
 - HTML-heavy product descriptions now cooperate with google's structured data
   properly
 
