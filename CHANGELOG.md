@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+#### Fixed
+- HTML-heavy product descriptions now cooperate with google's structured data
+  properly
+
 ## [3.7.3] - 2019-02-19
 #### Fixed
 - Can now re-order from orders that have OOS items (THEME-1519)
