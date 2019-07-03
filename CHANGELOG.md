@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [unreleased] - unreleased
 #### Fixed
 - Product structured data was throwing errors in AMP pages so we removed it
+- When account creation is disabled, people are still supposed to be able to
+  login incase merchants create accounts for them
 
 ## [3.7.6] - 2019-04-10
 #### Fixed
