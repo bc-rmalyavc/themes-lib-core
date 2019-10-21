@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.7.7] - 2019-10-21
 #### Fixed
 - Product structured data was throwing errors in AMP pages so we removed it
 - When account creation is disabled, people are still supposed to be able to
