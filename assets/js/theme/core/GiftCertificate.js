@@ -6,7 +6,9 @@ export default class GiftCertificate {
 
   _bindEvents() {
     this.$purchaseForm.on('change', () => {
-      this._showPreview();
+      if ($('#giftcard-amount').val() != "") {
+        this._showPreview();
+      }
     });
 
     this.$purchaseForm.find('[data-no-refresh]').on('change', (event) => {
