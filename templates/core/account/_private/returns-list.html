@@ -3,7 +3,13 @@
     {{#each returns}}
       <article class="account-item">
         <div class="account-item-thumbnail">
-          <img src="{{getImage product.image 'account-product-thumbnail' (cdn ../theme_settings.default_image)}}" alt="{{product.image.alt}}">
+          {{> components/common/responsive-image
+            image=product.image
+            fit=../theme_settings.product_grid_image_cropping
+            lazyload=../theme_settings.lazyload_mode
+            fallback_size=../theme_settings.account-product-thumbnail
+            default_image=../theme_settings.default_image
+          }}
         </div>
 
         <div class="account-item-body">
@@ -17,28 +23,44 @@
 
           <div class="account-item-details">
             <div class="account-item-detail">
-              <h2 class="account-item-detail-title">{{lang 'core.account.returns.list.date'}}</h2>
-              <span class="account-item-detail-value">{{date_requested}}</span>
+              <h2 class="account-item-detail-title">
+                {{lang 'core.account.returns.list.date'}}
+              </h2>
+              <span class="account-item-detail-value">
+                {{date_requested}}
+              </span>
             </div>
 
             <div class="account-item-detail">
-              <h2 class="account-item-detail-title">{{lang 'core.account.returns.list.action'}}</h2>
-              <span class="account-item-detail-value">{{action}}</span>
+              <h2 class="account-item-detail-title">
+                {{lang 'core.account.returns.list.action'}}
+              </h2>
+              <span class="account-item-detail-value">
+                {{action}}
+              </span>
             </div>
           </div>
 
           <div class="account-item-details">
             <div class="account-item-detail">
-              <h2 class="account-item-detail-title">{{lang 'core.account.returns.list.reason'}}</h2>
-              <span class="account-item-detail-value">{{reason}}</span>
+              <h2 class="account-item-detail-title">
+                {{lang 'core.account.returns.list.reason'}}
+              </h2>
+              <span class="account-item-detail-value">
+                {{reason}}
+              </span>
             </div>
           </div>
 
           {{#if comments}}
             <div class="account-item-details">
               <div class="account-item-detail">
-                <h2 class="account-item-detail-title">{{lang 'core.account.returns.list.comments'}}</h2>
-                <span class="account-item-detail-value">{{comments}}</span>
+                <h2 class="account-item-detail-title">
+                  {{lang 'core.account.returns.list.comments'}}
+                </h2>
+                <span class="account-item-detail-value">
+                  {{comments}}
+                </span>
               </div>
             </div>
           {{/if}}
@@ -74,5 +96,7 @@
   </div>
 
 {{else}}
-  <div class="account-empty">{{lang 'core.account.returns.no_returns'}}</div>
+  <div class="account-empty">
+    {{lang 'core.account.returns.no_returns'}}
+  </div>
 {{/if}}
