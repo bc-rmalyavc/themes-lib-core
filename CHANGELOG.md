@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+#### Fixed
+- The sales badge only shows on amp products when there is a sales price for the
+  product
+
+#### Added
+- We now support responsive images in account pages
+
 ## [3.7.7] - 2019-10-21
 #### Fixed
 - Product structured data was throwing errors in AMP pages so we removed it

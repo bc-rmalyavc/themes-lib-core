@@ -1,11 +1,11 @@
 <article class="amp-grid-item amp-product-grid-item">
-  {{#if price.saved}}
+  {{#or price.non_sale_price_with_tax price.non_sale_price_without_tax}}
     {{#unless out_of_stock_message}}
       <div class="product-badge product-badge-sale">
         {{lang 'core.product.sale'}}
       </div>
     {{/unless}}
-  {{/if}}
+  {{/or}}
   {{#if out_of_stock_message}}
     <div class="product-badge product-badge-sold-out">
       {{out_of_stock_message}}

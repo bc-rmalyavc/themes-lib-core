@@ -9,14 +9,22 @@
             {{#if items.0.type '===' 'giftcertificate'}}
               <img src="{{cdn ../../theme_settings.default_image_gift_certificate}}">
             {{else}}
-              <img src="{{getImage image 'account-product-thumbnail' (cdn ../../theme_settings.default_image)}}" alt="{{image.alt}}">
+              {{> components/common/responsive-image
+                image=image
+                fit=../../theme_settings.product_grid_image_cropping
+                lazyload=../../theme_settings.lazyload_mode
+                fallback_size=../../theme_settings.account-product-thumbnail
+                default_image=../../theme_settings.default_image
+              }}
             {{/if}}
           </a>
         </div>
 
         <div class="account-item-body">
           <h1 class="account-item-title">
-            <a href="{{details_url}}">{{lang 'core.account.orders.items.number' number=id}}</a>
+            <a href="{{details_url}}">
+              {{lang 'core.account.orders.items.number' number=id}}
+            </a>
           </h1>
 
           <p class="account-item-description">
@@ -25,27 +33,38 @@
 
           <div class="account-item-details">
             <div class="account-item-detail">
-              <h2 class="account-item-detail-title">{{lang 'core.account.orders.items.placed'}}</h2>
-              <span class="account-item-detail-value">{{date}}</span>
+              <h2 class="account-item-detail-title">
+                {{lang 'core.account.orders.items.placed'}}
+              </h2>
+              <span class="account-item-detail-value">
+                {{date}}
+              </span>
             </div>
 
             {{#if date '!==' last_update_date}}
               <div class="account-item-detail">
-                <h2 class="account-item-detail-title">{{lang 'core.account.orders.items.updated'}}</h2>
-                <span class="account-item-detail-value">{{last_update_date}}</span>
+                <h2 class="account-item-detail-title">
+                  {{lang 'core.account.orders.items.updated'}}
+                </h2>
+                <span class="account-item-detail-value">
+                  {{last_update_date}}
+                </span>
               </div>
             {{/if}}
           </div>
         </div>
 
         <div class="account-item-badge">
-          <h2 class="account-status">{{status}}</h2>
+          <h2 class="account-status">
+            {{status}}
+          </h2>
         </div>
       </article>
     {{/each}}
   </div>
 
 {{else}}
-  <div class="account-empty">{{lang 'core.account.orders.items.empty'}}</div>
-
+  <div class="account-empty">
+    {{lang 'core.account.orders.items.empty'}}
+  </div>
 {{/if}}
