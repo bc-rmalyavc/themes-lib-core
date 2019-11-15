@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+#### Changed
+- Structure data Updated
+
+#### Fixed
+- Placeholder text is now removed when textarea is focused on
+
 ## [3.7.8] - 2019-10-28
 #### Fixed
 - The sales badge only shows on amp products when there is a sales price for the
