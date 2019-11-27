@@ -544,6 +544,9 @@
     },
     "geotrust": {
       "click_to_verify": "Click to Verify - This site chose GeoTrust SSL for secure e-commerce and confidential communications."
+    },
+    "cookies": {
+        "accept": "Accept Cookies"
     }
   }
 }
