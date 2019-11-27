@@ -9,6 +9,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 #### Fixed
 - Placeholder text is now removed when textarea is focused on
 
+#### Added
+- Support for EU cookie notification
+
 ## [3.7.8] - 2019-10-28
 #### Fixed
 - The sales badge only shows on amp products when there is a sales price for the
