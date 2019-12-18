@@ -21,7 +21,16 @@
 
         {{#each forms.return.order_products}}
           <tr>
-            <td>{{name}}</td>
+            <td>
+              {{name}}
+              <br>
+              {{#if options}}
+                {{#each options}}
+                  {{name}}:
+                  {{value}}
+                {{/each}}
+              {{/if}}
+            </td>
             <td>{{price.formatted}}</td>
             <td>
               {{> core/forms/common/number
@@ -72,4 +81,7 @@
   {{/if}}
 {{/partial}}
 
-{{> core/account/_private/layout nav_page='returns' class='add-return'}}
+{{> core/account/_private/layout
+  nav_page='returns'
+  class='add-return'
+}}

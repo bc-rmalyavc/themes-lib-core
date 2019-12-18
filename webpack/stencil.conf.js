@@ -1,51 +1,44 @@
-var path = require('path');
 var webpack = require('webpack');
 
-var webpackConfig = {
-  bail: false,
-  context: __dirname,
-  devtool: 'eval-cheap-module-source-map',
-  entry: { main: path.resolve(__dirname, 'assets/js/app.js') },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        include: [
-          path.resolve(__dirname, 'assets/js'),
-          path.resolve(__dirname, 'node_modules/@bigcommerce/stencil-utils'),
-        ],
-        use: {
-          loader: 'babel-loader',
-          options: {
-            compact: true,
-            cacheDirectory: true,
-            minified: true,
-            presets: [ ['es2015', {loose: true}] ],
-            plugins: ['transform-object-rest-spread']
-          }
-        }
-      }
-    ]
-  },
-  output: {
-    path: path.resolve(__dirname, 'assets/js'),
-    filename: 'bundle.js'
-  },
-  plugins: [],
-  watch: false
+/**
+ * Watch options for the core watcher
+ * @type {{files: string[], ignored: string[]}}
+ */
+var watchOptions = {
+  // If files in these directories change, reload the page.
+  files: [
+    '/templates',
+    '/lang',
+  ],
+
+  //Do not watch files in these directories
+  ignored: [
+    '/assets/scss',
+    '/assets/css',
+    '/assets/dist',
+  ]
 };
 
 /**
  * Watch any custom files and trigger a rebuild
  */
 function development() {
+  var devConfig = require('./webpack.dev.js');
+
   // Rebuild the bundle once at bootup
-  webpack(webpackConfig).watch({}, err => {
+  webpack(devConfig).watch({}, (err, stats) => {
     if (err) {
       console.error(err.message, err.details);
     }
 
-    // Interface with stencil-cli
+    if (stats.hasErrors()) {
+      console.error(stats.toString({ all: false, errors: true, colors: true }));
+    }
+
+    if (stats.hasWarnings()) {
+      console.error(stats.toString({ all: false, warnings: true, colors: true }));
+    }
+
     process.send('reload');
   });
 }
@@ -54,22 +47,25 @@ function development() {
  * Hook into the `stencil bundle` command and build your files before they are packaged as a .zip
  */
 function production() {
-  webpackConfig.devtool = false;
-  webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
-    comments: false,
-    compress: {
-        warnings: true,
-    },
-    sourceMap: false, // Toggle to turn on source maps.
-  }));
+  var prodConfig = require('./webpack.prod.js');
 
-  webpack(webpackConfig).run(err => {
+  webpack(prodConfig).run((err, stats) => {
     if (err) {
       console.error(err.message, err.details);
-      throw err;
+      process.exit(1);
+      return;
     }
 
-    // Interface with stencil-cli
+    if (stats.hasErrors()) {
+      console.error(stats.toString({ all: false, errors: true, colors: true }));
+      process.exit(1);
+      return;
+    }
+
+    if (stats.hasWarnings()) {
+      console.error(stats.toString({ all: false, warnings: true, colors: true }));
+    }
+
     process.send('done');
   });
 }
@@ -86,24 +82,7 @@ if (process.send) {
     }
   });
 
-  // Interface with stencil-cli
   process.send('ready');
 }
 
-/**
- * Watch options for the core watcher
- * @type {{files: string[], ignored: string[]}}
- */
-module.exports = {
-  // If files in these directories change, reload the page.
-  files: [
-    '/templates',
-    '/lang',
-  ],
-
-  //Do not watch files in these directories
-  ignored: [
-    '/assets/scss',
-    '/assets/css',
-  ]
-};
+module.exports = { watchOptions };
