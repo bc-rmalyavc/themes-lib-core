@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased] - unreleased
+#### Changed
+- Webpack updated to version 4
+
 ## [3.8.0] - 2019-11-27
 #### Changed
 - Structure data Updated
