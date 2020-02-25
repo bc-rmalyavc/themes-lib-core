@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.9.2] - 2020-02-25
 - Add GEEA data tag support to AMP files
 
 ## [3.9.1] - 2020-02-06
