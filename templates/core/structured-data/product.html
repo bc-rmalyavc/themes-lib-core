@@ -8,6 +8,7 @@
     "name": "{{product.title}}",
     "image": "{{getImage product.main_image}}",
     "description": "{{json product.description}}",
+    "sku": "{{product.sku}}",
     "brand": {
       "@type": "Thing",
       "name": "{{product.brand.name}}"
@@ -17,6 +18,17 @@
         "@type": "AggregateRating",
         "ratingValue": "{{product.rating}}",
         "reviewCount": "{{product.num_reviews}}"
+      },
+      "review": {
+        "author": {
+          "@type": "Organization",
+          "name": "{{../settings.store_name}}"
+        },
+        "name": "{{product.title}}",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "{{product.rating}}"
+        }
       },
     {{/if}}
     "offers": {
