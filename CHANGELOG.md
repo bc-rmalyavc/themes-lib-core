@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.9.3] - 2020-03-03
 - Updates to product and review schema's to remove as many warnings and errors
   as possible
 
