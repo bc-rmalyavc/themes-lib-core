@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.9.4] - 2020-03-24
 - Make Geotrust url use https to avoid security issues on Google Ads
 
 ## [3.9.3] - 2020-03-03
