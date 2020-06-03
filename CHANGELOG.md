@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.9.5] - 2020-06-03
 - Sanitize option values in account pages
 
 ## [3.9.4] - 2020-03-24
