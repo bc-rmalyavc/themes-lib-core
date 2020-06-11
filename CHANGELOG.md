@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.9.6] - 2020-06-11
+- Add lang string for checkout title
+
 ## [3.9.5] - 2020-06-03
 - Sanitize option values in account pages
 
