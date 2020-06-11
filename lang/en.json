@@ -160,6 +160,9 @@
         "item4": "Type your gift certificate code in to the 'Redeem Gift Certificate' box and click 'Go'."
       }
     },
+    "checkout": {
+      "title": "Checkout"
+    },
     "account": {
       "common": {
         "yes": "Yes",
