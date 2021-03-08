@@ -1,11 +1,10 @@
 {{#unless customer.payment_methods}}
   {{> core/alerts/alert-info (lang 'core.payment_methods.no_methods')}}
 {{/unless}}
-
- <ul class="payment-method-list">
-  {{#each customer.payment_methods}}
-    {{#if @key '!==' 'selected_payment_method'}}
-      <h4 class="payment-method-name">{{display_name}}</h4>
+{{#each customer.payment_methods}}
+  {{#if @key '!==' 'selected_payment_method'}}
+    <h2 class="payment-method-name">{{display_name}}</h2>
+    <ul class="payment-method-list">
       {{#each methods}}
         <li class="payment-method">
           <div class="panel panel-payment-method">
@@ -83,5 +82,5 @@
         </a>
       </li>
     {{/if}}
-  {{/each}}
-</ul>
+  </ul>
+{{/each}}
