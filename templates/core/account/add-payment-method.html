@@ -37,6 +37,11 @@
     <form class="form" data-payment-method-form data-validated-form>
       <input type="hidden" name="email" value="{{customer.email}}">
       <input type="hidden" name="provider_id" value="{{forms.provider}}">
+      <input
+        type="hidden"
+        name="currency_code"
+        value="{{currency_selector.active_currency_code}}"
+      >
 
       <h2 class="payment-method-form-heading">
         {{lang 'core.account.payment_methods.heading'}}
