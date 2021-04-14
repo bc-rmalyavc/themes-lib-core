@@ -22,6 +22,11 @@
         name="bigpay_token"
         value="{{customer.payment_methods.selected_payment_method.bigpay_token}}"
       >
+      <input
+        type="hidden"
+        name="currency_code"
+        value="{{currency_selector.active_currency_code}}"
+      >
       <h2 class="payment-method-form-heading">
         {{lang 'core.account.payment_methods.heading'}}
       </h2>

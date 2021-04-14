@@ -38,8 +38,9 @@ export const storeInstrument = ({
   vaultToken,
 }, {
   /* eslint-disable */
-  // Provider Name
+  // Provider Info
   provider_id,
+  currency_code,
    // Instrument Details
   credit_card_number,
   expiration,
@@ -96,6 +97,7 @@ export const storeInstrument = ({
       }),
       provider_id,
       default_instrument,
+      currency_code,
     }),
   })
     .done(done)
