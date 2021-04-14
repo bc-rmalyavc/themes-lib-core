@@ -7,7 +7,7 @@
  *
  */
 
-import PageManager from '../../PageManager'
+import PageManager from '../../PageManager';
 import _ from 'lodash';
 import initAlertDismissable from './alertDismissable';
 import Alert from '../components/Alert';

@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.9.8] - 2021-04-14
 - Add currency codes to vaulted credit cards
 
 ## [3.9.7] - 2021-03-22
