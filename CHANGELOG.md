@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased] - unreleased
+## [3.9.9] - 2021-05-27
 - Add missing generic error message
 - GeoTrust seals moved to regions so the code is no longer needed in core
 

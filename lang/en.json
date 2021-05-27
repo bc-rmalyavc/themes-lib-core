@@ -546,9 +546,6 @@
       "max_checked": "Maximum {count, plural, one {1 option} other {# options}} allowed.",
       "min_checked": "Please select {count, plural, one {an option} other {# or more options}}."
     },
-    "geotrust": {
-      "click_to_verify": "Click to Verify - This site chose GeoTrust SSL for secure e-commerce and confidential communications."
-    },
     "cookies": {
         "accept": "Accept Cookies"
     }
