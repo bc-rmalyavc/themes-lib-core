@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased] - unreleased
 - Add missing generic error message
+- GeoTrust seals moved to regions so the code is no longer needed in core
 
 ## [3.9.8] - 2021-04-14
 - Add currency codes to vaulted credit cards
