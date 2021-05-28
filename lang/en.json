@@ -545,9 +545,6 @@
       "password_length": "Your password must be at least {min_length} characters long",
       "max_checked": "Maximum {count, plural, one {1 option} other {# options}} allowed.",
       "min_checked": "Please select {count, plural, one {an option} other {# or more options}}."
-    },
-    "cookies": {
-        "accept": "Accept Cookies"
     }
   }
 }
