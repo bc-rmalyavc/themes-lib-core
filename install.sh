@@ -8,7 +8,7 @@ if [ -z "$1" ]; then
 fi
 
 # Destination path doesn't look like a theme
-if [ ! -f "$1/.stencil" ]; then
+if [ ! -f "$1/config.stencil.json" ]; then
   echo "No .stencil file found in destination directory. Halting."
   exit 1
 fi

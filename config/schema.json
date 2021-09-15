@@ -594,16 +594,16 @@
         },
         {
           "type": "select",
-          "label": "Ranged price format",
+          "label": "Price format",
           "id": "price_range_display",
           "options": [
             {
               "value": "both",
-              "label": "Show lowest and highest price"
+              "label": "Show price ranges for products with variants"
             },
             {
               "value": "lowest",
-              "label": "Show lowest price"
+              "label": "Show default product price for all products"
             }
           ]
         },

@@ -58,7 +58,10 @@ export default class ProductUtils {
       this.cartAddAlert.clear();
       this.cartOptionAlert.clear();
 
-      utils.api.productAttributes.optionChange(this.productId, $form.serialize(), (err, response) => {
+      // product template should be passed as a string
+      const productTemplate = this.options.template && typeof this.options.template === 'string' ? this.options.template : null;
+
+      utils.api.productAttributes.optionChange(this.productId, $form.serialize(), productTemplate, (err, response) => {
         const viewModel = this._getViewModel(this.$el);
         const data = response ? response.data : {};
 
