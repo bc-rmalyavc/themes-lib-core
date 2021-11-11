@@ -7,7 +7,8 @@
         "categories": "Categories",
         "contact": "Contact",
         "pages": "Pages",
-        "sitemap_title": "Sitemap"
+        "sitemap_title": "Sitemap",
+        "powered_by": "Powered by {powered_by}"
       },
       "header": {
         "account": "Account",
@@ -139,7 +140,7 @@
         "amount": "Amount",
         "preview": "Preview Theme",
         "theme": "Gift Certificate Theme",
-        "custom_range": "(Value must be between {min} and {max} and contian no special characters. Example: 50)",
+        "custom_range": "(Value must be between {min} and {max} and contain no special characters. Example: 50)",
         "agree": "I understand that Gift Certificates expire after {days, plural, one {1 day} other {# days}}",
         "agree2": "I agree that Gift Certificates are nonrefundable",
         "submit_value": "Add Gift Certificate to Cart",
