@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Draft
 - Update path to theme bundle file in amp iframe that fixes showing options without SKUs on the PDP. [#1](https://github.com/bigcommerce/themes-lib-core/pull/1)
+- Populate data tags despite of data_tag_enabled setting  [#2](https://github.com/bigcommerce/themes-lib-core/pull/2)
+
 ## [3.9.10] - 2021-05-28
 - Remove cookie notification, now handled by platform
 
